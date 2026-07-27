@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-27T14:41:37Z",
+  "created_at": "2026-07-27T14:30:02Z",
+  "execution_completed_at": "2026-07-27T14:40:39Z",
+  "execution_reason": null,
+  "execution_result_kind": "success",
+  "node_path": "Main.CountingAndMain",
+  "objective": "Create and prove the single source-owned positivity helper for the unpaired perturbed-star term from SourceIndex b_0011 and formal_target.lean lines 14–24. Derive the exact s-form Nat.choose positivity under the immutable hypotheses by instantiating perturbedStarParameterBounds at r = d + 1 - s, using its arithmetic rewrite d - 2*r = 2*s - d - 2 and its lower-index bound, deriving n - 2*r - 2 ≥ d - 2*r from hn/hd, and applying Nat.choose_pos. This helper is the immediate strictness input for the protected final existential theorem.",
+  "plan_closeout_acknowledged_at": "2026-07-27T14:41:37Z",
+  "plan_closeout_acknowledged_by": "a_69813ea8bd4a4ab38bca6ad41a76a566",
+  "result_kind": "success",
+  "result_reason": "All stages passed and the exact s-form positive-binomial helper is accepted at proved state.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedStarExtra_choose_pos@rev:1",
+      "decl_name": "perturbedStarExtra_choose_pos",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_16b8e53e008b44f483101a9431aaf379",
+  "round_index": 17,
+  "started_at": "2026-07-27T14:31:04Z",
+  "status": "committed",
+  "strategy_id": "strategy_7cbc30f0d9cb46628fd30ebca588482b",
+  "summary": "The bottom-up strategy made the intended progress: perturbedStarExtra_choose_pos reached proved and is graph_proved with no remaining dependency closure work. The exact cardinality theorem and exact positive excess are now both available. The only remaining contract-owned declaration work is the immutable public exists_uniformMissingTraceFamily_strictlyLargerThanStar theorem, assembled from perturbedStar_isUniformMissingTraceFamily, perturbedStarParameterBounds, perturbedStarFamily_card, and this positivity helper."
+}

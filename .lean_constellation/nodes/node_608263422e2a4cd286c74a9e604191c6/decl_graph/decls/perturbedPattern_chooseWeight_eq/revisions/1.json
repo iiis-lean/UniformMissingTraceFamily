@@ -1,0 +1,78 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "perturbedPattern_card_eq"
+    ],
+    "anticipated_statement_dep_names": [],
+    "base_revision": null,
+    "kind": "create",
+    "objective": "For every B : PerturbedStarBlocks n r, d, and Y ⊆ B.L, prove equality of the exact completion weights Nat.choose (perturbedStarFiller B).card (d + 1 - ({B.a} ∪ B.T ∪ Y).card) and Nat.choose (perturbedStarFiller B).card (d + 1 - ({B.b} ∪ B.T ∪ Y).card). Preserve the contribution equality in SourceIndex b_0009 / article/sections/02_proof.tex:49, use the exact constructors and filler, and add no hrd/hrn assumptions. Consume the proved perturbedPattern_card_eq by rewriting the card argument; this theorem feeds the proper matched-sum side of the public cancellation interface.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Blocked at Statement NL as a round-level collateral effect before formal statement capture. The intended consumer-side goal remains equality, for every B, d, and Y ⊆ B.L, of the two Nat.choose (perturbedStarFiller B).card completion weights for the exact a/b anchored patterns; perturbedPattern_card_eq is already proved and matches the required card rewrite. Statement NL is present, but statement formal/proof artifacts are absent and the revision remains planned. Concrete blocker classification: Mathlib typed-dependency index gap, not source, interface, or proof mathematics. Retry after the repo MathlibIndex records compiler-verified Finset.image from Mathlib.Data.Finset.Image; no other prerequisite is known.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": null,
+  "proof": null,
+  "revision": 1,
+  "state": "planned",
+  "statement": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Card",
+          "name": "Finset.card"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Nat.Choose.Basic",
+          "name": "Nat.choose"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedStarFiller",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": null,
+    "nl": {
+      "origin": [
+        {
+          "end_line": 49,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source states that matched removed and added a/T/Y and b/T/Y patterns have the same size and therefore contribute the same number of completions.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 49,
+          "start_locator": null
+        }
+      ],
+      "text": "For every `B : PerturbedStarBlocks n r`, every natural number `d`, and every finite set `Y` with `Y ⊆ B.L`, the exact completion weights of the matched deleted and added patterns are equal:\n\n`Nat.choose (perturbedStarFiller B).card (d + 1 - ({B.a} ∪ B.T ∪ Y).card) = Nat.choose (perturbedStarFiller B).card (d + 1 - ({B.b} ∪ B.T ∪ Y).card)`.\n\nNo additional hypotheses, including `hrd` or `hrn`, are assumed."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T16:55:54Z"
+}

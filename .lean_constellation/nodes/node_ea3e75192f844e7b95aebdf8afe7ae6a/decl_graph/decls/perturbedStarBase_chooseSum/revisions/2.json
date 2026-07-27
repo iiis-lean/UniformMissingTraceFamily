@@ -1,0 +1,246 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "perturbedStarCore_card",
+      "perturbedStarFiller_card"
+    ],
+    "anticipated_statement_dep_names": [],
+    "base_revision": 1,
+    "kind": "update",
+    "objective": "Retry revision 1 unchanged after satisfying its sole Statement-NL prerequisite: Finset.powerset and Finset.filter are now verified repository MathlibIndex entries and current-node hints. Formalize the exact anchored-base equation required by SourceIndex b_0009/article lines 48–49: the weighted double Finset sum over (perturbedStarCore B).powerset filtered by B.a ∈ P and P.card ≤ d+1 equals Nat.choose (n-1) d. Use the proved perturbedStarCore_card and perturbedStarFiller_card providers and the core/filler partition; retain the exact representation and assumptions accepted in the preserved consumer goal so the result feeds perturbedStarPatterns_chooseSum.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": "planned",
+    "summary": "Update revision 2 advanced from planned to proof_planned: Statement NL, compiler-confirmed Statement Formal, and Proof NL were accepted; Proof Formal is absent, so the proved target and graph_proved satisfaction were not reached. Blocker classification: predictable tracked helper / Lean-specific finite-sum reindexing within this node. Preserved consumer-side formal goal: for B : PerturbedStarBlocks n r, ∑ P ∈ (perturbedStarCore B).powerset.filter (fun P => B.a ∈ P ∧ P.card ≤ d+1), Nat.choose (perturbedStarFiller B).card (d+1-P.card) = Nat.choose (n-1) d, with no added parameter hypothesis. The accepted route checked perturbedStarCore_card, perturbedStarFiller_card, Finset.sum_bij, Finset.card_powersetCard, Finset.card_erase_of_mem, and Nat.add_choose_eq. Their mismatch is that they support elementary cardinality and convolution steps but do not expose the standalone weighted reindexing from anchored subsets P to cardinality classes of P.erase B.a. Before retrying this parent, add and prove a tracked interface expressing that anchored filtered-powerset weighted sum as the finite binomial convolution over the core-minus-anchor and filler cardinalities (including its bijection/cardinality normalization), with objects and indices matching this formal statement exactly.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": "perturbedStarBase_chooseSum",
+  "proof": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": "Reindexes the filtered anchored powerset into cardinality/antidiagonal classes.",
+        "ref": {
+          "module": "Mathlib.Algebra.BigOperators.Group.Finset.Defs",
+          "name": "Finset.sum_bij"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": "Computes the core-minus-anchor cardinality.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Card",
+          "name": "Finset.card_erase_of_mem"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": "Counts each fixed-cardinality subfamily after grouping the anchored subsets.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Powerset",
+          "name": "Finset.card_powersetCard"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": "Evaluates the resulting core/filler binomial convolution.",
+        "ref": {
+          "module": "Mathlib.Data.Nat.Choose.Vandermonde",
+          "name": "Nat.add_choose_eq"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "Determines the core-minus-anchor cardinality for the Vandermonde convolution.",
+        "ref": {
+          "name": "perturbedStarCore_card",
+          "node": "Main.CountingAndMain",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "Determines the complementary cardinality in the convolution and its sum with the core-minus-anchor.",
+        "ref": {
+          "name": "perturbedStarFiller_card",
+          "node": "Main.CountingAndMain",
+          "repo": null,
+          "revision": 3
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "Provides the anchor and construction data needed for the anchored-powerset reindexing.",
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "Supplies the core whose anchored powerset is summed.",
+        "ref": {
+          "name": "perturbedStarCore",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "Supplies the complementary filler used in every weight.",
+        "ref": {
+          "name": "perturbedStarFiller",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": null,
+    "nl": {
+      "origin": [
+        {
+          "end_line": 49,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source identifies the unchanged anchored base with the full star contribution, which this route evaluates by core/filler decomposition.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 48,
+          "start_locator": null
+        }
+      ],
+      "text": "Put `C := perturbedStarCore B` and `U := perturbedStarFiller B`.  Unfold the filler and use the core/filler complement partition.  From `perturbedStarCore_card B`, `perturbedStarFiller_card B`, and the fact that `B.a ∈ C`, derive `(C.erase B.a).card + U.card = n - 1`.  Reindex the displayed filtered powerset by `P ↦ P.erase B.a`: it is a bijection from anchored `P ⊆ C` with `P.card ≤ d + 1` to subfinsets of `C.erase B.a` with the corresponding cardinal bound, and the weight becomes `Nat.choose U.card (d - X.card)`.\n\nGroup this reindexed sum by `X.card`, using `Finset.sum_bij` to pass to the appropriate antidiagonal and `Finset.card_powersetCard` to replace each cardinality class by `Nat.choose (C.erase B.a).card j`.  The two antidiagonal components are exactly the core-minus-anchor and filler choice counts, so `Nat.add_choose_eq` evaluates the convolution to `Nat.choose ((C.erase B.a).card + U.card) d`; rewrite the previously established cardinality equality to conclude `Nat.choose (n - 1) d`.  The filter/cardinality normalization and finite reindexing witnesses are local to this helper; no new parameter hypothesis is used."
+    }
+  },
+  "revision": 2,
+  "state": "proof_planned",
+  "statement": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": "The displayed anchored-base expression directly applies Finset.filter to enforce the anchor and cardinality conditions.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Filter",
+          "name": "Finset.filter"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": "The displayed anchored-base expression directly applies Finset.powerset to perturbedStarCore B.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Powerset",
+          "name": "Finset.powerset"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": "Both sides and each summand of the stated base enumeration directly use Nat.choose.",
+        "ref": {
+          "module": "Mathlib.Data.Nat.Choose.Basic",
+          "name": "Nat.choose"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The statement quantifies over the accepted block data B and its distinguished anchor.",
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The anchored base is expressed as the filtered powerset of this accepted core definition.",
+        "ref": {
+          "name": "perturbedStarCore",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "Each summand uses the cardinality of this accepted complementary filler.",
+        "ref": {
+          "name": "perturbedStarFiller",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": true,
+        "contains_axiom": false,
+        "contains_sorry": true,
+        "diagnostics": {
+          "diagnostics": [
+            {
+              "column": 9,
+              "line": 35,
+              "message": "declaration uses `sorry`",
+              "severity": "warning"
+            }
+          ],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarBase_chooseSum', 'items': [{'severity': 'warning', 'pos': {'line': 35, 'column': 9}, 'endPos': {'line': 35, 'column': 36}, 'kind': None, 'data': 'declaration uses `sorry`', 'fileName': 'UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarBase_chooseSum', 'content': '  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\\n-/\\ntheorem perturbedStarBase_chooseSum {n r d : ℕ} (B : PerturbedStarBlocks n r) :\\n    (∑ P ∈ (perturbedStarCore B).powerset.filter (fun P => B.a ∈ P ∧ P.card ≤ d + 1),\\n      Nat.choose (perturbedStarFiller B).card (d + 1 - P.card)) = Nat.choose (n - 1) d := by'}], 'total_items': 1, 'error_count': 0, 'warning_count': 1, 'info_count': 0, 'sorry_count': 1}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarBase_chooseSum.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 1 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": true,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [
+            {
+              "column": 3,
+              "excerpt": "sorry",
+              "kind": "sorry",
+              "line": 38
+            }
+          ],
+          "opaque_count": 0,
+          "sorry_count": 1,
+          "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Finset.Filter\nimport Mathlib.Data.Finset.Powerset\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarBase_chooseSum`\n\nFor natural numbers n, r, and d and construction data `B : PerturbedStarBlocks n r`,\n`∑ P ∈ ((perturbedStarCore B).powerset.filter (fun P => B.a ∈ P ∧ P.card ≤ d + 1)), Nat.choose\n(perturbedStarFiller B).card (d + 1 - P.card) = Nat.choose (n - 1) d`.\nThus the anchored base in exactly the representation used by `perturbedStarPatterns` enumerates all\n`(d + 1)`-subsets of `Fin n` containing `B.a`, by their core and complementary-filler parts.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 48–49\n\n## Statement dependencies\n\n- `Finset.filter` from `Mathlib.Data.Finset.Filter`\n- `Finset.powerset` from `Mathlib.Data.Finset.Powerset`\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarCore` → `perturbedStarCore` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n-/\ntheorem perturbedStarBase_chooseSum {n r d : ℕ} (B : PerturbedStarBlocks n r) :\n    (∑ P ∈ (perturbedStarCore B).powerset.filter (fun P => B.a ∈ P ∧ P.card ≤ d + 1),\n      Nat.choose (perturbedStarFiller B).card (d + 1 - P.card)) = Nat.choose (n - 1) d := by\n  sorry\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 49,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source identifies the full anchored star inside the core with all (d+1)-sets containing the first anchor and gives its binomial contribution.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 48,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers n, r, and d and construction data `B : PerturbedStarBlocks n r`,\n`∑ P ∈ ((perturbedStarCore B).powerset.filter (fun P => B.a ∈ P ∧ P.card ≤ d + 1)), Nat.choose (perturbedStarFiller B).card (d + 1 - P.card) = Nat.choose (n - 1) d`.\nThus the anchored base in exactly the representation used by `perturbedStarPatterns` enumerates all `(d + 1)`-subsets of `Fin n` containing `B.a`, by their core and complementary-filler parts."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T13:05:51Z"
+}

@@ -1,0 +1,47 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-26T10:52:31Z",
+  "created_at": "2026-07-26T10:48:54Z",
+  "execution_completed_at": "2026-07-26T10:52:31Z",
+  "execution_reason": "Draft validation found round-internal proved dependencies; close this unexecuted draft so its independent providers can be replanned separately.",
+  "execution_result_kind": "failed",
+  "node_path": "Main.CountingAndMain",
+  "objective": "Prove the generic and construction-specific counting foundations needed by SourceIndex b_0009: core/filler cardinalities, exact cardinality of one completion fiber, pairwise disjointness of distinct completion fibers, and the resulting sum formula for patternFamily. These proved private lemmas will feed the later cancellation and public perturbedStarFamily_card round.",
+  "plan_closeout_acknowledged_at": "2026-07-26T10:52:31Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "failed",
+  "result_reason": "Draft validation found round-internal proved dependencies; close this unexecuted draft so its independent providers can be replanned separately.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedStarCore_card@rev:1",
+      "decl_name": "perturbedStarCore_card",
+      "revision": 1
+    },
+    {
+      "change_id": "perturbedStarFiller_card@rev:1",
+      "decl_name": "perturbedStarFiller_card",
+      "revision": 1
+    },
+    {
+      "change_id": "completionFiber_card@rev:1",
+      "decl_name": "completionFiber_card",
+      "revision": 1
+    },
+    {
+      "change_id": "completionFibers_pairwiseDisjoint@rev:1",
+      "decl_name": "completionFibers_pairwiseDisjoint",
+      "revision": 1
+    },
+    {
+      "change_id": "patternFamily_card_sum@rev:1",
+      "decl_name": "patternFamily_card_sum",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_06d7e661838840adb853200fab812a02",
+  "round_index": 1,
+  "started_at": null,
+  "status": "committed",
+  "strategy_id": "strategy_746a2d92b99d454db9e1556c2088f3e8",
+  "summary": "Draft validation rejected the batch because perturbedStarFiller_card depended on perturbedStarCore_card and patternFamily_card_sum depended on completionFiber_card plus completionFibers_pairwiseDisjoint within the same round. No worker stages ran. The semantic route remains valid; replan independent providers first, then dependent consumers in a later round."
+}

@@ -1,0 +1,128 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "perturbedStarCore_card",
+      "perturbedStarFiller_card"
+    ],
+    "anticipated_statement_dep_names": [],
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Formalize exactly the matched cancellation calculation in SourceIndex b_0009/article/sections/02_proof.tex 41–51. Under the minimal r-form bounds available from perturbedStarParameterBounds (in particular 2*r ≤ d and enough ambient room such as 2+2*r ≤ n), prove that the Finset sum over P ∈ perturbedStarPatterns d B of Nat.choose (perturbedStarFiller B).card (d+1-P.card) equals Nat.choose (n-1) d + Nat.choose (n-2*r-2) (d-2*r). The full a-star gives the first term; proper Y deleted at anchor a pairs with the same-cardinality Y inserted at anchor b; Y=B.L is the sole unpaired pattern. Consume proved perturbedStarCore_card and perturbedStarFiller_card plus the lower construction definitions and verified Nat.choose/Finset support. This exact helper serves perturbedStarFamily_card; do not rewrite to s-form yet or add assumptions unavailable from the lower parameter-bounds theorem.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "The parent weighted-cancellation theorem reached committed declared state with its formal statement compiler-passed, but Proof NL was blocked and no proof artifacts were accepted. The preserved exact consumer goal is: for B : PerturbedStarBlocks n r, hrd : 2*r ≤ d, hrn : 2+2*r ≤ n, the double Finset sum over perturbedStarPatterns d B of Nat.choose (perturbedStarFiller B).card (d+1-P.card) equals Nat.choose (n-1) d + Nat.choose (n-2*r-2) (d-2*r). Existing proved declarations checked include perturbedStarCore_card, perturbedStarFiller_card, completionFiber_card, completionFibers_pairwiseDisjoint, and patternFamily_card_sum; none enumerates the anchored base patterns or formalizes the deleted/inserted cancellation. This is a predictable tracked-helper blocker inside the current Content scope. Before retrying the parent, prove (1) an anchored-base weighted enumeration theorem giving Nat.choose (n-1) d, and (2) a perturbation cancellation theorem pairing every proper Y deletion with its equal-cardinality b-insertion and isolating Y=B.L as the sole extra term. These helpers must preserve the current r-form bounds and exact Nat.choose indices.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": "perturbedStarPatterns_chooseSum",
+  "proof": null,
+  "revision": 1,
+  "state": "declared",
+  "statement": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": "Both sides of the stated weighted-sum equality directly use Nat.choose.",
+        "ref": {
+          "module": "Mathlib.Data.Nat.Choose.Basic",
+          "name": "Nat.choose"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The statement quantifies over the accepted block data B.",
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The binomial upper index is the cardinality of this accepted complementary-filler definition.",
+        "ref": {
+          "name": "perturbedStarFiller",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The sum is indexed by this accepted perturbed-star pattern family.",
+        "ref": {
+          "name": "perturbedStarPatterns",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": true,
+        "contains_axiom": false,
+        "contains_sorry": true,
+        "diagnostics": {
+          "diagnostics": [
+            {
+              "column": 9,
+              "line": 33,
+              "message": "declaration uses `sorry`",
+              "severity": "warning"
+            }
+          ],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarPatterns_chooseSum', 'items': [{'severity': 'warning', 'pos': {'line': 33, 'column': 9}, 'endPos': {'line': 33, 'column': 40}, 'kind': None, 'data': 'declaration uses `sorry`', 'fileName': 'UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarPatterns_chooseSum', 'content': '  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\\n-/\\ntheorem perturbedStarPatterns_chooseSum {n r d : ℕ} (B : PerturbedStarBlocks n r)\\n    (hrd : 2 * r ≤ d) (hrn : 2 + 2 * r ≤ n) :\\n    ∑ P ∈ perturbedStarPatterns d B,'}], 'total_items': 1, 'error_count': 0, 'warning_count': 1, 'info_count': 0, 'sorry_count': 1}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarPatterns_chooseSum.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 1 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": true,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [
+            {
+              "column": 3,
+              "excerpt": "sorry",
+              "kind": "sorry",
+              "line": 38
+            }
+          ],
+          "opaque_count": 0,
+          "sorry_count": 1,
+          "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarPatterns_chooseSum`\n\nFor natural numbers n, r, and d, construction data `B : PerturbedStarBlocks n r`, and hypotheses `2\n* r ≤ d` and `2 + 2 * r ≤ n`,\n`∑ P ∈ perturbedStarPatterns d B, Nat.choose (perturbedStarFiller B).card (d + 1 - P.card) =\nNat.choose (n - 1) d + Nat.choose (n - 2 * r - 2) (d - 2 * r)`.\nThe anchored base star contributes the first term; each proper-`B.L` deletion at the first anchor\ncancels with its equal-cardinality insertion at the second anchor, leaving only the `Y = B.L`\npattern as the second term.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 41–51\n\n## Statement dependencies\n\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\n-/\ntheorem perturbedStarPatterns_chooseSum {n r d : ℕ} (B : PerturbedStarBlocks n r)\n    (hrd : 2 * r ≤ d) (hrn : 2 + 2 * r ≤ n) :\n    ∑ P ∈ perturbedStarPatterns d B,\n      Nat.choose (perturbedStarFiller B).card (d + 1 - P.card) =\n        Nat.choose (n - 1) d + Nat.choose (n - 2 * r - 2) (d - 2 * r) := by\n  sorry\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 51,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source gives the exact cardinality claim and its matched deletion/insertion cancellation, with the sole final B.L pattern furnishing the unpaired binomial term.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 41,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers n, r, and d, construction data `B : PerturbedStarBlocks n r`, and hypotheses `2 * r ≤ d` and `2 + 2 * r ≤ n`,\n`∑ P ∈ perturbedStarPatterns d B, Nat.choose (perturbedStarFiller B).card (d + 1 - P.card) = Nat.choose (n - 1) d + Nat.choose (n - 2 * r - 2) (d - 2 * r)`.\nThe anchored base star contributes the first term; each proper-`B.L` deletion at the first anchor cancels with its equal-cardinality insertion at the second anchor, leaving only the `Y = B.L` pattern as the second term."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T12:21:46Z"
+}

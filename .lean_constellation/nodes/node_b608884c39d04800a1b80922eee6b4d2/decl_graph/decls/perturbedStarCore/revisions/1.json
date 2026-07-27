@@ -1,0 +1,81 @@
+{
+  "change": {
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Define the source b_0008 core C from article/sections/02_proof.tex line 34. For n r and accepted construction data B : PerturbedStarBlocks n r, return the Finset (Fin n) equal to {B.a, B.b} ∪ B.T ∪ B.L, with union/insert association chosen transparently but no semantic additions. Capture PerturbedStarBlocks rev2 as the statement dependency. This public reusable definition is the lower provider for U=[n]\\C, the allowed perturbed-star patterns on C, the required perturbedStarFamily interface, all five certificate cases, and downstream exact-cardinality work.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Completed successfully. The source-b_0008 core is now the public declared definition `perturbedStarCore B = {B.a, B.b} ∪ B.T ∪ B.L`. Its formal statement passed Lean checking, its sole statement dependency is the accepted `PerturbedStarBlocks` revision 2, and declared/proved-policy satisfaction holds for this non-theorem provider. No blocker or retry condition remains; the definition is ready to feed the complementary filler, allowed-pattern, family, counting, and certificate layers.",
+    "target_state": "declared"
+  },
+  "lean_decl_name": "perturbedStarCore",
+  "proof": null,
+  "revision": 1,
+  "state": "declared",
+  "statement": {
+    "deps": [
+      {
+        "kind": "repo_decl",
+        "reason": "The core's input B and its anchor and block fields are supplied by this accepted construction-data structure.",
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": false,
+        "contains_axiom": false,
+        "contains_sorry": false,
+        "diagnostics": {
+          "diagnostics": [],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore', 'items': [], 'total_items': 0, 'error_count': 0, 'warning_count': 0, 'info_count': 0, 'sorry_count': 0}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Defs/perturbedStarCore.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 0 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": false,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [],
+          "opaque_count": 0,
+          "sorry_count": 0,
+          "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarCore`\n\nFor natural numbers n and r and construction data `B : PerturbedStarBlocks n r`, `perturbedStarCore\nB` is the finite subset of `Fin n` defined by\n\n`{B.a, B.b} ∪ B.T ∪ B.L`.\n\nEquivalently, it is the union of the two distinguished anchors and the two blocks recorded by `B`;\nthe displayed union association is part of the definition and no additional elements or assumptions\nare introduced.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 34\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n-/\ndef perturbedStarCore {n r : ℕ} (B : PerturbedStarBlocks n r) : Finset (Fin n) :=\n  {B.a, B.b} ∪ B.T ∪ B.L\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 34,
+          "end_locator": null,
+          "kind": "source",
+          "note": "This source line defines the fixed core C as the union of the two distinguished points and the T and L blocks.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 34,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers n and r and construction data `B : PerturbedStarBlocks n r`, `perturbedStarCore B` is the finite subset of `Fin n` defined by\n\n`{B.a, B.b} ∪ B.T ∪ B.L`.\n\nEquivalently, it is the union of the two distinguished anchors and the two blocks recorded by `B`; the displayed union association is part of the definition and no additional elements or assumptions are introduced."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-22T12:58:11Z"
+}

@@ -1,0 +1,32 @@
+\section{Introduction}
+
+A basic goal in extremal set theory is to find how large or how small a set system can be under a given combinatorial condition. One starting point is the theorem of Erd\H{o}s, Ko and Rado~\cite{1961EKR}, which says that for \(n\ge2k\), every intersecting \(k\)-uniform family on \([n]\) has size at most \(\binom{n-1}{k-1}\). Moreover, when \(n>2k\), equality holds only for a star. This theorem led to many later results on intersection conditions and their variants~\cite{1989Chuan,2017PAMSHan,1967HM,2017HuangZhao,2024PengHuang,1986Pyber}.
+
+Here we focus on a related direction, VC-dimension. Let \(\cF\subseteq 2^X\) be a set system. A set \(S\subseteq X\) is shattered by \(\cF\) if \(\Tr_{\cF}(S)=2^S\), where \(\Tr_{\cF}(S)=\{F\cap S:F\in\cF\}\). The VC-dimension of \(\cF\), denoted by \(\VC(\cF)\), is the largest size of a shattered set. The Sauer--Shelah theorem~\cite{1972JCTASauer,1972PACJMShelah,1971TPAVCVC} gives exactly the maximum size of a not necessarily uniform set system with VC-dimension at most \(d\), namely \(\sum_{i=0}^d\binom{n}{i}\). The Hamming ball of radius \(d\) shows that this bound is sharp.
+
+The uniform version is much less understood. For a \((d+1)\)-uniform family \(\cF\subseteq\binom{[n]}{d+1}\), the condition \(\VC(\cF)\le d\) has a simple form: for every \(F\in\cF\), there is a proper subset \(B_F\subsetneq F\) such that \(F\cap F'\ne B_F\) for every \(F'\in\cF\). Thus every edge misses at least one trace on itself. If \(\cF\) is intersecting, then one may take \(B_F=\emptyset\) for every \(F\), so the Erd\H{o}s--Ko--Rado theorem gives examples of size \(\binom{n-1}{d}\).
+
+Because of this link, Erd\H{o}s~\cite{1984Erdos} and Frankl and Pach~\cite{1984Franklpach} conjectured in the 1980s that \(\binom{n-1}{d}\) should be the maximum size of a \((d+1)\)-uniform family with VC-dimension at most \(d\), when \(n\) is sufficiently large compared to \(d\). Frankl and Pach~\cite{1984Franklpach} proved the general upper bound \(\binom{n}{d}\). However, Ahlswede and Khachatrian~\cite{1997CombFan} disproved the conjecture by constructing a family of size \(\binom{n-1}{d}+\binom{n-4}{d-2}\). Mubayi and Zhao~\cite{2007JAC} later gave infinitely many non-isomorphic constructions with the same size, and conjectured that this Ahlswede--Khachatrian value is the correct answer for large \(n\). More recently, Tran and Xu~\cite{2026TranXu}, and Zhao and Ge~\cite{2026GeZhao} independently further improved the lower bound for \(d\ge 3\), thereby disproving the above conjecture of Mubayi and Zhao.
+
+The upper bound side has also seen several developments. Mubayi and Zhao~\cite{2007JAC} improved the Frankl--Pach bound by an \(\Omega_d(\log n)\) term when \(d\) is a prime power and \(n\) is large. Ge, Xu, Yip, Zhang and Zhao~\cite{2024FranklPach} proved that the Frankl--Pach bound is not tight for any \(d\ge2\) and \(n\ge 2d+2\), giving an unconditional improvement. Chao, Xu, Yip and Zhang~\cite{2025CombProof} later gave a purely combinatorial proof of the stronger estimate \(\binom{n-1}{d}+O_d(n^{d-1-\frac{1}{4d-2}})\). Later, Yang and Yu~\cite{2025YangYu} improved this further to \(\binom{n-1}{d}+O_d(n^{d-2})\) for fixed \(d\) and large \(n\). For \(d=2\), Wang, Xu and Zhang~\cite{2025ThreeUniform} determined the exact value for \(n\ge 7\), confirming the Ahlswede--Khachatrian value in the 3-uniform case. These results show both the strength and the difficulty of the original Erd\H{o}s--Frankl--Pach problem~\cite{1984Erdos,1984Franklpach}. They also show that bounded VC-dimension alone is not the right way to recover the Erd\H{o}s--Ko--Rado theorem.
+
+Chao, Xu, Yip and Zhang~\cite{2025CombProof} proposed a more rigid way to recover the Erd\H{o}s--Ko--Rado theorem. Instead of only asking that every edge has some missing trace, they require all missing traces to have the same fixed size. Let \(0\le s\le d\). A family \(\cF\subseteq\binom{[n]}{d+1}\) is called an \(s\)-witness family if for every \(F\in\cF\), there exists \(B_F\in\binom{F}{s}\) such that \(F\cap F'\ne B_F\) for every \(F'\in\cF\). We write \(\W_{d,s}(n)\) for the maximum size of an \(s\)-witness family in \(\binom{[n]}{d+1}\).
+
+The case \(s=0\) is exactly the Erd\H{o}s-Ko-Rado Theorem. The star is an \(s\)-witness family for every \(s\le d\), since for an edge \(F\) containing the center \(1\), any \(s\)-subset of \(F\setminus\{1\}\) is missing from the trace on \(F\). This led to the following conjecture.
+
+\begin{conj}[Uniform witness conjecture~\cite{2025CombProof}]\label{conj:witness}
+Let \(n\ge2(d+1)\) and \(0\le s\le d\). If \(\cF\subseteq\binom{[n]}{d+1}\) is an \(s\)-witness family, then \(|\cF|\le\binom{n-1}{d}\).
+\end{conj}
+
+Chao, Xu, Yip and Zhang~\cite{2025CombProof} verified Conjecture~\ref{conj:witness} when \(s=d\), and also when \(s=1\) and \(n\) is sufficiently large. In particular, their result implies the case \(d=2\) for large \(n\). Very recently, Chao, Xu and Zakharov~\cite{2026Chao} proved the conjecture when \(s\le \frac{d}{2}\) and \(n\) is sufficiently large. They also constructed various non-star \(s\)-witness families of size exactly \(\binom{n-1}{d}\) for \(\frac{d}{2}<s\le d-1\), showing that equality already looks quite different beyond the threshold \(\frac{d}{2}\).
+
+Our main result shows that Conjecture~\ref{conj:witness} is false in general.
+
+\begin{theorem}\label{thm:main}
+Let \(d\ge4\) and let \(s\) be an integer with
+\(\left\lceil \frac{d+2}{2}\right\rceil\le s\le d-1.\) If \(n\ge2(d+1)\), then
+\[
+\W_{d,s}(n)\ge\binom{n-1}{d}+\binom{n-2(d+1-s)-2}{2s-d-2}.
+\]
+\end{theorem}
+This covers every possible \(s\) when \(d\) is even, and every possible \(s\) except the lower boundary \(s=\frac{d+1}{2}\) when \(d\) is odd. Moreover, combining Theorem~\ref{thm:main} and the results in~\cite{2025CombProof,2026Chao,1961EKR} gives a rather strange picture: the conjecture is true for \(0\le s\le \frac{d}{2}\) and large \(n\), and it is also true for \(s=d\), but the middle parameters violate the conjectured bound.

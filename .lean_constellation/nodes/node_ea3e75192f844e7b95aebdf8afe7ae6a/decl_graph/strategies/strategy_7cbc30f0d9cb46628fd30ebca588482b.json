@@ -1,0 +1,21 @@
+{
+  "closed_at": "2026-07-27T14:56:43Z",
+  "closed_reason": "All contract-owned declarations and both public interfaces are proved; graph hygiene cleanup is committed.",
+  "created_at": "2026-07-27T13:15:45Z",
+  "created_round_ids": [
+    "round_0407c5b656c743628cbb5a9b8e6eee6d",
+    "round_a1128bdb8a14412991557cc884e7cba9",
+    "round_7b9ce71ebc18446f874f34606fdb6bb7",
+    "round_d555c8ee268b477a81d53fa6905c934f",
+    "round_8e5d00d8fabb4bb29165f1e7bccfa9d3",
+    "round_a7651ea9f8c64ccc92e48ba9432c519a",
+    "round_16b8e53e008b44f483101a9431aaf379",
+    "round_f67114f17c934435b92e53ffe6af5907"
+  ],
+  "node_path": "Main.CountingAndMain",
+  "objective": "Repair and complete Main.CountingAndMain by consuming the two new proved lower-node counting interfaces: first discharge the exact local anchored-powerset and proper-pattern wrapper statements, then prove the anchored-star and perturbation counting consumers, combine them into perturbedStarPatterns_chooseSum and the public perturbedStarFamily_card formula, prove positivity/strictness, and assemble the immutable final existential theorem; remove the two superseded private wrappers only after all consumers import the lower providers directly.",
+  "rationale": "Coordinator scope review added Main.AnchoredPowersetEnumeration::anchoredPowerset_weightedSum_eq_chooseSum and Main.PerturbedPatternCancellation::perturbedPattern_properWeights_add_full_eq_fullWeights. Dependency recon verified both are ready, non-stale, proof-accepted, and exactly match the retained proof-planned wrapper statements in objects, hypotheses, indices, and equality direction. Under graph_proved, proceed bottom-up without Mathlib/resource recon: prove the two wrappers by direct provider use, then retry their two parents, and only afterward clean up wrappers once no active reference remains. This preserves SourceIndex b_0009 (article/sections/02_proof.tex 41–51), later b_0011/b_0014 consumers, the contract’s immutable public shapes, and the revised boundary that moved the oversized helper packages into lower nodes.",
+  "status": "closed",
+  "strategy_id": "strategy_7cbc30f0d9cb46628fd30ebca588482b",
+  "summary": "Completed the repaired bottom-up graph_proved route: consumed the two new exact lower-node providers, proved the surviving counting chain, removed superseded wrappers, proved the public r-form cardinality and exact s-form positive excess, and proved the immutable final existential theorem."
+}

@@ -1,0 +1,21 @@
+{
+  "completion_mode": "graph_proved",
+  "created_at": "2026-07-27T15:44:11Z",
+  "dependency_change": null,
+  "dependency_lock_digest": "700c581c20a511adc3fbc00687220cf76f3445e81786b5a2c0214d443921314c",
+  "node_contract_versions": {
+    "node_2094ae1c4bd24610aba7ac7ae066fc45": 1,
+    "node_608263422e2a4cd286c74a9e604191c6": 1,
+    "node_8178f6ab0b0449cf94f3be8b2fb3ccf5": 1,
+    "node_b608884c39d04800a1b80922eee6b4d2": 1,
+    "node_c24b3eac6025417f8bece8bc91538304": 1,
+    "node_ea3e75192f844e7b95aebdf8afe7ae6a": 1
+  },
+  "parent_release_id": null,
+  "release_id": "release_0003a13681d5421fa9638ca420c857a2",
+  "release_kind": "semantic",
+  "schema_version": 2,
+  "semantic_manifest_digest": "2718ed49e86ccef55b0cc454fb2dd02348a3d8185e76b5cc026e37f4dabf508d",
+  "summary": "UniformMissingTraceFamily is ready as a graph_proved native repository. All five content nodes and Main contract v1 are committed; the complete theorem/helper graph is proved; the sole public export is the immutable exists_uniformMissingTraceFamily_strictlyLargerThanStar@1 with its exact protected statement; source and release compatibility are intact; and the candidate release gate passes with no blocking issues.",
+  "validation_profile": "semantic_full"
+}

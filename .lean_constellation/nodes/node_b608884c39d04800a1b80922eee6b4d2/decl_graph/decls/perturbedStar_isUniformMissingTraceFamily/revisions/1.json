@@ -1,0 +1,41 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "PerturbedStarBlocks",
+      "exists_perturbedStarBlocks",
+      "perturbedStarCertificate_addedProper",
+      "perturbedStarCertificate_finalAdded",
+      "perturbedStarCertificate_largeAvoiding",
+      "perturbedStarCertificate_largeMeeting",
+      "perturbedStarCertificate_smallStar",
+      "perturbedStarCore",
+      "perturbedStarFamily",
+      "perturbedStarFiller",
+      "perturbedStarParameterBounds",
+      "perturbedStarPatterns",
+      "perturbedStarTau"
+    ],
+    "anticipated_statement_dep_names": [
+      "PerturbedStarBlocks",
+      "perturbedStarFamily"
+    ],
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Create and prove the contract-required public interface theorem, faithful to SourceIndex b_0008 and b_0012 / article/sections/02_proof.tex lines 30–39 and 53–73. Its consumer-facing statement must quantify d,s,n : ℕ and assume exactly the immutable construction hypotheses used by accepted `perturbedStarParameterBounds`: hd : 4 ≤ d, hslow : (d+3)/2 ≤ s, hshigh : s ≤ d-1, and hn : 2*(d+1) ≤ n. Conclude `∃ B : PerturbedStarBlocks n (d+1-s), IsUniformMissingTraceFamily d s (perturbedStarFamily d B)`, preserving the explicit family object required by downstream counting. In the proof set r=d+1-s; obtain 2≤r, r+1≤s, and 2+2*r≤n from `perturbedStarParameterBounds`, select B via `exists_perturbedStarBlocks`, and instantiate visible proved `Main.PatternCriterion.patternFamily_isUniformMissingTraceFamily` with C=`perturbedStarCore B`, U=`perturbedStarFiller B`, patterns=`perturbedStarPatterns d B`, and tau=`perturbedStarTau B`. Prove core/filler disjointness and every pattern's containment in the core directly from the accepted definitions. For the criterion's bundled tau hypothesis, classify each pattern exactly according to the source construction: inserted `{B.b}∪B.T∪Y` with Y≠B.L uses `perturbedStarCertificate_addedProper`; the Y=B.L insertion uses `perturbedStarCertificate_finalAdded`; an a-anchored base pattern with card≤r uses `perturbedStarCertificate_smallStar`; a larger base pattern with empty intersection with T uses `perturbedStarCertificate_largeAvoiding`; and the remaining larger base pattern meeting T uses `perturbedStarCertificate_largeMeeting`. Do not merge or bypass any branch. Finish by unfolding only the accepted `perturbedStarFamily` specialization. This is the final graph_proved assembly and brings the active graph to the contract's expected upper scale of 15 declarations.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "DeclGraphRoundFlow failed for change perturbedStar_isUniformMissingTraceFamily@rev:1.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": null,
+  "proof": null,
+  "revision": 1,
+  "state": "planned",
+  "statement": {
+    "deps": [],
+    "formal": null,
+    "nl": null
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T09:18:41Z"
+}

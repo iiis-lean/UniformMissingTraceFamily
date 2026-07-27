@@ -1,0 +1,247 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "perturbedPatternB_injOn",
+      "perturbedPattern_properDomain_eq_erase"
+    ],
+    "anticipated_statement_dep_names": [],
+    "base_revision": 1,
+    "kind": "update",
+    "objective": "Retry the unchanged SourceIndex b_0009 / article line 49 image-erase target now that Finset.image is recorded in MathlibIndex, attached to the node, and hint validation passes. Prove that the image of the proper domain under exactly Y ↦ {B.b} ∪ B.T ∪ Y equals the full B.L.powerset image with {B.b} ∪ B.T ∪ B.L erased. Consume proved perturbedPattern_properDomain_eq_erase and perturbedPatternB_injOn, preserve no hrd/hrn assumptions, and provide the exact equality needed by Finset.sum_erase_add in the public interface proof.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": "planned",
+    "summary": "Completed successfully after Finset.image was recorded and attached. The proper/full b-image erase declaration advanced from planned revision 1 to revision 2 at proved state; formal statement and proof checks passed, its proof consumes proved perturbedPattern_properDomain_eq_erase and perturbedPatternB_injOn, and graph_proved satisfaction holds.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": "perturbedPatternB_properImage_eq_erase",
+  "proof": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Defs",
+          "name": "Finset.ext"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Erase",
+          "name": "Finset.mem_erase"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Image",
+          "name": "Finset.mem_image"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Powerset",
+          "name": "Finset.mem_powerset"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedPatternB_injOn",
+          "node": "Main.PerturbedPatternCancellation",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedPattern_properDomain_eq_erase",
+          "node": "Main.PerturbedPatternCancellation",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": false,
+        "contains_axiom": false,
+        "contains_sorry": false,
+        "diagnostics": {
+          "diagnostics": [],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPatternB_properImage_eq_erase', 'items': [], 'total_items': 0, 'error_count': 0, 'warning_count': 0, 'info_count': 0, 'sorry_count': 0}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedPatternCancellation/Theorems/perturbedPatternB_properImage_eq_erase.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 0 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "proof_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": false,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [],
+          "opaque_count": 0,
+          "sorry_count": 0,
+          "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Prelude\nimport Mathlib.Data.Finset.Defs\nimport Mathlib.Data.Finset.Erase\nimport Mathlib.Data.Finset.Filter\nimport Mathlib.Data.Finset.Image\nimport Mathlib.Data.Finset.Powerset\nimport UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPatternB_injOn\nimport UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPattern_properDomain_eq_erase\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedPatternB_properImage_eq_erase`\n\nFor every `B : PerturbedStarBlocks n r`, let `f(Y) = {B.b} ∪ B.T ∪ Y`. The image of the exact proper\ndomain under `f` is the full `B.L.powerset` image with precisely the full-`L` pattern erased:\n\n`({Y ∈ B.L.powerset | Y ≠ B.L}.image f) = (B.L.powerset.image f).erase ({B.b} ∪ B.T ∪ B.L)`.\n\nNo additional hypotheses, including `hrd` or `hrn`, are assumed.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Finset.erase` from `Mathlib.Data.Finset.Erase`\n- `Finset.filter` from `Mathlib.Data.Finset.Filter`\n- `Finset.image` from `Mathlib.Data.Finset.Image`\n- `Finset.powerset` from `Mathlib.Data.Finset.Powerset`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n\n## Proof outline\n\nLet `f(Y) = {B.b} ∪ B.T ∪ Y`.  First rewrite the filtered proper domain using the accepted theorem\n`perturbedPattern_properDomain_eq_erase B`, so the left side becomes `(B.L.powerset.erase B.L).image\nf`.  Prove the resulting equality by `Finset.ext`, fixing an output pattern `Z`, and normalize\nimage/erase membership with `Finset.mem_image` and `Finset.mem_erase`.\n\nFor the forward direction, obtain a witness `Y ∈ B.L.powerset.erase B.L` with `f Y = Z`.  It gives\n`Y ∈ B.L.powerset`, hence `Y ⊆ B.L` by `Finset.mem_powerset`; also `B.L ∈ B.L.powerset`.  The\nwitness supplies membership in the full image.  If `Z = f B.L`, then `perturbedPatternB_injOn B`,\napplied to `Y` and `B.L` in the powerset, gives `Y = B.L`, contradicting the erase membership.\n\nFor the reverse direction, unpack membership in the erased full image to a witness `Y ∈\nB.L.powerset` with `f Y = Z` and `Z ≠ f B.L`.  If `Y = B.L`, its image equality contradicts the\nerased-image inequality; thus `Y ≠ B.L`.  Repack this with `Finset.mem_erase` as `Y ∈\nB.L.powerset.erase B.L`, then with `Finset.mem_image` to finish.  This exact b-map argument uses no\n`hrd` or `hrn` assumptions and no helper declaration.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Proof dependencies\n\n- `Finset.ext` from `Mathlib.Data.Finset.Defs`\n- `Finset.mem_erase` from `Mathlib.Data.Finset.Erase`\n- `Finset.mem_image` from `Mathlib.Data.Finset.Image`\n- `Finset.mem_powerset` from `Mathlib.Data.Finset.Powerset`\n- `Main.PerturbedPatternCancellation::perturbedPatternB_injOn` → `perturbedPatternB_injOn` from\n  `UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPatternB_injOn`\n- `Main.PerturbedPatternCancellation::perturbedPattern_properDomain_eq_erase` →\n  `perturbedPattern_properDomain_eq_erase` from `UniformMissingTraceFamily.Main.PerturbedPatternCanc\n  ellation.Theorems.perturbedPattern_properDomain_eq_erase`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n-/\ntheorem perturbedPatternB_properImage_eq_erase {n r : ℕ}\n    (B : PerturbedStarBlocks n r) :\n    (B.L.powerset.filter (fun Y => Y ≠ B.L)).image\n        (fun Y : Finset (Fin n) ↦ {B.b} ∪ B.T ∪ Y) =\n      (B.L.powerset.image\n          (fun Y : Finset (Fin n) ↦ {B.b} ∪ B.T ∪ Y)).erase\n        ({B.b} ∪ B.T ∪ B.L) := by\n  rw [perturbedPattern_properDomain_eq_erase B]\n  ext Z\n  constructor\n  · intro hZ\n    rcases Finset.mem_image.mp hZ with ⟨Y, hY, hYZ⟩\n    have hY' : Y ≠ B.L ∧ Y ∈ B.L.powerset := Finset.mem_erase.mp hY\n    refine Finset.mem_erase.mpr ⟨?_, Finset.mem_image.mpr ⟨Y, hY'.2, hYZ⟩⟩\n    intro hZL\n    have hL : B.L ∈ B.L.powerset := Finset.mem_powerset.mpr (fun _ hx => hx)\n    have hYL : Y = B.L := perturbedPatternB_injOn B hY'.2 hL (hYZ.trans hZL)\n    exact hY'.1 hYL\n  · intro hZ\n    rcases Finset.mem_erase.mp hZ with ⟨hZL, hZ⟩\n    rcases Finset.mem_image.mp hZ with ⟨Y, hY, hYZ⟩\n    refine Finset.mem_image.mpr ⟨Y, ?_, hYZ⟩\n    refine Finset.mem_erase.mpr ⟨?_, hY⟩\n    intro hYL\n    apply hZL\n    subst Y\n    exact hYZ.symm\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 49,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source matches every proper Y with its b/T image and identifies the full-L b/T image as the unique excess, supporting this erase transport.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 49,
+          "start_locator": null
+        }
+      ],
+      "text": "Let `f(Y) = {B.b} ∪ B.T ∪ Y`.  First rewrite the filtered proper domain using the accepted theorem `perturbedPattern_properDomain_eq_erase B`, so the left side becomes `(B.L.powerset.erase B.L).image f`.  Prove the resulting equality by `Finset.ext`, fixing an output pattern `Z`, and normalize image/erase membership with `Finset.mem_image` and `Finset.mem_erase`.\n\nFor the forward direction, obtain a witness `Y ∈ B.L.powerset.erase B.L` with `f Y = Z`.  It gives `Y ∈ B.L.powerset`, hence `Y ⊆ B.L` by `Finset.mem_powerset`; also `B.L ∈ B.L.powerset`.  The witness supplies membership in the full image.  If `Z = f B.L`, then `perturbedPatternB_injOn B`, applied to `Y` and `B.L` in the powerset, gives `Y = B.L`, contradicting the erase membership.\n\nFor the reverse direction, unpack membership in the erased full image to a witness `Y ∈ B.L.powerset` with `f Y = Z` and `Z ≠ f B.L`.  If `Y = B.L`, its image equality contradicts the erased-image inequality; thus `Y ≠ B.L`.  Repack this with `Finset.mem_erase` as `Y ∈ B.L.powerset.erase B.L`, then with `Finset.mem_image` to finish.  This exact b-map argument uses no `hrd` or `hrn` assumptions and no helper declaration."
+    }
+  },
+  "revision": 2,
+  "state": "proved",
+  "statement": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Erase",
+          "name": "Finset.erase"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Filter",
+          "name": "Finset.filter"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Image",
+          "name": "Finset.image"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Powerset",
+          "name": "Finset.powerset"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": true,
+        "contains_axiom": false,
+        "contains_sorry": true,
+        "diagnostics": {
+          "diagnostics": [
+            {
+              "column": 9,
+              "line": 34,
+              "message": "declaration uses `sorry`",
+              "severity": "warning"
+            }
+          ],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPatternB_properImage_eq_erase', 'items': [{'severity': 'warning', 'pos': {'line': 34, 'column': 9}, 'endPos': {'line': 34, 'column': 47}, 'kind': None, 'data': 'declaration uses `sorry`', 'fileName': 'UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPatternB_properImage_eq_erase', 'content': '  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\\n-/\\ntheorem perturbedPatternB_properImage_eq_erase {n r : ℕ}\\n    (B : PerturbedStarBlocks n r) :\\n    (B.L.powerset.filter (fun Y => Y ≠ B.L)).image'}], 'total_items': 1, 'error_count': 0, 'warning_count': 1, 'info_count': 0, 'sorry_count': 1}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedPatternCancellation/Theorems/perturbedPatternB_properImage_eq_erase.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 1 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": true,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [
+            {
+              "column": 3,
+              "excerpt": "sorry",
+              "kind": "sorry",
+              "line": 41
+            }
+          ],
+          "opaque_count": 0,
+          "sorry_count": 1,
+          "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Prelude\nimport Mathlib.Data.Finset.Erase\nimport Mathlib.Data.Finset.Filter\nimport Mathlib.Data.Finset.Image\nimport Mathlib.Data.Finset.Powerset\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedPatternB_properImage_eq_erase`\n\nFor every `B : PerturbedStarBlocks n r`, let `f(Y) = {B.b} ∪ B.T ∪ Y`. The image of the exact proper\ndomain under `f` is the full `B.L.powerset` image with precisely the full-`L` pattern erased:\n\n`({Y ∈ B.L.powerset | Y ≠ B.L}.image f) = (B.L.powerset.image f).erase ({B.b} ∪ B.T ∪ B.L)`.\n\nNo additional hypotheses, including `hrd` or `hrn`, are assumed.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Finset.erase` from `Mathlib.Data.Finset.Erase`\n- `Finset.filter` from `Mathlib.Data.Finset.Filter`\n- `Finset.image` from `Mathlib.Data.Finset.Image`\n- `Finset.powerset` from `Mathlib.Data.Finset.Powerset`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n-/\ntheorem perturbedPatternB_properImage_eq_erase {n r : ℕ}\n    (B : PerturbedStarBlocks n r) :\n    (B.L.powerset.filter (fun Y => Y ≠ B.L)).image\n        (fun Y : Finset (Fin n) ↦ {B.b} ∪ B.T ∪ Y) =\n      (B.L.powerset.image\n          (fun Y : Finset (Fin n) ↦ {B.b} ∪ B.T ∪ Y)).erase\n        ({B.b} ∪ B.T ∪ B.L) := by\n  sorry\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 49,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source matches every proper Y with an added b/T pattern and identifies the b/T/L pattern as the unique unmatched excess, exactly the erased image element.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 49,
+          "start_locator": null
+        }
+      ],
+      "text": "For every `B : PerturbedStarBlocks n r`, let `f(Y) = {B.b} ∪ B.T ∪ Y`. The image of the exact proper domain under `f` is the full `B.L.powerset` image with precisely the full-`L` pattern erased:\n\n`({Y ∈ B.L.powerset | Y ≠ B.L}.image f) = (B.L.powerset.image f).erase ({B.b} ∪ B.T ∪ B.L)`.\n\nNo additional hypotheses, including `hrd` or `hrn`, are assumed."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-27T01:25:21Z"
+}

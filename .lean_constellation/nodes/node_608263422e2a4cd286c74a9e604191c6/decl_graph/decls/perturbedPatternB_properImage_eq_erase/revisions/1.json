@@ -1,0 +1,77 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "perturbedPatternB_injOn",
+      "perturbedPattern_properDomain_eq_erase"
+    ],
+    "anticipated_statement_dep_names": [],
+    "base_revision": null,
+    "kind": "create",
+    "objective": "For every B : PerturbedStarBlocks n r, identify the image under exactly Y ↦ {B.b} ∪ B.T ∪ Y of the proper domain {Y ∈ B.L.powerset | Y ≠ B.L} with (B.L.powerset.image fun Y => {B.b} ∪ B.T ∪ Y).erase ({B.b} ∪ B.T ∪ B.L). This formalizes the sole unmatched Y = B.L pattern in SourceIndex b_0009 / article/sections/02_proof.tex:49. Consume the proved perturbedPattern_properDomain_eq_erase and perturbedPatternB_injOn, using verified erase/image support or a restricted-injectivity extensional proof. Add no hrd/hrn assumptions. The equality must directly support Finset.sum_erase_add in the public cancellation proof.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Blocked at Statement NL. The preserved consumer-side formal goal is the equality between the image of {Y ∈ B.L.powerset | Y ≠ B.L} under exactly Y ↦ {B.b} ∪ B.T ∪ Y and the full B.L.powerset image with {B.b} ∪ B.T ∪ B.L erased. The checked lower declarations perturbedPattern_properDomain_eq_erase and perturbedPatternB_injOn are both proved and semantically match the domain and restricted-injectivity needs. Statement NL is present, but statement formal/proof artifacts are absent and the revision remains planned. Concrete blocker classification: reviewer-required typed Statement dependency Finset.image is compiler-verified in Mathlib.Data.Finset.Image but missing from the repo MathlibIndex, so it cannot be recorded. Retry after adding that exact index entry (and current-node hint if needed); no source, representation, assumption, or scope mismatch was reported.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": null,
+  "proof": null,
+  "revision": 1,
+  "state": "planned",
+  "statement": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Erase",
+          "name": "Finset.erase"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Filter",
+          "name": "Finset.filter"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Powerset",
+          "name": "Finset.powerset"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      }
+    ],
+    "formal": null,
+    "nl": {
+      "origin": [
+        {
+          "end_line": 49,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source matches every proper Y with an added b/T pattern and identifies the b/T/L pattern as the unique unmatched excess, exactly the erased image element.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 49,
+          "start_locator": null
+        }
+      ],
+      "text": "For every `B : PerturbedStarBlocks n r`, let `f(Y) = {B.b} ∪ B.T ∪ Y`. The image of the exact proper domain under `f` is the full `B.L.powerset` image with precisely the full-`L` pattern erased:\n\n`({Y ∈ B.L.powerset | Y ≠ B.L}.image f) = (B.L.powerset.image f).erase ({B.b} ∪ B.T ∪ B.L)`.\n\nNo additional hypotheses, including `hrd` or `hrn`, are assumed."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T16:55:54Z"
+}

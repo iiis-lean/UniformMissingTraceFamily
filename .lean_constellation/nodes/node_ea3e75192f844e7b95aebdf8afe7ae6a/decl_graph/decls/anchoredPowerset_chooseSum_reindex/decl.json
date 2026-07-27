@@ -1,0 +1,18 @@
+{
+  "created_at": "2026-07-26T13:08:25Z",
+  "current_revision": 4,
+  "kind": "theorem",
+  "lifecycle": "deleted",
+  "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.anchoredPowerset_chooseSum_reindex",
+  "name": "anchoredPowerset_chooseSum_reindex",
+  "node_path": "Main.CountingAndMain",
+  "public": false,
+  "revision_ids": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "summary": "An anchored filtered powerset weighted by filler choices reindexes to the corresponding finite binomial convolution.",
+  "updated_at": "2026-07-27T14:03:27Z"
+}

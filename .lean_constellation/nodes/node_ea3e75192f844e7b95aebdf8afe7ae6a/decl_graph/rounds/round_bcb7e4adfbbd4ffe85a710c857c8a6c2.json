@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-26T11:36:39Z",
+  "created_at": "2026-07-26T11:27:37Z",
+  "execution_completed_at": "2026-07-26T11:36:39Z",
+  "execution_reason": "DeclGraphRoundFlow finished with completed.",
+  "execution_result_kind": "success",
+  "node_path": "Main.CountingAndMain",
+  "objective": "Retry only patternFamily_card_sum after resolving its exact Statement NL blocker by verifying and recording Nat.choose in the repository MathlibIndex and current-node hints. Keep the source-derived sum shape and already-proved provider closure unchanged.",
+  "plan_closeout_acknowledged_at": "2026-07-26T11:36:39Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "success",
+  "result_reason": "DeclGraphRoundFlow finished with completed.",
+  "revision_refs": [
+    {
+      "change_id": "patternFamily_card_sum@rev:3",
+      "decl_name": "patternFamily_card_sum",
+      "revision": 3
+    }
+  ],
+  "round_id": "round_bcb7e4adfbbd4ffe85a710c857c8a6c2",
+  "round_index": 4,
+  "started_at": "2026-07-26T11:28:44Z",
+  "status": "committed",
+  "strategy_id": "strategy_746a2d92b99d454db9e1556c2088f3e8",
+  "summary": "The strategy made the intended targeted progress: patternFamily_card_sum reached committed proved state and became proof-policy satisfied after the Nat.choose index prerequisite was resolved. No blocker, state-only intermediate, or retry condition remains for this declaration. perturbedStarFiller_card is still planned from the prior blocked round and is the next independent foundation to advance before source-specific cancellation and the public cardinality theorem."
+}

@@ -1,0 +1,45 @@
+{
+  "allow_interface_supplement": true,
+  "goal": "Produce a proved native Lean repository whose immutable public boundary exports exists_uniformMissingTraceFamily_strictlyLargerThanStar. For every parameter triple satisfying the stated natural-number bounds, construct a uniform family with the fixed missing-trace property, prove the exact cardinality formula, and prove its strict excess over the star bound.",
+  "interface_inputs": [
+    {
+      "bound_decl": null,
+      "expected_statement_lean_code": "theorem exists_uniformMissingTraceFamily_strictlyLargerThanStar\n    (d s n : ℕ)\n    (hd : 4 ≤ d)\n    (hslow : (d + 3) / 2 ≤ s)\n    (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    ∃ family : Finset (Finset (Fin n)),\n      IsUniformMissingTraceFamily d s family ∧\n      family.card =\n        Nat.choose (n - 1) d +\n          Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2) ∧\n      Nat.choose (n - 1) d < family.card := by\n  sorry",
+      "kind": "theorem",
+      "name": "exists_uniformMissingTraceFamily_strictlyLargerThanStar",
+      "note": "The theorem name, natural-number parameter bounds, exact cardinality and strict inequality are immutable. All five missing-trace certificate cases must be represented in the proof closure.",
+      "source_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": null,
+            "path": "formal_target.lean",
+            "start_line": null
+          }
+        },
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": null,
+            "path": "article/sections/02_proof.tex",
+            "start_line": null
+          }
+        },
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": null,
+            "path": "article/sections/03_remarks_and_acknowledgement.tex",
+            "start_line": null
+          }
+        }
+      ],
+      "summary": "The explicit middle-range uniform construction has a fixed missing trace on every member, the stated exact size, and strictly more members than a star."
+    }
+  ],
+  "notes": "Formalize the five pattern cases, completed-block injectivity and cardinality algebra locally with Mathlib 4.32.0. Contextual VC-dimension results are source background, not provider requirements.",
+  "requirement_refs": [],
+  "source_corpus_mode": "existing",
+  "source_corpus_relpath": ".lean_constellation/source",
+  "source_description": "Complete reconstruction of Xu's uniform-witness counterexample paper and one constructive Lean target with exact cardinality and strict star comparison."
+}

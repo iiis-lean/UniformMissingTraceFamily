@@ -1,0 +1,81 @@
+{
+  "change": {
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Formalize the certificate selector described in SourceIndex b_0012 / article/sections/02_proof.tex lines 58–72. For n,r, construction data B : PerturbedStarBlocks n r, and any P : Finset (Fin n), define a total (classical/noncomputable if needed) Finset-valued function whose values on members of `perturbedStarPatterns d B` follow exactly five semantic branches: (1) if P={B.b}∪B.T∪Y for a proper Y⊂B.L, return B.T; (2) for the final P={B.b}∪B.T∪B.L, return B.T together with one chosen element ell0∈B.L; (3) if B.a∈P and P.card≤r, return ∅; (4) if B.a∈P, P.card>r, and P∩B.T=∅, choose a subset of P∩B.L of cardinality P.card-r; (5) if B.a∈P, P.card>r, and P∩B.T≠∅, choose t0∈P∩B.T and then a subset of P\\{B.a,t0} of cardinality P.card-r. Outside these source-relevant cases, use an explicit harmless default so the function is total. Preserve the branch order and chosen-element avoidance needed later; do not merge any case. Consume `PerturbedStarBlocks` revision 2 and remain directly usable by five separate proved certificate lemmas and by the bundled hypothesis of visible `Main.PatternCriterion::patternFamily_isUniformMissingTraceFamily` revision 2.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Completed successfully. `perturbedStarTau` revision 1 reached declared state as a total noncomputable selector with the five source branches in priority order: proper added, final added with chosen L-element, small anchored star, large anchored star avoiding T with chosen exact-cardinality L-subset, and large anchored star meeting T with chosen t0 and avoiding subset; explicit empty defaults cover unavailable guards and irrelevant inputs. Lean statement checking passed, its accepted dependency is `PerturbedStarBlocks` revision 2, and declared/proof-policy satisfaction holds. Later case lemmas must prove their respective guards and choice witnesses before using the corresponding value; no current blocker remains.",
+    "target_state": "declared"
+  },
+  "lean_decl_name": "perturbedStarTau",
+  "proof": null,
+  "revision": 1,
+  "state": "declared",
+  "statement": {
+    "deps": [
+      {
+        "kind": "repo_decl",
+        "reason": "The selector branches use the accepted anchors and T/L blocks carried by B.",
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": false,
+        "contains_axiom": false,
+        "contains_sorry": false,
+        "diagnostics": {
+          "diagnostics": [],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau', 'items': [], 'total_items': 0, 'error_count': 0, 'warning_count': 0, 'info_count': 0, 'sorry_count': 0}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Defs/perturbedStarTau.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 0 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": false,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [],
+          "opaque_count": 0,
+          "sorry_count": 0,
+          "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarTau`\n\nFor natural numbers n and r, construction data `B : PerturbedStarBlocks n r`, and every finite set\n`P : Finset (Fin n)`, `perturbedStarTau B P` is a total finite-set-valued selector. It evaluates the\nfollowing guarded cases in the displayed priority order. A classical choice is made only after the\nindicated witness is available.\n\n1. If `P = {B.b} ∪ B.T ∪ Y` for a proper subset `Y ⊂ B.L`, it returns `B.T`.\n2. If `P = {B.b} ∪ B.T ∪ B.L` and there exists `ell0 ∈ B.L`, it chooses such an `ell0` and returns\n`B.T ∪ {ell0}`. If this pattern equality holds but `B.L` is empty, this guarded branch is\nunavailable and the selector falls through to the empty default.\n3. If `B.a ∈ P` and `P.card ≤ r`, it returns `∅`.\n4. If `B.a ∈ P`, `P.card > r`, `P ∩ B.T = ∅`, and there exists `Q ⊆ P ∩ B.L` with `Q.card = P.card -\nr`, it chooses such a `Q` and returns it. If no such subset exists, this guarded branch falls\nthrough to the empty default.\n5. If `B.a ∈ P`, `P.card > r`, `P ∩ B.T ≠ ∅`, and there exist `t0 ∈ P ∩ B.T` and `Q ⊆ P \\ {B.a, t0}`\nwith `Q.card = P.card - r`, it chooses such a pair and returns `Q`. If either required witness is\nunavailable, this guarded branch falls through to the empty default.\n\nWhen none of the preceding guarded cases applies, `perturbedStarTau B P` is `∅`. Later certificate\nlemmas prove, for members of `perturbedStarPatterns d B` under the perturbed-star parameter\nhypotheses, that the relevant guards and witnesses hold; therefore the intended five source values\napply there while the selector remains total for arbitrary data and inputs.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 58–72\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n-/\nnoncomputable def perturbedStarTau {n r : ℕ}\n    (B : PerturbedStarBlocks n r) (P : Finset (Fin n)) : Finset (Fin n) := by\n  classical\n  by_cases hproperAdded :\n    ∃ Y, Y ⊆ B.L ∧ Y ≠ B.L ∧ P = {B.b} ∪ B.T ∪ Y\n  · exact B.T\n  by_cases hfinalAdded : P = {B.b} ∪ B.T ∪ B.L ∧ ∃ ell0, ell0 ∈ B.L\n  · let ell0 := Classical.choose hfinalAdded.2\n    exact B.T ∪ {ell0}\n  by_cases hsmallStar : B.a ∈ P ∧ P.card ≤ r\n  · exact ∅\n  by_cases hlargeAvoiding :\n    B.a ∈ P ∧ r < P.card ∧ P ∩ B.T = ∅ ∧\n      ∃ Q, Q ⊆ P ∩ B.L ∧ Q.card = P.card - r\n  · let Q := Classical.choose hlargeAvoiding.2.2.2\n    exact Q\n  by_cases hlargeMeeting :\n    B.a ∈ P ∧ r < P.card ∧ P ∩ B.T ≠ ∅ ∧\n      ∃ t0, t0 ∈ P ∩ B.T ∧ ∃ Q, Q ⊆ P \\ {B.a, t0} ∧ Q.card = P.card - r\n  · let t0 := Classical.choose hlargeMeeting.2.2.2\n    let Q := Classical.choose (Classical.choose_spec hlargeMeeting.2.2.2).2\n    exact Q\n  · exact ∅\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 72,
+          "end_locator": null,
+          "kind": "source",
+          "note": "These source lines give the five separate certificate selections for added proper-L, final added, small star, and the two large-star cases.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 58,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers n and r, construction data `B : PerturbedStarBlocks n r`, and every finite set `P : Finset (Fin n)`, `perturbedStarTau B P` is a total finite-set-valued selector. It evaluates the following guarded cases in the displayed priority order. A classical choice is made only after the indicated witness is available.\n\n1. If `P = {B.b} ∪ B.T ∪ Y` for a proper subset `Y ⊂ B.L`, it returns `B.T`.\n2. If `P = {B.b} ∪ B.T ∪ B.L` and there exists `ell0 ∈ B.L`, it chooses such an `ell0` and returns `B.T ∪ {ell0}`. If this pattern equality holds but `B.L` is empty, this guarded branch is unavailable and the selector falls through to the empty default.\n3. If `B.a ∈ P` and `P.card ≤ r`, it returns `∅`.\n4. If `B.a ∈ P`, `P.card > r`, `P ∩ B.T = ∅`, and there exists `Q ⊆ P ∩ B.L` with `Q.card = P.card - r`, it chooses such a `Q` and returns it. If no such subset exists, this guarded branch falls through to the empty default.\n5. If `B.a ∈ P`, `P.card > r`, `P ∩ B.T ≠ ∅`, and there exist `t0 ∈ P ∩ B.T` and `Q ⊆ P \\ {B.a, t0}` with `Q.card = P.card - r`, it chooses such a pair and returns `Q`. If either required witness is unavailable, this guarded branch falls through to the empty default.\n\nWhen none of the preceding guarded cases applies, `perturbedStarTau B P` is `∅`. Later certificate lemmas prove, for members of `perturbedStarPatterns d B` under the perturbed-star parameter hypotheses, that the relevant guards and witnesses hold; therefore the intended five source values apply there while the selector remains total for arbitrary data and inputs."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-22T13:29:37Z"
+}

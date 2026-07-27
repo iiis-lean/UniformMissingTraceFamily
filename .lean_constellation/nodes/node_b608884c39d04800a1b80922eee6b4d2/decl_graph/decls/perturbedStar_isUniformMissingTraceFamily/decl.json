@@ -1,0 +1,18 @@
+{
+  "created_at": "2026-07-26T09:17:02Z",
+  "current_revision": 4,
+  "kind": "theorem",
+  "lifecycle": "active",
+  "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStar_isUniformMissingTraceFamily",
+  "name": "perturbedStar_isUniformMissingTraceFamily",
+  "node_path": "Main.PerturbedStarCertificates",
+  "public": true,
+  "revision_ids": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "summary": "The explicit perturbed-star construction yields a uniform family with the fixed missing-trace property.",
+  "updated_at": "2026-07-26T10:17:25Z"
+}

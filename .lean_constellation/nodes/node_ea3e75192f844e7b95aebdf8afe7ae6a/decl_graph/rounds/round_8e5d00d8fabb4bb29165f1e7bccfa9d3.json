@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-27T14:11:42Z",
+  "created_at": "2026-07-27T14:03:51Z",
+  "execution_completed_at": "2026-07-27T14:10:23Z",
+  "execution_reason": null,
+  "execution_result_kind": "success",
+  "node_path": "Main.CountingAndMain",
+  "objective": "Advance the unchanged declared SourceIndex b_0009 combined pattern-weight theorem to proved by composing the now-proved anchored-base and perturbation equations. This is a small proof-only bridge: rewrite the perturbation theorem’s explicit base sum with perturbedStarBase_chooseSum, preserving the r-form bounds and exact Nat.choose indices required by the future public family-cardinality theorem.",
+  "plan_closeout_acknowledged_at": "2026-07-27T14:11:42Z",
+  "plan_closeout_acknowledged_by": "a_69813ea8bd4a4ab38bca6ad41a76a566",
+  "result_kind": "success",
+  "result_reason": "The combined pattern-weight theorem reached proved state and passed graph_proved satisfaction from its two proved counting components.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedStarPatterns_chooseSum@rev:2",
+      "decl_name": "perturbedStarPatterns_chooseSum",
+      "revision": 2
+    }
+  ],
+  "round_id": "round_8e5d00d8fabb4bb29165f1e7bccfa9d3",
+  "round_index": 15,
+  "started_at": "2026-07-27T14:06:13Z",
+  "status": "committed",
+  "strategy_id": "strategy_7cbc30f0d9cb46628fd30ebca588482b",
+  "summary": "The strategy completed the private source-counting chain: perturbedStarPatterns_chooseSum reached proved state and is graph_proved-satisfied from the proved base and perturbation components. All active private declarations are now proved, the two superseded wrappers are deleted, and no dependency blocker remains. The next bottom-up action is to create and prove the required public perturbedStarFamily_card interface from patternFamily_card_sum, perturbedStarPatterns_disjoint_filler, perturbedStarPatterns_chooseSum, and the definition of perturbedStarFamily. Resource/Mathlib preparation remains unnecessary."
+}

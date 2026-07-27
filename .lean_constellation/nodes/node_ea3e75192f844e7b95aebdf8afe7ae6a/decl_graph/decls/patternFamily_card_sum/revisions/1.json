@@ -1,0 +1,27 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "completionFiber_card",
+      "completionFibers_pairwiseDisjoint"
+    ],
+    "anticipated_statement_dep_names": [],
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Prove the generic cardinality decomposition underpinning SourceIndex b_0009/article/sections/02_proof.tex 48–50: when every P ∈ patterns is disjoint from U, card (patternFamily d patterns U) equals ∑ P ∈ patterns, Nat.choose U.card (d + 1 - P.card), in the exact representation naturally supported by Finset.sum. Consume current-node completionFiber_card and completionFibers_pairwiseDisjoint together with the lower public patternFamily definition and Mathlib Finset.card_biUnion. This lemma serves the later cancellation calculation for perturbedStarPatterns; do not specialize away the pattern object or introduce assumptions beyond disjointness needed by the consumer.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "DeclGraphRoundFlow failed for change patternFamily_card_sum@rev:1.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": null,
+  "proof": null,
+  "revision": 1,
+  "state": "planned",
+  "statement": {
+    "deps": [],
+    "formal": null,
+    "nl": null
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T10:52:31Z"
+}

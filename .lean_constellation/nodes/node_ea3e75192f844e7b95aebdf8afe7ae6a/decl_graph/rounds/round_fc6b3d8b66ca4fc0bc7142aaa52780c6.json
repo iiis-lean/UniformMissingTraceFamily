@@ -1,0 +1,32 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-26T13:28:56Z",
+  "created_at": "2026-07-26T13:07:52Z",
+  "execution_completed_at": "2026-07-26T13:28:56Z",
+  "execution_reason": "DeclGraphRoundFlow finished with blocked.",
+  "execution_result_kind": "blocked",
+  "node_path": "Main.CountingAndMain",
+  "objective": "Add and prove exactly the two reusable finite-counting interfaces required by the accepted Proof NL routes for SourceIndex b_0009/article lines 48–50. First, isolate the generic anchored-powerset weighted reindexing from subsets containing an anchor to a binomial convolution by the erased-subset cardinality. Second, isolate the construction-specific equality between the weighted proper-Y deleted images and the corresponding inserted images, with the full Y=B.L insertion separated. These private helpers consume existing Mathlib finite-sum/image/powerset facts and the perturbed-star block fields, and will be the sole new prerequisites before retrying perturbedStarBase_chooseSum and perturbedStarPerturbation_chooseSum.",
+  "plan_closeout_acknowledged_at": "2026-07-26T13:28:56Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "blocked",
+  "result_reason": "DeclGraphRoundFlow finished with blocked.",
+  "revision_refs": [
+    {
+      "change_id": "anchoredPowerset_chooseSum_reindex@rev:1",
+      "decl_name": "anchoredPowerset_chooseSum_reindex",
+      "revision": 1
+    },
+    {
+      "change_id": "perturbedStarProperPatterns_chooseSum@rev:1",
+      "decl_name": "perturbedStarProperPatterns_chooseSum",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_fc6b3d8b66ca4fc0bc7142aaa52780c6",
+  "round_index": 10,
+  "started_at": "2026-07-26T13:16:37Z",
+  "status": "committed",
+  "strategy_id": "strategy_746a2d92b99d454db9e1556c2088f3e8",
+  "summary": "Round 10 made statement and proof-plan progress but proved neither target: both new helpers are compiler-declared and proof_planned, neither is graph_proved-satisfied. The accepted Proof NL routes expose a coherent additional package, not a single missing rewrite: anchoredPowerset_chooseSum_reindex needs a tracked anchored-subset/cardinality-fiber bijection plus fiber-sum evaluation; perturbedStarProperPatterns_chooseSum needs tracked anchored-map injectivity/intersection recovery, equal-card/equal-weight transport, and proper-filter/erase image-sum splitting. Until those are proved, neither helper nor perturbedStarBase_chooseSum, perturbedStarPerturbation_chooseSum, or perturbedStarPatterns_chooseSum may be retried. This package is Lean-specific implementation support for SourceIndex b_0009, but the graph already has 11 declarations against an expected total of about 6–12 including the still-absent two public interfaces and positivity/final assembly. Adding the known package would materially exceed the planned node scale before reaching any required interface. The next action should therefore be terminal Content blocked for Coordinator scope/split review, not another unbounded helper round or resource recon; source, visible providers, and Mathlib evidence are sufficient."
+}

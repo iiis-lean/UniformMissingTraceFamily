@@ -1,0 +1,32 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-26T15:57:24Z",
+  "created_at": "2026-07-26T15:37:23Z",
+  "execution_completed_at": "2026-07-26T15:57:24Z",
+  "execution_reason": "DeclGraphRoundFlow finished with completed.",
+  "execution_result_kind": "success",
+  "node_path": "Main.PerturbedPatternCancellation",
+  "objective": "Advance only the two committed recovery declarations from planned to proved: intersection with B.L recovers Y for the exact a- and b-anchored maps. This independent foundation batch avoids same-round consumer dependencies; injectivity declarations remain planned for a later round.",
+  "plan_closeout_acknowledged_at": "2026-07-26T15:57:24Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "success",
+  "result_reason": "DeclGraphRoundFlow finished with completed.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedPatternA_inter_L@rev:2",
+      "decl_name": "perturbedPatternA_inter_L",
+      "revision": 2
+    },
+    {
+      "change_id": "perturbedPatternB_inter_L@rev:2",
+      "decl_name": "perturbedPatternB_inter_L",
+      "revision": 2
+    }
+  ],
+  "round_id": "round_7c10aff3ca874174b427563ae0660549",
+  "round_index": 2,
+  "started_at": "2026-07-26T15:38:47Z",
+  "status": "committed",
+  "strategy_id": "strategy_ff5e1a1c26fc4bac9ab8fc7bd94fdb97",
+  "summary": "The bottom-up strategy made concrete progress: perturbedPatternA_inter_L and perturbedPatternB_inter_L both reached proved state with passed formal statement/proof checks and are proof-policy satisfied under graph_proved mode. No blocker or implementation helper was reported. The previously planned injectivity declarations remain at planned state and now have their required accepted recovery providers, so the next step is a focused round advancing both injectivity theorems to proved."
+}

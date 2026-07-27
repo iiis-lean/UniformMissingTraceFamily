@@ -1,0 +1,197 @@
+{
+  "boundary": "Owns the parameter consequences for r=d+1-s used by the construction, selection/encoding of disjoint blocks T and L, the fixed core C and filler U, the perturbed-star pattern family, and all five tau certificate cases from SourceIndex blocks b_0008 and b_0012. Excludes the generic criterion, global family cardinality calculation, positivity of the binomial excess, and the final protected theorem. Expected scale: about 8–15 important declarations including construction definitions and case lemmas.",
+  "committed_at": "2026-07-26T10:35:58Z",
+  "constraints": "Do not omit or merge away any of the five semantic certificate cases. Keep natural-number truncation and Fin n distinctness obligations explicit and justified.",
+  "context_refs": [],
+  "contract_kind": "content",
+  "created_at": "2026-07-22T08:53:20Z",
+  "decl_graph_head": {
+    "PerturbedStarBlocks": 2,
+    "exists_perturbedStarBlocks": 3,
+    "perturbedStarCertificate_addedProper": 1,
+    "perturbedStarCertificate_finalAdded": 2,
+    "perturbedStarCertificate_largeAvoiding": 1,
+    "perturbedStarCertificate_largeMeeting": 1,
+    "perturbedStarCertificate_smallStar": 1,
+    "perturbedStarCore": 1,
+    "perturbedStarFamily": 1,
+    "perturbedStarFiller": 1,
+    "perturbedStarFinalIntersection_excluded": 1,
+    "perturbedStarParameterBounds": 3,
+    "perturbedStarPatterns": 1,
+    "perturbedStarTau": 1,
+    "perturbedStar_isUniformMissingTraceFamily": 4
+  },
+  "deps": [
+    {
+      "added_by": "coordinator",
+      "dep_id": "dep_d12ccae110a813a8",
+      "expected_decl_refs": [
+        {
+          "name": "IsUniformMissingTraceFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 1
+        },
+        {
+          "name": "patternFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 1
+        },
+        {
+          "name": "patternFamily_isUniformMissingTraceFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 2
+        },
+        {
+          "name": "mem_patternFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 1
+        },
+        {
+          "name": "card_eq_of_mem_patternFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 1
+        }
+      ],
+      "reason": "Instantiate the committed generic pattern family and its proved bundled tau-certificate theorem for the explicit T/L construction; actual arguments and conclusion were checked against this consumer.",
+      "target": {
+        "node": "Main.PatternCriterion",
+        "repo": null
+      }
+    }
+  ],
+  "exports": [],
+  "goal": "Formalize the explicit perturbed-star pattern system and prove that its five source certificate cases satisfy the generic missing-trace criterion.",
+  "interfaces": [
+    {
+      "bound_decl": {
+        "name": "perturbedStarFamily",
+        "node": "Main.PerturbedStarCertificates",
+        "repo": null,
+        "revision": 1
+      },
+      "expected_statement_lean_code": null,
+      "kind": "definition",
+      "name": "perturbedStarFamily",
+      "note": "Consumer anchor: Main.CountingAndMain. Parameterized by d,s,n and construction data r,T,L (or an equivalent canonical encoding) under the immutable bounds. It must remain usable both for the missing-trace proof and exact cardinality proof. Source lines 30–39.",
+      "source_refs": [],
+      "summary": "The explicit family obtained by deleting proper-L patterns from a 1-star, inserting matched 2/T patterns, and adding the final T∪L pattern."
+    },
+    {
+      "bound_decl": {
+        "name": "perturbedStar_isUniformMissingTraceFamily",
+        "node": "Main.PerturbedStarCertificates",
+        "repo": null,
+        "revision": 4
+      },
+      "expected_statement_lean_code": null,
+      "kind": "theorem",
+      "name": "perturbedStar_isUniformMissingTraceFamily",
+      "note": "Consumer anchor: Main.CountingAndMain and protected theorem assembly. Under hd,hslow,hshigh,hn, produce or select the construction data and conclude IsUniformMissingTraceFamily d s perturbedStarFamily. The proved closure must contain distinct reasoning for: added proper-L, final added, small star, large star avoiding T, and large star meeting T. Reuse Main.PatternCriterion::patternFamily_isUniformMissingTraceFamily.",
+      "source_refs": [],
+      "summary": "The explicit perturbed-star family satisfies the fixed missing-trace property via all five certificate cases."
+    }
+  ],
+  "mathlib_decls": [
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Card",
+      "name": "Finset.card_map",
+      "reason": "Proves embedded T and L retain their prescribed cardinalities."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Image",
+      "name": "Finset.disjoint_map",
+      "reason": "Transfers the canonical block disjointness into Fin n."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Algebra.Group.Nat.Range",
+      "name": "Finset.disjoint_range_addRightEmbedding",
+      "reason": "Direct disjointness fact for the initial and shifted natural block ranges."
+    },
+    {
+      "added_by": "worker",
+      "kind": "def",
+      "module": "Mathlib.Data.Fin.Embedding",
+      "name": "Fin.castLEEmb",
+      "reason": "Embeds the constructed Fin (2*r) block universe into Fin n after proving 2*r ≤ n."
+    },
+    {
+      "added_by": "worker",
+      "kind": "def",
+      "module": "Mathlib.Data.Fin.Embedding",
+      "name": "Fin.natAddEmb",
+      "reason": "Constructs the offset second Fin block before the final cast into Fin n."
+    }
+  ],
+  "mathlib_modules": [
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Card",
+      "reason": "Cardinality calculations for the canonical T/L blocks and their embedded images."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Image",
+      "reason": "Transport the block construction and its disjointness along Fin embeddings."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Algebra.Group.Nat.Range",
+      "reason": "Build the source-required disjoint natural ranges before embedding them in Fin n."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Fin.Embedding",
+      "reason": "Place the two canonical blocks inside Fin n from the derived size inequalities."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Tactic",
+      "reason": "Provides omega for the linear natural-number bounds around r=d+1-s and the block-size inequality 2*r≤n."
+    }
+  ],
+  "objective": "After the generic criterion is available, produce a source-faithful explicit construction and a proved certificate theorem covering added proper-L patterns, the final added pattern, small star patterns, large star patterns avoiding T, and large star patterns meeting T.",
+  "owned_refs": [
+    {
+      "added_by": "coordinator",
+      "reason": "Owns the parameter consequences and explicit perturbed-star pattern construction.",
+      "ref": {
+        "kind": "source",
+        "ref": {
+          "end_line": 39,
+          "path": "article/sections/02_proof.tex",
+          "start_line": 30
+        }
+      },
+      "ref_id": "mat_19d3e45a2ae3f8d3"
+    },
+    {
+      "added_by": "coordinator",
+      "reason": "Owns the full five-case certificate verification for the constructed patterns.",
+      "ref": {
+        "kind": "source",
+        "ref": {
+          "end_line": 73,
+          "path": "article/sections/02_proof.tex",
+          "start_line": 53
+        }
+      },
+      "ref_id": "mat_90c7c9895d0a6a70"
+    }
+  ],
+  "status": "committed",
+  "success_criteria": "The construction is defined under the immutable parameter hypotheses; all five certificate branches are represented in the proved dependency closure; the resulting public certificate theorem has exactly the capability needed by final assembly.",
+  "summary": "Accepted ready outcome in graph_proved mode. The committed boundary provides explicit PerturbedStarBlocks data, perturbedStarFamily d B, proved construction existence, all five distinct certificate-case theorems, and a proved theorem producing B : PerturbedStarBlocks n (d+1-s) with IsUniformMissingTraceFamily d s (perturbedStarFamily d B). The actual signatures fit the CountingAndMain consumer's exact-family counting and final existential assembly; no unresolved prerequisite remains within this node.",
+  "version": 1
+}

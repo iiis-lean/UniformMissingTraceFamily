@@ -1,0 +1,37 @@
+{
+  "change": {
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Assuming 2+2*r ≤ n, construct PerturbedStarBlocks n r source-faithfully by reserving two distinguished Fin n points and embedding two shifted r-element ranges. Prove exact block cardinalities, T/L disjointness, anchor avoidance, and anchor distinctness using Fin.castLEEmb, Fin.natAddEmb, Finset.card_map, Finset.disjoint_map, and Finset.disjoint_range_addRightEmbedding recorded by Mathlib recon. This implements article/sections/02_proof.tex line 32 and supplies the concrete construction data used by the upper core, family, counting, and certificate declarations.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Created the source-line-32 existence theorem and reached committed state specified with accepted Statement NL. The preserved consumer-side formal goal is: for n r : ℕ, 2 + 2*r ≤ n implies ∃ PerturbedStarBlocks n r. Statement Formal was blocked because the declaration-owned theorem module could not import/reference PerturbedStarBlocks while that provider remained only specified; stage authority correctly forbade adding a dependency on an undeclared provider. Classification: predictable tracked helper/provider sequencing, not statement drift or scope overflow. Checked provider: current-node PerturbedStarBlocks rev1, whose formal structure candidate passed but was not yet accepted declared. Exact retry condition: first advance PerturbedStarBlocks rev1 (or a successor retaining the same meaning) to declared and proof-policy satisfied; then retry this unchanged statement, capture the current-node dependency/import, and subsequently prove the explicit construction with the recorded Fin embedding/cardinality/disjointness Mathlib facts.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": null,
+  "proof": null,
+  "revision": 1,
+  "state": "specified",
+  "statement": {
+    "deps": [],
+    "formal": null,
+    "nl": {
+      "origin": [
+        {
+          "end_line": 32,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source explicitly chooses two disjoint r-element blocks after the ambient-size estimate.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 32,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers n and r, if `2 + 2*r ≤ n`, then there exists `PerturbedStarBlocks n r`.  The asserted data may be chosen by reserving two distinguished points of `Fin n` and embedding two consecutive, shifted ranges of length `r`; consequently its two blocks have cardinality `r`, are disjoint, avoid both distinguished points, and the distinguished points are distinct."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-22T12:09:45Z"
+}

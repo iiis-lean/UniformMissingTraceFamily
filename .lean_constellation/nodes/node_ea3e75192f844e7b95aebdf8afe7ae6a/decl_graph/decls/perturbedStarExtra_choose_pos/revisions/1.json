@@ -1,0 +1,177 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [],
+    "anticipated_statement_dep_names": [],
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Implement the SourceIndex b_0011 positivity step in the exact consumer-side s-form required by formal_target.lean lines 14–24: for d s n : ℕ with hd : 4 ≤ d, hslow : (d + 3) / 2 ≤ s, hshigh : s ≤ d - 1, and hn : 2 * (d + 1) ≤ n, prove `0 < Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2)`. Preserve all immutable hypotheses and both exact Nat.choose indices. Consume the proved lower-node perturbedStarParameterBounds to obtain the rewrite `d - 2 * (d + 1 - s) = 2 * s - d - 2` and the nonnegative lower index/bounds; derive `d - 2*r ≤ n - 2*r - 2` from hn (with hd as needed), then apply Mathlib Nat.choose_pos and rewrite to the s-form. This private proved helper must directly feed the strict inequality conjunct of exists_uniformMissingTraceFamily_strictlyLargerThanStar; do not change the final theorem or re-prove construction/cardinality.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Created private theorem perturbedStarExtra_choose_pos and advanced revision 1 through statement and proof stages to proved. The accepted theorem has exactly the immutable d, s, n hypotheses and proves positivity of `Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2)`. Its proof reuses perturbedStarParameterBounds for the r-to-s index rewrite and room inequalities and Mathlib Nat.choose_pos, so it is proof-policy satisfied under graph_proved and is the direct strictness input for the final public existential theorem.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": "perturbedStarExtra_choose_pos",
+  "proof": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": "Converts the derived lower-index-at-most-upper-index inequality into strict positivity of the binomial term.",
+        "ref": {
+          "module": "Mathlib.Data.Nat.Choose.Basic",
+          "name": "Nat.choose_pos"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "Supplies r = d + 1 - s, the exact lower-index rewrite, and the construction bounds used for the choose-index comparison.",
+        "ref": {
+          "name": "perturbedStarParameterBounds",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 3
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": false,
+        "contains_axiom": false,
+        "contains_sorry": false,
+        "diagnostics": {
+          "diagnostics": [],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarExtra_choose_pos', 'items': [], 'total_items': 0, 'error_count': 0, 'warning_count': 0, 'info_count': 0, 'sorry_count': 0}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarExtra_choose_pos.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 0 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "proof_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": false,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [],
+          "opaque_count": 0,
+          "sorry_count": 0,
+          "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarExtra_choose_pos`\n\nFor natural numbers `d`, `s`, and `n`, if `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤ d -\n1`, and `hn : 2 * (d + 1) ≤ n`, then\n`0 < Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2)`.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 75–79\n- Source `formal_target.lean`, lines 14–24\n\n## Statement dependencies\n\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n\n## Proof outline\n\nSet `r := d + 1 - s` and instantiate the proof-accepted lower interface\n`Main.PerturbedStarCertificates::perturbedStarParameterBounds d s n hd hslow hshigh hn`. Destructure\nits conclusions to obtain the exact rewrite `d - 2 * r = 2 * s - d - 2`, together with `2 * r ≤ d`,\n`2 + 2 * r ≤ n`, and the stated nontruncation bounds for `r`.\n\nUse `hn` and `hd` in elementary natural-number arithmetic to derive `d - 2 * r ≤ n - 2 * r - 2`; the\nprovider’s `2 * r ≤ d` ensures this is the intended lower index. Apply verified `Nat.choose_pos` to\nget `0 < Nat.choose (n - 2 * r - 2) (d - 2 * r)`. Finally unfold `r` and rewrite its lower choice\nindex with the provider equality, yielding exactly `0 < Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s\n- d - 2)`. No construction or cardinality result is reproved.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, lines 75–79\n\n## Proof dependencies\n\n- `Nat.choose_pos` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PerturbedStarCertificates::perturbedStarParameterBounds` → `perturbedStarParameterBounds`\n  from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarParameterBounds`\n-/\ntheorem perturbedStarExtra_choose_pos {d s n : ℕ} (hd : 4 ≤ d)\n    (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    0 < Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2) := by\n  rcases perturbedStarParameterBounds d s n hd hslow hshigh hn with\n    ⟨hr_two, hr_s, hrewrite, hrd, hrn⟩\n  apply Nat.choose_pos\n  omega\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 79,
+          "end_locator": null,
+          "kind": "source",
+          "note": "SourceIndex b_0011 states that the exact second binomial term is positive under the displayed parameter bounds.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 75,
+          "start_locator": null
+        }
+      ],
+      "text": "Set `r := d + 1 - s` and instantiate the proof-accepted lower interface `Main.PerturbedStarCertificates::perturbedStarParameterBounds d s n hd hslow hshigh hn`. Destructure its conclusions to obtain the exact rewrite `d - 2 * r = 2 * s - d - 2`, together with `2 * r ≤ d`, `2 + 2 * r ≤ n`, and the stated nontruncation bounds for `r`.\n\nUse `hn` and `hd` in elementary natural-number arithmetic to derive `d - 2 * r ≤ n - 2 * r - 2`; the provider’s `2 * r ≤ d` ensures this is the intended lower index. Apply verified `Nat.choose_pos` to get `0 < Nat.choose (n - 2 * r - 2) (d - 2 * r)`. Finally unfold `r` and rewrite its lower choice index with the provider equality, yielding exactly `0 < Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2)`. No construction or cardinality result is reproved."
+    }
+  },
+  "revision": 1,
+  "state": "proved",
+  "statement": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": "The exact conclusion is a strict-positivity assertion for this Nat.choose binomial coefficient.",
+        "ref": {
+          "module": "Mathlib.Data.Nat.Choose.Basic",
+          "name": "Nat.choose"
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": true,
+        "contains_axiom": false,
+        "contains_sorry": true,
+        "diagnostics": {
+          "diagnostics": [
+            {
+              "column": 9,
+              "line": 24,
+              "message": "declaration uses `sorry`",
+              "severity": "warning"
+            }
+          ],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarExtra_choose_pos', 'items': [{'severity': 'warning', 'pos': {'line': 24, 'column': 9}, 'endPos': {'line': 24, 'column': 38}, 'kind': None, 'data': 'declaration uses `sorry`', 'fileName': 'UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarExtra_choose_pos', 'content': '- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\\n-/\\ntheorem perturbedStarExtra_choose_pos {d s n : ℕ} (hd : 4 ≤ d)\\n    (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\\n    (hn : 2 * (d + 1) ≤ n) :'}], 'total_items': 1, 'error_count': 0, 'warning_count': 1, 'info_count': 0, 'sorry_count': 1}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarExtra_choose_pos.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 1 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": true,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [
+            {
+              "column": 3,
+              "excerpt": "sorry",
+              "kind": "sorry",
+              "line": 28
+            }
+          ],
+          "opaque_count": 0,
+          "sorry_count": 1,
+          "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarExtra_choose_pos`\n\nFor natural numbers `d`, `s`, and `n`, if `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤ d -\n1`, and `hn : 2 * (d + 1) ≤ n`, then\n`0 < Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2)`.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 75–79\n- Source `formal_target.lean`, lines 14–24\n\n## Statement dependencies\n\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n-/\ntheorem perturbedStarExtra_choose_pos {d s n : ℕ} (hd : 4 ≤ d)\n    (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    0 < Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2) := by\n  sorry\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 79,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source's final construction conclusion uses these s-form indices and states that the second binomial term is positive from the displayed lower-index and ambient bounds.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 75,
+          "start_locator": null
+        },
+        {
+          "end_line": 24,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The immutable consumer theorem fixes the quantified parameters, hypotheses, and exact s-form Nat.choose term whose positivity this helper supplies.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "formal_target.lean",
+          "start_line": 14,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers `d`, `s`, and `n`, if `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤ d - 1`, and `hn : 2 * (d + 1) ≤ n`, then\n`0 < Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2)`."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-27T14:41:34Z"
+}

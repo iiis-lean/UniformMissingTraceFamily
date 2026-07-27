@@ -1,0 +1,47 @@
+{
+  "decl_names": [
+    "anchoredPowerset_chooseSum_reindex",
+    "completionFiber_card",
+    "completionFibers_pairwiseDisjoint",
+    "exists_uniformMissingTraceFamily_strictlyLargerThanStar",
+    "patternFamily_card_sum",
+    "perturbedStarBase_chooseSum",
+    "perturbedStarCore_card",
+    "perturbedStarExtra_choose_pos",
+    "perturbedStarFamily_card",
+    "perturbedStarFiller_card",
+    "perturbedStarPatterns_chooseSum",
+    "perturbedStarPatterns_disjoint_filler",
+    "perturbedStarPerturbation_chooseSum",
+    "perturbedStarProperPatterns_chooseSum"
+  ],
+  "node_id": "node_ea3e75192f844e7b95aebdf8afe7ae6a",
+  "node_path": "Main.CountingAndMain",
+  "round_ids": [
+    "round_0407c5b656c743628cbb5a9b8e6eee6d",
+    "round_06d7e661838840adb853200fab812a02",
+    "round_16b8e53e008b44f483101a9431aaf379",
+    "round_1ed57fdff50b485d9a6fae7380d3434a",
+    "round_2cc09a7ca04c473dbd6f63caf5aa0786",
+    "round_2f5e46a1294e4df7b2db668ced25ecce",
+    "round_3dbd9d0587e943deb1546f6fcaf9f286",
+    "round_6871444043bd467ca03762529d118f5f",
+    "round_7b9ce71ebc18446f874f34606fdb6bb7",
+    "round_8e5d00d8fabb4bb29165f1e7bccfa9d3",
+    "round_a1128bdb8a14412991557cc884e7cba9",
+    "round_a7651ea9f8c64ccc92e48ba9432c519a",
+    "round_bcb7e4adfbbd4ffe85a710c857c8a6c2",
+    "round_c5d25c45b86f4373b634000029e60b3a",
+    "round_c602c2afc8684314adc0efbcab015603",
+    "round_d555c8ee268b477a81d53fa6905c934f",
+    "round_f67114f17c934435b92e53ffe6af5907",
+    "round_fc6b3d8b66ca4fc0bc7142aaa52780c6"
+  ],
+  "schema_version": 1,
+  "strategy_ids": [
+    "strategy_746a2d92b99d454db9e1556c2088f3e8",
+    "strategy_7cbc30f0d9cb46628fd30ebca588482b"
+  ],
+  "summary": "DeclGraph index rebuilt for Main.CountingAndMain: 14 decls, 18 rounds, 2 strategies.",
+  "updated_at": "2026-07-27T15:27:30Z"
+}

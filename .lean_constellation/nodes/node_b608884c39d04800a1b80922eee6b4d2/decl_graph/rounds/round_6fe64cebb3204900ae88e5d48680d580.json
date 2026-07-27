@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-22T15:10:50Z",
+  "created_at": "2026-07-22T14:50:06Z",
+  "execution_completed_at": "2026-07-22T15:10:50Z",
+  "execution_reason": "DeclGraphRoundFlow finished with completed.",
+  "execution_result_kind": "success",
+  "node_path": "Main.PerturbedStarCertificates",
+  "objective": "Prove the fourth mandatory source b_0012 certificate branch (article/sections/02_proof.tex lines 67–70): for a large allowed a-anchored pattern disjoint from T, construct the selector witness inside P∩L and establish the exact four-clause certificate bundle consumed by Main.PatternCriterion.",
+  "plan_closeout_acknowledged_at": "2026-07-22T15:10:50Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "success",
+  "result_reason": "DeclGraphRoundFlow finished with completed.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedStarCertificate_largeAvoiding@rev:1",
+      "decl_name": "perturbedStarCertificate_largeAvoiding",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_6fe64cebb3204900ae88e5d48680d580",
+  "round_index": 16,
+  "started_at": "2026-07-22T14:51:08Z",
+  "status": "committed",
+  "strategy_id": "strategy_140c2962785943968f6203e9ab1972fc",
+  "summary": "Round 16 completed the fourth of five mandatory certificate branches. `perturbedStarCertificate_largeAvoiding` reached proved state and is recursively proof-policy satisfied. The bottom-up strategy remains viable and within scope; no unresolved dependencies, superseded artifacts, state-only intermediates, or graph-hygiene problems were introduced. The sole remaining source case is the large a-star meeting T from line 72; once proved, all five branches will be available for final public assembly."
+}

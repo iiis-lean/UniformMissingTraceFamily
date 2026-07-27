@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-07-27T14:42:18Z",
+  "current_revision": 1,
+  "kind": "theorem",
+  "lifecycle": "active",
+  "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.exists_uniformMissingTraceFamily_strictlyLargerThanStar",
+  "name": "exists_uniformMissingTraceFamily_strictlyLargerThanStar",
+  "node_path": "Main.CountingAndMain",
+  "public": true,
+  "revision_ids": [
+    1
+  ],
+  "summary": "In the middle parameter range, an explicit uniform missing-trace family has the exact perturbed-star cardinality and strictly exceeds a star.",
+  "updated_at": "2026-07-27T14:42:18Z"
+}

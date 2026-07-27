@@ -1,0 +1,79 @@
+\section{Proof of Theorem~\ref{thm:main}}
+
+Let \(C\) and \(U\) be disjoint subsets of \([n]\), let \(\cP\subseteq 2^C\), and define
+\[
+\cF(\cP,U)=\bigg\{P\cup A:P\in\cP,\ A\in\binom{U}{d+1-|P|}\bigg\}.
+\]
+The set \(C\) is fixed and small. A set \(P\in\cP\) records the part of an edge inside \(C\), while \(A\subseteq U\) fills the remaining vertices.
+
+\begin{lemma}\label{lem:criterion}
+Let \(r=d+1-s\). Suppose that for every \(P\in\cP\), there is a set \(\tau(P)\subsetneq P\) such that \(|P|-|\tau(P)|\le r\), \(|\tau(P)|\le s\), and there is no \(Q\in\cP\) satisfying
+\(
+Q\cap P=\tau(P)\) and \(|Q|\le |\tau(P)|+r.\)
+Then \(\cF(\cP,U)\) is an \(s\)-witness family.
+\end{lemma}
+
+\begin{proof}[Proof of Lemma~\ref{lem:criterion}]
+For every \(P\in\cP\), we have \(|P|\le |\tau(P)|+r\le s+r=d+1\), so the family above is well-defined. Fix \(F=P\cup A\in\cF(\cP,U)\). Since \(|P|-|\tau(P)|\le r=d+1-s\), we get
+\[
+s-|\tau(P)|\le d+1-|P|=|A|.
+\]
+Choose \(X\subseteq A\) with \(|X|=s-|\tau(P)|\), and put \(B_F=\tau(P)\cup X\). Then \(B_F\subseteq F\) and \(|B_F|=s\). We claim that \(B_F\) is missing from the trace on \(F\). Indeed, suppose that \(F'=Q\cup A'\in\cF(\cP,U)\) satisfies \(F\cap F'=B_F\). Comparing the vertices in \(C\) and in \(U\) separately gives
+\(Q\cap P=\tau(P)\) and \(A'\cap A=X.\)
+Hence
+\[
+d+1-|Q|=|A'|\ge |X|=s-|\tau(P)|,
+\]
+which further implies that \(|Q|\le |\tau(P)|+r\), contradicting the assumption on \(\tau(P)\). Thus \(B_F\notin\Tr_{\cF}(F)\), and \(\cF(\cP,U)\) is an \(s\)-witness family.
+\end{proof}
+
+Put \(r=d+1-s\). From the assumptions we have
+\(r\ge2,\) \(s\ge r+1\) and \(d-2r=2s-d-2\ge 0.\)
+In particular \(2r\le d\), so there is enough room to choose two disjoint \(r\)-sets \(T,L\subseteq[n]\setminus\{1,2\}\). Now fix
+\(
+C:=\{1,2\}\cup T\cup L\) and \(U=[n]\setminus C.\)
+Define
+\[
+\cP=\left(\{P\subseteq C:1\in P,\ |P|\le d+1\}\setminus\{\{1\}\cup T\cup Y:Y\subsetneq L\}\right)\cup\{\{2\}\cup T\cup Y:Y\subseteq L\}.
+\]
+So we start from the \(1\)-star inside \(C\), remove all sets \(\{1\}\cup T\cup Y\) with \(Y\subsetneq L\), put back the corresponding sets \(\{2\}\cup T\cup Y\), and also add the last set \(\{2\}\cup T\cup L\). This last set has size \(1+2r\le d+1\), so it is included in the construction.
+
+\begin{claim}\label{claim:main-count}
+For \(\cF=\cF(\cP,U)\),
+\(
+|\cF|=\binom{n-1}{d}+\binom{n-2r-2}{d-2r}.
+\)
+\end{claim}
+
+\begin{poc}
+The full \(1\)-star inside \(C\), namely \(\{P\subseteq C:1\in P,\ |P|\le d+1\}\), gives exactly all \((d+1)\)-sets containing \(1\). Hence it contributes \(\binom{n-1}{d}\). For every \(Y\subsetneq L\), the removed set \(\{1\}\cup T\cup Y\) and the added set \(\{2\}\cup T\cup Y\) have the same size, so they contribute the same number of edges. The only added set without a removed partner is \(\{2\}\cup T\cup L\). Its size is \(2r+1\), and its contribution is \(\binom{|U|}{d+1-(2r+1)}=\binom{n-2r-2}{d-2r}.\)
+This proves the claim.
+\end{poc}
+
+\begin{claim}\label{claim:main-certificate}
+The family \(\cP\) satisfies the assumptions of Lemma~\ref{lem:criterion}.
+\end{claim}
+
+\begin{poc}
+The main task is to choose \(\tau(P)\) for each \(P\in\cP\).
+
+First take \(P=\{2\}\cup T\cup Y\) with \(Y\subsetneq L\). Set \(\tau(P)=T\). Then \(\tau(P)\subsetneq P\), \(|P|-|\tau(P)|=1+|Y|\le r\), and \(|\tau(P)|=r\le s\). Suppose that some \(Q\in\cP\) satisfies \(Q\cap P=T\). If \(Q\) is also of the form \(\{2\}\cup T\cup Z\), then \(2\in Q\cap P\), impossible. Thus \(Q\) must contain \(1\). To have intersection exactly \(T\), it must be of the form \(\{1\}\cup T\cup Z\), where \(Z\subseteq L\) and \(Z\cap Y=\emptyset\). If \(Z\subsetneq L\), then this set was removed from \(\cP\). If \(Z=L\), then \(Y=\emptyset\), and in this case \(|Q|=1+2r>2r=|\tau(P)|+r.\)
+So no such \(Q\) satisfies the size condition in Lemma~\ref{lem:criterion}.
+
+Next take the remaining added set \(P=\{2\}\cup T\cup L\). Fix one element \(\ell_0\in L\), and set \(\tau(P)=T\cup\{\ell_0\}\). Then \(\tau(P)\subsetneq P\), \(|P|-|\tau(P)|=r\), and \(|\tau(P)|=r+1\le s\). A set of the form \(\{2\}\cup T\cup Z\) cannot have intersection \(\tau(P)\) with \(P\), because the intersection contains \(2\). A set containing \(1\) would have to contain \(T\cup\{\ell_0\}\), avoid \(2\), and avoid every point of \(L\setminus\{\ell_0\}\). Hence it would be exactly \(\{1\}\cup T\cup\{\ell_0\}\), which was removed. Thus the required exclusion also holds for this \(P\).
+
+It remains to consider \(P\in\cP\) with \(1\in P\). If \(|P|\le r\), set \(\tau(P)=\emptyset\). Then \(\tau(P)\subsetneq P\), \(|P|-|\tau(P)|\le r\), and \(|\tau(P)|\le s\). Notice that no set containing \(1\) can have empty intersection with \(P\), since \(1\in P\). Any set of the form \(\{2\}\cup T\cup Z\) has size at least \(r+1\), so it cannot satisfy \(|Q|\le r=|\tau(P)|+r\).
+
+Now assume that \(1\in P\), \(|P|>r\), and \(P\cap T=\emptyset\). Then all points of \(P\), except possibly \(1\) and \(2\), lie in \(L\). Since \(r\ge2\), there are enough points in \(P\cap L\) to choose
+\(\tau(P)\subseteq P\cap L\) with \(|\tau(P)|=|P|-r.\)
+Then \(\tau(P)\) does not contain \(1\). Hence no pattern containing \(1\) can have intersection \(\tau(P)\) with \(P\). On the other hand, if \(Q\) is one of the added sets, say \(Q=\{2\}\cup T\cup Z\), and \(Q\cap P=\tau(P)\), then \(Q\) must contain \(T\) and all points of \(\tau(P)\). Thus \(|Q|\ge |\tau(P)|+r+1,\)
+which yields that this set \(Q\) is too large to be relevant in Lemma~\ref{lem:criterion}.
+
+Finally assume that \(1\in P\), \(|P|>r\), and \(P\cap T\ne\emptyset\). Since \(r\ge 2,\) we can choose \(t_0\in P\cap T\), and further choose \(\tau(P)\subseteq P\setminus\{1,t_0\}\) with \(|\tau(P)|=|P|-r.\) Clearly, \(\tau(P)\subsetneq P\) and \(|\tau(P)|\le s\). Notice that any set containing \(1\) has intersection with \(P\) containing \(1\), and any set of the form \(\{2\}\cup T\cup Z\) has intersection with \(P\) containing \(t_0\). Since \(\tau(P)\) contains neither \(1\) nor \(t_0\), no such \(Q\) can have \(Q\cap P=\tau(P)\). This completes the verification and proves the claim.
+\end{poc}
+
+By Lemma~\ref{lem:criterion} and Claims~\ref{claim:main-count} and~\ref{claim:main-certificate}, the family \(\cF\) is an \(s\)-witness family and
+\[
+|\cF|=\binom{n-1}{d}+\binom{n-2(d+1-s)-2}{2s-d-2}.
+\]
+The second term is positive, because \(d-2r\ge0\) and \(n-2r-2\ge d-2r\). This proves Theorem~\ref{thm:main}.

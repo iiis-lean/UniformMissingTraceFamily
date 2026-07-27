@@ -1,0 +1,168 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [],
+    "anticipated_statement_dep_names": [],
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Create and prove the generic constant-weight fiber evaluation required by contract v1's powersetCard role and supporting the anchored contribution abstracted from SourceIndex b_0009 / article/sections/02_proof.tex:41-51. For [DecidableEq α], finsets s and U and naturals d j, preserve the exact Nat subtraction index and state: the Nat sum over T ∈ s.powersetCard j of Nat.choose U.card (d - T.card) equals Nat.choose s.card j * Nat.choose U.card (d - j). Add no size or disjointness assumptions. Use Finset.mem_powersetCard and Finset.sum_powersetCard or Finset.card_powersetCard. This lower declaration will evaluate each fiber after the public theorem decomposes (C.erase a).powerset by cardinality.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Created the intended private theorem and advanced revision 1 through statement NL, statement formal, proof NL, and proof formal to proved. The formal statement and proof both passed, and the declaration is proof-policy satisfied. It evaluates the exact Nat.choose U.card (d - T.card) weight on a powersetCard j fiber as Nat.choose s.card j * Nat.choose U.card (d - j), preserving Nat subtraction without extra hypotheses. No blocker, state-only gap, or cleanup issue remains.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": "powersetCard_weightedSum_eq_choose",
+  "proof": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Algebra.BigOperators.Group.Finset.Powerset",
+          "name": "Finset.sum_powersetCard"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Powerset",
+          "name": "Finset.card_powersetCard"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Powerset",
+          "name": "Finset.mem_powersetCard"
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": false,
+        "contains_axiom": false,
+        "contains_sorry": false,
+        "diagnostics": {
+          "diagnostics": [],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.AnchoredPowersetEnumeration.Theorems.powersetCard_weightedSum_eq_choose', 'items': [], 'total_items': 0, 'error_count': 0, 'warning_count': 0, 'info_count': 0, 'sorry_count': 0}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/AnchoredPowersetEnumeration/Theorems/powersetCard_weightedSum_eq_choose.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 0 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "proof_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": false,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [],
+          "opaque_count": 0,
+          "sorry_count": 0,
+          "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.AnchoredPowersetEnumeration.Prelude\nimport Mathlib.Algebra.BigOperators.Group.Finset.Powerset\nimport Mathlib.Data.Finset.Powerset\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `powersetCard_weightedSum_eq_choose`\n\nLet α be a type with `[DecidableEq α]`. For every finsets `s U : Finset α` and naturals `d j`, the\nconstant-weight sum over the cardinality-`j` subsets of `s` is\n\n`∑ T ∈ s.powersetCard j, Nat.choose U.card (d - T.card) = Nat.choose s.card j * Nat.choose U.card (d\n- j)`.\n\nNo size or disjointness assumptions are required; all subtractions are natural-number subtraction.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Finset.powersetCard` from `Mathlib.Data.Finset.Powerset`\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n\n## Proof outline\n\nUse `Finset.sum_powersetCard` with the cardinality-only function `g k := Nat.choose U.card (d - k)`.\nThat lemma replaces every occurrence of `g T.card` in the sum over `s.powersetCard j` by the single\nvalue `g j` and multiplies it by the number of members of the fiber.\n\nIts cardinality factor is `Nat.choose s.card j` (the same value supplied by\n`Finset.card_powersetCard`; it is built into `Finset.sum_powersetCard`).  Substituting the\ndefinition of `g` gives exactly `Nat.choose s.card j * Nat.choose U.card (d - j)`.  No inequality or\ndisjointness argument is needed: `Finset.mem_powersetCard` fixes `T.card = j`, so the natural\nsubtraction index is rewritten exactly, including the cases where `d < j`.\n\n## Proof dependencies\n\n- `Finset.sum_powersetCard` from `Mathlib.Algebra.BigOperators.Group.Finset.Powerset`\n- `Finset.card_powersetCard` from `Mathlib.Data.Finset.Powerset`\n- `Finset.mem_powersetCard` from `Mathlib.Data.Finset.Powerset`\n-/\ntheorem powersetCard_weightedSum_eq_choose {α : Type*} [inst : DecidableEq α]\n    (s U : Finset α) (d j : ℕ) :\n    let _ : DecidableEq α := inst\n    ∑ T ∈ s.powersetCard j, Nat.choose U.card (d - T.card) =\n      Nat.choose s.card j * Nat.choose U.card (d - j) := by\n  simpa using\n    (Finset.sum_powersetCard j s (fun k => Nat.choose U.card (d - k)))\n"
+    },
+    "nl": {
+      "origin": [],
+      "text": "Use `Finset.sum_powersetCard` with the cardinality-only function `g k := Nat.choose U.card (d - k)`.  That lemma replaces every occurrence of `g T.card` in the sum over `s.powersetCard j` by the single value `g j` and multiplies it by the number of members of the fiber.\n\nIts cardinality factor is `Nat.choose s.card j` (the same value supplied by `Finset.card_powersetCard`; it is built into `Finset.sum_powersetCard`).  Substituting the definition of `g` gives exactly `Nat.choose s.card j * Nat.choose U.card (d - j)`.  No inequality or disjointness argument is needed: `Finset.mem_powersetCard` fixes `T.card = j`, so the natural subtraction index is rewritten exactly, including the cases where `d < j`."
+    }
+  },
+  "revision": 1,
+  "state": "proved",
+  "statement": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Powerset",
+          "name": "Finset.powersetCard"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Nat.Choose.Basic",
+          "name": "Nat.choose"
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": true,
+        "contains_axiom": false,
+        "contains_sorry": true,
+        "diagnostics": {
+          "diagnostics": [
+            {
+              "column": 9,
+              "line": 29,
+              "message": "declaration uses `sorry`",
+              "severity": "warning"
+            }
+          ],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.AnchoredPowersetEnumeration.Theorems.powersetCard_weightedSum_eq_choose', 'items': [{'severity': 'warning', 'pos': {'line': 29, 'column': 9}, 'endPos': {'line': 29, 'column': 43}, 'kind': None, 'data': 'declaration uses `sorry`', 'fileName': 'UniformMissingTraceFamily.Main.AnchoredPowersetEnumeration.Theorems.powersetCard_weightedSum_eq_choose', 'content': '- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\\n-/\\ntheorem powersetCard_weightedSum_eq_choose {α : Type*} [inst : DecidableEq α]\\n    (s U : Finset α) (d j : ℕ) :\\n    let _ : DecidableEq α := inst'}], 'total_items': 1, 'error_count': 0, 'warning_count': 1, 'info_count': 0, 'sorry_count': 1}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/AnchoredPowersetEnumeration/Theorems/powersetCard_weightedSum_eq_choose.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 1 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": true,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [
+            {
+              "column": 3,
+              "excerpt": "sorry",
+              "kind": "sorry",
+              "line": 34
+            }
+          ],
+          "opaque_count": 0,
+          "sorry_count": 1,
+          "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.AnchoredPowersetEnumeration.Prelude\nimport Mathlib.Data.Finset.Powerset\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `powersetCard_weightedSum_eq_choose`\n\nLet α be a type with `[DecidableEq α]`. For every finsets `s U : Finset α` and naturals `d j`, the\nconstant-weight sum over the cardinality-`j` subsets of `s` is\n\n`∑ T ∈ s.powersetCard j, Nat.choose U.card (d - T.card) = Nat.choose s.card j * Nat.choose U.card (d\n- j)`.\n\nNo size or disjointness assumptions are required; all subtractions are natural-number subtraction.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Finset.powersetCard` from `Mathlib.Data.Finset.Powerset`\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n-/\ntheorem powersetCard_weightedSum_eq_choose {α : Type*} [inst : DecidableEq α]\n    (s U : Finset α) (d j : ℕ) :\n    let _ : DecidableEq α := inst\n    ∑ T ∈ s.powersetCard j, Nat.choose U.card (d - T.card) =\n      Nat.choose s.card j * Nat.choose U.card (d - j) := by\n  sorry\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 49,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source evaluates an anchored set’s contribution by a binomial coefficient determined by the remaining filler choices; this declaration abstracts the constant cardinality fiber.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 49,
+          "start_locator": null
+        }
+      ],
+      "text": "Let α be a type with `[DecidableEq α]`. For every finsets `s U : Finset α` and naturals `d j`, the constant-weight sum over the cardinality-`j` subsets of `s` is\n\n`∑ T ∈ s.powersetCard j, Nat.choose U.card (d - T.card) = Nat.choose s.card j * Nat.choose U.card (d - j)`.\n\nNo size or disjointness assumptions are required; all subtractions are natural-number subtraction."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T14:32:16Z"
+}

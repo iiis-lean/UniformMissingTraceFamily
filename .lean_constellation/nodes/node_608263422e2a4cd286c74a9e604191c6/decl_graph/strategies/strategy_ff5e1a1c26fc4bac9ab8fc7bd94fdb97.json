@@ -1,0 +1,21 @@
+{
+  "closed_at": "2026-07-27T13:04:11Z",
+  "closed_reason": "The public theorem is proved with the exact contract-prescribed maps and no extra assumptions; its dependency closure contains recovery, injectivity, equal-card/choose-weight, proper-domain erase, and b-image erase transport. The completion gate passes all checks with no warnings.",
+  "created_at": "2026-07-26T15:34:54Z",
+  "created_round_ids": [
+    "round_16343be575ba418cba0aad22e93fd348",
+    "round_7c10aff3ca874174b427563ae0660549",
+    "round_ff476b6c5b6f429a9911c05595653405",
+    "round_202fa79c6c844b77bb52fca2037ecf7c",
+    "round_034e0c72cd6f41d88677ff930697cd00",
+    "round_5ef0e250f1c44e3eaadd3e793c7c53d0",
+    "round_7a1bd8feec674ce7b7fb8d8b3b609987",
+    "round_d8966ad85f6e4360bc20cae55b094f97"
+  ],
+  "node_path": "Main.PerturbedPatternCancellation",
+  "objective": "Build the graph-proved cancellation chain bottom-up from SourceIndex b_0009 and article/sections/02_proof.tex:49: first prove recovery by intersection with B.L and injectivity on B.L.powerset for the exact maps Y ↦ {B.a} ∪ B.T ∪ Y and Y ↦ {B.b} ∪ B.T ∪ Y; then prove matched cardinal/choose-weight equality and the proper-domain erase characterization; finally transport the b-image erase/sum split and prove the public interface perturbedPattern_properWeights_add_full_eq_fullWeights for every B and d with no hrd/hrn assumptions.",
+  "rationale": "Repository mode is graph_proved, so theorem-like foundations and the public output must be proved. Visible dependency recon confirmed Main.PerturbedStarCertificates as the complete construction boundary, and Mathlib recon verified all recovery, cardinality, powerset/erase, image, and finite-sum support. The route preserves the sole unmatched Y = B.L term from source line 49, stays within the expected 5–10 important declarations, and serves the downstream consumer shape without adding assumptions or redesigning perturbedStarPatterns.",
+  "status": "closed",
+  "strategy_id": "strategy_ff5e1a1c26fc4bac9ab8fc7bd94fdb97",
+  "summary": "Completed the graph-proved perturbed-pattern cancellation chain with nine intentional proved declarations, culminating in the bound public proper/full weighted cancellation interface."
+}

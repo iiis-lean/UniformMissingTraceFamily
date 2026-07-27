@@ -1,0 +1,32 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-27T13:24:45Z",
+  "created_at": "2026-07-27T13:15:51Z",
+  "execution_completed_at": "2026-07-27T13:22:16Z",
+  "execution_reason": "Both captured Proof Formal proofs directly apply their exact public providers and pass formal consistency, but their accepted Proof NL routes still require obsolete local arguments. Proof Formal may not mutate Proof NL; an earlier proof-planning revision is required before this batch can be re-reviewed.",
+  "execution_result_kind": "blocked",
+  "node_path": "Main.CountingAndMain",
+  "objective": "Advance only the two retained proof-planned wrapper declarations to proved by direct reuse of their newly attached exact lower-node providers. Preserve their compiler-confirmed SourceIndex b_0009 statements unchanged: anchoredPowerset_chooseSum_reindex should close from anchoredPowerset_weightedSum_eq_chooseSum, and perturbedStarProperPatterns_chooseSum should close from perturbedPattern_properWeights_add_full_eq_fullWeights. Do not retry parent counting declarations or delete wrappers in this round.",
+  "plan_closeout_acknowledged_at": "2026-07-27T13:24:45Z",
+  "plan_closeout_acknowledged_by": "a_69813ea8bd4a4ab38bca6ad41a76a566",
+  "result_kind": "blocked",
+  "result_reason": "Both direct provider proofs pass formal consistency, but accepted Proof NL artifacts are obsolete. Commit the proof_planned revisions and retry from declared so Proof NL and Proof Formal can be updated coherently.",
+  "revision_refs": [
+    {
+      "change_id": "anchoredPowerset_chooseSum_reindex@rev:2",
+      "decl_name": "anchoredPowerset_chooseSum_reindex",
+      "revision": 2
+    },
+    {
+      "change_id": "perturbedStarProperPatterns_chooseSum@rev:2",
+      "decl_name": "perturbedStarProperPatterns_chooseSum",
+      "revision": 2
+    }
+  ],
+  "round_id": "round_0407c5b656c743628cbb5a9b8e6eee6d",
+  "round_index": 11,
+  "started_at": "2026-07-27T13:16:45Z",
+  "status": "committed",
+  "strategy_id": "strategy_7cbc30f0d9cb46628fd30ebca588482b",
+  "summary": "The repair strategy confirmed both direct provider proofs are Lean-valid, but neither wrapper reached proved or proof-policy satisfaction because this round intentionally began after Proof NL and therefore retained obsolete proof plans inconsistent with the new formal proofs. No mathematical dependency remains: both lower providers are exact, ready, non-stale, and proof-accepted. The complete retry condition is stage-local for both declarations: commit this blocked round, open new revisions from the accepted statement layer with reset_to_state=declared, replace Proof NL by direct application of the corresponding lower provider, and rerun Proof Formal. Parent counting declarations remain deferred. The next action is that bounded proof-plan-and-formal retry under the same strategy; no Mathlib/resource recon, scope escalation, or graph cleanup is appropriate yet."
+}

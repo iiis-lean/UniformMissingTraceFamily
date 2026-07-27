@@ -1,0 +1,32 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-26T16:54:22Z",
+  "created_at": "2026-07-26T16:47:49Z",
+  "execution_completed_at": "2026-07-26T16:54:22Z",
+  "execution_reason": "DeclGraphRoundFlow finished with blocked.",
+  "execution_result_kind": "blocked",
+  "node_path": "Main.PerturbedPatternCancellation",
+  "objective": "Prove the two independent upper providers for final cancellation: equal perturbedStarFiller-based Nat.choose weights for each matched a/b pattern, and transport of the proper-Y b-image to the full b-image with the unique full-L pattern erased. Consume only already proved middle/foundation declarations.",
+  "plan_closeout_acknowledged_at": "2026-07-26T16:54:22Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "blocked",
+  "result_reason": "DeclGraphRoundFlow finished with blocked.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedPattern_chooseWeight_eq@rev:1",
+      "decl_name": "perturbedPattern_chooseWeight_eq",
+      "revision": 1
+    },
+    {
+      "change_id": "perturbedPatternB_properImage_eq_erase@rev:1",
+      "decl_name": "perturbedPatternB_properImage_eq_erase",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_034e0c72cd6f41d88677ff930697cd00",
+  "round_index": 5,
+  "started_at": "2026-07-26T16:50:49Z",
+  "status": "committed",
+  "strategy_id": "strategy_ff5e1a1c26fc4bac9ab8fc7bd94fdb97",
+  "summary": "The upper-provider round was blocked at Statement NL before either declaration reached formal statement capture; both remain planned and unsatisfied, with Statement NL present only. The mathematical strategy and all lower dependency closure remain valid: perturbedPattern_card_eq, perturbedPattern_properDomain_eq_erase, and perturbedPatternB_injOn are proved and match their consumers. The sole concrete blocker is a Lean/metadata typed-dependency gap: Finset.image is compiler-verified in Mathlib.Data.Finset.Image but absent from the repo MathlibIndex, preventing the reviewer-required Statement dependency from being recorded. Retry conditions are to curate that exact MathlibIndex entry, add it as a current-node declaration hint if required for visibility, then rerun both planned declarations from planned to proved. No resource, source, provider, scope, or interface escalation is needed; the open strategy remains viable."
+}

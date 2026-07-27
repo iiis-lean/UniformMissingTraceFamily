@@ -1,0 +1,867 @@
+{
+  "active_file_scope": [],
+  "blocks": {
+    "b_0001": {
+      "active": true,
+      "block_id": "b_0001",
+      "child_ids": [],
+      "created_at": "2026-07-21T19:37:59Z",
+      "kind": "context",
+      "lifecycle_status": "completed",
+      "link_ids": [
+        "link_0001"
+      ],
+      "parent_id": "root",
+      "refs": [
+        {
+          "material_ref": {
+            "kind": "source",
+            "ref": {
+              "end_line": 8,
+              "path": "README.md",
+              "start_line": 5
+            }
+          },
+          "ref_id": "ref_0001",
+          "role": "primary"
+        },
+        {
+          "material_ref": {
+            "kind": "source",
+            "ref": {
+              "end_line": 30,
+              "path": "README.md",
+              "start_line": 16
+            }
+          },
+          "ref_id": "ref_0002",
+          "role": "supporting"
+        }
+      ],
+      "subtype": "provenance",
+      "summary": "README identifies the article reconstruction as the main source and states that the Lean target formalizes the explicit construction on Fin n without relying on the cited contextual VC-dimension results.",
+      "title": "Corpus provenance and formalization scope",
+      "updated_at": "2026-07-21T19:39:07Z"
+    },
+    "b_0002": {
+      "active": true,
+      "block_id": "b_0002",
+      "child_ids": [],
+      "created_at": "2026-07-21T19:37:59Z",
+      "kind": "document",
+      "lifecycle_status": "completed",
+      "link_ids": [
+        "link_0002"
+      ],
+      "parent_id": "root",
+      "refs": [
+        {
+          "material_ref": {
+            "kind": "source",
+            "ref": {
+              "end_line": 36,
+              "path": "article/main.tex",
+              "start_line": 23
+            }
+          },
+          "ref_id": "ref_0003",
+          "role": "primary"
+        }
+      ],
+      "subtype": "entrypoint",
+      "summary": "The LaTeX entry point declares the article title and composes the abstract, introduction, proof, remarks, and bibliography in order.",
+      "title": "Article assembly",
+      "updated_at": "2026-07-21T19:39:07Z"
+    },
+    "b_0003": {
+      "active": true,
+      "block_id": "b_0003",
+      "child_ids": [],
+      "created_at": "2026-07-21T19:37:59Z",
+      "kind": "context",
+      "lifecycle_status": "completed",
+      "link_ids": [],
+      "parent_id": "root",
+      "refs": [
+        {
+          "material_ref": {
+            "kind": "source",
+            "ref": {
+              "end_line": 192,
+              "path": "article/references.bib",
+              "start_line": 1
+            }
+          },
+          "ref_id": "ref_0004",
+          "role": "primary"
+        }
+      ],
+      "subtype": "bibliography",
+      "summary": "Bibliography supporting the article's contextual citations on Erdős--Ko--Rado, VC-dimension, uniform witnesses, and related extremal-family results.",
+      "title": "Bibliographic context",
+      "updated_at": "2026-07-21T19:39:07Z"
+    },
+    "b_0004": {
+      "active": true,
+      "block_id": "b_0004",
+      "child_ids": [],
+      "created_at": "2026-07-21T19:37:59Z",
+      "kind": "definition",
+      "lifecycle_status": "completed",
+      "link_ids": [
+        "link_0004"
+      ],
+      "parent_id": "root",
+      "refs": [
+        {
+          "material_ref": {
+            "kind": "source",
+            "ref": {
+              "end_line": 13,
+              "path": "article/sections/01_introduction.tex",
+              "start_line": 13
+            }
+          },
+          "ref_id": "ref_0007",
+          "role": "primary"
+        }
+      ],
+      "subtype": "missing_trace_family",
+      "summary": "An s-witness family is a (d+1)-uniform family in which each member has an s-subset absent from its intersection trace; W_{d,s}(n) denotes its maximum possible cardinality.",
+      "title": "s-witness family and extremal function",
+      "updated_at": "2026-07-21T19:39:07Z"
+    },
+    "b_0005": {
+      "active": true,
+      "block_id": "b_0005",
+      "child_ids": [],
+      "created_at": "2026-07-21T19:37:59Z",
+      "kind": "theorem",
+      "lifecycle_status": "completed",
+      "link_ids": [
+        "link_0003"
+      ],
+      "parent_id": "root",
+      "refs": [
+        {
+          "material_ref": {
+            "kind": "source",
+            "ref": {
+              "end_line": 8,
+              "path": "article/sections/00_abstract.tex",
+              "start_line": 2
+            }
+          },
+          "ref_id": "ref_0005",
+          "role": "primary"
+        }
+      ],
+      "subtype": "abstract_statement",
+      "summary": "For d ≥ 4, ceil((d+2)/2) ≤ s ≤ d−1, and n ≥ 2(d+1), the source constructs an s-witness (d+1)-uniform family of exact size choose(n−1,d)+choose(n−2(d+1−s)−2,2s−d−2), disproving the uniform witness conjecture.",
+      "title": "Abstract counterexample statement",
+      "updated_at": "2026-07-21T19:39:07Z"
+    },
+    "b_0006": {
+      "active": true,
+      "block_id": "b_0006",
+      "child_ids": [],
+      "created_at": "2026-07-21T19:37:59Z",
+      "kind": "conjecture",
+      "lifecycle_status": "completed",
+      "link_ids": [
+        "link_0005"
+      ],
+      "parent_id": "root",
+      "refs": [
+        {
+          "material_ref": {
+            "kind": "source",
+            "ref": {
+              "end_line": 19,
+              "path": "article/sections/01_introduction.tex",
+              "start_line": 17
+            }
+          },
+          "ref_id": "ref_0006",
+          "role": "primary"
+        }
+      ],
+      "subtype": "uniform_witness",
+      "summary": "For n ≥ 2(d+1) and 0 ≤ s ≤ d, every s-witness family in choose([n],d+1) was conjectured to have cardinality at most choose(n−1,d).",
+      "title": "Uniform witness conjecture",
+      "updated_at": "2026-07-21T19:39:07Z"
+    },
+    "b_0007": {
+      "active": true,
+      "block_id": "b_0007",
+      "child_ids": [],
+      "created_at": "2026-07-21T19:37:59Z",
+      "kind": "theorem",
+      "lifecycle_status": "completed",
+      "link_ids": [
+        "link_0006"
+      ],
+      "parent_id": "root",
+      "refs": [
+        {
+          "material_ref": {
+            "kind": "source",
+            "ref": {
+              "end_line": 30,
+              "path": "article/sections/01_introduction.tex",
+              "start_line": 23
+            }
+          },
+          "ref_id": "ref_0010",
+          "role": "primary"
+        }
+      ],
+      "subtype": "main_lower_bound",
+      "summary": "In the middle parameter range d ≥ 4, ceil((d+2)/2) ≤ s ≤ d−1, and n ≥ 2(d+1), W_{d,s}(n) is at least choose(n−1,d)+choose(n−2(d+1−s)−2,2s−d−2).",
+      "title": "Main lower-bound theorem",
+      "updated_at": "2026-07-21T19:39:07Z"
+    },
+    "b_0008": {
+      "active": true,
+      "block_id": "b_0008",
+      "child_ids": [],
+      "created_at": "2026-07-21T19:37:59Z",
+      "kind": "construction",
+      "lifecycle_status": "completed",
+      "link_ids": [
+        "link_0008"
+      ],
+      "parent_id": "root",
+      "refs": [
+        {
+          "material_ref": {
+            "kind": "source",
+            "ref": {
+              "end_line": 39,
+              "path": "article/sections/02_proof.tex",
+              "start_line": 30
+            }
+          },
+          "ref_id": "ref_0009",
+          "role": "primary"
+        }
+      ],
+      "subtype": "star_perturbation",
+      "summary": "With r=d+1−s, choose disjoint r-sets T,L and define C={1,2}∪T∪L and U=[n]∖C; replace the proper-L patterns {1}∪T∪Y in the 1-star by {2}∪T∪Y and include the final Y=L pattern.",
+      "title": "Explicit perturbed-star pattern family",
+      "updated_at": "2026-07-21T19:39:07Z"
+    },
+    "b_0009": {
+      "active": true,
+      "block_id": "b_0009",
+      "child_ids": [],
+      "created_at": "2026-07-21T19:37:59Z",
+      "kind": "claim",
+      "lifecycle_status": "completed",
+      "link_ids": [
+        "link_0009"
+      ],
+      "parent_id": "root",
+      "refs": [
+        {
+          "material_ref": {
+            "kind": "source",
+            "ref": {
+              "end_line": 51,
+              "path": "article/sections/02_proof.tex",
+              "start_line": 41
+            }
+          },
+          "ref_id": "ref_0008",
+          "role": "primary"
+        }
+      ],
+      "subtype": "cardinality",
+      "summary": "The perturbed-star family has cardinality choose(n−1,d)+choose(n−2r−2,d−2r); matched removed and added patterns cancel, leaving the final added pattern as the excess.",
+      "title": "Exact cardinality of the construction",
+      "updated_at": "2026-07-21T19:39:07Z"
+    },
+    "b_0010": {
+      "active": true,
+      "block_id": "b_0010",
+      "child_ids": [],
+      "created_at": "2026-07-21T19:37:59Z",
+      "kind": "lemma",
+      "lifecycle_status": "completed",
+      "link_ids": [
+        "link_0007"
+      ],
+      "parent_id": "root",
+      "refs": [
+        {
+          "material_ref": {
+            "kind": "source",
+            "ref": {
+              "end_line": 28,
+              "path": "article/sections/02_proof.tex",
+              "start_line": 3
+            }
+          },
+          "ref_id": "ref_0011",
+          "role": "primary"
+        }
+      ],
+      "subtype": "template_criterion",
+      "summary": "For F(P,U) formed by filling patterns P ⊆ C to size d+1, a proper certificate τ(P) satisfying size bounds and an excluded pattern-intersection condition guarantees that F(P,U) is an s-witness family.",
+      "title": "Pattern-family missing-trace criterion",
+      "updated_at": "2026-07-21T19:39:07Z"
+    },
+    "b_0011": {
+      "active": true,
+      "block_id": "b_0011",
+      "child_ids": [],
+      "created_at": "2026-07-21T19:38:00Z",
+      "kind": "theorem",
+      "lifecycle_status": "completed",
+      "link_ids": [
+        "link_0011",
+        "link_0012",
+        "link_0013",
+        "link_0014"
+      ],
+      "parent_id": "root",
+      "refs": [
+        {
+          "material_ref": {
+            "kind": "source",
+            "ref": {
+              "end_line": 79,
+              "path": "article/sections/02_proof.tex",
+              "start_line": 75
+            }
+          },
+          "ref_id": "ref_0013",
+          "role": "primary"
+        }
+      ],
+      "subtype": "proof_conclusion",
+      "summary": "Applying the criterion, count, and certificate claim gives an s-witness family with the displayed exact formula; its second binomial term is positive under the stated hypotheses.",
+      "title": "Construction yields a strict excess over the star",
+      "updated_at": "2026-07-21T19:39:07Z"
+    },
+    "b_0012": {
+      "active": true,
+      "block_id": "b_0012",
+      "child_ids": [],
+      "created_at": "2026-07-21T19:38:00Z",
+      "kind": "proof",
+      "lifecycle_status": "completed",
+      "link_ids": [
+        "link_0010"
+      ],
+      "parent_id": "root",
+      "refs": [
+        {
+          "material_ref": {
+            "kind": "source",
+            "ref": {
+              "end_line": 73,
+              "path": "article/sections/02_proof.tex",
+              "start_line": 53
+            }
+          },
+          "ref_id": "ref_0012",
+          "role": "primary"
+        }
+      ],
+      "subtype": "certificate_cases",
+      "summary": "Five cases choose τ(P) for added proper-L patterns, the final added pattern, small star patterns, larger star patterns avoiding T, and larger star patterns meeting T; each rules out the prohibited Q and proves the criterion hypotheses.",
+      "title": "Certificate verification for all patterns",
+      "updated_at": "2026-07-21T19:39:07Z"
+    },
+    "b_0013": {
+      "active": true,
+      "block_id": "b_0013",
+      "child_ids": [],
+      "created_at": "2026-07-21T19:38:00Z",
+      "kind": "remark",
+      "lifecycle_status": "completed",
+      "link_ids": [
+        "link_0015"
+      ],
+      "parent_id": "root",
+      "refs": [
+        {
+          "material_ref": {
+            "kind": "source",
+            "ref": {
+              "end_line": 18,
+              "path": "article/sections/03_remarks_and_acknowledgement.tex",
+              "start_line": 1
+            }
+          },
+          "ref_id": "ref_0015",
+          "role": "primary"
+        }
+      ],
+      "subtype": "boundary_and_asymptotics",
+      "summary": "The remarks isolate a possible unresolved odd boundary d=2s−1 and state that the construction’s excess is Θ_{d,s}(n^(2s−d−2)); optimality of that order is open.",
+      "title": "Remaining boundary and excess asymptotics",
+      "updated_at": "2026-07-21T19:39:07Z"
+    },
+    "b_0014": {
+      "active": true,
+      "block_id": "b_0014",
+      "child_ids": [],
+      "created_at": "2026-07-21T19:38:00Z",
+      "kind": "definition",
+      "lifecycle_status": "completed",
+      "link_ids": [
+        "link_0016",
+        "link_0017"
+      ],
+      "parent_id": "root",
+      "refs": [
+        {
+          "material_ref": {
+            "kind": "source",
+            "ref": {
+              "end_line": 26,
+              "path": "formal_target.lean",
+              "start_line": 3
+            }
+          },
+          "ref_id": "ref_0014",
+          "role": "primary"
+        }
+      ],
+      "subtype": "lean_specification",
+      "summary": "formal_target.lean defines IsUniformMissingTraceFamily for Fin n and requires exists_uniformMissingTraceFamily_strictlyLargerThanStar under the stated natural-number bounds, with the exact construction cardinality and strict comparison to choose(n−1,d).",
+      "title": "Lean definition and required exported theorem",
+      "updated_at": "2026-07-21T19:39:07Z"
+    },
+    "root": {
+      "active": true,
+      "block_id": "root",
+      "child_ids": [
+        "b_0001",
+        "b_0002",
+        "b_0003",
+        "b_0004",
+        "b_0005",
+        "b_0006",
+        "b_0007",
+        "b_0008",
+        "b_0009",
+        "b_0010",
+        "b_0011",
+        "b_0012",
+        "b_0013",
+        "b_0014"
+      ],
+      "created_at": "2026-07-21T19:36:31Z",
+      "kind": "root",
+      "lifecycle_status": "draft",
+      "link_ids": [],
+      "parent_id": null,
+      "refs": [],
+      "subtype": null,
+      "summary": "Root block for the source corpus.",
+      "title": "Source corpus",
+      "updated_at": "2026-07-21T19:38:00Z"
+    }
+  },
+  "committed_at": "2026-07-21T21:13:29Z",
+  "created_at": "2026-07-21T19:36:31Z",
+  "files": {
+    "README.md": {
+      "committed": true,
+      "indexing_status": "indexed",
+      "line_count": 41,
+      "path": "README.md",
+      "readable_text": true,
+      "source_sha256": "3eba4f01e8272b22d19472f10fb3171e183a106126632f8b5e84b85001ccb47d",
+      "summary": "Provenance, reading order, and extraction limits; identifies the article and Lean target as the mathematical core.",
+      "survey_status": "surveyed"
+    },
+    "article/main.tex": {
+      "committed": true,
+      "indexing_status": "indexed",
+      "line_count": 38,
+      "path": "article/main.tex",
+      "readable_text": true,
+      "source_sha256": "f9aa76c4214cd20f0f7de263031e7811d30d1e7150aebf77cd4299a27491b079",
+      "summary": "LaTeX entry point that assembles the abstract, introduction, proof, remarks, and bibliography.",
+      "survey_status": "surveyed"
+    },
+    "article/references.bib": {
+      "committed": true,
+      "indexing_status": "indexed",
+      "line_count": 192,
+      "path": "article/references.bib",
+      "readable_text": true,
+      "source_sha256": "b3f4c2885408bf4e660fbd698eb05e238ecfadbffc91245714e910a38874be86",
+      "summary": "Bibliographic data for historical and contextual extremal-set-theory and VC-dimension citations.",
+      "survey_status": "surveyed"
+    },
+    "article/sections/00_abstract.tex": {
+      "committed": true,
+      "indexing_status": "indexed",
+      "line_count": 9,
+      "path": "article/sections/00_abstract.tex",
+      "readable_text": true,
+      "source_sha256": "1490bbcb5e4fa5977ce5bd66c76a9cc72a440b92c5805f6ada3bb2cd66153e0b",
+      "summary": "Abstract states the counterexample range and exact cardinality.",
+      "survey_status": "surveyed"
+    },
+    "article/sections/01_introduction.tex": {
+      "committed": true,
+      "indexing_status": "indexed",
+      "line_count": 32,
+      "path": "article/sections/01_introduction.tex",
+      "readable_text": true,
+      "source_sha256": "0221ccbfe18d594105f6be76d0b60fe8bc978da77c9ef620c98270cf00145c55",
+      "summary": "Defines fixed-size missing-trace witnesses, states the conjecture, and gives the main theorem.",
+      "survey_status": "surveyed"
+    },
+    "article/sections/02_proof.tex": {
+      "committed": true,
+      "indexing_status": "indexed",
+      "line_count": 79,
+      "path": "article/sections/02_proof.tex",
+      "readable_text": true,
+      "source_sha256": "058c7553aa4c20a00e2d343b96e47403bf10747602f10a9fcc17d36f673f997b",
+      "summary": "Provides the template-family criterion, explicit construction, cardinality proof, and all certificate cases.",
+      "survey_status": "surveyed"
+    },
+    "article/sections/03_remarks_and_acknowledgement.tex": {
+      "committed": true,
+      "indexing_status": "indexed",
+      "line_count": 21,
+      "path": "article/sections/03_remarks_and_acknowledgement.tex",
+      "readable_text": true,
+      "source_sha256": "40672f1d484b5aebc95a55ec48836d7c0dde483a68f1dd5506235bfefe41d9ef",
+      "summary": "Records remaining boundary questions and asymptotic size of the construction's excess.",
+      "survey_status": "surveyed"
+    },
+    "formal_target.lean": {
+      "committed": true,
+      "indexing_status": "indexed",
+      "line_count": 26,
+      "path": "formal_target.lean",
+      "readable_text": true,
+      "source_sha256": "2dd1ab62a792c751013303ecf0e7cc3b97f373bd64616bc6acb14e5c640600aa",
+      "summary": "Formal public target defining uniform missing-trace families and the existential strict-star theorem.",
+      "survey_status": "surveyed"
+    }
+  },
+  "links": {
+    "link_0001": {
+      "created_at": "2026-07-21T19:38:58Z",
+      "evidence_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": 30,
+            "path": "README.md",
+            "start_line": 16
+          }
+        }
+      ],
+      "link_id": "link_0001",
+      "link_kind": "refers_to",
+      "source_block_id": "b_0001",
+      "target_block_id": "b_0014",
+      "target_hint": null
+    },
+    "link_0002": {
+      "created_at": "2026-07-21T19:38:58Z",
+      "evidence_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": 36,
+            "path": "article/main.tex",
+            "start_line": 23
+          }
+        }
+      ],
+      "link_id": "link_0002",
+      "link_kind": "refers_to",
+      "source_block_id": "b_0002",
+      "target_block_id": "b_0005",
+      "target_hint": null
+    },
+    "link_0003": {
+      "created_at": "2026-07-21T19:38:58Z",
+      "evidence_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": 8,
+            "path": "article/sections/00_abstract.tex",
+            "start_line": 2
+          }
+        }
+      ],
+      "link_id": "link_0003",
+      "link_kind": "same_as",
+      "source_block_id": "b_0005",
+      "target_block_id": "b_0007",
+      "target_hint": null
+    },
+    "link_0004": {
+      "created_at": "2026-07-21T19:38:58Z",
+      "evidence_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": 13,
+            "path": "article/sections/01_introduction.tex",
+            "start_line": 13
+          }
+        }
+      ],
+      "link_id": "link_0004",
+      "link_kind": "supports",
+      "source_block_id": "b_0004",
+      "target_block_id": "b_0006",
+      "target_hint": null
+    },
+    "link_0005": {
+      "created_at": "2026-07-21T19:38:58Z",
+      "evidence_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": 19,
+            "path": "article/sections/01_introduction.tex",
+            "start_line": 17
+          }
+        }
+      ],
+      "link_id": "link_0005",
+      "link_kind": "uses",
+      "source_block_id": "b_0006",
+      "target_block_id": "b_0004",
+      "target_hint": null
+    },
+    "link_0006": {
+      "created_at": "2026-07-21T19:38:58Z",
+      "evidence_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": 30,
+            "path": "article/sections/01_introduction.tex",
+            "start_line": 23
+          }
+        }
+      ],
+      "link_id": "link_0006",
+      "link_kind": "refers_to",
+      "source_block_id": "b_0007",
+      "target_block_id": "b_0006",
+      "target_hint": null
+    },
+    "link_0007": {
+      "created_at": "2026-07-21T19:38:58Z",
+      "evidence_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": 28,
+            "path": "article/sections/02_proof.tex",
+            "start_line": 3
+          }
+        }
+      ],
+      "link_id": "link_0007",
+      "link_kind": "supports",
+      "source_block_id": "b_0010",
+      "target_block_id": "b_0004",
+      "target_hint": null
+    },
+    "link_0008": {
+      "created_at": "2026-07-21T19:38:58Z",
+      "evidence_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": 39,
+            "path": "article/sections/02_proof.tex",
+            "start_line": 30
+          }
+        }
+      ],
+      "link_id": "link_0008",
+      "link_kind": "uses",
+      "source_block_id": "b_0008",
+      "target_block_id": "b_0010",
+      "target_hint": null
+    },
+    "link_0009": {
+      "created_at": "2026-07-21T19:38:58Z",
+      "evidence_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": 51,
+            "path": "article/sections/02_proof.tex",
+            "start_line": 41
+          }
+        }
+      ],
+      "link_id": "link_0009",
+      "link_kind": "uses",
+      "source_block_id": "b_0009",
+      "target_block_id": "b_0008",
+      "target_hint": null
+    },
+    "link_0010": {
+      "created_at": "2026-07-21T19:38:58Z",
+      "evidence_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": 73,
+            "path": "article/sections/02_proof.tex",
+            "start_line": 53
+          }
+        }
+      ],
+      "link_id": "link_0010",
+      "link_kind": "supports",
+      "source_block_id": "b_0012",
+      "target_block_id": "b_0008",
+      "target_hint": null
+    },
+    "link_0011": {
+      "created_at": "2026-07-21T19:38:58Z",
+      "evidence_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": 79,
+            "path": "article/sections/02_proof.tex",
+            "start_line": 75
+          }
+        }
+      ],
+      "link_id": "link_0011",
+      "link_kind": "uses",
+      "source_block_id": "b_0011",
+      "target_block_id": "b_0010",
+      "target_hint": null
+    },
+    "link_0012": {
+      "created_at": "2026-07-21T19:38:58Z",
+      "evidence_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": 79,
+            "path": "article/sections/02_proof.tex",
+            "start_line": 75
+          }
+        }
+      ],
+      "link_id": "link_0012",
+      "link_kind": "uses",
+      "source_block_id": "b_0011",
+      "target_block_id": "b_0009",
+      "target_hint": null
+    },
+    "link_0013": {
+      "created_at": "2026-07-21T19:38:58Z",
+      "evidence_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": 79,
+            "path": "article/sections/02_proof.tex",
+            "start_line": 75
+          }
+        }
+      ],
+      "link_id": "link_0013",
+      "link_kind": "uses",
+      "source_block_id": "b_0011",
+      "target_block_id": "b_0012",
+      "target_hint": null
+    },
+    "link_0014": {
+      "created_at": "2026-07-21T19:38:58Z",
+      "evidence_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": 79,
+            "path": "article/sections/02_proof.tex",
+            "start_line": 75
+          }
+        }
+      ],
+      "link_id": "link_0014",
+      "link_kind": "proves",
+      "source_block_id": "b_0011",
+      "target_block_id": "b_0007",
+      "target_hint": null
+    },
+    "link_0015": {
+      "created_at": "2026-07-21T19:38:59Z",
+      "evidence_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": 18,
+            "path": "article/sections/03_remarks_and_acknowledgement.tex",
+            "start_line": 1
+          }
+        }
+      ],
+      "link_id": "link_0015",
+      "link_kind": "refers_to",
+      "source_block_id": "b_0013",
+      "target_block_id": "b_0007",
+      "target_hint": null
+    },
+    "link_0016": {
+      "created_at": "2026-07-21T19:38:59Z",
+      "evidence_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": 26,
+            "path": "formal_target.lean",
+            "start_line": 3
+          }
+        }
+      ],
+      "link_id": "link_0016",
+      "link_kind": "same_as",
+      "source_block_id": "b_0014",
+      "target_block_id": "b_0004",
+      "target_hint": null
+    },
+    "link_0017": {
+      "created_at": "2026-07-21T19:38:59Z",
+      "evidence_refs": [
+        {
+          "kind": "source",
+          "ref": {
+            "end_line": 26,
+            "path": "formal_target.lean",
+            "start_line": 3
+          }
+        }
+      ],
+      "link_id": "link_0017",
+      "link_kind": "refers_to",
+      "source_block_id": "b_0014",
+      "target_block_id": "b_0011",
+      "target_hint": null
+    }
+  },
+  "overview": "Source corpus for a constructive counterexample to the uniform witness conjecture in the middle parameter range. The article defines s-witness families, states the exact lower-bound construction, proves it through a pattern-family missing-trace criterion, a count, and certificate cases; formal_target.lean fixes the corresponding Fin n existential theorem and its exact cardinality and strict-star conclusion.",
+  "root_block_id": "root",
+  "schema_version": 3,
+  "status": "committed",
+  "summary": "Committed scoped SourceIndex update.",
+  "updated_at": "2026-07-21T21:13:29Z"
+}

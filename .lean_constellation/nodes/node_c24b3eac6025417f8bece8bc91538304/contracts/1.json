@@ -1,0 +1,188 @@
+{
+  "boundary": "Owns generic [DecidableEq α] lemmas for the erase/insert bijection between subsets containing a fixed anchor and subsets of C.erase a, cardinality-fiber decomposition by powersetCard, constant-weight evaluation of each fiber, and the final anchored weighted-sum convolution. It excludes PerturbedStarBlocks, construction-specific pattern maps, source-level star cardinality normalization to Nat.choose (n-1) d, and the final family theorem. Context is SourceIndex b_0009/article line 49. Expected scale: about 4–8 important declarations, with theorem-like helpers proved under graph_proved mode.",
+  "committed_at": "2026-07-26T15:19:09Z",
+  "constraints": "Do not add disjointness, cardinality, or ambient-size hypotheses beyond ha : a ∈ C. Preserve Nat subtraction indices exactly. Do not prove or restate perturbedStarBase_chooseSum or any source-level final counting theorem.",
+  "context_refs": [
+    {
+      "added_by": "coordinator",
+      "reason": "Source counting context identifies the anchored 1-star contribution; this node owns only the generic Lean reindexing machinery, not the source-level count.",
+      "ref": {
+        "kind": "source",
+        "ref": {
+          "end_line": 51,
+          "path": "article/sections/02_proof.tex",
+          "start_line": 41
+        }
+      },
+      "ref_id": "mat_e0b5e99a08f17766"
+    }
+  ],
+  "contract_kind": "content",
+  "created_at": "2026-07-26T13:40:33Z",
+  "decl_graph_head": {
+    "anchoredPowerset_sum_erase": 1,
+    "anchoredPowerset_weightedSum_eq_chooseSum": 1,
+    "powersetCard_weightedSum_eq_choose": 1,
+    "powerset_weightedSum_eq_chooseSum": 1
+  },
+  "deps": [],
+  "exports": [],
+  "goal": "Develop proved finite-set reindexing and fiber-sum results for weighted anchored powersets, culminating in the exact binomial convolution needed for star enumeration.",
+  "interfaces": [
+    {
+      "bound_decl": {
+        "name": "anchoredPowerset_weightedSum_eq_chooseSum",
+        "node": "Main.AnchoredPowersetEnumeration",
+        "repo": null,
+        "revision": 1
+      },
+      "expected_statement_lean_code": null,
+      "kind": "theorem",
+      "name": "anchoredPowerset_weightedSum_eq_chooseSum",
+      "note": "Consumer anchor: private Main.CountingAndMain::anchoredPowerset_chooseSum_reindex@1. Required shape: theorem for {α : Type*} [DecidableEq α] (C U : Finset α) (a : α) (ha : a ∈ C) (d : ℕ), equating ∑ P ∈ C.powerset.filter (fun P => a ∈ P ∧ P.card ≤ d + 1), Nat.choose U.card (d + 1 - P.card) with ∑ j ∈ Finset.range (d + 1), Nat.choose (C.erase a).card j * Nat.choose U.card (d - j). No additional hypotheses, no changed indices, and equality direction must be directly reusable by the consumer. The proof closure should expose erase/insert reindexing and constant powersetCard fiber-sum evaluation.",
+      "source_refs": [],
+      "summary": "A filtered anchored-powerset sum weighted by filler choices equals its cardinality-fiber binomial convolution."
+    }
+  ],
+  "mathlib_decls": [
+    {
+      "added_by": "coordinator",
+      "kind": "theorem",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Defs",
+      "name": "Finset.sum_bij",
+      "reason": "Reindex anchored subsets through erase/insert and cardinality fibers."
+    },
+    {
+      "added_by": "coordinator",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Powerset",
+      "name": "Finset.card_powersetCard",
+      "reason": "Evaluate the cardinality of each fixed-cardinality subset fiber."
+    },
+    {
+      "added_by": "coordinator",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Card",
+      "name": "Finset.card_erase_of_mem",
+      "reason": "Relate anchored subset cardinality to its erased subset."
+    },
+    {
+      "added_by": "coordinator",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Powerset",
+      "name": "Finset.mem_powerset",
+      "reason": "Normalize subset-domain membership."
+    },
+    {
+      "added_by": "coordinator",
+      "kind": "def",
+      "module": "Mathlib.Data.Nat.Choose.Basic",
+      "name": "Nat.choose",
+      "reason": "Express fiber cardinalities and filler weights."
+    },
+    {
+      "added_by": "worker",
+      "kind": "lemma",
+      "module": "Mathlib.Data.Finset.Basic",
+      "name": "Finset.insert_erase_invOn",
+      "reason": "Use as the inverse-law core for the generic anchored erase/insert bijection."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Insert",
+      "name": "Finset.insert_subset",
+      "reason": "Shows insertion of the anchor sends a subset of C.erase a back into C using ha."
+    },
+    {
+      "added_by": "worker",
+      "kind": "lemma",
+      "module": "Mathlib.Data.Finset.Powerset",
+      "name": "Finset.mem_powersetCard",
+      "reason": "Identifies exact fixed-cardinality fibers after reindexing."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Card",
+      "name": "Finset.card_erase_add_one",
+      "reason": "Rewrites anchored subset cardinality as erased cardinality plus one."
+    },
+    {
+      "added_by": "worker",
+      "kind": "lemma",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Powerset",
+      "name": "Finset.sum_powerset",
+      "reason": "Decomposes the erased powerset sum into powersetCard fibers."
+    },
+    {
+      "added_by": "worker",
+      "kind": "lemma",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Powerset",
+      "name": "Finset.sum_powersetCard",
+      "reason": "Evaluates the cardinal-only weight on each fiber."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Nat.Choose.Basic",
+      "name": "Nat.choose_eq_zero_of_lt",
+      "reason": "Makes oversized powersetCard fibers vanish when preserving `range (d + 1)`."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "name": "Finset.sum_subset_zero_on_sdiff",
+      "reason": "Handles range extension/restriction after the out-of-range terms are proved zero."
+    }
+  ],
+  "mathlib_modules": [
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Defs",
+      "reason": "Direct import for the coordinator-required `Finset.sum_bij` reindexing theorem."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Powerset",
+      "reason": "Direct import for coordinator-required powerset and powersetCard facts."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Card",
+      "reason": "Direct import for the anchor-cardinality subtraction identities."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Nat.Choose.Basic",
+      "reason": "Direct import for the exact `Nat.choose` factors and zero-above-cardinality rule."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Basic",
+      "reason": "Provides the verified erase/insert inverse and accessible subset-insertion fact."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Powerset",
+      "reason": "Provides powerset fiber decomposition and constant powersetCard-sum evaluation."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Insert",
+      "reason": "Defining import for the recorded `Finset.insert_subset` reverse-map closure."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "reason": "Defining import for the recorded zero-on-set-difference range comparison."
+    }
+  ],
+  "objective": "Prove a public anchored-powerset weighted reindexing theorem with exactly the objects, indices, and no-extra-hypothesis shape consumed by Main.CountingAndMain::anchoredPowerset_chooseSum_reindex@1.",
+  "owned_refs": [],
+  "status": "committed",
+  "success_criteria": "A proved public theorem rewrites the filtered anchored-powerset weighted sum to ∑ j∈range(d+1), choose (C.erase a).card j * choose U.card (d-j); its proof closure contains the reusable anchor erase/insert and powersetCard fiber evaluation roles; all theorem-like outputs are proof-policy satisfied.",
+  "summary": "Accepted ready outcome in graph_proved mode. Four intentional theorem declarations are proved and proof-policy satisfied. The public anchoredPowerset_weightedSum_eq_chooseSum has exactly the [DecidableEq α], C/U/a/ha/d signature, filtered anchored domain, Nat subtraction indices, and equality direction of private consumer Main.CountingAndMain::anchoredPowerset_chooseSum_reindex@1, with no extra hypotheses. This discharges the generic enumeration prerequisite; the separate perturbed-pattern cancellation prerequisite remains.",
+  "version": 1
+}

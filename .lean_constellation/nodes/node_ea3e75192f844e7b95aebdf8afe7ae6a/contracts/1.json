@@ -1,0 +1,377 @@
+{
+  "boundary": "Owns cancellation/counting of removed and added pattern completions, the unpaired final-pattern binomial term, the arithmetic rewrite d-2r=2s-d-2, positivity/strict star comparison, and final assembly of exists_uniformMissingTraceFamily_strictlyLargerThanStar from SourceIndex blocks b_0009, b_0011, and b_0014. Excludes re-proving the generic criterion or redesigning the five certificate cases. Expected scale: about 6–12 important declarations including injectivity/disjointness/cardinality helpers and the final theorem.",
+  "committed_at": "2026-07-27T15:37:19Z",
+  "constraints": "The theorem name, all hypotheses, IsUniformMissingTraceFamily conclusion, exact Nat.choose expression, and strict inequality are immutable. Reuse lower-node public interfaces rather than duplicating their proofs.",
+  "context_refs": [],
+  "contract_kind": "content",
+  "created_at": "2026-07-22T08:53:20Z",
+  "decl_graph_head": {
+    "completionFiber_card": 2,
+    "completionFibers_pairwiseDisjoint": 2,
+    "exists_uniformMissingTraceFamily_strictlyLargerThanStar": 1,
+    "patternFamily_card_sum": 3,
+    "perturbedStarBase_chooseSum": 3,
+    "perturbedStarCore_card": 2,
+    "perturbedStarExtra_choose_pos": 1,
+    "perturbedStarFamily_card": 1,
+    "perturbedStarFiller_card": 3,
+    "perturbedStarPatterns_chooseSum": 2,
+    "perturbedStarPatterns_disjoint_filler": 2,
+    "perturbedStarPerturbation_chooseSum": 3
+  },
+  "deps": [
+    {
+      "added_by": "coordinator",
+      "dep_id": "dep_d12ccae110a813a8",
+      "expected_decl_refs": [
+        {
+          "name": "IsUniformMissingTraceFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 1
+        }
+      ],
+      "reason": "Use the exact committed IsUniformMissingTraceFamily predicate in the immutable protected theorem statement and final assembly.",
+      "target": {
+        "node": "Main.PatternCriterion",
+        "repo": null
+      }
+    },
+    {
+      "added_by": "coordinator",
+      "dep_id": "dep_21e64735cdad69f6",
+      "expected_decl_refs": [
+        {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        },
+        {
+          "name": "exists_perturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 3
+        },
+        {
+          "name": "perturbedStarParameterBounds",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 3
+        },
+        {
+          "name": "perturbedStarCore",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        },
+        {
+          "name": "perturbedStarFiller",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        },
+        {
+          "name": "perturbedStarPatterns",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        },
+        {
+          "name": "perturbedStarFamily",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        },
+        {
+          "name": "perturbedStar_isUniformMissingTraceFamily",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 4
+        }
+      ],
+      "reason": "Count the exact committed perturbedStarFamily d B returned by the proved missing-trace theorem, using its explicit blocks, core, filler, and pattern definitions; actual provider signatures were checked against the final existential consumer.",
+      "target": {
+        "node": "Main.PerturbedStarCertificates",
+        "repo": null
+      }
+    },
+    {
+      "added_by": "coordinator",
+      "dep_id": "dep_f26ef2db3db98cab",
+      "expected_decl_refs": [
+        {
+          "name": "anchoredPowerset_weightedSum_eq_chooseSum",
+          "node": "Main.AnchoredPowersetEnumeration",
+          "repo": null,
+          "revision": 1
+        }
+      ],
+      "reason": "Discharge the exact private anchoredPowerset_chooseSum_reindex@1 statement using the proved public theorem with matching objects, hypotheses, indices, and equality direction.",
+      "target": {
+        "node": "Main.AnchoredPowersetEnumeration",
+        "repo": null
+      }
+    },
+    {
+      "added_by": "coordinator",
+      "dep_id": "dep_1aa26bb1f7817bc0",
+      "expected_decl_refs": [
+        {
+          "name": "perturbedPattern_properWeights_add_full_eq_fullWeights",
+          "node": "Main.PerturbedPatternCancellation",
+          "repo": null,
+          "revision": 2
+        }
+      ],
+      "reason": "Discharges the preserved private consumer Main.CountingAndMain::perturbedStarProperPatterns_chooseSum@1 with the exact proved proper-a-image plus full-L b-pattern equals full-b-image weighted-sum interface, using the same B, d, constructors, indices, no hrd/hrn assumptions, and conclusion direction.",
+      "target": {
+        "node": "Main.PerturbedPatternCancellation",
+        "repo": null
+      }
+    }
+  ],
+  "exports": [],
+  "goal": "Prove the exact cardinality and positive excess of the explicit perturbed-star family and assemble the immutable exported existential theorem.",
+  "interfaces": [
+    {
+      "bound_decl": {
+        "name": "perturbedStarFamily_card",
+        "node": "Main.CountingAndMain",
+        "repo": null,
+        "revision": 1
+      },
+      "expected_statement_lean_code": null,
+      "kind": "theorem",
+      "name": "perturbedStarFamily_card",
+      "note": "For the family/canonical construction supplied by Main.PerturbedStarCertificates, prove card = Nat.choose (n-1) d + Nat.choose (n-2*(d+1-s)-2) (2*s-d-2) under the protected parameter hypotheses. Preserve natural-number subtraction semantics. Source lines 41–51 and 75–78.",
+      "source_refs": [],
+      "summary": "The explicit perturbed-star family has star cardinality plus the unpaired final-pattern binomial contribution."
+    },
+    {
+      "bound_decl": {
+        "name": "exists_uniformMissingTraceFamily_strictlyLargerThanStar",
+        "node": "Main.CountingAndMain",
+        "repo": null,
+        "revision": 1
+      },
+      "expected_statement_lean_code": null,
+      "kind": "theorem",
+      "name": "exists_uniformMissingTraceFamily_strictlyLargerThanStar",
+      "note": "This declaration must satisfy the protected Main consumer exactly: theorem exists_uniformMissingTraceFamily_strictlyLargerThanStar (d s n : ℕ) (hd : 4 ≤ d) (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1) (hn : 2 * (d + 1) ≤ n) : ∃ family : Finset (Finset (Fin n)), IsUniformMissingTraceFamily d s family ∧ family.card = Nat.choose (n - 1) d + Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2) ∧ Nat.choose (n - 1) d < family.card. Reuse the lower public construction, missing-trace, and counting declarations; no hypothesis or conclusion drift.",
+      "source_refs": [],
+      "summary": "The explicit middle-range construction has the immutable exact cardinality and strictly exceeds the star bound."
+    }
+  ],
+  "mathlib_decls": [
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Powerset",
+      "name": "Finset.card_powersetCard",
+      "reason": null
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Card",
+      "name": "Finset.card_image_of_injective",
+      "reason": "Requires a global Injective constructor map."
+    },
+    {
+      "added_by": "worker",
+      "kind": "lemma",
+      "module": "Mathlib.Data.Finset.Card",
+      "name": "Finset.card_union_of_disjoint",
+      "reason": "Requires a Disjoint proof for the counted components."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Card",
+      "name": "Finset.card_sdiff",
+      "reason": "Expresses deletion cardinality via the intersection term."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "name": "Finset.card_biUnion",
+      "reason": "Requires Set.PairwiseDisjoint over the indexed completion fibers."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Nat.Choose.Basic",
+      "name": "Nat.choose_pos",
+      "reason": "Use only after establishing the lower choice index ≤ upper index."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Powerset",
+      "name": "Finset.card_powerset",
+      "reason": "Counts a full powerset when an uncancelled subset-family count is needed."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Card",
+      "name": "Finset.card_pair",
+      "reason": "Counts the two distinct anchors in perturbedStarCore_card."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Card",
+      "name": "Finset.card_image_of_injOn",
+      "reason": "Applies injectivity restricted to U.powersetCard in completionFiber_card."
+    },
+    {
+      "added_by": "worker",
+      "kind": "def",
+      "module": "Mathlib.Data.Nat.Choose.Basic",
+      "name": "Nat.choose",
+      "reason": "Direct statement dependency for exact binomial cardinality formulas, including patternFamily_card_sum and the required public interfaces."
+    },
+    {
+      "added_by": "worker",
+      "kind": "def",
+      "module": "Mathlib.Data.Finset.Powerset",
+      "name": "Finset.powerset",
+      "reason": "Direct typed statement dependency for explicit anchored-base and proper-subset collections."
+    },
+    {
+      "added_by": "worker",
+      "kind": "def",
+      "module": "Mathlib.Data.Finset.Filter",
+      "name": "Finset.filter",
+      "reason": "Direct typed statement dependency for anchored-base and proper-subset filtering."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Nat.Choose.Vandermonde",
+      "name": "Nat.add_choose_eq",
+      "reason": "Evaluates the anchored core/filler binomial convolution."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Defs",
+      "name": "Finset.sum_bij",
+      "reason": "Reindexes weighted Finset sums for the base enumeration and perturbation cancellation."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "name": "Finset.sum_sdiff",
+      "reason": "Splits the weighted base family after the deleted patterns are shown to lie in it."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "name": "Finset.sum_union",
+      "reason": "Splits the perturbed weighted sum across disjoint retained-base and inserted components."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "name": "Finset.sum_image",
+      "reason": "Reindexes the deletion and insertion weight sums along their injective subset maps."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "name": "Finset.sum_erase_add",
+      "reason": "Separates the exceptional full-L insertion from the proper-Y cancellation sum."
+    }
+  ],
+  "mathlib_modules": [
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Powerset",
+      "reason": null
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Card",
+      "reason": "Finset image, disjoint-union, and sdiff cardinality identities for perturbation cancellation."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "reason": "Provides card_biUnion for disjoint completion-fiber counts."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Nat.Choose.Basic",
+      "reason": "Provides Nat.choose_pos for the strict excess term."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Filter",
+      "reason": "Provides Finset.filter used directly in the typed anchored-base and perturbation helper statements."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Nat.Choose.Vandermonde",
+      "reason": "Provides Nat.add_choose_eq for the weighted anchored-base convolution."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Defs",
+      "reason": "Defining import for Finset.sum_bij used in the planned weighted-sum reindexings."
+    }
+  ],
+  "objective": "Once the criterion and certificate construction are public, prove the exact source formula and strict inequality and bind the protected Main interface without changing its statement.",
+  "owned_refs": [
+    {
+      "added_by": "coordinator",
+      "reason": "Owns cancellation of matched pattern completions and the exact unpaired binomial contribution.",
+      "ref": {
+        "kind": "source",
+        "ref": {
+          "end_line": 51,
+          "path": "article/sections/02_proof.tex",
+          "start_line": 41
+        }
+      },
+      "ref_id": "mat_e0b5e99a08f17766"
+    },
+    {
+      "added_by": "coordinator",
+      "reason": "Owns the immutable protected theorem statement and exact Nat.choose formula.",
+      "ref": {
+        "kind": "source",
+        "ref": {
+          "end_line": 26,
+          "path": "formal_target.lean",
+          "start_line": 11
+        }
+      },
+      "ref_id": "mat_b1280ab54dd14300"
+    },
+    {
+      "added_by": "coordinator",
+      "reason": "Owns final assembly and positivity of the excess term.",
+      "ref": {
+        "kind": "source",
+        "ref": {
+          "end_line": 79,
+          "path": "article/sections/02_proof.tex",
+          "start_line": 75
+        }
+      },
+      "ref_id": "mat_c97fcd55a989f583"
+    }
+  ],
+  "status": "committed",
+  "success_criteria": "The explicit family has the exact immutable cardinality; the second choose term is proved positive under the given hypotheses; the protected theorem exists_uniformMissingTraceFamily_strictlyLargerThanStar is compiler-confirmed and proved-level proof-policy satisfied.",
+  "summary": "Accepted ready under graph_proved. The public perturbedStarFamily_card revision 1 proves the exact r-form cardinality with unchanged hypotheses and equality direction. The public exists_uniformMissingTraceFamily_strictlyLargerThanStar revision 1 preserves the immutable root signature, exact Nat.choose indices, conjunction structure, and strict inequality and is proved-level satisfied. The full counting, cancellation, arithmetic, and positivity chain is proved using the committed lower providers; the two superseded private wrappers are intentionally obsolete. No node-local prerequisite remains.",
+  "version": 1
+}

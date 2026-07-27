@@ -1,0 +1,84 @@
+{
+  "change": {
+    "base_revision": null,
+    "kind": "create",
+    "objective": "From the contract hypotheses hd : 4 ≤ d, hslow : (d+2)/2 ≤ s, hshigh : s ≤ d-1, and hn : 2*(d+1) ≤ n, with r = d+1-s, prove the source b_0008 consequences from article/sections/02_proof.tex lines 30–32: 2 ≤ r, r+1 ≤ s, d-2*r = 2*s-d-2 (or an equivalent truncation-safe equality), 2*r ≤ d, and enough room 2+2*r ≤ n. Keep every Nat subtraction/truncation justification explicit. This consumes the verified Mathlib.Tactic/omega support and serves the block-existence theorem, later certificate size bounds, and the public perturbed-star theorem.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Created the source b_0008 arithmetic foundation and reached committed state specified. Statement NL was accepted, and a Lean statement candidate matching the consumer shape was checked: under hd, hslow, hshigh, hn with r=d+1-s it concludes 2≤r, r+1≤s, the truncation-safe equality d-2*r=2*s-d-2, 2*r≤d, and 2+2*r≤n. It did not reach declared/proved because the round terminated at Statement Formal on a sibling dependency; no declaration-specific source, interface, or Lean mismatch was reported. Retry by advancing this unchanged accepted statement through declared and proved with Mathlib.Tactic/omega.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": "perturbedStarParameterBounds",
+  "proof": null,
+  "revision": 1,
+  "state": "specified",
+  "statement": {
+    "deps": [],
+    "formal": {
+      "check": {
+        "allow_sorry": true,
+        "contains_axiom": false,
+        "contains_sorry": true,
+        "diagnostics": {
+          "diagnostics": [
+            {
+              "column": 9,
+              "line": 19,
+              "message": "declaration uses `sorry`",
+              "severity": "warning"
+            }
+          ],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarParameterBounds', 'items': [{'severity': 'warning', 'pos': {'line': 19, 'column': 9}, 'endPos': {'line': 19, 'column': 37}, 'kind': None, 'data': 'declaration uses `sorry`', 'fileName': 'UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarParameterBounds', 'content': '- Source `article/sections/02_proof.tex`, lines 30–32\\n-/\\ntheorem perturbedStarParameterBounds (d s n : ℕ) (hd : 4 ≤ d)\\n    (hslow : (d + 2) / 2 ≤ s) (hshigh : s ≤ d - 1)\\n    (hn : 2 * (d + 1) ≤ n) :'}], 'total_items': 1, 'error_count': 0, 'warning_count': 1, 'info_count': 0, 'sorry_count': 1}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Theorems/perturbedStarParameterBounds.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 1 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": true,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [
+            {
+              "column": 3,
+              "excerpt": "sorry",
+              "kind": "sorry",
+              "line": 25
+            }
+          ],
+          "opaque_count": 0,
+          "sorry_count": 1,
+          "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarParameterBounds`\n\nFor natural numbers d, s, and n, assume `4 ≤ d`, `(d + 2) / 2 ≤ s`, `s ≤ d - 1`, and `2 * (d + 1) ≤\nn`.  Put `r = d + 1 - s`.  Then `2 ≤ r`, `r + 1 ≤ s`, `d - 2*r = 2*s - d - 2`, `2*r ≤ d`, and `2 +\n2*r ≤ n`.  All subtractions are natural-number subtraction, so the theorem supplies the accompanying\ntruncation-safe arithmetic consequences under the displayed hypotheses.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 30–32\n-/\ntheorem perturbedStarParameterBounds (d s n : ℕ) (hd : 4 ≤ d)\n    (hslow : (d + 2) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    let r := d + 1 - s\n    2 ≤ r ∧ r + 1 ≤ s ∧ d - 2 * r = 2 * s - d - 2 ∧\n      2 * r ≤ d ∧ 2 + 2 * r ≤ n := by\n  sorry\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 32,
+          "end_locator": null,
+          "kind": "source",
+          "note": "This passage gives r = d + 1 - s and the arithmetic/ambient-size setup required before choosing the blocks.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 30,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers d, s, and n, assume `4 ≤ d`, `(d + 2) / 2 ≤ s`, `s ≤ d - 1`, and `2 * (d + 1) ≤ n`.  Put `r = d + 1 - s`.  Then `2 ≤ r`, `r + 1 ≤ s`, `d - 2*r = 2*s - d - 2`, `2*r ≤ d`, and `2 + 2*r ≤ n`.  All subtractions are natural-number subtraction, so the theorem supplies the accompanying truncation-safe arithmetic consequences under the displayed hypotheses."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-22T12:09:45Z"
+}

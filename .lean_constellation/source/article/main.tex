@@ -1,0 +1,38 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{verbose,tmargin=2.1cm,bmargin=2.1cm,lmargin=2.4cm,rmargin=2.4cm}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conj}[theorem]{Conjecture}
+\newtheorem{claim}[theorem]{Claim}
+\newenvironment{poc}{\begin{proof}[Proof of the claim]\renewcommand*{\qedsymbol}{$\blacksquare$}}{\end{proof}}
+
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\VC}{\operatorname{VC}}
+\newcommand{\W}{\operatorname{W}}
+
+\title{A disproof of the uniform witness conjecture}
+\author{Zixiang Xu\thanks{School of Mathematical Sciences, Zhejiang University, Hangzhou, China. Email: zixiangxu@zju.edu.cn.}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\input{sections/00_abstract}
+\input{sections/01_introduction}
+\input{sections/02_proof}
+\input{sections/03_remarks_and_acknowledgement}
+
+\bibliographystyle{abbrv}
+\bibliography{references}
+
+\end{document}

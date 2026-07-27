@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-22T11:20:29Z",
+  "created_at": "2026-07-22T11:08:30Z",
+  "execution_completed_at": "2026-07-22T11:20:29Z",
+  "execution_reason": "DeclGraphRoundFlow finished with completed.",
+  "execution_result_kind": "success",
+  "node_path": "Main.PatternCriterion",
+  "objective": "Repair reviewer visibility for the generic criterion by compacting its formally equivalent tau hypotheses into one per-pattern certificate bundle, then rerun the theorem through proved state without changing its mathematics.",
+  "plan_closeout_acknowledged_at": "2026-07-22T11:20:29Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "success",
+  "result_reason": "DeclGraphRoundFlow finished with completed.",
+  "revision_refs": [
+    {
+      "change_id": "patternFamily_isUniformMissingTraceFamily@rev:2",
+      "decl_name": "patternFamily_isUniformMissingTraceFamily",
+      "revision": 2
+    }
+  ],
+  "round_id": "round_4877ce132fae47908f6a6f142b659176",
+  "round_index": 5,
+  "started_at": "2026-07-22T11:11:27Z",
+  "status": "committed",
+  "strategy_id": "strategy_d509811e109f4266a85f656d30c12936",
+  "summary": "Round 5 completed the bottom-up strategy's final theorem. patternFamily_isUniformMissingTraceFamily revision 2 reached proved state and is proof-policy satisfied; the prior reviewer-visibility blocker is resolved without mathematical strengthening or weakening. All five active declarations are purposeful: two required public definitions, two reusable proved helpers, and the required proved criterion. No state-only work, blocker, retry condition, superseded active branch, or cleanup round remains. The next step is interface binding and the content-node completion gate."
+}

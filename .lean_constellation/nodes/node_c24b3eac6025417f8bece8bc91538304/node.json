@@ -1,0 +1,9 @@
+{
+  "active_contract_version": 1,
+  "current_contract_version": 1,
+  "kind": "content",
+  "lifecycle": "active",
+  "node_id": "node_c24b3eac6025417f8bece8bc91538304",
+  "open_contract_version": null,
+  "path": "Main.AnchoredPowersetEnumeration"
+}

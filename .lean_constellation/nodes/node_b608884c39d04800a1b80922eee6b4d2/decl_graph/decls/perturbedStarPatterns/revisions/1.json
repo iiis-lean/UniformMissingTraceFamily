@@ -1,0 +1,91 @@
+{
+  "change": {
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Formalize exactly SourceIndex b_0008 / article/sections/02_proof.tex lines 35–39 as a finite family of finite subsets of Fin n. For d,n,r and accepted B : PerturbedStarBlocks n r, start with every P ⊆ perturbedStarCore B such that B.a ∈ P and P.card ≤ d+1; delete exactly the patterns `{B.a} ∪ B.T ∪ Y` indexed by proper subsets Y ⊂ B.L; then insert exactly the patterns `{B.b} ∪ B.T ∪ Y` indexed by all subsets Y ⊆ B.L, including Y=B.L as the final added pattern. Preserve these three source components explicitly enough that later proofs can distinguish deleted-proper-L/added-proper-L, final-added, small-star, large-star-avoiding-T, and large-star-meeting-T cases. Consume `PerturbedStarBlocks` revision 2 and `perturbedStarCore` revision 1. Produce a public Finset (Finset (Fin n)) usable unchanged as the `patterns` argument of Main.PatternCriterion.patternFamily, by the required `perturbedStarFamily`, by downstream exact-cardinality work, and by all five certificate lemmas. Do not introduce filler elements or additional hypotheses.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Completed successfully. `perturbedStarPatterns` revision 1 reached declared state with the exact source-b_0008 three-part construction: the bounded a-anchored base on the core, deletion of precisely the proper-L a/T patterns, and insertion of every b/T/L-subset pattern including the final Y=L case. Lean statement checking passed; dependencies are the accepted `PerturbedStarBlocks` revision 2 and `perturbedStarCore` revision 1, and declared/proof-policy satisfaction holds. No blocker or retry condition remains.",
+    "target_state": "declared"
+  },
+  "lean_decl_name": "perturbedStarPatterns",
+  "proof": null,
+  "revision": 1,
+  "state": "declared",
+  "statement": {
+    "deps": [
+      {
+        "kind": "repo_decl",
+        "reason": "The pattern construction uses B's anchors and its T and L block fields.",
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The base anchored-star component is bounded by this accepted fixed-core definition.",
+        "ref": {
+          "name": "perturbedStarCore",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": false,
+        "contains_axiom": false,
+        "contains_sorry": false,
+        "diagnostics": {
+          "diagnostics": [],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns', 'items': [], 'total_items': 0, 'error_count': 0, 'warning_count': 0, 'info_count': 0, 'sorry_count': 0}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Defs/perturbedStarPatterns.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 0 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": false,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [],
+          "opaque_count": 0,
+          "sorry_count": 0,
+          "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarPatterns`\n\nFor natural numbers d, n, and r and construction data `B : PerturbedStarBlocks n r`,\n`perturbedStarPatterns d B` is a finite family of finite subsets of `Fin n`, defined from the\nfollowing three components.\n\n1. Its base anchored-star component consists of every finite set `P` with `P ⊆ perturbedStarCore B`,\n`B.a ∈ P`, and `P.card ≤ d + 1`.\n2. From that base component, delete exactly the sets `{B.a} ∪ B.T ∪ Y` for which `Y` is a proper\nsubset of `B.L`.\n3. Insert exactly the sets `{B.b} ∪ B.T ∪ Y` for every subset `Y ⊆ B.L`.\n\nThe result is the base component after the stated deletions, union the stated inserted component. In\nparticular, the insertion includes `Y = B.L` as the final added pattern, while the deletion excludes\nthat non-proper choice. No filler elements or further hypotheses occur in this definition.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 35–39\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarCore` → `perturbedStarCore` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore`\n-/\ndef perturbedStarPatterns (d : ℕ) {n r : ℕ}\n    (B : PerturbedStarBlocks n r) : Finset (Finset (Fin n)) :=\n  let base := (perturbedStarCore B).powerset.filter fun P =>\n    B.a ∈ P ∧ P.card ≤ d + 1\n  let deleted :=\n    (B.L.powerset.filter fun Y => Y ⊆ B.L ∧ Y ≠ B.L).image fun Y =>\n      {B.a} ∪ B.T ∪ Y\n  let inserted := B.L.powerset.image fun Y =>\n    {B.b} ∪ B.T ∪ Y\n  (base \\ deleted) ∪ inserted\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 39,
+          "end_locator": null,
+          "kind": "source",
+          "note": "These lines define the anchored star, its proper-L deletions, and the complete b/T insertion family including the final added pattern.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 35,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers d, n, and r and construction data `B : PerturbedStarBlocks n r`, `perturbedStarPatterns d B` is a finite family of finite subsets of `Fin n`, defined from the following three components.\n\n1. Its base anchored-star component consists of every finite set `P` with `P ⊆ perturbedStarCore B`, `B.a ∈ P`, and `P.card ≤ d + 1`.\n2. From that base component, delete exactly the sets `{B.a} ∪ B.T ∪ Y` for which `Y` is a proper subset of `B.L`.\n3. Insert exactly the sets `{B.b} ∪ B.T ∪ Y` for every subset `Y ⊆ B.L`.\n\nThe result is the base component after the stated deletions, union the stated inserted component. In particular, the insertion includes `Y = B.L` as the final added pattern, while the deletion excludes that non-proper choice. No filler elements or further hypotheses occur in this definition."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-22T13:09:46Z"
+}

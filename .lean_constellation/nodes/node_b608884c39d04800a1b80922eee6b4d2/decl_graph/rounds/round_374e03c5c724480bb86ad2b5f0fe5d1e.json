@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-22T13:27:20Z",
+  "created_at": "2026-07-22T13:16:26Z",
+  "execution_completed_at": "2026-07-22T13:27:20Z",
+  "execution_reason": "DeclGraphRoundFlow finished with completed.",
+  "execution_result_kind": "success",
+  "node_path": "Main.PerturbedStarCertificates",
+  "objective": "Declare the source b_0012 case-defined perturbed-star certificate selector tau as the common provider for five distinct proved certificate branches and the final generic-criterion instantiation.",
+  "plan_closeout_acknowledged_at": "2026-07-22T13:27:20Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "success",
+  "result_reason": "DeclGraphRoundFlow finished with completed.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedStarTau@rev:1",
+      "decl_name": "perturbedStarTau",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_374e03c5c724480bb86ad2b5f0fe5d1e",
+  "round_index": 10,
+  "started_at": "2026-07-22T13:20:21Z",
+  "status": "committed",
+  "strategy_id": "strategy_140c2962785943968f6203e9ab1972fc",
+  "summary": "Round 10 completed the certificate foundation: the public five-branch `perturbedStarTau` selector is declared and proof-policy satisfied, preserving each b_0012 semantic case separately. There is no intentional state-only work, dependency gap, superseded candidate, retry-name artifact, graph-hygiene issue, or scope overflow. The active strategy remains viable. The next bottom-up proved step is the added proper-L certificate lemma from source lines 60–61, whose branch guard is directly available and whose proof must establish all four bundled criterion clauses."
+}

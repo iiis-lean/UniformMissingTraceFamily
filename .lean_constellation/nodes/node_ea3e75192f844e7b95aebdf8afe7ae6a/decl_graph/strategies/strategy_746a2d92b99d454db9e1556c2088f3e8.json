@@ -1,0 +1,23 @@
+{
+  "closed_at": "2026-07-26T13:33:00Z",
+  "closed_reason": "Content task requires Coordinator scope/split review before further declaration expansion.",
+  "created_at": "2026-07-26T10:48:19Z",
+  "created_round_ids": [
+    "round_06d7e661838840adb853200fab812a02",
+    "round_c602c2afc8684314adc0efbcab015603",
+    "round_2cc09a7ca04c473dbd6f63caf5aa0786",
+    "round_bcb7e4adfbbd4ffe85a710c857c8a6c2",
+    "round_3dbd9d0587e943deb1546f6fcaf9f286",
+    "round_c5d25c45b86f4373b634000029e60b3a",
+    "round_6871444043bd467ca03762529d118f5f",
+    "round_2f5e46a1294e4df7b2db668ced25ecce",
+    "round_1ed57fdff50b485d9a6fae7380d3434a",
+    "round_fc6b3d8b66ca4fc0bc7142aaa52780c6"
+  ],
+  "node_path": "Main.CountingAndMain",
+  "objective": "Prove the Main.CountingAndMain graph bottom-up from the source cancellation argument: first establish reusable exact-completion counting and disjoint-fiber/injective pattern constructors, then formalize cancellation between deleted and inserted proper-subset patterns, derive the public perturbedStarFamily_card formula and positivity of its unpaired binomial term, and finally assemble the immutable exists_uniformMissingTraceFamily_strictlyLargerThanStar theorem from the proved lower-node certificate.",
+  "rationale": "The route follows SourceIndex b_0009 (article/sections/02_proof.tex 41–51) into b_0011 (75–79) and the protected consumer shape in b_0014/formal_target.lean 11–26. graph_proved requires proved bottom-up foundations. Lower nodes already provide the explicit definitions, parameter arithmetic, and missing-trace certificate; Mathlib recon verified powerset-cardinality, injective-image, disjoint-union, difference, biUnion, and choose-positivity support. Keep the graph within the contract’s expected 6–12 declarations, expose the two required public interfaces unchanged, and use private tracked helpers only for mathematically meaningful counting stages.",
+  "status": "closed",
+  "strategy_id": "strategy_746a2d92b99d454db9e1556c2088f3e8",
+  "summary": "The bottom-up strategy established six proved foundations and compiler-confirmed the central counting statements, but two successive Proof Formal decompositions exposed an additional coherent finite-enumeration/cancellation package. The active graph now has 11 semantically live declarations, with five more concrete helper roles known before the three blocked counting parents can be proved, while the two required public interfaces and positivity/final assembly are still absent. This exceeds the contract’s expected about 6–12 declaration scale and triggers Coordinator review rather than another unbounded helper round. No obsolete retry-named or superseded branch was found; the proof_planned declarations preserve useful accepted statements and plans."
+}

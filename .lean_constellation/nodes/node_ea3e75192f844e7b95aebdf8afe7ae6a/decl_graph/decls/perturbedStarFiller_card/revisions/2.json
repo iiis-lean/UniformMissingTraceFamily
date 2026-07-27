@@ -1,0 +1,73 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "perturbedStarCore_card"
+    ],
+    "anticipated_statement_dep_names": [],
+    "base_revision": 1,
+    "kind": "update",
+    "objective": "Advance the planned source-derived filler-size lemma through all stages to proved. Preserve SourceIndex b_0009/article 48–50: for B : PerturbedStarBlocks n r, (perturbedStarFiller B).card = n - (2 + 2*r), up to equivalent Nat arithmetic. Consume the now-proved perturbedStarCore_card plus the lower perturbedStarFiller definition and Finset.card_sdiff/univ cardinality. This exact upper-index bridge serves the later unpaired completion term in perturbedStarFamily_card without stronger ambient assumptions.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": "planned",
+    "summary": "The intended proved advancement was blocked at the shared Statement NL stage; this revision retained a present Statement NL artifact but remained committed at planned state with no formal statement or proof artifacts. Its consumer-side goal is unchanged: prove (perturbedStarFiller B).card = n - (2 + 2*r) from proved perturbedStarCore_card and Finset.card_sdiff. No semantic or provider mismatch was found for this declaration; it was stopped because sibling patternFamily_card_sum could not record a required Mathlib statement dependency. Retry after the repository MathlibIndex contains a direct Nat.choose entry, preferably in a batch whose dependencies are then valid.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": null,
+  "proof": null,
+  "revision": 2,
+  "state": "planned",
+  "statement": {
+    "deps": [
+      {
+        "kind": "repo_decl",
+        "reason": "The statement quantifies over construction data B of this accepted structure.",
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The statement asserts the cardinality of this accepted complementary-filler definition.",
+        "ref": {
+          "name": "perturbedStarFiller",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": null,
+    "nl": {
+      "origin": [
+        {
+          "end_line": 34,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source defines the core from two anchors and two disjoint r-blocks and defines U as its complement, which supports the filler-cardinality formula.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 30,
+          "start_locator": null
+        },
+        {
+          "end_line": 50,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source's final unmatched completion uses the upper index |U| = n - 2r - 2, the same filler size established here.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 48,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers n and r and `B : PerturbedStarBlocks n r`, the complementary filler has cardinality\n`(perturbedStarFiller B).card = n - (2 + 2 * r)`.\nThis uses only that the filler is the complement of the two-anchor, two-r-block core and introduces no additional ambient-size hypothesis."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T11:25:54Z"
+}

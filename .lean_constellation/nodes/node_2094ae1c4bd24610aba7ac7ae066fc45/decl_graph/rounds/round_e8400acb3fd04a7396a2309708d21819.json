@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-22T10:45:59Z",
+  "created_at": "2026-07-22T10:22:02Z",
+  "execution_completed_at": "2026-07-22T10:45:59Z",
+  "execution_reason": "DeclGraphRoundFlow finished with blocked.",
+  "execution_result_kind": "blocked",
+  "node_path": "Main.PatternCriterion",
+  "objective": "Create and prove the public generic tau-certificate theorem, using the accepted foundations and uniform-cardinality helper to turn the source hypotheses into IsUniformMissingTraceFamily for patternFamily.",
+  "plan_closeout_acknowledged_at": "2026-07-22T10:45:59Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "blocked",
+  "result_reason": "DeclGraphRoundFlow finished with blocked.",
+  "revision_refs": [
+    {
+      "change_id": "patternFamily_isUniformMissingTraceFamily@rev:1",
+      "decl_name": "patternFamily_isUniformMissingTraceFamily",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_e8400acb3fd04a7396a2309708d21819",
+  "round_index": 4,
+  "started_at": "2026-07-22T10:26:23Z",
+  "status": "committed",
+  "strategy_id": "strategy_d509811e109f4266a85f656d30c12936",
+  "summary": "Round 4 made substantive progress but ended blocked at proof_formal review. patternFamily_isUniformMissingTraceFamily has a compiler-passing captured proof and complete satisfied dependency closure, but is not proved-level proof-policy satisfied because the reviewer-visible 600-character preview is consumed by the 599-character frozen header and exposes none of the proof. No source, provider, mathematical-helper, scope, or Lean-check blocker remains. The precise retry condition is a semantics-preserving statement-header repair—bundle the same per-pattern tau assumptions compactly so the proof becomes visible—followed by a fresh proved-target update. The current revision is superseded only if that compact revision succeeds; no other graph cleanup is needed."
+}

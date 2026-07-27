@@ -1,0 +1,136 @@
+{
+  "change": {
+    "base_revision": 2,
+    "kind": "update",
+    "objective": "Correct the rev2 statement/interface drift by rerunning Statement NL onward. The theorem must use exactly the immutable formal_target.lean binders hd : 4≤d, hslow : (d+3)/2≤s, hshigh : s≤d-1, hn : 2*(d+1)≤n. With r=d+1-s, preserve the source b_0008 lines 30–32 conclusions in the same direction: 2≤r, r+1≤s, the truncation-safe Nat equality d-2*r=2*s-d-2, 2*r≤d, and 2+2*r≤n. This explicit binder correction repairs the false (d+2)/2 rev2 statement rather than adding assumptions beyond the consumer’s immutable interface. Prove with Mathlib.Tactic/omega while making subtraction nontruncation explicit. The result serves the proved block existence theorem, later certificate size arguments, and final public theorem assembly.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": "planned",
+    "summary": "Full-pipeline semantic repair completed. Rev3 replaced only the false rev2 lower-bound binder with the immutable hslow : (d+3)/2≤s, preserved r=d+1-s and all five source b_0008 consequences, and reran Statement NL, Statement Formal, Proof NL, and Proof Formal. The strict omega-based Lean proof passed without sorry with explicit Nat nontruncation reasoning. perturbedStarParameterBounds rev3 is committed at proved and proof-policy satisfied. Rev2 remains historical and is superseded; no active cleanup target or blocker remains.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": "perturbedStarParameterBounds",
+  "proof": {
+    "deps": [],
+    "formal": {
+      "check": {
+        "allow_sorry": false,
+        "contains_axiom": false,
+        "contains_sorry": false,
+        "diagnostics": {
+          "diagnostics": [],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarParameterBounds', 'items': [], 'total_items': 0, 'error_count': 0, 'warning_count': 0, 'info_count': 0, 'sorry_count': 0}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Theorems/perturbedStarParameterBounds.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 0 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "proof_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": false,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [],
+          "opaque_count": 0,
+          "sorry_count": 0,
+          "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarParameterBounds`\n\nFor natural numbers d, s, and n, assume `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤ d -\n1`, and `hn : 2 * (d + 1) ≤ n`. Put `r = d + 1 - s`. Then `2 ≤ r`, `r + 1 ≤ s`, `d - 2*r = 2*s - d -\n2`, `2*r ≤ d`, and `2 + 2*r ≤ n`. All subtractions are natural-number subtraction; the theorem\nestablishes the displayed equality and bounds with the needed nontruncation consequences explicit\nunder exactly these hypotheses.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 30–32\n\n## Proof outline\n\nUnfold the `let r := d + 1 - s`.  First use `hshigh : s ≤ d - 1` to obtain `s ≤ d + 1` and the lower\nbound `2 ≤ d + 1 - s`; this makes the first subtraction nontruncating.  Next apply `omega` to the\ncorrected half-bound `hslow : (d + 3) / 2 ≤ s`.  It yields both `d + 2 ≤ 2*s` and hence `r + 1 ≤ s`\nand `2*r ≤ d`.\n\nRecord the two nontruncation facts before proving the displayed equality: `2*r ≤ d` certifies the\nleft subtraction `d - 2*r`, while `d + 2 ≤ 2*s` certifies `2*s - d - 2`.  With `r = d + 1 - s`\nexpanded, `omega` proves the truncation-safe natural-number identity `d - 2*r = 2*s - d - 2`.\n\nFinally combine `2*r ≤ d` with `hn : 2*(d+1) ≤ n`; linear arithmetic gives `2 + 2*r ≤ n`.  Conjoin,\nin order, the lower bound for `r`, `r+1≤s`, the subtraction equality, `2*r≤d`, and the ambient-size\ninequality.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, lines 30–32\n-/\ntheorem perturbedStarParameterBounds (d s n : ℕ) (hd : 4 ≤ d)\n    (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    let r := d + 1 - s\n    2 ≤ r ∧ r + 1 ≤ s ∧ d - 2 * r = 2 * s - d - 2 ∧\n      2 * r ≤ d ∧ 2 + 2 * r ≤ n := by\n  dsimp\n  have htwo : 2 ≤ d + 1 - s := by omega\n  have hhalf : d + 2 ≤ 2 * s := by omega\n  have hr_le_d : 2 * (d + 1 - s) ≤ d := by omega\n  have hleft : 2 * (d + 1 - s) ≤ d := hr_le_d\n  have hright : d + 2 ≤ 2 * s := hhalf\n  refine ⟨htwo, ?_, ?_, hr_le_d, ?_⟩\n  · omega\n  · omega\n  · omega\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 32,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source defines r=d+1-s, states the associated arithmetic consequences, and uses the resulting room bound before selecting the blocks; this route implements those conclusions with explicit Nat nontruncation.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 30,
+          "start_locator": null
+        }
+      ],
+      "text": "Unfold the `let r := d + 1 - s`.  First use `hshigh : s ≤ d - 1` to obtain `s ≤ d + 1` and the lower bound `2 ≤ d + 1 - s`; this makes the first subtraction nontruncating.  Next apply `omega` to the corrected half-bound `hslow : (d + 3) / 2 ≤ s`.  It yields both `d + 2 ≤ 2*s` and hence `r + 1 ≤ s` and `2*r ≤ d`.\n\nRecord the two nontruncation facts before proving the displayed equality: `2*r ≤ d` certifies the left subtraction `d - 2*r`, while `d + 2 ≤ 2*s` certifies `2*s - d - 2`.  With `r = d + 1 - s` expanded, `omega` proves the truncation-safe natural-number identity `d - 2*r = 2*s - d - 2`.\n\nFinally combine `2*r ≤ d` with `hn : 2*(d+1) ≤ n`; linear arithmetic gives `2 + 2*r ≤ n`.  Conjoin, in order, the lower bound for `r`, `r+1≤s`, the subtraction equality, `2*r≤d`, and the ambient-size inequality."
+    }
+  },
+  "revision": 3,
+  "state": "proved",
+  "statement": {
+    "deps": [],
+    "formal": {
+      "check": {
+        "allow_sorry": true,
+        "contains_axiom": false,
+        "contains_sorry": true,
+        "diagnostics": {
+          "diagnostics": [
+            {
+              "column": 9,
+              "line": 20,
+              "message": "declaration uses `sorry`",
+              "severity": "warning"
+            }
+          ],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarParameterBounds', 'items': [{'severity': 'warning', 'pos': {'line': 20, 'column': 9}, 'endPos': {'line': 20, 'column': 37}, 'kind': None, 'data': 'declaration uses `sorry`', 'fileName': 'UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarParameterBounds', 'content': '- Source `article/sections/02_proof.tex`, lines 30–32\\n-/\\ntheorem perturbedStarParameterBounds (d s n : ℕ) (hd : 4 ≤ d)\\n    (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\\n    (hn : 2 * (d + 1) ≤ n) :'}], 'total_items': 1, 'error_count': 0, 'warning_count': 1, 'info_count': 0, 'sorry_count': 1}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Theorems/perturbedStarParameterBounds.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 1 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": true,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [
+            {
+              "column": 3,
+              "excerpt": "sorry",
+              "kind": "sorry",
+              "line": 26
+            }
+          ],
+          "opaque_count": 0,
+          "sorry_count": 1,
+          "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarParameterBounds`\n\nFor natural numbers d, s, and n, assume `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤ d -\n1`, and `hn : 2 * (d + 1) ≤ n`. Put `r = d + 1 - s`. Then `2 ≤ r`, `r + 1 ≤ s`, `d - 2*r = 2*s - d -\n2`, `2*r ≤ d`, and `2 + 2*r ≤ n`. All subtractions are natural-number subtraction; the theorem\nestablishes the displayed equality and bounds with the needed nontruncation consequences explicit\nunder exactly these hypotheses.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 30–32\n-/\ntheorem perturbedStarParameterBounds (d s n : ℕ) (hd : 4 ≤ d)\n    (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    let r := d + 1 - s\n    2 ≤ r ∧ r + 1 ≤ s ∧ d - 2 * r = 2 * s - d - 2 ∧\n      2 * r ≤ d ∧ 2 + 2 * r ≤ n := by\n  sorry\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 32,
+          "end_locator": null,
+          "kind": "source",
+          "note": "This source passage defines r = d + 1 - s and supplies the arithmetic and ambient-size consequences used before the block construction.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 30,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers d, s, and n, assume `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤ d - 1`, and `hn : 2 * (d + 1) ≤ n`. Put `r = d + 1 - s`. Then `2 ≤ r`, `r + 1 ≤ s`, `d - 2*r = 2*s - d - 2`, `2*r ≤ d`, and `2 + 2*r ≤ n`. All subtractions are natural-number subtraction; the theorem establishes the displayed equality and bounds with the needed nontruncation consequences explicit under exactly these hypotheses."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-22T12:51:28Z"
+}

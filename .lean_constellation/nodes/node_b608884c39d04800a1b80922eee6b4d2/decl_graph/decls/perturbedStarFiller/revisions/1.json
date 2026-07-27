@@ -1,0 +1,91 @@
+{
+  "change": {
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Define the source b_0008 filler U from article/sections/02_proof.tex line 34. For natural n,r and accepted B : PerturbedStarBlocks n r, return the Finset (Fin n) exactly equal to (Finset.univ : Finset (Fin n)) \\ perturbedStarCore B, with no extra hypotheses or semantic changes. Consume the already declared PerturbedStarBlocks revision 2 and perturbedStarCore revision 1. This public construction provider must remain usable by the allowed perturbed-star pattern definition, the required perturbedStarFamily interface, the generic Main.PatternCriterion instantiation, all five certificate branches, and downstream exact-cardinality work.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Completed successfully. `perturbedStarFiller` revision 1 reached declared state with the exact source-b_0008 meaning `(Finset.univ : Finset (Fin n)) \\ perturbedStarCore B`. Lean statement checking passed; its accepted dependencies are `PerturbedStarBlocks` revision 2 and `perturbedStarCore` revision 1, and the non-theorem declaration is proof-policy satisfied. No blocker or retry condition remains.",
+    "target_state": "declared"
+  },
+  "lean_decl_name": "perturbedStarFiller",
+  "proof": null,
+  "revision": 1,
+  "state": "declared",
+  "statement": {
+    "deps": [
+      {
+        "kind": "repo_decl",
+        "reason": "The filler takes construction data B of this accepted structure as its input.",
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The filler is defined as the complement of this accepted fixed-core definition.",
+        "ref": {
+          "name": "perturbedStarCore",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": false,
+        "contains_axiom": false,
+        "contains_sorry": false,
+        "diagnostics": {
+          "diagnostics": [],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller', 'items': [], 'total_items': 0, 'error_count': 0, 'warning_count': 0, 'info_count': 0, 'sorry_count': 0}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Defs/perturbedStarFiller.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 0 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": false,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [],
+          "opaque_count": 0,
+          "sorry_count": 0,
+          "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarFiller`\n\nFor natural numbers n and r and construction data `B : PerturbedStarBlocks n r`,\n`perturbedStarFiller B` is the finite subset of `Fin n` defined by\n\n`(Finset.univ : Finset (Fin n)) \\ perturbedStarCore B`.\n\nThus it is exactly the complement of the fixed core within `Fin n`; no additional elements,\nhypotheses, or semantic conditions are introduced.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 34\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarCore` → `perturbedStarCore` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore`\n-/\ndef perturbedStarFiller {n r : ℕ} (B : PerturbedStarBlocks n r) : Finset (Fin n) :=\n  (Finset.univ : Finset (Fin n)) \\ perturbedStarCore B\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 34,
+          "end_locator": null,
+          "kind": "source",
+          "note": "This source line introduces U as the complement of the fixed core C in the ambient ground set.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 34,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers n and r and construction data `B : PerturbedStarBlocks n r`, `perturbedStarFiller B` is the finite subset of `Fin n` defined by\n\n`(Finset.univ : Finset (Fin n)) \\ perturbedStarCore B`.\n\nThus it is exactly the complement of the fixed core within `Fin n`; no additional elements, hypotheses, or semantic conditions are introduced."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-22T13:03:21Z"
+}

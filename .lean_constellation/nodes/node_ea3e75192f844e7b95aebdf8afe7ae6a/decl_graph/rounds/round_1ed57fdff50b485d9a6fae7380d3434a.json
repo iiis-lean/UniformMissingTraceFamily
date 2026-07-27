@@ -1,0 +1,32 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-26T13:01:00Z",
+  "created_at": "2026-07-26T12:43:53Z",
+  "execution_completed_at": "2026-07-26T13:01:00Z",
+  "execution_reason": "DeclGraphRoundFlow finished with blocked.",
+  "execution_result_kind": "blocked",
+  "node_path": "Main.CountingAndMain",
+  "objective": "Retry the two independent proved enumeration/cancellation helpers from SourceIndex b_0009 (article/sections/02_proof.tex 41–51) without semantic change now that their reviewer-required direct dependencies Finset.powerset and Finset.filter are verified in the repository MathlibIndex and exposed as current-node hints. Prove perturbedStarBase_chooseSum from the core/filler cardinality providers, and prove perturbedStarPerturbation_chooseSum by the proper-Y deletion/insertion pairing with the full Y=B.L term left unpaired. These helpers preserve the exact explicit anchored-base representation and r-form choose indices required to unblock the already-declared parent perturbedStarPatterns_chooseSum.",
+  "plan_closeout_acknowledged_at": "2026-07-26T13:01:00Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "blocked",
+  "result_reason": "DeclGraphRoundFlow finished with blocked.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedStarBase_chooseSum@rev:2",
+      "decl_name": "perturbedStarBase_chooseSum",
+      "revision": 2
+    },
+    {
+      "change_id": "perturbedStarPerturbation_chooseSum@rev:2",
+      "decl_name": "perturbedStarPerturbation_chooseSum",
+      "revision": 2
+    }
+  ],
+  "round_id": "round_1ed57fdff50b485d9a6fae7380d3434a",
+  "round_index": 9,
+  "started_at": "2026-07-26T12:45:12Z",
+  "status": "committed",
+  "strategy_id": "strategy_746a2d92b99d454db9e1556c2088f3e8",
+  "summary": "The strategy made statement/proof-plan progress but no declaration reached proved: both retry revisions are now proof_planned with compiler-confirmed formal statements and accepted Proof NL routes, yet neither is graph_proved-satisfied because Proof Formal blocked. Known retry conditions are complete and local. perturbedStarBase_chooseSum requires one Source-visible/Lean-specific tracked interface for the weighted anchored-subset reindexing into the finite Vandermonde convolution; perturbedStarPerturbation_chooseSum requires one tracked proper-Y deletion/insertion sum-cancellation interface carrying injectivity, equal-card weights, relevant disjointness, and the exceptional full-L term. Existing proved core/filler cardinality providers and indexed Finset/Nat sum lemmas remain sufficient after those interfaces exist. Do not retry these parents or perturbedStarPatterns_chooseSum before proving those two foundations. The next justified action is a bounded bottom-up helper round under the same strategy; this remains within the node’s owned counting/cancellation boundary, though graph scale must be watched before further expansion."
+}

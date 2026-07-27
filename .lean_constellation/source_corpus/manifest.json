@@ -1,0 +1,67 @@
+{
+  "created_from_mode": "scan",
+  "entry_path": "README.md",
+  "files": [
+    {
+      "line_count": 41,
+      "path": "README.md",
+      "readable_text": true,
+      "sha256": "3eba4f01e8272b22d19472f10fb3171e183a106126632f8b5e84b85001ccb47d",
+      "size_bytes": 1745
+    },
+    {
+      "line_count": 38,
+      "path": "article/main.tex",
+      "readable_text": true,
+      "sha256": "f9aa76c4214cd20f0f7de263031e7811d30d1e7150aebf77cd4299a27491b079",
+      "size_bytes": 1119
+    },
+    {
+      "line_count": 192,
+      "path": "article/references.bib",
+      "readable_text": true,
+      "sha256": "b3f4c2885408bf4e660fbd698eb05e238ecfadbffc91245714e910a38874be86",
+      "size_bytes": 5624
+    },
+    {
+      "line_count": 9,
+      "path": "article/sections/00_abstract.tex",
+      "readable_text": true,
+      "sha256": "1490bbcb5e4fa5977ce5bd66c76a9cc72a440b92c5805f6ada3bb2cd66153e0b",
+      "size_bytes": 1165
+    },
+    {
+      "line_count": 32,
+      "path": "article/sections/01_introduction.tex",
+      "readable_text": true,
+      "sha256": "0221ccbfe18d594105f6be76d0b60fe8bc978da77c9ef620c98270cf00145c55",
+      "size_bytes": 6037
+    },
+    {
+      "line_count": 79,
+      "path": "article/sections/02_proof.tex",
+      "readable_text": true,
+      "sha256": "058c7553aa4c20a00e2d343b96e47403bf10747602f10a9fcc17d36f673f997b",
+      "size_bytes": 6417
+    },
+    {
+      "line_count": 21,
+      "path": "article/sections/03_remarks_and_acknowledgement.tex",
+      "readable_text": true,
+      "sha256": "40672f1d484b5aebc95a55ec48836d7c0dde483a68f1dd5506235bfefe41d9ef",
+      "size_bytes": 1021
+    },
+    {
+      "line_count": 26,
+      "path": "formal_target.lean",
+      "readable_text": true,
+      "sha256": "2dd1ab62a792c751013303ecf0e7cc3b97f373bd64616bc6acb14e5c640600aa",
+      "size_bytes": 1049
+    }
+  ],
+  "generated_at": "2026-07-22T08:48:27Z",
+  "overview": null,
+  "relpath": ".lean_constellation/source",
+  "schema_version": 2,
+  "summary": "Scanned 8 source files."
+}

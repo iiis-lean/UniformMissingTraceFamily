@@ -1,0 +1,32 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-27T14:00:37Z",
+  "created_at": "2026-07-27T13:34:31Z",
+  "execution_completed_at": "2026-07-27T13:59:21Z",
+  "execution_reason": null,
+  "execution_result_kind": "success",
+  "node_path": "Main.CountingAndMain",
+  "objective": "Advance the two unchanged SourceIndex b_0009 parent counting theorems from declared to proved using the new lower-node interfaces directly. For perturbedStarBase_chooseSum, combine anchoredPowerset_weightedSum_eq_chooseSum with the proved core/filler cardinalities and the Vandermonde identity to obtain choose(n-1,d). For perturbedStarPerturbation_chooseSum, combine perturbedPattern_properWeights_add_full_eq_fullWeights with the remaining base-minus-deleted/inserted set algebra and normalize the full-L term using the proved block/filler cardinalities and hrd/hrn. Replace the obsolete local enumeration/cancellation Proof NL routes, preserve both accepted statements exactly, and avoid proof dependencies on the temporary local wrappers so they can be deleted after this round succeeds.",
+  "plan_closeout_acknowledged_at": "2026-07-27T14:00:37Z",
+  "plan_closeout_acknowledged_by": "a_69813ea8bd4a4ab38bca6ad41a76a566",
+  "result_kind": "success",
+  "result_reason": "Both source-specific parent counting theorems reached proved state with accepted direct-provider proofs and passed graph_proved satisfaction.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedStarBase_chooseSum@rev:3",
+      "decl_name": "perturbedStarBase_chooseSum",
+      "revision": 3
+    },
+    {
+      "change_id": "perturbedStarPerturbation_chooseSum@rev:3",
+      "decl_name": "perturbedStarPerturbation_chooseSum",
+      "revision": 3
+    }
+  ],
+  "round_id": "round_7b9ce71ebc18446f874f34606fdb6bb7",
+  "round_index": 13,
+  "started_at": "2026-07-27T13:35:51Z",
+  "status": "committed",
+  "strategy_id": "strategy_7cbc30f0d9cb46628fd30ebca588482b",
+  "summary": "The strategy made the intended central counting progress: perturbedStarBase_chooseSum and perturbedStarPerturbation_chooseSum both reached proved state and passed graph_proved satisfaction with exact SourceIndex b_0009 statements unchanged. Their proofs import the new lower providers directly and do not use the two temporary local wrappers. No blocker or dependency-closure work remains before retrying the declared perturbedStarPatterns_chooseSum. Graph hygiene now requires previewing and, if safe, deleting anchoredPowerset_chooseSum_reindex and perturbedStarProperPatterns_chooseSum before adding public outputs; the next action should be that small cleanup round, followed by the combined pattern-weight theorem."
+}

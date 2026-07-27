@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-07-26T16:18:25Z",
+  "current_revision": 1,
+  "kind": "theorem",
+  "lifecycle": "active",
+  "module": "UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPattern_properDomain_eq_erase",
+  "name": "perturbedPattern_properDomain_eq_erase",
+  "node_path": "Main.PerturbedPatternCancellation",
+  "public": false,
+  "revision_ids": [
+    1
+  ],
+  "summary": "The proper subsets of L form its powerset with L erased.",
+  "updated_at": "2026-07-26T16:18:25Z"
+}

@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-07-22T09:16:53Z",
+  "current_revision": 1,
+  "kind": "definition",
+  "lifecycle": "active",
+  "module": "UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily",
+  "name": "IsUniformMissingTraceFamily",
+  "node_path": "Main.PatternCriterion",
+  "public": true,
+  "revision_ids": [
+    1
+  ],
+  "summary": "A Finset family on Fin n is (d+1)-uniform and has an s-element missing intersection trace inside every member.",
+  "updated_at": "2026-07-22T09:16:53Z"
+}

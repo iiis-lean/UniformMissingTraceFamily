@@ -1,0 +1,31 @@
+{
+  "decl_names": [
+    "perturbedPatternA_injOn",
+    "perturbedPatternA_inter_L",
+    "perturbedPatternB_injOn",
+    "perturbedPatternB_inter_L",
+    "perturbedPatternB_properImage_eq_erase",
+    "perturbedPattern_card_eq",
+    "perturbedPattern_chooseWeight_eq",
+    "perturbedPattern_properDomain_eq_erase",
+    "perturbedPattern_properWeights_add_full_eq_fullWeights"
+  ],
+  "node_id": "node_608263422e2a4cd286c74a9e604191c6",
+  "node_path": "Main.PerturbedPatternCancellation",
+  "round_ids": [
+    "round_034e0c72cd6f41d88677ff930697cd00",
+    "round_16343be575ba418cba0aad22e93fd348",
+    "round_202fa79c6c844b77bb52fca2037ecf7c",
+    "round_5ef0e250f1c44e3eaadd3e793c7c53d0",
+    "round_7a1bd8feec674ce7b7fb8d8b3b609987",
+    "round_7c10aff3ca874174b427563ae0660549",
+    "round_d8966ad85f6e4360bc20cae55b094f97",
+    "round_ff476b6c5b6f429a9911c05595653405"
+  ],
+  "schema_version": 1,
+  "strategy_ids": [
+    "strategy_ff5e1a1c26fc4bac9ab8fc7bd94fdb97"
+  ],
+  "summary": "DeclGraph index rebuilt for Main.PerturbedPatternCancellation: 9 decls, 8 rounds, 1 strategies.",
+  "updated_at": "2026-07-27T15:27:30Z"
+}

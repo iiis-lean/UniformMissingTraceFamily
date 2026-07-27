@@ -1,0 +1,70 @@
+{
+  "change": {
+    "base_revision": 1,
+    "kind": "update",
+    "objective": "Advance the accepted rev1 statement from specified through Statement Formal only, preserving exactly the checked public structure PerturbedStarBlocks (n r) with anchors a,b, equal-cardinality blocks T,L, explicit anchor inequality, T/L disjointness, and four anchor-avoidance fields. This is the source b_0008 lines 30–32 provider required by the unchanged consumer goal of exists_perturbedStarBlocks and later core/pattern, five-certificate, and counting declarations. Its current formal candidate already passes without sorry; no semantic redesign or extra assumption is authorized.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": "specified",
+    "summary": "Provider-only sequencing repair completed. PerturbedStarBlocks rev2 preserved the accepted source b_0008 public structure exactly and advanced from specified to declared through Statement Formal. Lean checking passed without sorry; the declaration is now committed, declared, and proof-policy satisfied. This discharges the concrete round-1 retry prerequisite for exists_perturbedStarBlocks and introduces no new blocker, semantic drift, or cleanup target.",
+    "target_state": "declared"
+  },
+  "lean_decl_name": "PerturbedStarBlocks",
+  "proof": null,
+  "revision": 2,
+  "state": "declared",
+  "statement": {
+    "deps": [],
+    "formal": {
+      "check": {
+        "allow_sorry": false,
+        "contains_axiom": false,
+        "contains_sorry": false,
+        "diagnostics": {
+          "diagnostics": [],
+          "passed": true,
+          "raw_excerpt": "",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Types/PerturbedStarBlocks.lean",
+          "schema_version": 2,
+          "summary": "Command completed successfully"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": false,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [],
+          "opaque_count": 0,
+          "sorry_count": 0,
+          "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `PerturbedStarBlocks`\n\nFor natural numbers n and r, `PerturbedStarBlocks n r` is public construction data consisting of two\ndistinguished elements `a` and `b` of `Fin n` and two finite sets `T` and `L` of `Fin n`.  It\nrecords explicitly that `a ≠ b`, that `T` and `L` each have cardinality `r`, that `T` and `L` are\ndisjoint, and that neither `T` nor `L` contains either distinguished element.  Thus all anchor\ndistinctness and block-avoidance requirements are fields of the data, rather than implicit\nconventions.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 30–32\n-/\nstructure PerturbedStarBlocks (n r : ℕ) where\n  a : Fin n\n  b : Fin n\n  T : Finset (Fin n)\n  L : Finset (Fin n)\n  a_ne_b : a ≠ b\n  card_T : T.card = r\n  card_L : L.card = r\n  T_disjoint_L : Disjoint T L\n  a_not_mem_T : a ∉ T\n  b_not_mem_T : b ∉ T\n  a_not_mem_L : a ∉ L\n  b_not_mem_L : b ∉ L\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 32,
+          "end_locator": null,
+          "kind": "source",
+          "note": "This source passage introduces the parameter r and the two disjoint r-element blocks used for the perturbed-star construction.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 30,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers n and r, `PerturbedStarBlocks n r` is public construction data consisting of two distinguished elements `a` and `b` of `Fin n` and two finite sets `T` and `L` of `Fin n`.  It records explicitly that `a ≠ b`, that `T` and `L` each have cardinality `r`, that `T` and `L` are disjoint, and that neither `T` nor `L` contains either distinguished element.  Thus all anchor distinctness and block-avoidance requirements are fields of the data, rather than implicit conventions."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-22T12:14:10Z"
+}

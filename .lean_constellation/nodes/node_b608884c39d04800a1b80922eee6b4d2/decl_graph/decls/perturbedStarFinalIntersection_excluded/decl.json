@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-07-22T14:07:06Z",
+  "current_revision": 1,
+  "kind": "theorem",
+  "lifecycle": "active",
+  "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarFinalIntersection_excluded",
+  "name": "perturbedStarFinalIntersection_excluded",
+  "node_path": "Main.PerturbedStarCertificates",
+  "public": true,
+  "revision_ids": [
+    1
+  ],
+  "summary": "No allowed perturbed-star pattern intersects the final b/T/L pattern in T plus exactly one L-element.",
+  "updated_at": "2026-07-22T14:07:06Z"
+}

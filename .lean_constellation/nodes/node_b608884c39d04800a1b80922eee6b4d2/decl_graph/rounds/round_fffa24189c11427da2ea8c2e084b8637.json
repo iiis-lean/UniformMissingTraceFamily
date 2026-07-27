@@ -1,0 +1,32 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-22T12:35:02Z",
+  "created_at": "2026-07-22T12:14:45Z",
+  "execution_completed_at": "2026-07-22T12:35:02Z",
+  "execution_reason": "DeclGraphRoundFlow finished with blocked.",
+  "execution_result_kind": "blocked",
+  "node_path": "Main.PerturbedStarCertificates",
+  "objective": "Complete the source b_0008 foundation after provider acceptance by proving the immutable Nat parameter bounds and the explicit existence of PerturbedStarBlocks, preserving both accepted consumer-side statements and requiring proved-level satisfaction.",
+  "plan_closeout_acknowledged_at": "2026-07-22T12:35:02Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "blocked",
+  "result_reason": "DeclGraphRoundFlow finished with blocked.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedStarParameterBounds@rev:2",
+      "decl_name": "perturbedStarParameterBounds",
+      "revision": 2
+    },
+    {
+      "change_id": "exists_perturbedStarBlocks@rev:2",
+      "decl_name": "exists_perturbedStarBlocks",
+      "revision": 2
+    }
+  ],
+  "round_id": "round_fffa24189c11427da2ea8c2e084b8637",
+  "round_index": 3,
+  "started_at": "2026-07-22T12:15:49Z",
+  "status": "committed",
+  "strategy_id": "strategy_140c2962785943968f6203e9ab1972fc",
+  "summary": "Round 3 made real foundation progress but was blocked at Proof Formal by statement/interface drift in perturbedStarParameterBounds. Both revisions reached proof_planned. exists_perturbedStarBlocks has an accepted statement dependency on declared PerturbedStarBlocks rev2 and a strict Lean proof candidate that passed; it is ready for an isolated proof-formal retry. perturbedStarParameterBounds is not provable as frozen because hslow was encoded as (d+2)/2≤s instead of the immutable formal_target.lean assumption (d+3)/2≤s; d=5,s=3,n=12 is a concrete counterexample. Neither theorem reached proved or proof-policy satisfaction in this atomic batch. No external dependency, resource, scope split, or Lean helper is missing. Retry conditions are: first bank the already checked exists_perturbedStarBlocks proof in a small isolated round; then replace the parameter theorem with a successor revision that reruns the statement stages using (d+3)/2≤s and preserves the source conclusions. The bottom-up strategy remains viable, and no active declaration should be deleted; the incorrect parameter revision is historical/superseded once corrected."
+}

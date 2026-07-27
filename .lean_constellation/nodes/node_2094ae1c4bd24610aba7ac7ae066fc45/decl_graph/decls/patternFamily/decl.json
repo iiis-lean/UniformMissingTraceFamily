@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-07-22T09:16:53Z",
+  "current_revision": 1,
+  "kind": "definition",
+  "lifecycle": "active",
+  "module": "UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily",
+  "name": "patternFamily",
+  "node_path": "Main.PatternCriterion",
+  "public": true,
+  "revision_ids": [
+    1
+  ],
+  "summary": "The Finset family of unions P ∪ A where P is an allowed core pattern and A is a fixed-cardinality filler from U.",
+  "updated_at": "2026-07-22T09:16:53Z"
+}

@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-26T11:48:34Z",
+  "created_at": "2026-07-26T11:38:36Z",
+  "execution_completed_at": "2026-07-26T11:48:34Z",
+  "execution_reason": "DeclGraphRoundFlow finished with completed.",
+  "execution_result_kind": "success",
+  "node_path": "Main.CountingAndMain",
+  "objective": "Retry only perturbedStarFiller_card, which was stopped by a sibling’s now-resolved Statement NL blocker. Advance the complementary filler-size bridge to proved using the already-proved core cardinality before beginning source-specific cancellation.",
+  "plan_closeout_acknowledged_at": "2026-07-26T11:48:34Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "success",
+  "result_reason": "DeclGraphRoundFlow finished with completed.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedStarFiller_card@rev:3",
+      "decl_name": "perturbedStarFiller_card",
+      "revision": 3
+    }
+  ],
+  "round_id": "round_3dbd9d0587e943deb1546f6fcaf9f286",
+  "round_index": 5,
+  "started_at": "2026-07-26T11:39:32Z",
+  "status": "committed",
+  "strategy_id": "strategy_746a2d92b99d454db9e1556c2088f3e8",
+  "summary": "The strategy advanced as intended: perturbedStarFiller_card reached committed proved state and became proof-policy satisfied. All five currently tracked generic/foundation declarations are now proved, with no state-only intermediates or blockers remaining. The next step is a new bottom-up round for the source-specific perturbedStarPatterns/filler disjointness and matched deleted/inserted weighted-sum cancellation before creating the public perturbedStarFamily_card interface."
+}

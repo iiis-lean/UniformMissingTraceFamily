@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-07-22T15:13:03Z",
+  "current_revision": 1,
+  "kind": "theorem",
+  "lifecycle": "active",
+  "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarCertificate_largeMeeting",
+  "name": "perturbedStarCertificate_largeMeeting",
+  "node_path": "Main.PerturbedStarCertificates",
+  "public": true,
+  "revision_ids": [
+    1
+  ],
+  "summary": "The tau certificate satisfies the generic criterion for a large a-anchored pattern meeting T.",
+  "updated_at": "2026-07-22T15:13:03Z"
+}

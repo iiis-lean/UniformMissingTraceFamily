@@ -1,0 +1,204 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "powersetCard_weightedSum_eq_choose"
+    ],
+    "anticipated_statement_dep_names": [],
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Create and prove the reusable cardinality-fiber decomposition required by contract v1 and abstracted from the anchored-star count in SourceIndex b_0009 / article/sections/02_proof.tex:41-51. For [DecidableEq α], finsets s and U, and natural d, state the equality in the direction from the Nat sum over T ∈ s.powerset filtered by T.card ≤ d, weighted by Nat.choose U.card (d - T.card), to ∑ j ∈ Finset.range (d + 1), Nat.choose s.card j * Nat.choose U.card (d - j). Preserve the filter, exact range (d + 1), and Nat subtraction index; add no cardinality, disjointness, or ambient-size assumptions. Consume the already proved powersetCard_weightedSum_eq_choose together with Finset.sum_powerset, Finset.mem_powersetCard, Finset.sum_subset_zero_on_sdiff, and Nat.choose_eq_zero_of_lt as appropriate. This declaration will be consumed by the public anchoredPowerset_weightedSum_eq_chooseSum after erase/insert reindexing and the card shift.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Created the intended private cardinality-filtered powerset convolution and advanced revision 1 through statement NL, statement formal, proof NL, and proof formal to proved. Both formal artifacts passed and the declaration is proof-policy satisfied. It preserves the filter T.card ≤ d, exact Finset.range (d + 1), and Nat.choose U.card (d - j), and consumes the previously proved powersetCard_weightedSum_eq_choose role. No blocker, state-only gap, superseded candidate, or cleanup target remains.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": "powerset_weightedSum_eq_chooseSum",
+  "proof": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+          "name": "Finset.sum_filter"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+          "name": "Finset.sum_subset_zero_on_sdiff"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Algebra.BigOperators.Group.Finset.Powerset",
+          "name": "Finset.sum_powerset"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Powerset",
+          "name": "Finset.mem_powersetCard"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Nat.Choose.Basic",
+          "name": "Nat.choose_eq_zero_of_lt"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "powersetCard_weightedSum_eq_choose",
+          "node": "Main.AnchoredPowersetEnumeration",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": false,
+        "contains_axiom": false,
+        "contains_sorry": false,
+        "diagnostics": {
+          "diagnostics": [],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.AnchoredPowersetEnumeration.Theorems.powerset_weightedSum_eq_chooseSum', 'items': [], 'total_items': 0, 'error_count': 0, 'warning_count': 0, 'info_count': 0, 'sorry_count': 0}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/AnchoredPowersetEnumeration/Theorems/powerset_weightedSum_eq_chooseSum.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 0 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "proof_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": false,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [],
+          "opaque_count": 0,
+          "sorry_count": 0,
+          "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.AnchoredPowersetEnumeration.Prelude\nimport Mathlib.Algebra.BigOperators.Group.Finset.Basic\nimport Mathlib.Algebra.BigOperators.Group.Finset.Powerset\nimport Mathlib.Data.Finset.Filter\nimport Mathlib.Data.Finset.Powerset\nimport Mathlib.Data.Nat.Choose.Basic\nimport UniformMissingTraceFamily.Main.AnchoredPowersetEnumeration.Theorems.powersetCard_weightedSum_eq_choose\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `powerset_weightedSum_eq_chooseSum`\n\nLet α be a type with `[DecidableEq α]`. For every finsets `s U : Finset α` and natural `d`, the\nweighted sum over subsets of `s` whose cardinality is at most `d` decomposes into cardinality\nfibers:\n\n`∑ T ∈ s.powerset.filter (fun T => T.card ≤ d), Nat.choose U.card (d - T.card) = ∑ j ∈ Finset.range\n(d + 1), Nat.choose s.card j * Nat.choose U.card (d - j)`.\n\nThe filter, the index range `Finset.range (d + 1)`, and every subtraction use the displayed\nnatural-number forms; no cardinality, disjointness, or ambient-size assumptions are required.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Finset.filter` from `Mathlib.Data.Finset.Filter`\n- `Finset.powerset` from `Mathlib.Data.Finset.Powerset`\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n\n## Proof outline\n\nFirst use `Finset.sum_filter` to rewrite the filtered left-hand sum as a sum over all of\n`s.powerset` with the zero-extended summand\n`F T := if T.card ≤ d then Nat.choose U.card (d - T.card) else 0`.\nThis preserves the original filter exactly.\n\nApply `Finset.sum_powerset s F`. It decomposes that sum into the fibers `s.powersetCard j` for `j ∈\nFinset.range (s.card + 1)`. On a fixed fiber, `Finset.mem_powersetCard` rewrites every `T.card` to\n`j`. If `j ≤ d`, the resulting fiber is exactly\n`∑ T ∈ s.powersetCard j, Nat.choose U.card (d - T.card)`,\nso use the committed lower theorem `powersetCard_weightedSum_eq_choose` to obtain\n`Nat.choose s.card j * Nat.choose U.card (d - j)`. If `d < j`, the conditional definition of `F`\nmakes every summand zero.\n\nIt remains to replace the sum over `Finset.range (s.card + 1)` of these in-range fiber values by the\nstated sum over `Finset.range (d + 1)`. Split on the comparison of `s.card` and `d`. When `d ≤\ns.card`, the latter range is a subset of the former and the extra indices have `d < j`, hence their\nzero-extended fiber values are zero. When `s.card ≤ d`, the former range is a subset of the latter;\nfor an index in the added difference, `s.card < j`, so `Nat.choose_eq_zero_of_lt` makes the\ndisplayed binomial product zero. In both cases apply `Finset.sum_subset_zero_on_sdiff` to remove the\nzero terms. This yields exactly the required `range (d + 1)` convolution with the unchanged natural\nsubtraction index.\n\n## Proof dependencies\n\n- `Finset.sum_filter` from `Mathlib.Algebra.BigOperators.Group.Finset.Basic`\n- `Finset.sum_subset_zero_on_sdiff` from `Mathlib.Algebra.BigOperators.Group.Finset.Basic`\n- `Finset.sum_powerset` from `Mathlib.Algebra.BigOperators.Group.Finset.Powerset`\n- `Finset.mem_powersetCard` from `Mathlib.Data.Finset.Powerset`\n- `Nat.choose_eq_zero_of_lt` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.AnchoredPowersetEnumeration::powersetCard_weightedSum_eq_choose` →\n  `powersetCard_weightedSum_eq_choose` from `UniformMissingTraceFamily.Main.AnchoredPowersetEnumerat\n  ion.Theorems.powersetCard_weightedSum_eq_choose`\n-/\ntheorem powerset_weightedSum_eq_chooseSum {α : Type*} [inst : DecidableEq α]\n    (s U : Finset α) (d : ℕ) :\n    let _ : DecidableEq α := inst\n    ∑ T ∈ s.powerset.filter (fun T => T.card ≤ d), Nat.choose U.card (d - T.card) =\n      ∑ j ∈ Finset.range (d + 1), Nat.choose s.card j * Nat.choose U.card (d - j) := by\n  let F : Finset α → ℕ := fun T =>\n    if T.card ≤ d then Nat.choose U.card (d - T.card) else 0\n  have hfiltered :\n      ∑ T ∈ s.powerset.filter (fun T => T.card ≤ d), Nat.choose U.card (d - T.card) =\n        ∑ T ∈ s.powerset, F T := by\n    simpa [F] using\n      (Finset.sum_filter (s := s.powerset) (p := fun T => T.card ≤ d)\n        (f := fun T => Nat.choose U.card (d - T.card)))\n  have hfiber (j : ℕ) :\n      ∑ T ∈ s.powersetCard j, F T =\n        if j ≤ d then Nat.choose s.card j * Nat.choose U.card (d - j) else 0 := by\n    by_cases hj : j ≤ d\n    · rw [if_pos hj]\n      calc\n        ∑ T ∈ s.powersetCard j, F T =\n            ∑ T ∈ s.powersetCard j, Nat.choose U.card (d - T.card) := by\n              apply Finset.sum_congr rfl\n              intro T hT\n              simp [F, (Finset.mem_powersetCard.mp hT).2, hj]\n        _ = Nat.choose s.card j * Nat.choose U.card (d - j) :=\n          powersetCard_weightedSum_eq_choose s U d j\n    · rw [if_neg hj]\n      apply Finset.sum_eq_zero\n      intro T hT\n      simp [F, (Finset.mem_powersetCard.mp hT).2, hj]\n  have hrange :\n      ∑ j ∈ Finset.range (s.card + 1),\n          (if j ≤ d then Nat.choose s.card j * Nat.choose U.card (d - j) else 0) =\n        ∑ j ∈ Finset.range (d + 1), Nat.choose s.card j * Nat.choose U.card (d - j) := by\n    by_cases hsd : s.card ≤ d\n    · refine Finset.sum_subset_zero_on_sdiff ?_ ?_ ?_\n      · intro j hj\n        simp only [Finset.mem_range] at hj ⊢\n        omega\n      · intro j hj\n        simp only [Finset.mem_sdiff, Finset.mem_range] at hj\n        have hlt : s.card < j := by omega\n        rw [Nat.choose_eq_zero_of_lt hlt]\n        simp\n      · intro j hj\n        simp only [Finset.mem_range] at hj\n        have hjle : j ≤ s.card := Nat.le_of_lt_succ hj\n        simp [hjle.trans hsd]\n    · have hds : d < s.card := Nat.lt_of_not_ge hsd\n      symm\n      refine Finset.sum_subset_zero_on_sdiff ?_ ?_ ?_\n      · intro j hj\n        simp only [Finset.mem_range] at hj ⊢\n        omega\n      · intro j hj\n        simp only [Finset.mem_sdiff, Finset.mem_range] at hj\n        have hlt : d < j := by omega\n        simp [Nat.not_le_of_gt hlt]\n      · intro j hj\n        simp only [Finset.mem_range] at hj\n        have hjle : j ≤ d := Nat.le_of_lt_succ hj\n        simp [hjle]\n  calc\n    ∑ T ∈ s.powerset.filter (fun T => T.card ≤ d), Nat.choose U.card (d - T.card) =\n        ∑ T ∈ s.powerset, F T := hfiltered\n    _ = ∑ j ∈ Finset.range (s.card + 1), ∑ T ∈ s.powersetCard j, F T :=\n      Finset.sum_powerset s F\n    _ = ∑ j ∈ Finset.range (s.card + 1),\n        (if j ≤ d then Nat.choose s.card j * Nat.choose U.card (d - j) else 0) := by\n      apply Finset.sum_congr rfl\n      intro j hj\n      exact hfiber j\n    _ = ∑ j ∈ Finset.range (d + 1), Nat.choose s.card j * Nat.choose U.card (d - j) := hrange\n"
+    },
+    "nl": {
+      "origin": [],
+      "text": "First use `Finset.sum_filter` to rewrite the filtered left-hand sum as a sum over all of `s.powerset` with the zero-extended summand\n`F T := if T.card ≤ d then Nat.choose U.card (d - T.card) else 0`.\nThis preserves the original filter exactly.\n\nApply `Finset.sum_powerset s F`. It decomposes that sum into the fibers `s.powersetCard j` for `j ∈ Finset.range (s.card + 1)`. On a fixed fiber, `Finset.mem_powersetCard` rewrites every `T.card` to `j`. If `j ≤ d`, the resulting fiber is exactly\n`∑ T ∈ s.powersetCard j, Nat.choose U.card (d - T.card)`,\nso use the committed lower theorem `powersetCard_weightedSum_eq_choose` to obtain\n`Nat.choose s.card j * Nat.choose U.card (d - j)`. If `d < j`, the conditional definition of `F` makes every summand zero.\n\nIt remains to replace the sum over `Finset.range (s.card + 1)` of these in-range fiber values by the stated sum over `Finset.range (d + 1)`. Split on the comparison of `s.card` and `d`. When `d ≤ s.card`, the latter range is a subset of the former and the extra indices have `d < j`, hence their zero-extended fiber values are zero. When `s.card ≤ d`, the former range is a subset of the latter; for an index in the added difference, `s.card < j`, so `Nat.choose_eq_zero_of_lt` makes the displayed binomial product zero. In both cases apply `Finset.sum_subset_zero_on_sdiff` to remove the zero terms. This yields exactly the required `range (d + 1)` convolution with the unchanged natural subtraction index."
+    }
+  },
+  "revision": 1,
+  "state": "proved",
+  "statement": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Filter",
+          "name": "Finset.filter"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Powerset",
+          "name": "Finset.powerset"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Nat.Choose.Basic",
+          "name": "Nat.choose"
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": true,
+        "contains_axiom": false,
+        "contains_sorry": true,
+        "diagnostics": {
+          "diagnostics": [
+            {
+              "column": 9,
+              "line": 33,
+              "message": "declaration uses `sorry`",
+              "severity": "warning"
+            }
+          ],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.AnchoredPowersetEnumeration.Theorems.powerset_weightedSum_eq_chooseSum', 'items': [{'severity': 'warning', 'pos': {'line': 33, 'column': 9}, 'endPos': {'line': 33, 'column': 42}, 'kind': None, 'data': 'declaration uses `sorry`', 'fileName': 'UniformMissingTraceFamily.Main.AnchoredPowersetEnumeration.Theorems.powerset_weightedSum_eq_chooseSum', 'content': '- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\\n-/\\ntheorem powerset_weightedSum_eq_chooseSum {α : Type*} [inst : DecidableEq α]\\n    (s U : Finset α) (d : ℕ) :\\n    let _ : DecidableEq α := inst'}], 'total_items': 1, 'error_count': 0, 'warning_count': 1, 'info_count': 0, 'sorry_count': 1}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/AnchoredPowersetEnumeration/Theorems/powerset_weightedSum_eq_chooseSum.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 1 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": true,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [
+            {
+              "column": 3,
+              "excerpt": "sorry",
+              "kind": "sorry",
+              "line": 38
+            }
+          ],
+          "opaque_count": 0,
+          "sorry_count": 1,
+          "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.AnchoredPowersetEnumeration.Prelude\nimport Mathlib.Data.Finset.Filter\nimport Mathlib.Data.Finset.Powerset\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `powerset_weightedSum_eq_chooseSum`\n\nLet α be a type with `[DecidableEq α]`. For every finsets `s U : Finset α` and natural `d`, the\nweighted sum over subsets of `s` whose cardinality is at most `d` decomposes into cardinality\nfibers:\n\n`∑ T ∈ s.powerset.filter (fun T => T.card ≤ d), Nat.choose U.card (d - T.card) = ∑ j ∈ Finset.range\n(d + 1), Nat.choose s.card j * Nat.choose U.card (d - j)`.\n\nThe filter, the index range `Finset.range (d + 1)`, and every subtraction use the displayed\nnatural-number forms; no cardinality, disjointness, or ambient-size assumptions are required.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Finset.filter` from `Mathlib.Data.Finset.Filter`\n- `Finset.powerset` from `Mathlib.Data.Finset.Powerset`\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n-/\ntheorem powerset_weightedSum_eq_chooseSum {α : Type*} [inst : DecidableEq α]\n    (s U : Finset α) (d : ℕ) :\n    let _ : DecidableEq α := inst\n    ∑ T ∈ s.powerset.filter (fun T => T.card ≤ d), Nat.choose U.card (d - T.card) =\n      ∑ j ∈ Finset.range (d + 1), Nat.choose s.card j * Nat.choose U.card (d - j) := by\n  sorry\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 49,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The anchored-star count evaluates a filtered family’s edge contributions by binomial filler choices; this statement isolates its generic cardinality-fiber decomposition.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 49,
+          "start_locator": null
+        }
+      ],
+      "text": "Let α be a type with `[DecidableEq α]`. For every finsets `s U : Finset α` and natural `d`, the weighted sum over subsets of `s` whose cardinality is at most `d` decomposes into cardinality fibers:\n\n`∑ T ∈ s.powerset.filter (fun T => T.card ≤ d), Nat.choose U.card (d - T.card) = ∑ j ∈ Finset.range (d + 1), Nat.choose s.card j * Nat.choose U.card (d - j)`.\n\nThe filter, the index range `Finset.range (d + 1)`, and every subtraction use the displayed natural-number forms; no cardinality, disjointness, or ambient-size assumptions are required."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T14:47:54Z"
+}

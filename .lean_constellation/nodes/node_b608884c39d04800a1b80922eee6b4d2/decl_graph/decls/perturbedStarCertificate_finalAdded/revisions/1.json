@@ -1,0 +1,199 @@
+{
+  "change": {
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Prove the distinct final-added certificate case from SourceIndex b_0012 / article/sections/02_proof.tex line 63. For d,s,n,r and accepted B : PerturbedStarBlocks n r, let P = {B.b} ∪ B.T ∪ B.L and assume r = d+1-s, 2 ≤ r, and r+1 ≤ s. Conclude exactly the four-clause bundle required by visible `Main.PatternCriterion::patternFamily_isUniformMissingTraceFamily` revision 2 for `tau = perturbedStarTau B` and `patterns = perturbedStarPatterns d B`: properness of tau P in P; the gap bound by d+1-s; tau-cardinality at most s; and absence of Q in the pattern collection with `Q ∩ P = tau P` and the criterion size bound. The proof must use 2≤r and B.card_L to establish a chosen ell0∈B.L and expose the final-added selector branch, so tau P=B.T∪{ell0}; prove card tau=r+1 and card P-card tau=r using the accepted disjointness and avoidance fields; split exclusion exactly as the source does: every inserted Q contributes B.b to the intersection, whereas any a-anchored Q with the required intersection must equal `{B.a} ∪ B.T ∪ {ell0}`, which belongs to the deleted proper-L image because r≥2 makes `{ell0}` a proper subset of B.L. Consume `PerturbedStarBlocks` revision 2, `perturbedStarCore` revision 1 as needed for base classification, `perturbedStarPatterns` revision 1, and `perturbedStarTau` revision 1. This theorem is the second of five separate proved branches and must remain directly composable into the eventual universal certificate theorem.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Blocked at Proof Formal after Statement Formal and Proof NL were accepted. The frozen consumer-side theorem remains: for P={B.b}∪B.T∪B.L under r=d+1-s, 2≤r, and r+1≤s, prove the exact four-clause generic certificate bundle for `perturbedStarTau B P` over `perturbedStarPatterns d B`. The accepted proof plan checks `PerturbedStarBlocks` rev2, `perturbedStarCore` rev1, `perturbedStarPatterns` rev1, `perturbedStarTau` rev1, and the listed Finset cardinality/disjointness/powerset lemmas. The concrete missing item is a predictable tracked helper: from ell0∈B.L, Q∈perturbedStarPatterns d B, and `Q ∩ ({B.b}∪B.T∪B.L)=B.T∪{ell0}`, classify Q's raw pattern-membership branch. Inserted Q is impossible because B.b lies in the intersection; a base Q must be exactly `{B.a}∪B.T∪{ell0}`, hence is deleted because 2≤r makes `{ell0}⊂B.L`. This is a major reusable finite-set classification/exclusion argument and cannot remain a local Proof Formal helper. No statement/interface drift or source mismatch occurred. Retry condition: first prove and accept that tracked final-intersection exclusion lemma, then retry this unchanged proof-planned revision with the helper in its proof dependencies.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": "perturbedStarCertificate_finalAdded",
+  "proof": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": "Computes the tau and final-pattern cardinalities from pairwise-disjoint unions.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Card",
+          "name": "Finset.card_union_of_disjoint"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": "Transfers block and anchor disjointness to the chosen singleton and supports elementwise exclusions.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Disjoint",
+          "name": "Finset.disjoint_left"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": "Exposes subset witnesses in the inserted and deleted powerset images.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Powerset",
+          "name": "Finset.mem_powerset"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "Uses the anchors, block cardinalities, nonemptiness consequence, avoidance fields, and T/L disjointness.",
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "Classifies a base-branch Q using its containment in the explicit a/b/T/L core.",
+        "ref": {
+          "name": "perturbedStarCore",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "Unfolds the inserted and base-minus-deleted branches in the exclusion proof.",
+        "ref": {
+          "name": "perturbedStarPatterns",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "Unfolds the ordered proper-added and final-added guards to obtain the chosen ell0 selector value.",
+        "ref": {
+          "name": "perturbedStarTau",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": null,
+    "nl": {
+      "origin": [
+        {
+          "end_line": 63,
+          "end_locator": null,
+          "kind": "source",
+          "note": "This source line specifies the final b/T/L selector, its cardinalities, and the inserted-versus-deleted-singleton exclusion.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 63,
+          "start_locator": null
+        }
+      ],
+      "text": "Let `P := {B.b} ∪ B.T ∪ B.L`. From `hrtwo : 2 ≤ r` and `B.card_L = r`, prove `B.L.Nonempty`: if `B.L = ∅`, its cardinality is zero, contradicting `2 ≤ r`. Fix\n```\nell0 := Classical.choose hL,   hell0 : ell0 ∈ B.L.\n```\n\nFirst show that the earlier proper-added guard in `perturbedStarTau` is false. If `P = {B.b} ∪ B.T ∪ Y` with `Y ⊆ B.L` and `Y ≠ B.L`, intersect the equality with `B.L`. The anchor-avoidance fields and `B.T_disjoint_L` reduce its left side to `B.L` and its right side to `Y`, contradicting `Y ≠ B.L`. The next guard is true, with the displayed equality for `P` and `hL`. Unfolding the two selectors therefore gives\n```\nperturbedStarTau B P = B.T ∪ {ell0}.\n```\n\nUse `B.T_disjoint_L` and `hell0`, via `Finset.disjoint_left`, to obtain `Disjoint B.T {ell0}`. Together with the two b-avoidance fields, this makes the displayed unions pairwise disjoint. Hence `Finset.card_union_of_disjoint`, `B.card_T`, and `B.card_L` give\n```\n(perturbedStarTau B P).card = r + 1,\nP.card = 1 + 2*r,\nP.card - (perturbedStarTau B P).card = r.\n```\nThe properness clause follows because the tau is contained in `P`, while `B.b ∈ P` but `B.b ∉ B.T ∪ {ell0}`. Rewrite `r` as `d + 1 - s` with `hr` for the gap clause, and use `hrs : r + 1 ≤ s` for the tau-cardinality clause.\n\nFor the exclusion clause, assume `Q ∈ perturbedStarPatterns d B`, `Q ∩ P = B.T ∪ {ell0}`, and the criterion size bound. Unfold `perturbedStarPatterns` and simplify the powerset, image, filter, union, and difference membership (using `Finset.mem_powerset`).\n\n* In the inserted branch, `Q = {B.b} ∪ B.T ∪ Z` for some `Z ⊆ B.L`. Then `B.b ∈ Q ∩ P`, but `B.b ∉ B.T ∪ {ell0}` by `B.b_not_mem_T`, `B.b_not_mem_L`, and `hell0`, a contradiction.\n\n* In the base-minus-deleted branch, unfold `perturbedStarCore`. It gives `B.a ∈ Q` and `Q ⊆ {B.a, B.b} ∪ B.T ∪ B.L`. The intersection equality forces `B.b ∉ Q`, `B.T ∪ {ell0} ⊆ Q`, and excludes every member of `B.L \\ {ell0}` from `Q`. With the core containment, extensionality gives\n  ```\n  Q = {B.a} ∪ B.T ∪ {ell0}.\n  ```\n  The singleton is a proper subset of `B.L`: it is contained by `hell0`, and equality would make `B.L.card = 1`, contrary to `B.card_L` and `hrtwo`. Therefore this exact representation is in the deleted powerset image, contradicting the base-minus-deleted membership.\n\nThus no such `Q` exists (the final branch is already contradictory before its size hypothesis is needed), and rewriting by the selector equality yields the four requested conjuncts."
+    }
+  },
+  "revision": 1,
+  "state": "proof_planned",
+  "statement": {
+    "deps": [
+      {
+        "kind": "repo_decl",
+        "reason": "The theorem quantifies construction data B and uses its block cardinality/nonemptiness interface to state the final selector case.",
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The fourth certificate clause quantifies membership in the accepted perturbed-star pattern collection.",
+        "ref": {
+          "name": "perturbedStarPatterns",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "Every clause is stated for the final-added value of the accepted total certificate selector.",
+        "ref": {
+          "name": "perturbedStarTau",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": true,
+        "contains_axiom": false,
+        "contains_sorry": true,
+        "diagnostics": {
+          "diagnostics": [
+            {
+              "column": 9,
+              "line": 41,
+              "message": "declaration uses `sorry`",
+              "severity": "warning"
+            }
+          ],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarCertificate_finalAdded', 'items': [{'severity': 'warning', 'pos': {'line': 41, 'column': 9}, 'endPos': {'line': 41, 'column': 44}, 'kind': None, 'data': 'declaration uses `sorry`', 'fileName': 'UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarCertificate_finalAdded', 'content': '  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau`\\n-/\\ntheorem perturbedStarCertificate_finalAdded (d s n r : ℕ)\\n    (B : PerturbedStarBlocks n r)\\n    (hr : r = d + 1 - s) (hrtwo : 2 ≤ r) (hrs : r + 1 ≤ s) :'}], 'total_items': 1, 'error_count': 0, 'warning_count': 1, 'info_count': 0, 'sorry_count': 1}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Theorems/perturbedStarCertificate_finalAdded.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 1 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": true,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [
+            {
+              "column": 3,
+              "excerpt": "sorry",
+              "kind": "sorry",
+              "line": 51
+            }
+          ],
+          "opaque_count": 0,
+          "sorry_count": 1,
+          "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarCertificate_finalAdded`\n\nFor natural numbers `d`, `s`, `n`, and `r`, let `B : PerturbedStarBlocks n r`. Assume `r = d + 1 -\ns`, `2 ≤ r`, and `r + 1 ≤ s`, and put `P = {B.b} ∪ B.T ∪ B.L`. The lower bound together with\n`B.card_L = r` makes `B.L` nonempty, so the final-added selector guard applies: for the selector's\nchosen `ell0 ∈ B.L`, `perturbedStarTau B P = B.T ∪ {ell0}`. Then the following four-clause\ncertificate bundle holds:\n\n1. `perturbedStarTau B P ⊂ P`.\n2. `P.card - (perturbedStarTau B P).card ≤ d + 1 - s`.\n3. `(perturbedStarTau B P).card ≤ s`.\n4. There is no `Q ∈ perturbedStarPatterns d B` such that both `Q ∩ P = perturbedStarTau B P` and\n`Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s)`.\n\nThis is the final inserted `b/T/L` pattern case and supplies exactly the certificate shape required\nby the generic pattern-family criterion.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 63\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\n- `Main.PerturbedStarCertificates::perturbedStarTau` → `perturbedStarTau` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau`\n-/\ntheorem perturbedStarCertificate_finalAdded (d s n r : ℕ)\n    (B : PerturbedStarBlocks n r)\n    (hr : r = d + 1 - s) (hrtwo : 2 ≤ r) (hrs : r + 1 ≤ s) :\n    let P := {B.b} ∪ B.T ∪ B.L\n    perturbedStarTau B P ⊂ P ∧\n      P.card - (perturbedStarTau B P).card ≤ d + 1 - s ∧\n      (perturbedStarTau B P).card ≤ s ∧\n      ¬ ∃ Q ∈ perturbedStarPatterns d B,\n        Q ∩ P = perturbedStarTau B P ∧\n          Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s) := by\n  sorry\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 63,
+          "end_locator": null,
+          "kind": "source",
+          "note": "Source b_0012's distinct final inserted b/T/L certificate case.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 63,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers `d`, `s`, `n`, and `r`, let `B : PerturbedStarBlocks n r`. Assume `r = d + 1 - s`, `2 ≤ r`, and `r + 1 ≤ s`, and put `P = {B.b} ∪ B.T ∪ B.L`. The lower bound together with `B.card_L = r` makes `B.L` nonempty, so the final-added selector guard applies: for the selector's chosen `ell0 ∈ B.L`, `perturbedStarTau B P = B.T ∪ {ell0}`. Then the following four-clause certificate bundle holds:\n\n1. `perturbedStarTau B P ⊂ P`.\n2. `P.card - (perturbedStarTau B P).card ≤ d + 1 - s`.\n3. `(perturbedStarTau B P).card ≤ s`.\n4. There is no `Q ∈ perturbedStarPatterns d B` such that both `Q ∩ P = perturbedStarTau B P` and `Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s)`.\n\nThis is the final inserted `b/T/L` pattern case and supplies exactly the certificate shape required by the generic pattern-family criterion."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-22T14:06:30Z"
+}

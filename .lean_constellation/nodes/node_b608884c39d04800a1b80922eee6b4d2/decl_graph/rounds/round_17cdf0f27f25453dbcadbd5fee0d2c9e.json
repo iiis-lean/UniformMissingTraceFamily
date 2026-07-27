@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-26T09:55:19Z",
+  "created_at": "2026-07-26T09:44:44Z",
+  "execution_completed_at": "2026-07-26T09:55:19Z",
+  "execution_reason": "DeclGraphRoundFlow finished with blocked.",
+  "execution_result_kind": "blocked",
+  "node_path": "Main.PerturbedStarCertificates",
+  "objective": "Retry the unchanged final public theorem from specified state now that the rebased workspace's Mathlib checkout is restored and Lean resolves successfully.",
+  "plan_closeout_acknowledged_at": "2026-07-26T09:55:19Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "blocked",
+  "result_reason": "DeclGraphRoundFlow finished with blocked.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedStar_isUniformMissingTraceFamily@rev:3",
+      "decl_name": "perturbedStar_isUniformMissingTraceFamily",
+      "revision": 3
+    }
+  ],
+  "round_id": "round_17cdf0f27f25453dbcadbd5fee0d2c9e",
+  "round_index": 20,
+  "started_at": "2026-07-26T09:46:32Z",
+  "status": "committed",
+  "strategy_id": "strategy_140c2962785943968f6203e9ab1972fc",
+  "summary": "Round 20 made substantive final-assembly progress: the public perturbedStar_isUniformMissingTraceFamily statement compiled and reached declared state with its explicit existential PerturbedStarBlocks witness and perturbedStarFamily conclusion unchanged. No declaration reached proved or graph_proved satisfaction in this round. Proof NL captured the intended bottom-up route through the parameter theorem, block existence, generic pattern criterion, and all five proved source certificate cases, but the round blocked on five draft dependency-stage checks for the declared definitions perturbedStarCore, perturbedStarFamily, perturbedStarFiller, perturbedStarPatterns, and perturbedStarTau appearing in the proof plan after the planner had correctly removed them from theorem-only anticipated proof dependencies following round 18. Dependency closure is complete and all mathematical providers are present; there is no missing source evidence, resource, external repository, reusable helper, superseded graph branch, or scope split. The active strategy still explains the remaining work. Next action should be one isolated metadata-corrected continuation round from declared state, preserving the accepted statement and Proof NL plan and targeting proved; completion and interface binding follow only after the proof passes."
+}

@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-22T12:50:32Z",
+  "created_at": "2026-07-22T12:42:28Z",
+  "execution_completed_at": "2026-07-22T12:50:32Z",
+  "execution_reason": "DeclGraphRoundFlow finished with completed.",
+  "execution_result_kind": "success",
+  "node_path": "Main.PerturbedStarCertificates",
+  "objective": "Repair the source-derived parameter foundation by replacing the false hslow encoding in perturbedStarParameterBounds with the immutable formal-target bound (d+3)/2≤s, rerunning statement and proof stages, and proving the unchanged five r=d+1-s consequences.",
+  "plan_closeout_acknowledged_at": "2026-07-22T12:50:32Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "success",
+  "result_reason": "DeclGraphRoundFlow finished with completed.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedStarParameterBounds@rev:3",
+      "decl_name": "perturbedStarParameterBounds",
+      "revision": 3
+    }
+  ],
+  "round_id": "round_2940862f49ee43279a78931865fefe65",
+  "round_index": 5,
+  "started_at": "2026-07-22T12:43:29Z",
+  "status": "committed",
+  "strategy_id": "strategy_140c2962785943968f6203e9ab1972fc",
+  "summary": "Round 5 successfully repaired and completed the parameter foundation. perturbedStarParameterBounds rev3 reached proved and proof-policy satisfaction under exactly the immutable hd, (d+3)/2≤s, hshigh, and hn interface. Together with declared PerturbedStarBlocks and proved exists_perturbedStarBlocks, the entire arithmetic/block foundation is now satisfied. No intentional state-only work, source drift, external prerequisite, or superseded active branch remains. The bottom-up strategy remains viable; the next round should begin the construction layer from SourceIndex b_0008, first declaring the fixed core C from the accepted PerturbedStarBlocks data before dependent filler, pattern, and family definitions."
+}

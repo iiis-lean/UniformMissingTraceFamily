@@ -1,0 +1,188 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "perturbedPattern_card_eq"
+    ],
+    "anticipated_statement_dep_names": [],
+    "base_revision": 1,
+    "kind": "update",
+    "objective": "Retry the unchanged SourceIndex b_0009 / article line 49 weight-equality target after the round-level Finset.image typed-dependency gap was repaired. For every B, d, and Y ⊆ B.L, prove equality of Nat.choose (perturbedStarFiller B).card at d + 1 minus the exact a/b anchored pattern cards. Consume proved perturbedPattern_card_eq; preserve the exact constructors and no hrd/hrn assumptions. This remains the weight provider for the public cancellation interface.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": "planned",
+    "summary": "Completed successfully after the MathlibIndex repair. The choose-weight declaration advanced from planned revision 1 to revision 2 at proved state; formal statement and proof checks passed, its proof consumes proved perturbedPattern_card_eq, and graph_proved satisfaction holds.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": "perturbedPattern_chooseWeight_eq",
+  "proof": {
+    "deps": [
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedPattern_card_eq",
+          "node": "Main.PerturbedPatternCancellation",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": false,
+        "contains_axiom": false,
+        "contains_sorry": false,
+        "diagnostics": {
+          "diagnostics": [],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPattern_chooseWeight_eq', 'items': [], 'total_items': 0, 'error_count': 0, 'warning_count': 0, 'info_count': 0, 'sorry_count': 0}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedPatternCancellation/Theorems/perturbedPattern_chooseWeight_eq.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 0 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "proof_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": false,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [],
+          "opaque_count": 0,
+          "sorry_count": 0,
+          "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Prelude\nimport Mathlib.Data.Finset.Card\nimport Mathlib.Data.Nat.Choose.Basic\nimport UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPattern_card_eq\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedPattern_chooseWeight_eq`\n\nFor every `B : PerturbedStarBlocks n r`, every natural number `d`, and every finite set `Y` with `Y\n⊆ B.L`, the exact completion weights of the matched deleted and added patterns are equal:\n\n`Nat.choose (perturbedStarFiller B).card (d + 1 - ({B.a} ∪ B.T ∪ Y).card) = Nat.choose\n(perturbedStarFiller B).card (d + 1 - ({B.b} ∪ B.T ∪ Y).card)`.\n\nNo additional hypotheses, including `hrd` or `hrn`, are assumed.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Finset.card` from `Mathlib.Data.Finset.Card`\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n\n## Proof outline\n\nFix `B`, `d`, `Y`, and `hY : Y ⊆ B.L`.  Apply the accepted project theorem `perturbedPattern_card_eq\nB Y hY` to rewrite the cardinality of the exact a-anchored constructor `{B.a} ∪ B.T ∪ Y` to the\ncardinality of the exact b-anchored constructor `{B.b} ∪ B.T ∪ Y`.\n\nAfter this rewrite, the two subtraction arguments to `Nat.choose (perturbedStarFiller B).card` are\ndefinitionally identical, so the equality closes by reflexivity (or `simpa`).  No property of\n`perturbedStarFiller` beyond its occurrence in the unchanged common first argument is used.  This\npreserves the required constructors, uses no `hrd` or `hrn` assumptions, and needs no helper\ndeclaration.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Proof dependencies\n\n- `Main.PerturbedPatternCancellation::perturbedPattern_card_eq` → `perturbedPattern_card_eq` from\n  `UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPattern_card_eq`\n-/\ntheorem perturbedPattern_chooseWeight_eq {n r : ℕ} (B : PerturbedStarBlocks n r)\n    (d : ℕ) (Y : Finset (Fin n)) (hY : Y ⊆ B.L) :\n    Nat.choose (perturbedStarFiller B).card\n        (d + 1 - ({B.a} ∪ B.T ∪ Y).card) =\n      Nat.choose (perturbedStarFiller B).card\n        (d + 1 - ({B.b} ∪ B.T ∪ Y).card) := by\n  rw [perturbedPattern_card_eq B Y hY]\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 49,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source’s matched a/T/Y and b/T/Y patterns have equal size and hence the same completion weight, exactly the rewrite used here.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 49,
+          "start_locator": null
+        }
+      ],
+      "text": "Fix `B`, `d`, `Y`, and `hY : Y ⊆ B.L`.  Apply the accepted project theorem `perturbedPattern_card_eq B Y hY` to rewrite the cardinality of the exact a-anchored constructor `{B.a} ∪ B.T ∪ Y` to the cardinality of the exact b-anchored constructor `{B.b} ∪ B.T ∪ Y`.\n\nAfter this rewrite, the two subtraction arguments to `Nat.choose (perturbedStarFiller B).card` are definitionally identical, so the equality closes by reflexivity (or `simpa`).  No property of `perturbedStarFiller` beyond its occurrence in the unchanged common first argument is used.  This preserves the required constructors, uses no `hrd` or `hrn` assumptions, and needs no helper declaration."
+    }
+  },
+  "revision": 2,
+  "state": "proved",
+  "statement": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Card",
+          "name": "Finset.card"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Nat.Choose.Basic",
+          "name": "Nat.choose"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedStarFiller",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": true,
+        "contains_axiom": false,
+        "contains_sorry": true,
+        "diagnostics": {
+          "diagnostics": [
+            {
+              "column": 9,
+              "line": 33,
+              "message": "declaration uses `sorry`",
+              "severity": "warning"
+            }
+          ],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPattern_chooseWeight_eq', 'items': [{'severity': 'warning', 'pos': {'line': 33, 'column': 9}, 'endPos': {'line': 33, 'column': 41}, 'kind': None, 'data': 'declaration uses `sorry`', 'fileName': 'UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPattern_chooseWeight_eq', 'content': '  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\\n-/\\ntheorem perturbedPattern_chooseWeight_eq {n r : ℕ} (B : PerturbedStarBlocks n r)\\n    (d : ℕ) (Y : Finset (Fin n)) (hY : Y ⊆ B.L) :\\n    Nat.choose (perturbedStarFiller B).card'}], 'total_items': 1, 'error_count': 0, 'warning_count': 1, 'info_count': 0, 'sorry_count': 1}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedPatternCancellation/Theorems/perturbedPattern_chooseWeight_eq.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 1 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": true,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [
+            {
+              "column": 3,
+              "excerpt": "sorry",
+              "kind": "sorry",
+              "line": 39
+            }
+          ],
+          "opaque_count": 0,
+          "sorry_count": 1,
+          "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Prelude\nimport Mathlib.Data.Finset.Card\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedPattern_chooseWeight_eq`\n\nFor every `B : PerturbedStarBlocks n r`, every natural number `d`, and every finite set `Y` with `Y\n⊆ B.L`, the exact completion weights of the matched deleted and added patterns are equal:\n\n`Nat.choose (perturbedStarFiller B).card (d + 1 - ({B.a} ∪ B.T ∪ Y).card) = Nat.choose\n(perturbedStarFiller B).card (d + 1 - ({B.b} ∪ B.T ∪ Y).card)`.\n\nNo additional hypotheses, including `hrd` or `hrn`, are assumed.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Finset.card` from `Mathlib.Data.Finset.Card`\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n-/\ntheorem perturbedPattern_chooseWeight_eq {n r : ℕ} (B : PerturbedStarBlocks n r)\n    (d : ℕ) (Y : Finset (Fin n)) (hY : Y ⊆ B.L) :\n    Nat.choose (perturbedStarFiller B).card\n        (d + 1 - ({B.a} ∪ B.T ∪ Y).card) =\n      Nat.choose (perturbedStarFiller B).card\n        (d + 1 - ({B.b} ∪ B.T ∪ Y).card) := by\n  sorry\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 49,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source states that matched removed and added a/T/Y and b/T/Y patterns have the same size and therefore contribute the same number of completions.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 49,
+          "start_locator": null
+        }
+      ],
+      "text": "For every `B : PerturbedStarBlocks n r`, every natural number `d`, and every finite set `Y` with `Y ⊆ B.L`, the exact completion weights of the matched deleted and added patterns are equal:\n\n`Nat.choose (perturbedStarFiller B).card (d + 1 - ({B.a} ∪ B.T ∪ Y).card) = Nat.choose (perturbedStarFiller B).card (d + 1 - ({B.b} ∪ B.T ∪ Y).card)`.\n\nNo additional hypotheses, including `hrd` or `hrn`, are assumed."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-27T01:25:21Z"
+}

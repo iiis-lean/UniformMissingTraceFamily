@@ -1,0 +1,24 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [],
+    "anticipated_statement_dep_names": [],
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Formalize the disjoint-fiber fact needed to turn patternFamily.biUnion into a sum in the SourceIndex b_0009 counting route: for a finite family of distinct patterns each disjoint from U, show the completion fibers (U.powersetCard (d + 1 - P.card)).image (fun A => P ∪ A) are pairwise disjoint over P. Recover each P from a completed set using its disjointness from U. This consumes the lower patternFamily definition shape and serves patternFamily_card_sum via Finset.card_biUnion; the statement must cover the actual perturbedStarPatterns without requiring assumptions unavailable from their containment in perturbedStarCore and the complementary filler.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "DeclGraphRoundFlow failed for change completionFibers_pairwiseDisjoint@rev:1.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": null,
+  "proof": null,
+  "revision": 1,
+  "state": "planned",
+  "statement": {
+    "deps": [],
+    "formal": null,
+    "nl": null
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T10:52:31Z"
+}

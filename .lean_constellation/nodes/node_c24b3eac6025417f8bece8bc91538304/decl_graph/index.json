@@ -1,0 +1,21 @@
+{
+  "decl_names": [
+    "anchoredPowerset_sum_erase",
+    "anchoredPowerset_weightedSum_eq_chooseSum",
+    "powersetCard_weightedSum_eq_choose",
+    "powerset_weightedSum_eq_chooseSum"
+  ],
+  "node_id": "node_c24b3eac6025417f8bece8bc91538304",
+  "node_path": "Main.AnchoredPowersetEnumeration",
+  "round_ids": [
+    "round_796180c150b847cd9ade38a1867411ec",
+    "round_bae85cb7adfd4da3ac167306a006daf4",
+    "round_dfd3273c1a8640c4ada5c86816b33011"
+  ],
+  "schema_version": 1,
+  "strategy_ids": [
+    "strategy_44d5ffb61d1946208cb6cb22bb89a21d"
+  ],
+  "summary": "DeclGraph index rebuilt for Main.AnchoredPowersetEnumeration: 4 decls, 3 rounds, 1 strategies.",
+  "updated_at": "2026-07-27T15:27:30Z"
+}

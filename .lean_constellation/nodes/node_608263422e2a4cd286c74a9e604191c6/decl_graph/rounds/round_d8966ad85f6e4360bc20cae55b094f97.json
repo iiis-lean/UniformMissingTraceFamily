@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-27T01:53:59Z",
+  "created_at": "2026-07-27T01:38:11Z",
+  "execution_completed_at": "2026-07-27T01:53:59Z",
+  "execution_reason": "DeclGraphRoundFlow finished with completed.",
+  "execution_result_kind": "success",
+  "node_path": "Main.PerturbedPatternCancellation",
+  "objective": "Retry the unchanged public cancellation theorem after recording Finset.sum and its defining module and validating the node Mathlib hints. Advance the planned public revision to proved using the eight proved private providers.",
+  "plan_closeout_acknowledged_at": "2026-07-27T13:01:38Z",
+  "plan_closeout_acknowledged_by": "a_49190a60a0024da7a0b2a783f23a1d5a",
+  "result_kind": "success",
+  "result_reason": "DeclGraphRoundFlow finished with completed.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedPattern_properWeights_add_full_eq_fullWeights@rev:2",
+      "decl_name": "perturbedPattern_properWeights_add_full_eq_fullWeights",
+      "revision": 2
+    }
+  ],
+  "round_id": "round_d8966ad85f6e4360bc20cae55b094f97",
+  "round_index": 8,
+  "started_at": "2026-07-27T01:40:21Z",
+  "status": "committed",
+  "strategy_id": "strategy_ff5e1a1c26fc4bac9ab8fc7bd94fdb97",
+  "summary": "The strategy achieved its intended graph state. The public perturbedPattern_properWeights_add_full_eq_fullWeights theorem reached proved state with passed formal checks and proof-policy-satisfied closure over all eight proved private providers. The previous Finset.sum metadata blocker is resolved. All nine active declarations are semantically intentional, proved, within the contract's expected 5–10 scale, and free of retry-version or superseded branches. No declaration, state-only intermediate, blocker, cleanup round, preparation, resource, or scope expansion remains. Next: commit this closeout, bind the required interface to the public theorem, run the content completion gate, close the achieved strategy, and submit ready if the gate passes."
+}

@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-26T14:46:28Z",
+  "created_at": "2026-07-26T14:33:41Z",
+  "execution_completed_at": "2026-07-26T14:46:28Z",
+  "execution_reason": "DeclGraphRoundFlow finished with completed.",
+  "execution_result_kind": "success",
+  "node_path": "Main.AnchoredPowersetEnumeration",
+  "objective": "Prove the reusable cardinality-filtered powerset convolution from the accepted powersetCard fiber evaluation, preserving the exact range(d+1) and Nat subtraction form needed by the public anchored theorem.",
+  "plan_closeout_acknowledged_at": "2026-07-26T14:46:28Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "success",
+  "result_reason": "DeclGraphRoundFlow finished with completed.",
+  "revision_refs": [
+    {
+      "change_id": "powerset_weightedSum_eq_chooseSum@rev:1",
+      "decl_name": "powerset_weightedSum_eq_chooseSum",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_dfd3273c1a8640c4ada5c86816b33011",
+  "round_index": 2,
+  "started_at": "2026-07-26T14:36:01Z",
+  "status": "committed",
+  "strategy_id": "strategy_44d5ffb61d1946208cb6cb22bb89a21d",
+  "summary": "The strategy made full progress in round 2: powerset_weightedSum_eq_chooseSum reached proved state and is proof-policy satisfied under graph_proved, with all four pipeline stages and formal checks passing. Its proof closure includes the already proved powersetCard_weightedSum_eq_choose. No declaration remains unfinished, no state-only work or blocker exists, and graph hygiene remains clean with three intentional private helpers. The known lower closure is now sufficient to plan the public anchoredPowerset_weightedSum_eq_chooseSum theorem using anchoredPowerset_sum_erase plus this convolution; no resource or external dependency preparation is needed."
+}

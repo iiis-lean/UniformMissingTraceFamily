@@ -1,0 +1,32 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-22T09:25:17Z",
+  "created_at": "2026-07-22T09:16:36Z",
+  "execution_completed_at": "2026-07-22T09:25:17Z",
+  "execution_reason": "DeclGraphRoundFlow finished with completed.",
+  "execution_result_kind": "success",
+  "node_path": "Main.PatternCriterion",
+  "objective": "Declare the two source-defined public foundations: the exact uniform missing-trace predicate and the generic fixed-cardinality pattern-plus-filler family. This round intentionally stops before theorem proof work.",
+  "plan_closeout_acknowledged_at": "2026-07-22T09:25:17Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "success",
+  "result_reason": "DeclGraphRoundFlow finished with completed.",
+  "revision_refs": [
+    {
+      "change_id": "IsUniformMissingTraceFamily@rev:1",
+      "decl_name": "IsUniformMissingTraceFamily",
+      "revision": 1
+    },
+    {
+      "change_id": "patternFamily@rev:1",
+      "decl_name": "patternFamily",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_76fb5796e4724045b87d4e46e633f4d3",
+  "round_index": 1,
+  "started_at": "2026-07-22T09:19:13Z",
+  "status": "committed",
+  "strategy_id": "strategy_d509811e109f4266a85f656d30c12936",
+  "summary": "Round 1 successfully advanced the bottom-up strategy. IsUniformMissingTraceFamily and patternFamily both reached declared state and are proof-policy satisfied as non-theorem foundations under the proved repo target. No blocker, state-only exception, superseded artifact, or cleanup target was introduced. The final generic theorem remains uncreated; the next step is another bottom-up round for a small set of proved membership/cardinality helper lemmas before attempting the source certificate theorem."
+}

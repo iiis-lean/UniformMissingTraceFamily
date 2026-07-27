@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-07-27T14:12:34Z",
+  "current_revision": 1,
+  "kind": "theorem",
+  "lifecycle": "active",
+  "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarFamily_card",
+  "name": "perturbedStarFamily_card",
+  "node_path": "Main.CountingAndMain",
+  "public": true,
+  "revision_ids": [
+    1
+  ],
+  "summary": "The explicit perturbed-star family has star cardinality plus the sole unpaired full-L binomial contribution.",
+  "updated_at": "2026-07-27T14:12:34Z"
+}

@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-27T01:32:07Z",
+  "created_at": "2026-07-27T01:26:22Z",
+  "execution_completed_at": "2026-07-27T01:32:07Z",
+  "execution_reason": "DeclGraphRoundFlow finished with blocked.",
+  "execution_result_kind": "blocked",
+  "node_path": "Main.PerturbedPatternCancellation",
+  "objective": "Create and prove the single required public cancellation interface for every B and d: the filler-based Nat.choose sum over the proper a-pattern image plus the full-L b-pattern weight equals the corresponding sum over the full b-pattern image. Combine the eight proved private providers and verified Finset sum transport, preserving the exact constructors and no-hrd/no-hrn consumer shape.",
+  "plan_closeout_acknowledged_at": "2026-07-27T01:32:07Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "blocked",
+  "result_reason": "DeclGraphRoundFlow finished with blocked.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedPattern_properWeights_add_full_eq_fullWeights@rev:1",
+      "decl_name": "perturbedPattern_properWeights_add_full_eq_fullWeights",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_7a1bd8feec674ce7b7fb8d8b3b609987",
+  "round_index": 7,
+  "started_at": "2026-07-27T01:28:22Z",
+  "status": "committed",
+  "strategy_id": "strategy_ff5e1a1c26fc4bac9ab8fc7bd94fdb97",
+  "summary": "The final public-interface round was blocked at Statement NL; the theorem remains planned and unsatisfied, with only Statement NL present. All eight private providers are proved and proof-policy satisfied, and their objects, domains, weights, assumptions, and conclusion direction match the public consumer. The sole retry condition is a Lean/metadata typed-dependency repair: record compiler-verified Finset.sum in the repo MathlibIndex, attach it as a current-node declaration hint, validate hints, then rerun this unchanged public theorem from planned to proved. This is not a source, resource, provider, interface, scope, or proof-decomposition blocker; the open strategy remains viable and no cleanup target is present."
+}

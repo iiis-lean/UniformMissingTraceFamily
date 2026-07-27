@@ -1,0 +1,32 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-27T13:34:06Z",
+  "created_at": "2026-07-27T13:25:08Z",
+  "execution_completed_at": "2026-07-27T13:32:59Z",
+  "execution_reason": null,
+  "execution_result_kind": "success",
+  "node_path": "Main.CountingAndMain",
+  "objective": "Retry the same two unchanged wrapper theorems from the declared boundary so Proof NL and Proof Formal are coherently replaced together. The new Proof NL routes must consist of direct reuse of the exact ready lower providers, matching the provider-based Lean proofs already shown formally consistent in round 11. Do not touch statement artifacts, parent counting declarations, or cleanup candidates.",
+  "plan_closeout_acknowledged_at": "2026-07-27T13:34:06Z",
+  "plan_closeout_acknowledged_by": "a_69813ea8bd4a4ab38bca6ad41a76a566",
+  "result_kind": "success",
+  "result_reason": "Both wrappers reached proved state with accepted provider-based proof plans and formal proofs, and passed graph_proved satisfaction.",
+  "revision_refs": [
+    {
+      "change_id": "anchoredPowerset_chooseSum_reindex@rev:3",
+      "decl_name": "anchoredPowerset_chooseSum_reindex",
+      "revision": 3
+    },
+    {
+      "change_id": "perturbedStarProperPatterns_chooseSum@rev:3",
+      "decl_name": "perturbedStarProperPatterns_chooseSum",
+      "revision": 3
+    }
+  ],
+  "round_id": "round_a1128bdb8a14412991557cc884e7cba9",
+  "round_index": 12,
+  "started_at": "2026-07-27T13:26:16Z",
+  "status": "committed",
+  "strategy_id": "strategy_7cbc30f0d9cb46628fd30ebca588482b",
+  "summary": "The repair strategy made the intended bottom-up progress: anchoredPowerset_chooseSum_reindex and perturbedStarProperPatterns_chooseSum both reached proved state and passed graph_proved proof-policy satisfaction with coherent provider-based Proof NL and Proof Formal artifacts. No blocker or state-only closure remains. The exact lower-provider dependency closure is now known and accepted for the two parent counting theorems. The next round should reset perturbedStarBase_chooseSum and perturbedStarPerturbation_chooseSum to declared, update their proof plans to use the lower providers directly plus the already-proved local cardinality facts, and prove them; wrappers remain active only until those consumers compile without references, then should be deleted in a separate hygiene round."
+}

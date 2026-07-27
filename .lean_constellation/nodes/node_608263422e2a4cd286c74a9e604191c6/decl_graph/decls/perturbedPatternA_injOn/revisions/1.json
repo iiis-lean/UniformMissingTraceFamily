@@ -1,0 +1,26 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "perturbedPatternA_inter_L"
+    ],
+    "anticipated_statement_dep_names": [],
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Prove injectivity on the domain B.L.powerset of the exact map Y ↦ {B.a} ∪ B.T ∪ Y, in a form usable by Finset.sum_image. Consume perturbedPatternA_inter_L by applying congrArg (· ∩ B.L) to an equality of images and recovering both domain elements. This serves matched proper a-pattern sum transport in the final interface and must introduce no assumptions beyond B : PerturbedStarBlocks n r.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "DeclGraphRoundFlow failed for change perturbedPatternA_injOn@rev:1.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": null,
+  "proof": null,
+  "revision": 1,
+  "state": "planned",
+  "statement": {
+    "deps": [],
+    "formal": null,
+    "nl": null
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T15:36:58Z"
+}

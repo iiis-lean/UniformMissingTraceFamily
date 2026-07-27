@@ -1,0 +1,395 @@
+{
+  "declarations": [
+    {
+      "kind": "theorem",
+      "lean_full_name": "anchoredPowerset_weightedSum_eq_chooseSum",
+      "module": "UniformMissingTraceFamily.Main.AnchoredPowersetEnumeration.Theorems.anchoredPowerset_weightedSum_eq_chooseSum",
+      "name": "anchoredPowerset_weightedSum_eq_chooseSum",
+      "node_path": "Main.AnchoredPowersetEnumeration",
+      "source_origins": [
+        "article/sections/02_proof.tex:49-49"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.AnchoredPowersetEnumeration.Prelude\nimport Mathlib.Data.Finset.Filter\nimport Mathlib.Data.Finset.Powerset\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `anchoredPowerset_weightedSum_eq_chooseSum`\n\nLet α be a type with `[DecidableEq α]`. For every finsets `C U : Finset α`, anchor `a : α`, natural\n`d`, and proof `ha : a ∈ C`, the weighted filtered anchored-powerset sum equals the\ncardinality-fiber binomial convolution:\n\n`∑ P ∈ C.powerset.filter (fun P => a ∈ P ∧ P.card ≤ d + 1), Nat.choose U.card (d + 1 - P.card) = ∑ j\n∈ Finset.range (d + 1), Nat.choose (C.erase a).card j * Nat.choose U.card (d - j)`.\n\nNo disjointness, cardinality, or ambient-size assumptions are required. The bounds and both\nsubtraction expressions are natural-number expressions exactly as displayed.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Finset.filter` from `Mathlib.Data.Finset.Filter`\n- `Finset.powerset` from `Mathlib.Data.Finset.Powerset`\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n-/\ntheorem anchoredPowerset_weightedSum_eq_chooseSum {α : Type*} [DecidableEq α]\n    (C U : Finset α) (a : α) (d : ℕ) (ha : a ∈ C) :\n    ∑ P ∈ C.powerset.filter (fun P => a ∈ P ∧ P.card ≤ d + 1),\n        Nat.choose U.card (d + 1 - P.card) =\n      ∑ j ∈ Finset.range (d + 1),\n        Nat.choose (C.erase a).card j * Nat.choose U.card (d - j) := by\n  sorry\n",
+      "statement_dependencies": [
+        "Mathlib:Mathlib.Data.Finset.Filter.Finset.filter",
+        "Mathlib:Mathlib.Data.Finset.Powerset.Finset.powerset",
+        "Mathlib:Mathlib.Data.Nat.Choose.Basic.Nat.choose"
+      ],
+      "summary": "Rewrites a filtered anchored-powerset filler-weight sum as its exact binomial convolution."
+    },
+    {
+      "kind": "theorem",
+      "lean_full_name": "exists_uniformMissingTraceFamily_strictlyLargerThanStar",
+      "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.exists_uniformMissingTraceFamily_strictlyLargerThanStar",
+      "name": "exists_uniformMissingTraceFamily_strictlyLargerThanStar",
+      "node_path": "Main.CountingAndMain",
+      "source_origins": [
+        "formal_target.lean:14-25",
+        "article/sections/02_proof.tex:75-79"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `exists_uniformMissingTraceFamily_strictlyLargerThanStar`\n\nFor natural numbers `d`, `s`, and `n`, if `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤ d -\n1`, and `hn : 2 * (d + 1) ≤ n`, then there exists a family `family : Finset (Finset (Fin n))` such\nthat\n`IsUniformMissingTraceFamily d s family ∧ family.card = Nat.choose (n - 1) d + Nat.choose (n - 2 *\n(d + 1 - s) - 2) (2 * s - d - 2) ∧ Nat.choose (n - 1) d < family.card`.\n\n## Sources\n\n- Source `formal_target.lean`, lines 14–25\n- Source `article/sections/02_proof.tex`, lines 75–79\n\n## Statement dependencies\n\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PatternCriterion::IsUniformMissingTraceFamily` → `IsUniformMissingTraceFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily`\n-/\ntheorem exists_uniformMissingTraceFamily_strictlyLargerThanStar (d s n : ℕ)\n    (hd : 4 ≤ d) (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    ∃ family : Finset (Finset (Fin n)),\n      IsUniformMissingTraceFamily d s family ∧\n        family.card =\n          Nat.choose (n - 1) d +\n            Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2) ∧\n          Nat.choose (n - 1) d < family.card := by\n  sorry\n",
+      "statement_dependencies": [
+        "Mathlib:Mathlib.Data.Nat.Choose.Basic.Nat.choose",
+        "current repo:Main.PatternCriterion.IsUniformMissingTraceFamily"
+      ],
+      "summary": "In the middle parameter range, an explicit uniform missing-trace family has the exact perturbed-star cardinality and strictly exceeds a star."
+    },
+    {
+      "kind": "theorem",
+      "lean_full_name": "perturbedStarFamily_card",
+      "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarFamily_card",
+      "name": "perturbedStarFamily_card",
+      "node_path": "Main.CountingAndMain",
+      "source_origins": [
+        "article/sections/02_proof.tex:41-51"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarFamily_card`\n\nFor natural numbers `n`, `r`, and `d`, any `B : PerturbedStarBlocks n r`, and proofs `hrd : 2 * r ≤\nd` and `hrn : 2 + 2 * r ≤ n`, the explicit family `perturbedStarFamily d B` has cardinality\n`(perturbedStarFamily d B).card = Nat.choose (n - 1) d + Nat.choose (n - 2 * r - 2) (d - 2 * r)`.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 41–51\n\n## Statement dependencies\n\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFamily` → `perturbedStarFamily` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFamily`\n-/\ntheorem perturbedStarFamily_card {n r d : ℕ} (B : PerturbedStarBlocks n r)\n    (hrd : 2 * r ≤ d) (hrn : 2 + 2 * r ≤ n) :\n    (perturbedStarFamily d B).card =\n      Nat.choose (n - 1) d + Nat.choose (n - 2 * r - 2) (d - 2 * r) := by\n  sorry\n",
+      "statement_dependencies": [
+        "Mathlib:Mathlib.Data.Nat.Choose.Basic.Nat.choose",
+        "current repo:Main.PerturbedStarCertificates.PerturbedStarBlocks",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarFamily"
+      ],
+      "summary": "The explicit perturbed-star family has star cardinality plus the sole unpaired full-L binomial contribution."
+    },
+    {
+      "kind": "definition",
+      "lean_full_name": "IsUniformMissingTraceFamily",
+      "module": "UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily",
+      "name": "IsUniformMissingTraceFamily",
+      "node_path": "Main.PatternCriterion",
+      "source_origins": [
+        "formal_target.lean:3-9"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PatternCriterion.Prelude\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `IsUniformMissingTraceFamily`\n\nFor natural numbers `n`, `d`, and `s`, and a finite family `family : Finset (Finset (Fin n))`,\n`IsUniformMissingTraceFamily d s family` holds exactly when:\n\n1. every member `F` of `family` has cardinality `d + 1`; and\n2. every `F ∈ family` has a finite set `B : Finset (Fin n)` with `B ⊆ F` and `B.card = s` such that,\nfor every `F' ∈ family`, the intersection trace `F ∩ F'` is not `B`.\n\n## Sources\n\n- Source `formal_target.lean`, lines 3–9\n-/\ndef IsUniformMissingTraceFamily {n : ℕ} (d s : ℕ)\n    (family : Finset (Finset (Fin n))) : Prop :=\n  (∀ F ∈ family, F.card = d + 1) ∧\n    ∀ F ∈ family, ∃ B : Finset (Fin n), B ⊆ F ∧ B.card = s ∧\n      ∀ F' ∈ family, B ≠ F ∩ F'\n",
+      "statement_dependencies": [],
+      "summary": "A Finset family on Fin n is (d+1)-uniform and has an s-element missing intersection trace inside every member."
+    },
+    {
+      "kind": "theorem",
+      "lean_full_name": "card_eq_of_mem_patternFamily",
+      "module": "UniformMissingTraceFamily.Main.PatternCriterion.Theorems.card_eq_of_mem_patternFamily",
+      "name": "card_eq_of_mem_patternFamily",
+      "node_path": "Main.PatternCriterion",
+      "source_origins": [
+        "article/sections/02_proof.tex:3-17"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PatternCriterion.Prelude\nimport UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `card_eq_of_mem_patternFamily`\n\nFor natural numbers `n` and `d`, finite sets `C U F : Finset (Fin n)`, and an allowed pattern family\n`patterns : Finset (Finset (Fin n))`, assume:\n\n1. `C` and `U` are disjoint;\n2. every `P ∈ patterns` satisfies `P ⊆ C`;\n3. every `P ∈ patterns` satisfies `P.card ≤ d + 1`; and\n4. `F ∈ patternFamily d patterns U`.\n\nThen `F.card = d + 1`.\n\nIn particular, the core/filler disjointness makes the cardinality of a represented member `F = P ∪\nA` the sum of the allowed pattern size and its prescribed filler size, so every such member has the\ntarget uniform cardinality.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 3–17\n\n## Statement dependencies\n\n- `Main.PatternCriterion::patternFamily` → `patternFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily`\n-/\ntheorem card_eq_of_mem_patternFamily {n d : ℕ} (C U : Finset (Fin n))\n    (patterns : Finset (Finset (Fin n))) (F : Finset (Fin n))\n    (hCU : Disjoint C U) (h_patterns_subset : ∀ P ∈ patterns, P ⊆ C)\n    (h_patterns_card : ∀ P ∈ patterns, P.card ≤ d + 1)\n    (hF : F ∈ patternFamily d patterns U) : F.card = d + 1 := by\n  sorry\n",
+      "statement_dependencies": [
+        "current repo:Main.PatternCriterion.patternFamily"
+      ],
+      "summary": "Every member of a pattern family has cardinality d+1 when allowed patterns lie in a core disjoint from the filler region and have size at most d+1."
+    },
+    {
+      "kind": "theorem",
+      "lean_full_name": "mem_patternFamily",
+      "module": "UniformMissingTraceFamily.Main.PatternCriterion.Theorems.mem_patternFamily",
+      "name": "mem_patternFamily",
+      "node_path": "Main.PatternCriterion",
+      "source_origins": [
+        "article/sections/02_proof.tex:3-7"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PatternCriterion.Prelude\nimport UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `mem_patternFamily`\n\nFor natural numbers `n` and `d`, an allowed pattern family `patterns : Finset (Finset (Fin n))`, a\nfiller region `U : Finset (Fin n)`, and `F : Finset (Fin n)`, membership in the pattern-plus-filler\nfamily is characterized by\n```\nF ∈ patternFamily d patterns U ↔\n  ∃ P : Finset (Fin n), P ∈ patterns ∧\n    ∃ A : Finset (Fin n), A ⊆ U ∧ A.card = d + 1 - P.card ∧ F = P ∪ A.\n```\nThus a member is exactly the union of an allowed pattern and a filler subset of `U` whose\ncardinality supplies the remaining positions to reach size `d + 1`.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 3–7\n\n## Statement dependencies\n\n- `Main.PatternCriterion::patternFamily` → `patternFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily`\n-/\ntheorem mem_patternFamily {n d : ℕ} (patterns : Finset (Finset (Fin n)))\n    (U F : Finset (Fin n)) :\n    F ∈ patternFamily d patterns U ↔\n      ∃ P : Finset (Fin n), P ∈ patterns ∧\n        ∃ A : Finset (Fin n), A ⊆ U ∧ A.card = d + 1 - P.card ∧ F = P ∪ A := by\n  sorry\n",
+      "statement_dependencies": [
+        "current repo:Main.PatternCriterion.patternFamily"
+      ],
+      "summary": "Membership in patternFamily is equivalent to admitting an allowed pattern and an exact-cardinality filler whose union is the member."
+    },
+    {
+      "kind": "definition",
+      "lean_full_name": "patternFamily",
+      "module": "UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily",
+      "name": "patternFamily",
+      "node_path": "Main.PatternCriterion",
+      "source_origins": [
+        "article/sections/02_proof.tex:3-7"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PatternCriterion.Prelude\nimport Mathlib.Data.Finset.Powerset\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `patternFamily`\n\nFor a natural number `n`, a target size parameter `d`, an allowed pattern family `patterns : Finset\n(Finset (Fin n))`, and a filler region `U : Finset (Fin n)`, `patternFamily d patterns U` is the\nfinite family of all unions `P ∪ A` where `P ∈ patterns` and `A` is a subset of `U` of cardinality\n`d + 1 - P.card`; equivalently, `A ∈ U.powersetCard (d + 1 - P.card)`.\n\nThis construction records only the allowed core-pattern component and the exact-size filler\ncomponent. It does not itself impose disjointness or specialize the patterns to the later\nperturbed-star construction.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 3–7\n\n## Statement dependencies\n\n- `Finset.powersetCard` from `Mathlib.Data.Finset.Powerset`\n-/\ndef patternFamily {n : ℕ} (d : ℕ) (patterns : Finset (Finset (Fin n)))\n    (U : Finset (Fin n)) : Finset (Finset (Fin n)) :=\n  patterns.biUnion fun P => (U.powersetCard (d + 1 - P.card)).image fun A => P ∪ A\n",
+      "statement_dependencies": [
+        "Mathlib:Mathlib.Data.Finset.Powerset.Finset.powersetCard"
+      ],
+      "summary": "The Finset family of unions P ∪ A where P is an allowed core pattern and A is a fixed-cardinality filler from U."
+    },
+    {
+      "kind": "theorem",
+      "lean_full_name": "patternFamily_isUniformMissingTraceFamily",
+      "module": "UniformMissingTraceFamily.Main.PatternCriterion.Theorems.patternFamily_isUniformMissingTraceFamily",
+      "name": "patternFamily_isUniformMissingTraceFamily",
+      "node_path": "Main.PatternCriterion",
+      "source_origins": [
+        "article/sections/02_proof.tex:3-28"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PatternCriterion.Prelude\nimport UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily\nimport UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `patternFamily_isUniformMissingTraceFamily`\n\nFor natural numbers `n`, `d`, and `s`; finite core and filler regions `C U : Finset (Fin n)`; an\nallowed pattern family `patterns : Finset (Finset (Fin n))`; and a certificate function `tau :\nFinset (Fin n) → Finset (Fin n)`, assume:\n\n1. `C` and `U` are disjoint;\n2. every `P ∈ patterns` satisfies `P ⊆ C`; and\n3. every `P ∈ patterns` has the bundled certificate\n```\ntau P ⊂ P ∧\nP.card - (tau P).card ≤ d + 1 - s ∧\n(tau P).card ≤ s ∧\n¬ ∃ Q ∈ patterns,\n    Q ∩ P = tau P ∧\n    Q.card ≤ (tau P).card + (d + 1 - s).\n```\n\nThen\n```\nIsUniformMissingTraceFamily d s (patternFamily d patterns U).\n```\n\nThe bundled certificate is exactly the source’s proper-subpattern, difference-bound, size-bound, and\nexcluded-intersection data, while leaving the generic core/filler construction and conclusion\nunchanged.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 3–28\n\n## Statement dependencies\n\n- `Main.PatternCriterion::IsUniformMissingTraceFamily` → `IsUniformMissingTraceFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily`\n- `Main.PatternCriterion::patternFamily` → `patternFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily`\n-/\ntheorem patternFamily_isUniformMissingTraceFamily {n d s : ℕ}\n    (C U : Finset (Fin n)) (patterns : Finset (Finset (Fin n)))\n    (tau : Finset (Fin n) → Finset (Fin n)) (hCU : Disjoint C U)\n    (hPC : ∀ P ∈ patterns, P ⊆ C)\n    (hτ : ∀ P ∈ patterns, tau P ⊂ P ∧\n      P.card - (tau P).card ≤ d + 1 - s ∧ (tau P).card ≤ s ∧\n      ¬ ∃ Q ∈ patterns, Q ∩ P = tau P ∧\n        Q.card ≤ (tau P).card + (d + 1 - s)) :\n    IsUniformMissingTraceFamily d s (patternFamily d patterns U) := by\n  sorry\n",
+      "statement_dependencies": [
+        "current repo:Main.PatternCriterion.IsUniformMissingTraceFamily",
+        "current repo:Main.PatternCriterion.patternFamily"
+      ],
+      "summary": "The generic proper-subpattern tau certificates make the disjoint pattern-plus-filler construction a uniform missing-trace family."
+    },
+    {
+      "kind": "theorem",
+      "lean_full_name": "perturbedPattern_properWeights_add_full_eq_fullWeights",
+      "module": "UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPattern_properWeights_add_full_eq_fullWeights",
+      "name": "perturbedPattern_properWeights_add_full_eq_fullWeights",
+      "node_path": "Main.PerturbedPatternCancellation",
+      "source_origins": [
+        "article/sections/02_proof.tex:49-49"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Prelude\nimport Mathlib.Algebra.BigOperators.Group.Finset.Defs\nimport Mathlib.Data.Finset.Card\nimport Mathlib.Data.Finset.Filter\nimport Mathlib.Data.Finset.Image\nimport Mathlib.Data.Finset.Powerset\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedPattern_properWeights_add_full_eq_fullWeights`\n\nFor every `B : PerturbedStarBlocks n r` and every natural number `d`, let\n\n`w(P) = Nat.choose (perturbedStarFiller B).card (d + 1 - P.card)`,\n\n`fₐ(Y) = {B.a} ∪ B.T ∪ Y`, and `fᵦ(Y) = {B.b} ∪ B.T ∪ Y`.\n\nThen the proper deleted-pattern weight sum plus the sole full-`L` added-pattern weight equals the\nfull added-pattern image weight sum:\n\n`(∑ P ∈ ({Y ∈ B.L.powerset | Y ≠ B.L}.image fₐ), w(P)) + w({B.b} ∪ B.T ∪ B.L) = ∑ P ∈\nB.L.powerset.image fᵦ, w(P)`.\n\nNo additional hypotheses, including `hrd` or `hrn`, are assumed.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Finset.sum` from `Mathlib.Algebra.BigOperators.Group.Finset.Defs`\n- `Finset.card` from `Mathlib.Data.Finset.Card`\n- `Finset.filter` from `Mathlib.Data.Finset.Filter`\n- `Finset.image` from `Mathlib.Data.Finset.Image`\n- `Finset.powerset` from `Mathlib.Data.Finset.Powerset`\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n-/\ntheorem perturbedPattern_properWeights_add_full_eq_fullWeights {n r : ℕ}\n    (B : PerturbedStarBlocks n r) (d : ℕ) :\n    (∑ P ∈ (B.L.powerset.filter (fun Y => Y ≠ B.L)).image\n        (fun Y : Finset (Fin n) ↦ {B.a} ∪ B.T ∪ Y),\n      Nat.choose (perturbedStarFiller B).card (d + 1 - P.card)) +\n      Nat.choose (perturbedStarFiller B).card\n        (d + 1 - ({B.b} ∪ B.T ∪ B.L).card) =\n      ∑ P ∈ B.L.powerset.image (fun Y : Finset (Fin n) ↦ {B.b} ∪ B.T ∪ Y),\n        Nat.choose (perturbedStarFiller B).card (d + 1 - P.card) := by\n  sorry\n",
+      "statement_dependencies": [
+        "Mathlib:Mathlib.Algebra.BigOperators.Group.Finset.Defs.Finset.sum",
+        "Mathlib:Mathlib.Data.Finset.Card.Finset.card",
+        "Mathlib:Mathlib.Data.Finset.Filter.Finset.filter",
+        "Mathlib:Mathlib.Data.Finset.Image.Finset.image",
+        "Mathlib:Mathlib.Data.Finset.Powerset.Finset.powerset",
+        "Mathlib:Mathlib.Data.Nat.Choose.Basic.Nat.choose",
+        "current repo:Main.PerturbedStarCertificates.PerturbedStarBlocks",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarFiller"
+      ],
+      "summary": "Proper a-pattern weights plus the full-L b-pattern weight equal the full b-pattern image weights."
+    },
+    {
+      "kind": "structure",
+      "lean_full_name": "PerturbedStarBlocks",
+      "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks",
+      "name": "PerturbedStarBlocks",
+      "node_path": "Main.PerturbedStarCertificates",
+      "source_origins": [
+        "article/sections/02_proof.tex:30-32"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `PerturbedStarBlocks`\n\nFor natural numbers n and r, `PerturbedStarBlocks n r` is public construction data consisting of two\ndistinguished elements `a` and `b` of `Fin n` and two finite sets `T` and `L` of `Fin n`.  It\nrecords explicitly that `a ≠ b`, that `T` and `L` each have cardinality `r`, that `T` and `L` are\ndisjoint, and that neither `T` nor `L` contains either distinguished element.  Thus all anchor\ndistinctness and block-avoidance requirements are fields of the data, rather than implicit\nconventions.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 30–32\n-/\nstructure PerturbedStarBlocks (n r : ℕ) where\n  a : Fin n\n  b : Fin n\n  T : Finset (Fin n)\n  L : Finset (Fin n)\n  a_ne_b : a ≠ b\n  card_T : T.card = r\n  card_L : L.card = r\n  T_disjoint_L : Disjoint T L\n  a_not_mem_T : a ∉ T\n  b_not_mem_T : b ∉ T\n  a_not_mem_L : a ∉ L\n  b_not_mem_L : b ∉ L\n",
+      "statement_dependencies": [],
+      "summary": "Construction data consisting of two distinguished points and two disjoint equal-size blocks in Fin n."
+    },
+    {
+      "kind": "theorem",
+      "lean_full_name": "exists_perturbedStarBlocks",
+      "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.exists_perturbedStarBlocks",
+      "name": "exists_perturbedStarBlocks",
+      "node_path": "Main.PerturbedStarCertificates",
+      "source_origins": [
+        "article/sections/02_proof.tex:32-32"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `exists_perturbedStarBlocks`\n\nFor natural numbers n and r, if `2 + 2*r ≤ n`, then there exists `PerturbedStarBlocks n r`.  The\nasserted data may be chosen by reserving two distinguished points of `Fin n` and embedding two\nconsecutive, shifted ranges of length `r`; consequently its two blocks have cardinality `r`, are\ndisjoint, avoid both distinguished points, and the distinguished points are distinct.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 32\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n-/\ntheorem exists_perturbedStarBlocks (n r : ℕ) (hroom : 2 + 2 * r ≤ n) :\n    Nonempty (PerturbedStarBlocks n r) := by\n  sorry\n",
+      "statement_dependencies": [
+        "current repo:Main.PerturbedStarCertificates.PerturbedStarBlocks"
+      ],
+      "summary": "Sufficient ambient size yields explicit perturbed-star block data."
+    },
+    {
+      "kind": "theorem",
+      "lean_full_name": "perturbedStarCertificate_addedProper",
+      "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarCertificate_addedProper",
+      "name": "perturbedStarCertificate_addedProper",
+      "node_path": "Main.PerturbedStarCertificates",
+      "source_origins": [
+        "article/sections/02_proof.tex:60-61"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarCertificate_addedProper`\n\nFor natural numbers d, s, n, and r, let `B : PerturbedStarBlocks n r` and let `Y : Finset (Fin n)`\nsatisfy `Y ⊆ B.L` and `Y ≠ B.L`. Assume `r = d + 1 - s`, `2 ≤ r`, and `r + 1 ≤ s`, and put `P =\n{B.b} ∪ B.T ∪ Y`. Then the proper-added selector guard applies, so `perturbedStarTau B P = B.T`, and\nthe following four-clause certificate bundle holds:\n\n1. `perturbedStarTau B P ⊂ P`.\n2. `P.card - (perturbedStarTau B P).card ≤ d + 1 - s`.\n3. `(perturbedStarTau B P).card ≤ s`.\n4. There is no `Q ∈ perturbedStarPatterns d B` such that both `Q ∩ P = perturbedStarTau B P` and\n`Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s)`.\n\nThis is the inserted-pattern case indexed by a proper subset of `B.L`; it supplies exactly the\ncertificate shape required by the generic pattern-family criterion.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 60–61\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\n- `Main.PerturbedStarCertificates::perturbedStarTau` → `perturbedStarTau` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau`\n-/\ntheorem perturbedStarCertificate_addedProper (d s n r : ℕ)\n    (B : PerturbedStarBlocks n r) (Y : Finset (Fin n))\n    (hYsub : Y ⊆ B.L) (hYne : Y ≠ B.L)\n    (hr : r = d + 1 - s) (hrtwo : 2 ≤ r) (hrs : r + 1 ≤ s) :\n    let P := {B.b} ∪ B.T ∪ Y\n    perturbedStarTau B P ⊂ P ∧\n      P.card - (perturbedStarTau B P).card ≤ d + 1 - s ∧\n      (perturbedStarTau B P).card ≤ s ∧\n      ¬ ∃ Q ∈ perturbedStarPatterns d B,\n        Q ∩ P = perturbedStarTau B P ∧\n          Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s) := by\n  sorry\n",
+      "statement_dependencies": [
+        "current repo:Main.PerturbedStarCertificates.PerturbedStarBlocks",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarPatterns",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarTau"
+      ],
+      "summary": "The tau certificate satisfies the generic criterion for an inserted b/T pattern indexed by a proper subset of L."
+    },
+    {
+      "kind": "theorem",
+      "lean_full_name": "perturbedStarCertificate_finalAdded",
+      "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarCertificate_finalAdded",
+      "name": "perturbedStarCertificate_finalAdded",
+      "node_path": "Main.PerturbedStarCertificates",
+      "source_origins": [
+        "article/sections/02_proof.tex:63-63"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarCertificate_finalAdded`\n\nFor natural numbers `d`, `s`, `n`, and `r`, let `B : PerturbedStarBlocks n r`. Assume `r = d + 1 -\ns`, `2 ≤ r`, and `r + 1 ≤ s`, and put `P = {B.b} ∪ B.T ∪ B.L`. The lower bound together with\n`B.card_L = r` makes `B.L` nonempty, so the final-added selector guard applies: for the selector's\nchosen `ell0 ∈ B.L`, `perturbedStarTau B P = B.T ∪ {ell0}`. Then the following four-clause\ncertificate bundle holds:\n\n1. `perturbedStarTau B P ⊂ P`.\n2. `P.card - (perturbedStarTau B P).card ≤ d + 1 - s`.\n3. `(perturbedStarTau B P).card ≤ s`.\n4. There is no `Q ∈ perturbedStarPatterns d B` such that both `Q ∩ P = perturbedStarTau B P` and\n`Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s)`.\n\nThis is the final inserted `b/T/L` pattern case and supplies exactly the certificate shape required\nby the generic pattern-family criterion.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 63\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\n- `Main.PerturbedStarCertificates::perturbedStarTau` → `perturbedStarTau` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau`\n-/\ntheorem perturbedStarCertificate_finalAdded (d s n r : ℕ)\n    (B : PerturbedStarBlocks n r)\n    (hr : r = d + 1 - s) (hrtwo : 2 ≤ r) (hrs : r + 1 ≤ s) :\n    let P := {B.b} ∪ B.T ∪ B.L\n    perturbedStarTau B P ⊂ P ∧\n      P.card - (perturbedStarTau B P).card ≤ d + 1 - s ∧\n      (perturbedStarTau B P).card ≤ s ∧\n      ¬ ∃ Q ∈ perturbedStarPatterns d B,\n        Q ∩ P = perturbedStarTau B P ∧\n          Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s) := by\n  sorry\n",
+      "statement_dependencies": [
+        "current repo:Main.PerturbedStarCertificates.PerturbedStarBlocks",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarPatterns",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarTau"
+      ],
+      "summary": "The tau certificate satisfies the generic criterion for the final inserted b/T/L pattern."
+    },
+    {
+      "kind": "theorem",
+      "lean_full_name": "perturbedStarCertificate_largeAvoiding",
+      "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarCertificate_largeAvoiding",
+      "name": "perturbedStarCertificate_largeAvoiding",
+      "node_path": "Main.PerturbedStarCertificates",
+      "source_origins": [
+        "article/sections/02_proof.tex:67-70"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarCertificate_largeAvoiding`\n\nFor natural numbers `d`, `s`, `n`, and `r`, let `B : PerturbedStarBlocks n r` and `P : Finset (Fin\nn)`. Assume `P ∈ perturbedStarPatterns d B`, `B.a ∈ P`, `r < P.card`, `P ∩ B.T = ∅`, `r = d + 1 -\ns`, and `2 ≤ r`. The accepted fourth selector branch applies: `perturbedStarTau B P` is the chosen\nsubset of `P ∩ B.L` of cardinality `P.card - r`. Then the following four-clause certificate bundle\nholds:\n\n1. `perturbedStarTau B P ⊂ P`.\n2. `P.card - (perturbedStarTau B P).card ≤ d + 1 - s`.\n3. `(perturbedStarTau B P).card ≤ s`.\n4. There is no `Q ∈ perturbedStarPatterns d B` such that both `Q ∩ P = perturbedStarTau B P` and\n`Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s)`.\n\nThis is the distinct large a-anchored case avoiding `T`: the selected subset omits the anchor, while\nany competing base pattern contains the anchor and any inserted pattern exceeds the permitted size\nthreshold.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 67–70\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\n- `Main.PerturbedStarCertificates::perturbedStarTau` → `perturbedStarTau` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau`\n-/\ntheorem perturbedStarCertificate_largeAvoiding (d s n r : ℕ)\n    (B : PerturbedStarBlocks n r) (P : Finset (Fin n))\n    (hP : P ∈ perturbedStarPatterns d B) (ha : B.a ∈ P)\n    (hrlt : r < P.card) (havoid : P ∩ B.T = ∅)\n    (hr : r = d + 1 - s) (hrtwo : 2 ≤ r) :\n    perturbedStarTau B P ⊂ P ∧\n      P.card - (perturbedStarTau B P).card ≤ d + 1 - s ∧\n      (perturbedStarTau B P).card ≤ s ∧\n      ¬ ∃ Q ∈ perturbedStarPatterns d B,\n        Q ∩ P = perturbedStarTau B P ∧\n          Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s) := by\n  sorry\n",
+      "statement_dependencies": [
+        "current repo:Main.PerturbedStarCertificates.PerturbedStarBlocks",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarPatterns",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarTau"
+      ],
+      "summary": "The tau certificate satisfies the generic criterion for a large a-anchored pattern avoiding T."
+    },
+    {
+      "kind": "theorem",
+      "lean_full_name": "perturbedStarCertificate_largeMeeting",
+      "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarCertificate_largeMeeting",
+      "name": "perturbedStarCertificate_largeMeeting",
+      "node_path": "Main.PerturbedStarCertificates",
+      "source_origins": [
+        "article/sections/02_proof.tex:72-72"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarCertificate_largeMeeting`\n\nFor natural numbers `d`, `s`, `n`, and `r`, let `B : PerturbedStarBlocks n r` and `P : Finset (Fin\nn)`. Assume `P ∈ perturbedStarPatterns d B`, `B.a ∈ P`, `r < P.card`, `P ∩ B.T ≠ ∅`, `r = d + 1 -\ns`, and `2 ≤ r`. The accepted fifth selector branch applies: for its chosen `t0 ∈ P ∩ B.T`,\n`perturbedStarTau B P` is the chosen subset of `P \\ {B.a, t0}` of cardinality `P.card - r`. Then the\nfollowing four-clause certificate bundle holds:\n\n1. `perturbedStarTau B P ⊂ P`.\n2. `P.card - (perturbedStarTau B P).card ≤ d + 1 - s`.\n3. `(perturbedStarTau B P).card ≤ s`.\n4. There is no `Q ∈ perturbedStarPatterns d B` such that both `Q ∩ P = perturbedStarTau B P` and\n`Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s)`.\n\nThis is the distinct large a-anchored case meeting `T`: the selector omits both `B.a` and `t0`,\nwhich excludes the competing base and inserted pattern branches.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 72\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\n- `Main.PerturbedStarCertificates::perturbedStarTau` → `perturbedStarTau` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau`\n-/\ntheorem perturbedStarCertificate_largeMeeting (d s n r : ℕ)\n    (B : PerturbedStarBlocks n r) (P : Finset (Fin n))\n    (hP : P ∈ perturbedStarPatterns d B) (ha : B.a ∈ P)\n    (hrlt : r < P.card) (hmeeting : P ∩ B.T ≠ ∅)\n    (hr : r = d + 1 - s) (hrtwo : 2 ≤ r) :\n    perturbedStarTau B P ⊂ P ∧\n      P.card - (perturbedStarTau B P).card ≤ d + 1 - s ∧\n      (perturbedStarTau B P).card ≤ s ∧\n      ¬ ∃ Q ∈ perturbedStarPatterns d B,\n        Q ∩ P = perturbedStarTau B P ∧\n          Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s) := by\n  sorry\n",
+      "statement_dependencies": [
+        "current repo:Main.PerturbedStarCertificates.PerturbedStarBlocks",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarPatterns",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarTau"
+      ],
+      "summary": "The tau certificate satisfies the generic criterion for a large a-anchored pattern meeting T."
+    },
+    {
+      "kind": "theorem",
+      "lean_full_name": "perturbedStarCertificate_smallStar",
+      "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarCertificate_smallStar",
+      "name": "perturbedStarCertificate_smallStar",
+      "node_path": "Main.PerturbedStarCertificates",
+      "source_origins": [
+        "article/sections/02_proof.tex:65-65"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarCertificate_smallStar`\n\nFor natural numbers `d`, `s`, `n`, and `r`, let `B : PerturbedStarBlocks n r` and `P : Finset (Fin\nn)`. Assume `P ∈ perturbedStarPatterns d B`, `B.a ∈ P`, `P.card ≤ r`, and `r = d + 1 - s`. The\naccepted small-star selector branch applies, so `perturbedStarTau B P = ∅`. Then the following\nfour-clause certificate bundle holds:\n\n1. `perturbedStarTau B P ⊂ P`.\n2. `P.card - (perturbedStarTau B P).card ≤ d + 1 - s`.\n3. `(perturbedStarTau B P).card ≤ s`.\n4. There is no `Q ∈ perturbedStarPatterns d B` such that both `Q ∩ P = perturbedStarTau B P` and\n`Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s)`.\n\nThis is the distinct small a-anchored case of the source certificate: an a-anchored competing\npattern meets `P` at `B.a`, while an inserted b/T pattern cannot meet the required size bound.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 65\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\n- `Main.PerturbedStarCertificates::perturbedStarTau` → `perturbedStarTau` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau`\n-/\ntheorem perturbedStarCertificate_smallStar (d s n r : ℕ)\n    (B : PerturbedStarBlocks n r) (P : Finset (Fin n))\n    (hP : P ∈ perturbedStarPatterns d B) (ha : B.a ∈ P)\n    (hcard : P.card ≤ r) (hr : r = d + 1 - s) :\n    perturbedStarTau B P ⊂ P ∧\n      P.card - (perturbedStarTau B P).card ≤ d + 1 - s ∧\n      (perturbedStarTau B P).card ≤ s ∧\n      ¬ ∃ Q ∈ perturbedStarPatterns d B,\n        Q ∩ P = perturbedStarTau B P ∧\n          Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s) := by\n  sorry\n",
+      "statement_dependencies": [
+        "current repo:Main.PerturbedStarCertificates.PerturbedStarBlocks",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarPatterns",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarTau"
+      ],
+      "summary": "The tau certificate satisfies the generic criterion for a small a-anchored perturbed-star pattern."
+    },
+    {
+      "kind": "definition",
+      "lean_full_name": "perturbedStarCore",
+      "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore",
+      "name": "perturbedStarCore",
+      "node_path": "Main.PerturbedStarCertificates",
+      "source_origins": [
+        "article/sections/02_proof.tex:34-34"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarCore`\n\nFor natural numbers n and r and construction data `B : PerturbedStarBlocks n r`, `perturbedStarCore\nB` is the finite subset of `Fin n` defined by\n\n`{B.a, B.b} ∪ B.T ∪ B.L`.\n\nEquivalently, it is the union of the two distinguished anchors and the two blocks recorded by `B`;\nthe displayed union association is part of the definition and no additional elements or assumptions\nare introduced.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 34\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n-/\ndef perturbedStarCore {n r : ℕ} (B : PerturbedStarBlocks n r) : Finset (Fin n) :=\n  {B.a, B.b} ∪ B.T ∪ B.L\n",
+      "statement_dependencies": [
+        "current repo:Main.PerturbedStarCertificates.PerturbedStarBlocks"
+      ],
+      "summary": "The fixed core formed by the two distinguished anchors and the disjoint T and L blocks."
+    },
+    {
+      "kind": "definition",
+      "lean_full_name": "perturbedStarFamily",
+      "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFamily",
+      "name": "perturbedStarFamily",
+      "node_path": "Main.PerturbedStarCertificates",
+      "source_origins": [
+        "article/sections/02_proof.tex:30-39"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarFamily`\n\nFor natural numbers d, n, and r and construction data `B : PerturbedStarBlocks n r`,\n`perturbedStarFamily d B` is the finite family of finite subsets of `Fin n` defined exactly by\n\n`patternFamily d (perturbedStarPatterns d B) (perturbedStarFiller B)`.\n\nEquivalently, it is the generic exact-cardinality completion of the accepted perturbed-star core\npatterns using the complementary filler. This definition adds no parameter hypotheses: bounds on d,\ns, and n are used only later to construct suitable data and certify the family, not to change its\nmembers.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 30–39\n\n## Statement dependencies\n\n- `Main.PatternCriterion::patternFamily` → `patternFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\n-/\ndef perturbedStarFamily (d : ℕ) {n r : ℕ}\n    (B : PerturbedStarBlocks n r) : Finset (Finset (Fin n)) :=\n  patternFamily d (perturbedStarPatterns d B) (perturbedStarFiller B)\n",
+      "statement_dependencies": [
+        "current repo:Main.PatternCriterion.patternFamily",
+        "current repo:Main.PerturbedStarCertificates.PerturbedStarBlocks",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarFiller",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarPatterns"
+      ],
+      "summary": "The explicit uniform family generated from the perturbed-star core patterns and complementary filler."
+    },
+    {
+      "kind": "definition",
+      "lean_full_name": "perturbedStarFiller",
+      "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller",
+      "name": "perturbedStarFiller",
+      "node_path": "Main.PerturbedStarCertificates",
+      "source_origins": [
+        "article/sections/02_proof.tex:34-34"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarFiller`\n\nFor natural numbers n and r and construction data `B : PerturbedStarBlocks n r`,\n`perturbedStarFiller B` is the finite subset of `Fin n` defined by\n\n`(Finset.univ : Finset (Fin n)) \\ perturbedStarCore B`.\n\nThus it is exactly the complement of the fixed core within `Fin n`; no additional elements,\nhypotheses, or semantic conditions are introduced.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 34\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarCore` → `perturbedStarCore` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore`\n-/\ndef perturbedStarFiller {n r : ℕ} (B : PerturbedStarBlocks n r) : Finset (Fin n) :=\n  (Finset.univ : Finset (Fin n)) \\ perturbedStarCore B\n",
+      "statement_dependencies": [
+        "current repo:Main.PerturbedStarCertificates.PerturbedStarBlocks",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarCore"
+      ],
+      "summary": "The filler region complementary to the fixed perturbed-star core."
+    },
+    {
+      "kind": "theorem",
+      "lean_full_name": "perturbedStarFinalIntersection_excluded",
+      "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarFinalIntersection_excluded",
+      "name": "perturbedStarFinalIntersection_excluded",
+      "node_path": "Main.PerturbedStarCertificates",
+      "source_origins": [
+        "article/sections/02_proof.tex:63-63"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarFinalIntersection_excluded`\n\nFor natural numbers `d`, `n`, and `r`, let `B : PerturbedStarBlocks n r` and let `ell0 : Fin n`\nsatisfy `ell0 ∈ B.L`. If `2 ≤ r`, then there is no `Q ∈ perturbedStarPatterns d B` for which\n\n`Q ∩ ({B.b} ∪ B.T ∪ B.L) = B.T ∪ {ell0}`.\n\nEquivalently, no allowed perturbed-star pattern has intersection with the final inserted `b/T/L`\npattern equal to all of `T` together with exactly the single L-element `ell0`. This isolates the\nsource line-63 exclusion: inserted patterns contain `B.b`, while a base pattern with this\nintersection would be the deleted proper-L pattern `{B.a} ∪ B.T ∪ {ell0}`.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 63\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\n-/\ntheorem perturbedStarFinalIntersection_excluded (d n r : ℕ)\n    (B : PerturbedStarBlocks n r) (ell0 : Fin n)\n    (hell0 : ell0 ∈ B.L) (hrtwo : 2 ≤ r) :\n    ¬ ∃ Q ∈ perturbedStarPatterns d B,\n      Q ∩ ({B.b} ∪ B.T ∪ B.L) = B.T ∪ {ell0} := by\n  sorry\n",
+      "statement_dependencies": [
+        "current repo:Main.PerturbedStarCertificates.PerturbedStarBlocks",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarPatterns"
+      ],
+      "summary": "No allowed perturbed-star pattern intersects the final b/T/L pattern in T plus exactly one L-element."
+    },
+    {
+      "kind": "theorem",
+      "lean_full_name": "perturbedStarParameterBounds",
+      "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarParameterBounds",
+      "name": "perturbedStarParameterBounds",
+      "node_path": "Main.PerturbedStarCertificates",
+      "source_origins": [
+        "article/sections/02_proof.tex:30-32"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarParameterBounds`\n\nFor natural numbers d, s, and n, assume `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤ d -\n1`, and `hn : 2 * (d + 1) ≤ n`. Put `r = d + 1 - s`. Then `2 ≤ r`, `r + 1 ≤ s`, `d - 2*r = 2*s - d -\n2`, `2*r ≤ d`, and `2 + 2*r ≤ n`. All subtractions are natural-number subtraction; the theorem\nestablishes the displayed equality and bounds with the needed nontruncation consequences explicit\nunder exactly these hypotheses.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 30–32\n-/\ntheorem perturbedStarParameterBounds (d s n : ℕ) (hd : 4 ≤ d)\n    (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    let r := d + 1 - s\n    2 ≤ r ∧ r + 1 ≤ s ∧ d - 2 * r = 2 * s - d - 2 ∧\n      2 * r ≤ d ∧ 2 + 2 * r ≤ n := by\n  sorry\n",
+      "statement_dependencies": [],
+      "summary": "The immutable d,s,n hypotheses imply the arithmetic bounds required by the perturbed-star construction."
+    },
+    {
+      "kind": "definition",
+      "lean_full_name": "perturbedStarPatterns",
+      "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns",
+      "name": "perturbedStarPatterns",
+      "node_path": "Main.PerturbedStarCertificates",
+      "source_origins": [
+        "article/sections/02_proof.tex:35-39"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarPatterns`\n\nFor natural numbers d, n, and r and construction data `B : PerturbedStarBlocks n r`,\n`perturbedStarPatterns d B` is a finite family of finite subsets of `Fin n`, defined from the\nfollowing three components.\n\n1. Its base anchored-star component consists of every finite set `P` with `P ⊆ perturbedStarCore B`,\n`B.a ∈ P`, and `P.card ≤ d + 1`.\n2. From that base component, delete exactly the sets `{B.a} ∪ B.T ∪ Y` for which `Y` is a proper\nsubset of `B.L`.\n3. Insert exactly the sets `{B.b} ∪ B.T ∪ Y` for every subset `Y ⊆ B.L`.\n\nThe result is the base component after the stated deletions, union the stated inserted component. In\nparticular, the insertion includes `Y = B.L` as the final added pattern, while the deletion excludes\nthat non-proper choice. No filler elements or further hypotheses occur in this definition.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 35–39\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarCore` → `perturbedStarCore` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore`\n-/\ndef perturbedStarPatterns (d : ℕ) {n r : ℕ}\n    (B : PerturbedStarBlocks n r) : Finset (Finset (Fin n)) :=\n  let base := (perturbedStarCore B).powerset.filter fun P =>\n    B.a ∈ P ∧ P.card ≤ d + 1\n  let deleted :=\n    (B.L.powerset.filter fun Y => Y ⊆ B.L ∧ Y ≠ B.L).image fun Y =>\n      {B.a} ∪ B.T ∪ Y\n  let inserted := B.L.powerset.image fun Y =>\n    {B.b} ∪ B.T ∪ Y\n  (base \\ deleted) ∪ inserted\n",
+      "statement_dependencies": [
+        "current repo:Main.PerturbedStarCertificates.PerturbedStarBlocks",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarCore"
+      ],
+      "summary": "The allowed core patterns obtained by perturbing the anchored one-star along the T and L blocks."
+    },
+    {
+      "kind": "definition",
+      "lean_full_name": "perturbedStarTau",
+      "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau",
+      "name": "perturbedStarTau",
+      "node_path": "Main.PerturbedStarCertificates",
+      "source_origins": [
+        "article/sections/02_proof.tex:58-72"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarTau`\n\nFor natural numbers n and r, construction data `B : PerturbedStarBlocks n r`, and every finite set\n`P : Finset (Fin n)`, `perturbedStarTau B P` is a total finite-set-valued selector. It evaluates the\nfollowing guarded cases in the displayed priority order. A classical choice is made only after the\nindicated witness is available.\n\n1. If `P = {B.b} ∪ B.T ∪ Y` for a proper subset `Y ⊂ B.L`, it returns `B.T`.\n2. If `P = {B.b} ∪ B.T ∪ B.L` and there exists `ell0 ∈ B.L`, it chooses such an `ell0` and returns\n`B.T ∪ {ell0}`. If this pattern equality holds but `B.L` is empty, this guarded branch is\nunavailable and the selector falls through to the empty default.\n3. If `B.a ∈ P` and `P.card ≤ r`, it returns `∅`.\n4. If `B.a ∈ P`, `P.card > r`, `P ∩ B.T = ∅`, and there exists `Q ⊆ P ∩ B.L` with `Q.card = P.card -\nr`, it chooses such a `Q` and returns it. If no such subset exists, this guarded branch falls\nthrough to the empty default.\n5. If `B.a ∈ P`, `P.card > r`, `P ∩ B.T ≠ ∅`, and there exist `t0 ∈ P ∩ B.T` and `Q ⊆ P \\ {B.a, t0}`\nwith `Q.card = P.card - r`, it chooses such a pair and returns `Q`. If either required witness is\nunavailable, this guarded branch falls through to the empty default.\n\nWhen none of the preceding guarded cases applies, `perturbedStarTau B P` is `∅`. Later certificate\nlemmas prove, for members of `perturbedStarPatterns d B` under the perturbed-star parameter\nhypotheses, that the relevant guards and witnesses hold; therefore the intended five source values\napply there while the selector remains total for arbitrary data and inputs.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 58–72\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n-/\nnoncomputable def perturbedStarTau {n r : ℕ}\n    (B : PerturbedStarBlocks n r) (P : Finset (Fin n)) : Finset (Fin n) := by\n  classical\n  by_cases hproperAdded :\n    ∃ Y, Y ⊆ B.L ∧ Y ≠ B.L ∧ P = {B.b} ∪ B.T ∪ Y\n  · exact B.T\n  by_cases hfinalAdded : P = {B.b} ∪ B.T ∪ B.L ∧ ∃ ell0, ell0 ∈ B.L\n  · let ell0 := Classical.choose hfinalAdded.2\n    exact B.T ∪ {ell0}\n  by_cases hsmallStar : B.a ∈ P ∧ P.card ≤ r\n  · exact ∅\n  by_cases hlargeAvoiding :\n    B.a ∈ P ∧ r < P.card ∧ P ∩ B.T = ∅ ∧\n      ∃ Q, Q ⊆ P ∩ B.L ∧ Q.card = P.card - r\n  · let Q := Classical.choose hlargeAvoiding.2.2.2\n    exact Q\n  by_cases hlargeMeeting :\n    B.a ∈ P ∧ r < P.card ∧ P ∩ B.T ≠ ∅ ∧\n      ∃ t0, t0 ∈ P ∩ B.T ∧ ∃ Q, Q ⊆ P \\ {B.a, t0} ∧ Q.card = P.card - r\n  · let t0 := Classical.choose hlargeMeeting.2.2.2\n    let Q := Classical.choose (Classical.choose_spec hlargeMeeting.2.2.2).2\n    exact Q\n  · exact ∅\n",
+      "statement_dependencies": [
+        "current repo:Main.PerturbedStarCertificates.PerturbedStarBlocks"
+      ],
+      "summary": "The source case-defined proper-subpattern certificate selector for perturbed-star patterns."
+    },
+    {
+      "kind": "theorem",
+      "lean_full_name": "perturbedStar_isUniformMissingTraceFamily",
+      "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStar_isUniformMissingTraceFamily",
+      "name": "perturbedStar_isUniformMissingTraceFamily",
+      "node_path": "Main.PerturbedStarCertificates",
+      "source_origins": [
+        "article/sections/02_proof.tex:30-39",
+        "article/sections/02_proof.tex:53-73"
+      ],
+      "statement": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFamily\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStar_isUniformMissingTraceFamily`\n\nFor natural numbers `d`, `s`, and `n`, assume `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤\nd - 1`, and `hn : 2 * (d + 1) ≤ n`. Then there exists construction data\n\n`B : PerturbedStarBlocks n (d + 1 - s)`\n\nsuch that\n\n`IsUniformMissingTraceFamily d s (perturbedStarFamily d B)`.\n\nThe existential construction preserves the explicit perturbed-star family needed by downstream\ncounting; its missing-trace certificate is supplied by the five separate source cases through the\ngeneric pattern-family criterion.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 30–39\n- Source `article/sections/02_proof.tex`, lines 53–73\n\n## Statement dependencies\n\n- `Main.PatternCriterion::IsUniformMissingTraceFamily` → `IsUniformMissingTraceFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFamily` → `perturbedStarFamily` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFamily`\n-/\ntheorem perturbedStar_isUniformMissingTraceFamily (d s n : ℕ) (hd : 4 ≤ d)\n    (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    ∃ B : PerturbedStarBlocks n (d + 1 - s),\n      IsUniformMissingTraceFamily d s (perturbedStarFamily d B) := by\n  sorry\n",
+      "statement_dependencies": [
+        "current repo:Main.PatternCriterion.IsUniformMissingTraceFamily",
+        "current repo:Main.PerturbedStarCertificates.PerturbedStarBlocks",
+        "current repo:Main.PerturbedStarCertificates.perturbedStarFamily"
+      ],
+      "summary": "The explicit perturbed-star construction yields a uniform family with the fixed missing-trace property."
+    }
+  ],
+  "release_id": "release_0003a13681d5421fa9638ca420c857a2",
+  "repo_key": "UniformMissingTraceFamily",
+  "schema_version": 1,
+  "summary": "Exported 24 public declarations."
+}

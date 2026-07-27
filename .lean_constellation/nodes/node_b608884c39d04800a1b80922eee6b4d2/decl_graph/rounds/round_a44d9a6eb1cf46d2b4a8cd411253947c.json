@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-26T10:28:12Z",
+  "created_at": "2026-07-26T10:17:14Z",
+  "execution_completed_at": "2026-07-26T10:28:12Z",
+  "execution_reason": "DeclGraphRoundFlow finished with completed.",
+  "execution_result_kind": "success",
+  "node_path": "Main.PerturbedStarCertificates",
+  "objective": "Advance the accepted final perturbed-star theorem from declared to proved while repairing the round-20 dependency-stage metadata mismatch: retain the declared construction definitions in the declaration-side dependency closure and the theorem-like certificate providers in the proof-side closure, without changing the formal statement or source-faithful five-case Proof NL route.",
+  "plan_closeout_acknowledged_at": "2026-07-26T10:28:12Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "success",
+  "result_reason": "DeclGraphRoundFlow finished with completed.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedStar_isUniformMissingTraceFamily@rev:4",
+      "decl_name": "perturbedStar_isUniformMissingTraceFamily",
+      "revision": 4
+    }
+  ],
+  "round_id": "round_a44d9a6eb1cf46d2b4a8cd411253947c",
+  "round_index": 21,
+  "started_at": "2026-07-26T10:19:00Z",
+  "status": "committed",
+  "strategy_id": "strategy_140c2962785943968f6203e9ab1972fc",
+  "summary": "Round 21 completed the active bottom-up strategy's final assembly. perturbedStar_isUniformMissingTraceFamily revision 4 reached proved state and passed the graph_proved proof-policy satisfaction audit. Its dependency closure contains the source-faithful construction, parameter and block-existence foundations, all five distinct tau certificate theorems, and the visible generic criterion, with no missing declarations. No state-only intermediates remain, no declaration still needs work, and no superseded private artifacts, retry-version names, unused historical branches, resource gaps, or scope issues require another round. The next step is ContentPlan completion closeout: bind the two required current-node interfaces, run the deterministic completion gate, close the achieved strategy, and submit ready if the gate passes."
+}

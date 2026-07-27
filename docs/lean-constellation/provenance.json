@@ -1,0 +1,21 @@
+{
+  "build_command": "lake build",
+  "generated_at": "2026-07-27T15:44:11Z",
+  "lean_toolchain": "leanprover/lean4:v4.32.0",
+  "release_id": "release_0003a13681d5421fa9638ca420c857a2",
+  "repo_key": "UniformMissingTraceFamily",
+  "schema_version": 1,
+  "semantic_manifest_digest": "2718ed49e86ccef55b0cc454fb2dd02348a3d8185e76b5cc026e37f4dabf508d",
+  "source_files": {
+    "README.md": "3eba4f01e8272b22d19472f10fb3171e183a106126632f8b5e84b85001ccb47d",
+    "article/main.tex": "f9aa76c4214cd20f0f7de263031e7811d30d1e7150aebf77cd4299a27491b079",
+    "article/references.bib": "b3f4c2885408bf4e660fbd698eb05e238ecfadbffc91245714e910a38874be86",
+    "article/sections/00_abstract.tex": "1490bbcb5e4fa5977ce5bd66c76a9cc72a440b92c5805f6ada3bb2cd66153e0b",
+    "article/sections/01_introduction.tex": "0221ccbfe18d594105f6be76d0b60fe8bc978da77c9ef620c98270cf00145c55",
+    "article/sections/02_proof.tex": "058c7553aa4c20a00e2d343b96e47403bf10747602f10a9fcc17d36f673f997b",
+    "article/sections/03_remarks_and_acknowledgement.tex": "40672f1d484b5aebc95a55ec48836d7c0dde483a68f1dd5506235bfefe41d9ef",
+    "formal_target.lean": "2dd1ab62a792c751013303ecf0e7cc3b97f373bd64616bc6acb14e5c640600aa"
+  },
+  "source_manifest_digest": "8d0d40950a83d5c0f4ddd0c6219a667720a4f2bdf568dec4632ef58f00e67134",
+  "summary": "Portable Lean Constellation provenance."
+}

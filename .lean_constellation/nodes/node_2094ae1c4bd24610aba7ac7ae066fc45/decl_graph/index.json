@@ -1,0 +1,24 @@
+{
+  "decl_names": [
+    "IsUniformMissingTraceFamily",
+    "card_eq_of_mem_patternFamily",
+    "mem_patternFamily",
+    "patternFamily",
+    "patternFamily_isUniformMissingTraceFamily"
+  ],
+  "node_id": "node_2094ae1c4bd24610aba7ac7ae066fc45",
+  "node_path": "Main.PatternCriterion",
+  "round_ids": [
+    "round_0081e774590c471f89e9be97cdb0fd7b",
+    "round_4877ce132fae47908f6a6f142b659176",
+    "round_5da9f3e5b2904f439b68f8cea0e1164c",
+    "round_76fb5796e4724045b87d4e46e633f4d3",
+    "round_e8400acb3fd04a7396a2309708d21819"
+  ],
+  "schema_version": 1,
+  "strategy_ids": [
+    "strategy_d509811e109f4266a85f656d30c12936"
+  ],
+  "summary": "DeclGraph index rebuilt for Main.PatternCriterion: 5 decls, 5 rounds, 1 strategies.",
+  "updated_at": "2026-07-27T15:27:30Z"
+}

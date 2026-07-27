@@ -1,0 +1,18 @@
+{
+  "closed_at": "2026-07-22T11:27:33Z",
+  "closed_reason": "All required interfaces are implemented and bound; theorem-like outputs and helper closure are proved-policy satisfied.",
+  "created_at": "2026-07-22T09:16:31Z",
+  "created_round_ids": [
+    "round_76fb5796e4724045b87d4e46e633f4d3",
+    "round_0081e774590c471f89e9be97cdb0fd7b",
+    "round_5da9f3e5b2904f439b68f8cea0e1164c",
+    "round_e8400acb3fd04a7396a2309708d21819",
+    "round_4877ce132fae47908f6a6f142b659176"
+  ],
+  "node_path": "Main.PatternCriterion",
+  "objective": "Build the generic missing-trace criterion bottom-up from the exact predicate and pattern-plus-filler family, then prove reusable cardinality/trace helpers and finally the public tau-certificate theorem.",
+  "rationale": "Source route: committed SourceIndex blocks b_0014 and b_0010, grounded in formal_target.lean lines 3–9 and article/sections/02_proof.tex lines 3–28. Begin with declared-level public foundations IsUniformMissingTraceFamily and patternFamily. Next establish only independently meaningful helper lemmas needed for uniform cardinality, witness construction, and core/filler intersection separation, using the verified Finset Mathlib hints. Conclude with patternFamily_isUniformMissingTraceFamily at proved-level only after its dependency closure is accepted. This bottom-up route preserves the exact Finset (Finset (Fin n)) predicate, keeps the pattern family generic for the Main.PerturbedStarCertificates consumer, excludes later T/L-specific cases, and stays within the expected 6–12 declaration scale.",
+  "status": "closed",
+  "strategy_id": "strategy_d509811e109f4266a85f656d30c12936",
+  "summary": "Completed the source-driven bottom-up route: declared the exact predicate and generic pattern family, proved membership and uniform-cardinality helpers, proved the generic tau-certificate criterion, and repaired reviewer visibility without semantic change."
+}

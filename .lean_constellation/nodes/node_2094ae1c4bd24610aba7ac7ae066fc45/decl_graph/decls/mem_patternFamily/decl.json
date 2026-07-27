@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-07-22T09:29:56Z",
+  "current_revision": 1,
+  "kind": "theorem",
+  "lifecycle": "active",
+  "module": "UniformMissingTraceFamily.Main.PatternCriterion.Theorems.mem_patternFamily",
+  "name": "mem_patternFamily",
+  "node_path": "Main.PatternCriterion",
+  "public": true,
+  "revision_ids": [
+    1
+  ],
+  "summary": "Membership in patternFamily is equivalent to admitting an allowed pattern and an exact-cardinality filler whose union is the member.",
+  "updated_at": "2026-07-22T09:29:56Z"
+}

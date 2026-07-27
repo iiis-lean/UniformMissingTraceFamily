@@ -1,0 +1,70 @@
+{
+  "change": {
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Implement the exact public predicate from formal_target.lean lines 3–9 and contract interface IsUniformMissingTraceFamily: preserve binder order {n : ℕ} (d s : ℕ) (family : Finset (Finset (Fin n))) and require both uniform card d+1 and, for each F in family, an s-cardinality B ⊆ F unequal to F ∩ F' for every F' in family. It has no lower node declarations and serves the final patternFamily_isUniformMissingTraceFamily conclusion and downstream existential theorem without altering Finset semantics.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Completed creation of the public definition at declared state. The accepted Lean statement exactly preserves the contract binder order and Finset (Finset (Fin n)) semantics from formal_target.lean lines 3–9: uniform card d+1 plus an s-cardinality subset B whose intersection trace is absent against every family member. Lean statement checking passed, there are no declaration dependencies, and declared-level proof-policy satisfaction holds.",
+    "target_state": "declared"
+  },
+  "lean_decl_name": "IsUniformMissingTraceFamily",
+  "proof": null,
+  "revision": 1,
+  "state": "declared",
+  "statement": {
+    "deps": [],
+    "formal": {
+      "check": {
+        "allow_sorry": false,
+        "contains_axiom": false,
+        "contains_sorry": false,
+        "diagnostics": {
+          "diagnostics": [],
+          "passed": true,
+          "raw_excerpt": "",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PatternCriterion/Defs/IsUniformMissingTraceFamily.lean",
+          "schema_version": 2,
+          "summary": "Command completed successfully"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": false,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [],
+          "opaque_count": 0,
+          "sorry_count": 0,
+          "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PatternCriterion.Prelude\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `IsUniformMissingTraceFamily`\n\nFor natural numbers `n`, `d`, and `s`, and a finite family `family : Finset (Finset (Fin n))`,\n`IsUniformMissingTraceFamily d s family` holds exactly when:\n\n1. every member `F` of `family` has cardinality `d + 1`; and\n2. every `F ∈ family` has a finite set `B : Finset (Fin n)` with `B ⊆ F` and `B.card = s` such that,\nfor every `F' ∈ family`, the intersection trace `F ∩ F'` is not `B`.\n\n## Sources\n\n- Source `formal_target.lean`, lines 3–9\n-/\ndef IsUniformMissingTraceFamily {n : ℕ} (d s : ℕ)\n    (family : Finset (Finset (Fin n))) : Prop :=\n  (∀ F ∈ family, F.card = d + 1) ∧\n    ∀ F ∈ family, ∃ B : Finset (Fin n), B ⊆ F ∧ B.card = s ∧\n      ∀ F' ∈ family, B ≠ F ∩ F'\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 9,
+          "end_locator": null,
+          "kind": "source",
+          "note": "Defines the predicate, its binder order, uniform cardinality condition, and missing-trace condition.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "formal_target.lean",
+          "start_line": 3,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers `n`, `d`, and `s`, and a finite family `family : Finset (Finset (Fin n))`, `IsUniformMissingTraceFamily d s family` holds exactly when:\n\n1. every member `F` of `family` has cardinality `d + 1`; and\n2. every `F ∈ family` has a finite set `B : Finset (Fin n)` with `B ⊆ F` and `B.card = s` such that, for every `F' ∈ family`, the intersection trace `F ∩ F'` is not `B`."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-22T09:29:04Z"
+}

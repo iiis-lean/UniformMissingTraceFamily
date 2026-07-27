@@ -1,0 +1,182 @@
+{
+  "change": {
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Prove the elimination/introduction characterization implicit in SourceIndex block b_0010 and article/sections/02_proof.tex lines 3–7: for F, membership in patternFamily d patterns U is equivalent to the existence of P ∈ patterns and A ⊆ U with A.card = d+1-P.card and F = P ∪ A (up to harmless equality orientation). Consume the accepted patternFamily definition together with Finset.mem_powersetCard and standard biUnion/image membership facts. This proved helper serves the source proof stages at lines 17 and 21–25 by letting later uniformity and tau-certificate proofs unpack both F=P∪A and F'=Q∪A', and it must remain generic over Fin n without T/L specialization.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Completed creation of mem_patternFamily at proved state. Its accepted equivalence exposes P ∈ patterns and A ⊆ U with A.card = d+1-P.card and F = P ∪ A exactly as required by the source construction. Statement and proof Lean checks passed without sorry-like artifacts. The theorem depends on the accepted patternFamily definition plus Finset.mem_biUnion, Finset.mem_image, and Finset.mem_powersetCard, and its entire dependency closure is proof-policy satisfied.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": "mem_patternFamily",
+  "proof": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": "This equivalence eliminates and introduces the filler image witness, whose equality has orientation P ∪ A = F.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Image",
+          "name": "Finset.mem_image"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": "This equivalence converts fixed-cardinality filler membership to, and from, the required subset and card witnesses.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Powerset",
+          "name": "Finset.mem_powersetCard"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": "This equivalence eliminates and introduces membership in the outer biUnion defining patternFamily.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Union",
+          "name": "Finset.mem_biUnion"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The route unfolds the accepted patternFamily definition to expose its biUnion/image witnesses.",
+        "ref": {
+          "name": "patternFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": false,
+        "contains_axiom": false,
+        "contains_sorry": false,
+        "diagnostics": {
+          "diagnostics": [],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.PatternCriterion.Theorems.mem_patternFamily', 'items': [], 'total_items': 0, 'error_count': 0, 'warning_count': 0, 'info_count': 0, 'sorry_count': 0}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PatternCriterion/Theorems/mem_patternFamily.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 0 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "proof_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": false,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [],
+          "opaque_count": 0,
+          "sorry_count": 0,
+          "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PatternCriterion.Prelude\nimport Mathlib.Data.Finset.Image\nimport Mathlib.Data.Finset.Powerset\nimport Mathlib.Data.Finset.Union\nimport UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `mem_patternFamily`\n\nFor natural numbers `n` and `d`, an allowed pattern family `patterns : Finset (Finset (Fin n))`, a\nfiller region `U : Finset (Fin n)`, and `F : Finset (Fin n)`, membership in the pattern-plus-filler\nfamily is characterized by\n```\nF ∈ patternFamily d patterns U ↔\n  ∃ P : Finset (Fin n), P ∈ patterns ∧\n    ∃ A : Finset (Fin n), A ⊆ U ∧ A.card = d + 1 - P.card ∧ F = P ∪ A.\n```\nThus a member is exactly the union of an allowed pattern and a filler subset of `U` whose\ncardinality supplies the remaining positions to reach size `d + 1`.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 3–7\n\n## Statement dependencies\n\n- `Main.PatternCriterion::patternFamily` → `patternFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily`\n\n## Proof outline\n\nUnfold `patternFamily d patterns U`. Apply `Finset.mem_biUnion` to membership in the outer biunion,\nobtaining an allowed pattern `P ∈ patterns` and membership of `F` in the corresponding image. Apply\n`Finset.mem_image` to that image membership, obtaining a filler `A ∈ U.powersetCard (d + 1 -\nP.card)` and an equality `P ∪ A = F`. Take the symmetry of this image equality to obtain the\naccepted witness conclusion `F = P ∪ A`. Finally, apply `Finset.mem_powersetCard` to split the\nfiller membership into `A ⊆ U` and `A.card = d + 1 - P.card`. This proves the forward implication.\n\nConversely, given `P ∈ patterns`, `A ⊆ U`, `A.card = d + 1 - P.card`, and `F = P ∪ A`, use\n`Finset.mem_powersetCard` in the reverse direction to place `A` in `U.powersetCard (d + 1 -\nP.card)`. To reintroduce `A` through `Finset.mem_image`, use the supplied equality in reverse,\nnamely `P ∪ A = F`. Then reintroduce `P` through `Finset.mem_biUnion` to obtain `F ∈ patternFamily d\npatterns U`. The proof is generic in `Fin n` and uses no disjointness or perturbed-star-specific\ndata.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, lines 3–7\n\n## Proof dependencies\n\n- `Finset.mem_image` from `Mathlib.Data.Finset.Image`\n- `Finset.mem_powersetCard` from `Mathlib.Data.Finset.Powerset`\n- `Finset.mem_biUnion` from `Mathlib.Data.Finset.Union`\n- `Main.PatternCriterion::patternFamily` → `patternFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily`\n-/\ntheorem mem_patternFamily {n d : ℕ} (patterns : Finset (Finset (Fin n)))\n    (U F : Finset (Fin n)) :\n    F ∈ patternFamily d patterns U ↔\n      ∃ P : Finset (Fin n), P ∈ patterns ∧\n        ∃ A : Finset (Fin n), A ⊆ U ∧ A.card = d + 1 - P.card ∧ F = P ∪ A := by\n  simp [patternFamily, and_assoc, eq_comm]\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 7,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source definition gives the exact pattern-plus-fixed-cardinality-filler witnesses that the proof unfolds and repacks.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 3,
+          "start_locator": null
+        }
+      ],
+      "text": "Unfold `patternFamily d patterns U`. Apply `Finset.mem_biUnion` to membership in the outer biunion, obtaining an allowed pattern `P ∈ patterns` and membership of `F` in the corresponding image. Apply `Finset.mem_image` to that image membership, obtaining a filler `A ∈ U.powersetCard (d + 1 - P.card)` and an equality `P ∪ A = F`. Take the symmetry of this image equality to obtain the accepted witness conclusion `F = P ∪ A`. Finally, apply `Finset.mem_powersetCard` to split the filler membership into `A ⊆ U` and `A.card = d + 1 - P.card`. This proves the forward implication.\n\nConversely, given `P ∈ patterns`, `A ⊆ U`, `A.card = d + 1 - P.card`, and `F = P ∪ A`, use `Finset.mem_powersetCard` in the reverse direction to place `A` in `U.powersetCard (d + 1 - P.card)`. To reintroduce `A` through `Finset.mem_image`, use the supplied equality in reverse, namely `P ∪ A = F`. Then reintroduce `P` through `Finset.mem_biUnion` to obtain `F ∈ patternFamily d patterns U`. The proof is generic in `Fin n` and uses no disjointness or perturbed-star-specific data."
+    }
+  },
+  "revision": 1,
+  "state": "proved",
+  "statement": {
+    "deps": [
+      {
+        "kind": "repo_decl",
+        "reason": "The theorem statement characterizes membership in patternFamily.",
+        "ref": {
+          "name": "patternFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": true,
+        "contains_axiom": false,
+        "contains_sorry": true,
+        "diagnostics": {
+          "diagnostics": [
+            {
+              "column": 9,
+              "line": 31,
+              "message": "declaration uses `sorry`",
+              "severity": "warning"
+            }
+          ],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.PatternCriterion.Theorems.mem_patternFamily', 'items': [{'severity': 'warning', 'pos': {'line': 31, 'column': 9}, 'endPos': {'line': 31, 'column': 26}, 'kind': None, 'data': 'declaration uses `sorry`', 'fileName': 'UniformMissingTraceFamily.Main.PatternCriterion.Theorems.mem_patternFamily', 'content': '  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily`\\n-/\\ntheorem mem_patternFamily {n d : ℕ} (patterns : Finset (Finset (Fin n)))\\n    (U F : Finset (Fin n)) :\\n    F ∈ patternFamily d patterns U ↔'}], 'total_items': 1, 'error_count': 0, 'warning_count': 1, 'info_count': 0, 'sorry_count': 1}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PatternCriterion/Theorems/mem_patternFamily.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 1 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": true,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [
+            {
+              "column": 3,
+              "excerpt": "sorry",
+              "kind": "sorry",
+              "line": 36
+            }
+          ],
+          "opaque_count": 0,
+          "sorry_count": 1,
+          "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PatternCriterion.Prelude\nimport UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `mem_patternFamily`\n\nFor natural numbers `n` and `d`, an allowed pattern family `patterns : Finset (Finset (Fin n))`, a\nfiller region `U : Finset (Fin n)`, and `F : Finset (Fin n)`, membership in the pattern-plus-filler\nfamily is characterized by\n```\nF ∈ patternFamily d patterns U ↔\n  ∃ P : Finset (Fin n), P ∈ patterns ∧\n    ∃ A : Finset (Fin n), A ⊆ U ∧ A.card = d + 1 - P.card ∧ F = P ∪ A.\n```\nThus a member is exactly the union of an allowed pattern and a filler subset of `U` whose\ncardinality supplies the remaining positions to reach size `d + 1`.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 3–7\n\n## Statement dependencies\n\n- `Main.PatternCriterion::patternFamily` → `patternFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily`\n-/\ntheorem mem_patternFamily {n d : ℕ} (patterns : Finset (Finset (Fin n)))\n    (U F : Finset (Fin n)) :\n    F ∈ patternFamily d patterns U ↔\n      ∃ P : Finset (Fin n), P ∈ patterns ∧\n        ∃ A : Finset (Fin n), A ⊆ U ∧ A.card = d + 1 - P.card ∧ F = P ∪ A := by\n  sorry\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 7,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source defines the family by precisely these pattern and fixed-cardinality filler witnesses.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 3,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers `n` and `d`, an allowed pattern family `patterns : Finset (Finset (Fin n))`, a filler region `U : Finset (Fin n)`, and `F : Finset (Fin n)`, membership in the pattern-plus-filler family is characterized by\n```\nF ∈ patternFamily d patterns U ↔\n  ∃ P : Finset (Fin n), P ∈ patterns ∧\n    ∃ A : Finset (Fin n), A ⊆ U ∧ A.card = d + 1 - P.card ∧ F = P ∪ A.\n```\nThus a member is exactly the union of an allowed pattern and a filler subset of `U` whose cardinality supplies the remaining positions to reach size `d + 1`."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-22T09:53:36Z"
+}

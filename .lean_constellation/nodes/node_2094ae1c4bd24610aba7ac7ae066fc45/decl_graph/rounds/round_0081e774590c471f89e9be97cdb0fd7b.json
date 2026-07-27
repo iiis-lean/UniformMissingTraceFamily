@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-22T09:49:25Z",
+  "created_at": "2026-07-22T09:29:48Z",
+  "execution_completed_at": "2026-07-22T09:49:25Z",
+  "execution_reason": "DeclGraphRoundFlow finished with completed.",
+  "execution_result_kind": "success",
+  "node_path": "Main.PatternCriterion",
+  "objective": "Prove a reusable membership characterization for patternFamily, exposing exactly the source pattern and fixed-cardinality filler witnesses needed by later uniformity and missing-trace arguments.",
+  "plan_closeout_acknowledged_at": "2026-07-22T09:49:25Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "success",
+  "result_reason": "DeclGraphRoundFlow finished with completed.",
+  "revision_refs": [
+    {
+      "change_id": "mem_patternFamily@rev:1",
+      "decl_name": "mem_patternFamily",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_0081e774590c471f89e9be97cdb0fd7b",
+  "round_index": 2,
+  "started_at": "2026-07-22T09:31:36Z",
+  "status": "committed",
+  "strategy_id": "strategy_d509811e109f4266a85f656d30c12936",
+  "summary": "Round 2 successfully advanced the bottom-up strategy: mem_patternFamily reached proved state and is proof-policy satisfied, providing the stable elimination/introduction boundary needed for both uniform-cardinality and missing-trace arguments. No blocker, state-only exception, superseded branch, or cleanup target remains. The final criterion is still intentionally deferred; the next source-visible stage is a proved uniform-cardinality helper using mem_patternFamily, disjoint core/filler regions, and Finset.card_union_of_disjoint."
+}

@@ -1,0 +1,24 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [],
+    "anticipated_statement_dep_names": [],
+    "base_revision": null,
+    "kind": "create",
+    "objective": "For every B : PerturbedStarBlocks n r and Y ⊆ B.L, prove (({B.b} ∪ B.T ∪ Y) ∩ B.L) = Y. Preserve exactly the added-pattern constructor from SourceIndex b_0009 / article/sections/02_proof.tex:49, using only B's anchor avoidance and T_disjoint_L fields plus Finset.disjoint_left. This is the lower recovery fact for b-map injectivity and later erase/image transport; add no hrd/hrn assumptions.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "DeclGraphRoundFlow failed for change perturbedPatternB_inter_L@rev:1.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": null,
+  "proof": null,
+  "revision": 1,
+  "state": "planned",
+  "statement": {
+    "deps": [],
+    "formal": null,
+    "nl": null
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T15:36:58Z"
+}

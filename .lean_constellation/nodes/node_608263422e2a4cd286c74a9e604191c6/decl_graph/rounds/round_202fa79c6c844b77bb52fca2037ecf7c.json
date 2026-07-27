@@ -1,0 +1,32 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-26T16:34:31Z",
+  "created_at": "2026-07-26T16:18:12Z",
+  "execution_completed_at": "2026-07-26T16:34:31Z",
+  "execution_reason": "DeclGraphRoundFlow finished with completed.",
+  "execution_result_kind": "success",
+  "node_path": "Main.PerturbedPatternCancellation",
+  "objective": "Prove two independent middle-layer facts from source line 49: matched a- and b-anchored patterns have equal cardinality for each Y ⊆ B.L, and the proper-Y domain is exactly B.L.powerset.erase B.L. These facts prepare choose-weight equality and image/sum cancellation without introducing same-round dependencies.",
+  "plan_closeout_acknowledged_at": "2026-07-26T16:34:31Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "success",
+  "result_reason": "DeclGraphRoundFlow finished with completed.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedPattern_card_eq@rev:1",
+      "decl_name": "perturbedPattern_card_eq",
+      "revision": 1
+    },
+    {
+      "change_id": "perturbedPattern_properDomain_eq_erase@rev:1",
+      "decl_name": "perturbedPattern_properDomain_eq_erase",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_202fa79c6c844b77bb52fca2037ecf7c",
+  "round_index": 4,
+  "started_at": "2026-07-26T16:19:24Z",
+  "status": "committed",
+  "strategy_id": "strategy_ff5e1a1c26fc4bac9ab8fc7bd94fdb97",
+  "summary": "The strategy made clean middle-layer progress: perturbedPattern_card_eq and perturbedPattern_properDomain_eq_erase both reached proved state with passed formal checks and proof-policy satisfaction. No blocker, state-only intermediate, retry condition, superseded branch, or scope overflow remains. Six important declarations are now proved. The next round should prove the two independent upper providers: matched Nat.choose weight equality from perturbedPattern_card_eq, and proper/full b-image erase transport from perturbedPattern_properDomain_eq_erase plus perturbedPatternB_injOn."
+}

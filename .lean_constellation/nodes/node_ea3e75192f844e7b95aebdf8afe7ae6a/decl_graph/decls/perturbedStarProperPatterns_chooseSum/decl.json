@@ -1,0 +1,18 @@
+{
+  "created_at": "2026-07-26T13:08:25Z",
+  "current_revision": 4,
+  "kind": "theorem",
+  "lifecycle": "deleted",
+  "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarProperPatterns_chooseSum",
+  "name": "perturbedStarProperPatterns_chooseSum",
+  "node_path": "Main.CountingAndMain",
+  "public": false,
+  "revision_ids": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "summary": "The proper-L deleted and inserted perturbed-star pattern images have equal total completion weight, with the full-L insertion isolated.",
+  "updated_at": "2026-07-27T14:03:27Z"
+}

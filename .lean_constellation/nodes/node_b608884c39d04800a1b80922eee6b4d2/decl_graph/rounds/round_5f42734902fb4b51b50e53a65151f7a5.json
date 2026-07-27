@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-26T09:18:41Z",
+  "created_at": "2026-07-26T09:17:01Z",
+  "execution_completed_at": "2026-07-26T09:18:41Z",
+  "execution_reason": "Draft validation failed due to repairable anticipated dependency-stage misclassification; no child flow was dispatched.",
+  "execution_result_kind": "failed",
+  "node_path": "Main.PerturbedStarCertificates",
+  "objective": "Assemble the contract-required public perturbed-star missing-trace theorem at proved state from the satisfied parameter bounds, explicit block existence, all five distinct certificate branches, and Main.PatternCriterion.patternFamily_isUniformMissingTraceFamily.",
+  "plan_closeout_acknowledged_at": "2026-07-26T09:18:41Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "failed",
+  "result_reason": "Draft validation failed due to repairable anticipated dependency-stage misclassification; no child flow was dispatched.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedStar_isUniformMissingTraceFamily@rev:1",
+      "decl_name": "perturbedStar_isUniformMissingTraceFamily",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_5f42734902fb4b51b50e53a65151f7a5",
+  "round_index": 18,
+  "started_at": null,
+  "status": "committed",
+  "strategy_id": "strategy_140c2962785943968f6203e9ab1972fc",
+  "summary": "Unsubmitted round 18 draft failed validation solely because declared non-theorem foundations were misclassified as anticipated proof providers. The mathematical route, source anchors, graph_proved strategy, and final theorem target remain valid; no declaration artifact or dependency truth changed. Close this draft as failed and recreate the final assembly round with corrected planning metadata."
+}

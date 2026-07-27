@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-07-26T10:49:12Z",
+  "current_revision": 3,
+  "kind": "theorem",
+  "lifecycle": "active",
+  "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarFiller_card",
+  "name": "perturbedStarFiller_card",
+  "node_path": "Main.CountingAndMain",
+  "public": false,
+  "revision_ids": [
+    1,
+    2,
+    3
+  ],
+  "summary": "The complementary filler has cardinality n minus the two-anchor, two-block core.",
+  "updated_at": "2026-07-26T11:38:45Z"
+}

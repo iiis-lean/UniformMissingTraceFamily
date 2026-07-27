@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-22T10:14:32Z",
+  "created_at": "2026-07-22T09:54:09Z",
+  "execution_completed_at": "2026-07-22T10:14:32Z",
+  "execution_reason": "DeclGraphRoundFlow finished with completed.",
+  "execution_result_kind": "success",
+  "node_path": "Main.PatternCriterion",
+  "objective": "Prove the uniform-cardinality property of patternFamily members from core/filler disjointness, pattern containment in the core, and the source-visible pattern-cardinality bound.",
+  "plan_closeout_acknowledged_at": "2026-07-22T10:14:32Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "success",
+  "result_reason": "DeclGraphRoundFlow finished with completed.",
+  "revision_refs": [
+    {
+      "change_id": "card_eq_of_mem_patternFamily@rev:1",
+      "decl_name": "card_eq_of_mem_patternFamily",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_5da9f3e5b2904f439b68f8cea0e1164c",
+  "round_index": 3,
+  "started_at": "2026-07-22T10:01:05Z",
+  "status": "committed",
+  "strategy_id": "strategy_d509811e109f4266a85f656d30c12936",
+  "summary": "Round 3 successfully advanced the bottom-up strategy: card_eq_of_mem_patternFamily reached proved state and is proof-policy satisfied, completing the reusable uniformity stage from source line 17. No blocker, state-only exception, superseded artifact, or cleanup target remains. With the accepted predicate, construction, membership characterization, cardinality helper, exact-size subset Mathlib support, and intersection-distribution support, the known source-visible dependency closure for the final tau-certificate theorem is now available; the next step is a direct proved parent round, with any further helper justified only by a concrete Lean-stage blocker."
+}

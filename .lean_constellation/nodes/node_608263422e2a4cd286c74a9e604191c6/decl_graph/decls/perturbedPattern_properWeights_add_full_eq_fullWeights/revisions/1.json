@@ -1,0 +1,105 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "perturbedPatternA_injOn",
+      "perturbedPatternB_injOn",
+      "perturbedPatternB_properImage_eq_erase",
+      "perturbedPattern_chooseWeight_eq"
+    ],
+    "anticipated_statement_dep_names": [],
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Create the contract-required public theorem, for every B : PerturbedStarBlocks n r and natural d, with no hrd/hrn assumptions. Its left side must be the sum of weights Nat.choose (perturbedStarFiller B).card (d + 1 - P.card) over the image under exactly Y ↦ {B.a} ∪ B.T ∪ Y of the proper domain {Y ∈ B.L.powerset | Y ≠ B.L}, plus the single weight of {B.b} ∪ B.T ∪ B.L. Its right side must be the same weight summed over the full image of B.L.powerset under exactly Y ↦ {B.b} ∪ B.T ∪ Y, with equality directed proper-a sum plus full-L b weight = full b-image sum. This is the weighted cancellation and sole-excess assertion of SourceIndex b_0009 / article/sections/02_proof.tex:49 and must match the interface summary consumed by Main.CountingAndMain::perturbedStarProperPatterns_chooseSum@1. Prove it using perturbedPatternA_injOn and perturbedPatternB_injOn with Finset.sum_image, perturbedPattern_chooseWeight_eq to match proper terms, perturbedPatternB_properImage_eq_erase to identify the erased b-image, and Finset.sum_erase_add to restore the unique full-L term. Do not add assumptions, redesign perturbedStarPatterns, invoke generic anchored-powerset enumeration, or prove parent/global cardinality results.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Blocked at Statement NL before formal capture; the public revision remains planned with Statement NL present and all later artifacts absent. Preserve the consumer-side goal exactly: for every B : PerturbedStarBlocks n r and d, with no hrd/hrn assumptions, the Nat.choose (perturbedStarFiller B).card weighted sum over the proper a-pattern image under Y ↦ {B.a} ∪ B.T ∪ Y plus the weight of {B.b} ∪ B.T ∪ B.L equals the weighted sum over the full b-pattern image under Y ↦ {B.b} ∪ B.T ∪ Y. The checked providers perturbedPatternA_injOn, perturbedPatternB_injOn, perturbedPattern_chooseWeight_eq, and perturbedPatternB_properImage_eq_erase are all proved and match the intended proof; Finset.sum_image and Finset.sum_erase_add are already indexed. Concrete blocker classification: typed Statement MathlibIndex gap. Finset.sum is compiler-verified but has no repo MathlibIndex entry, so the reviewer-required dependency cannot be recorded. Retry after curating Finset.sum and attaching/validating its current-node hint; no source, interface, assumption, visibility, scope, or lower-dependency mismatch was reported.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": null,
+  "proof": null,
+  "revision": 1,
+  "state": "planned",
+  "statement": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Card",
+          "name": "Finset.card"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Filter",
+          "name": "Finset.filter"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Image",
+          "name": "Finset.image"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Powerset",
+          "name": "Finset.powerset"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Nat.Choose.Basic",
+          "name": "Nat.choose"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedStarFiller",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": null,
+    "nl": {
+      "origin": [
+        {
+          "end_line": 49,
+          "end_locator": null,
+          "kind": "source",
+          "note": "This line pairs every proper-Y removed and added pattern with equal contribution, and identifies the full-L added pattern as the sole excess; it supports the stated proper-a plus full-b equals full-b-image cancellation.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 49,
+          "start_locator": null
+        }
+      ],
+      "text": "For every `B : PerturbedStarBlocks n r` and every natural number `d`, let\n\n`w(P) = Nat.choose (perturbedStarFiller B).card (d + 1 - P.card)`,\n\n`fₐ(Y) = {B.a} ∪ B.T ∪ Y`, and `fᵦ(Y) = {B.b} ∪ B.T ∪ Y`.\n\nThen the proper deleted-pattern weight sum plus the sole full-`L` added-pattern weight equals the full added-pattern image weight sum:\n\n`(∑ P ∈ ({Y ∈ B.L.powerset | Y ≠ B.L}.image fₐ), w(P)) + w({B.b} ∪ B.T ∪ B.L) = ∑ P ∈ B.L.powerset.image fᵦ, w(P)`.\n\nNo additional hypotheses, including `hrd` or `hrn`, are assumed."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-27T01:36:36Z"
+}

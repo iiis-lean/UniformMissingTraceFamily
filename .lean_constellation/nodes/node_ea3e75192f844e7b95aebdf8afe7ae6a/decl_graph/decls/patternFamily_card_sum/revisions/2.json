@@ -1,0 +1,53 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "completionFiber_card",
+      "completionFibers_pairwiseDisjoint"
+    ],
+    "anticipated_statement_dep_names": [],
+    "base_revision": 1,
+    "kind": "update",
+    "objective": "Advance the planned generic cardinality decomposition through all stages to proved, preserving SourceIndex b_0009/article 48–50: if every P ∈ patterns is disjoint from U, card (patternFamily d patterns U) is the Finset sum over P of Nat.choose U.card (d+1-P.card). Consume the now-proved completionFiber_card and completionFibers_pairwiseDisjoint, the lower patternFamily definition, and Finset.card_biUnion. This must directly serve cancellation over perturbedStarPatterns without altering the pattern objects, indices, or adding unavailable assumptions.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": "planned",
+    "summary": "Blocked at Statement NL with a present NL artifact but no accepted formal statement or proof; the revision remains committed at planned state. The preserved consumer-side shape is card (patternFamily d patterns U) = ∑ P ∈ patterns, Nat.choose U.card (d+1-P.card) under per-pattern disjointness from U, consuming proved completionFiber_card and completionFibers_pairwiseDisjoint. The reviewer checked the available Mathlib support and required a direct Statement dependency on Nat.choose; the precise mismatch is repository-index metadata: Mathlib.Data.Nat.Choose.Basic and Nat.choose_pos are indexed/hinted, but Nat.choose itself has no MathlibIndex declaration entry, so the dependency cannot be recorded. This is a small Lean-specific index prerequisite, not missing source, provider mathematics, or scope. Retry only after verifying and curating Nat.choose in its defining Mathlib module.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": null,
+  "proof": null,
+  "revision": 2,
+  "state": "planned",
+  "statement": {
+    "deps": [
+      {
+        "kind": "repo_decl",
+        "reason": "The left-hand side of the equality is this accepted generic completion-family definition.",
+        "ref": {
+          "name": "patternFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": null,
+    "nl": {
+      "origin": [
+        {
+          "end_line": 50,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source counts completion contributions pattern by pattern and uses equal-sized matched completions; this statement is the generic Finset-sum decomposition supporting that count.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 48,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers n and d, a finite pattern family `patterns : Finset (Finset (Fin n))`, and a filler `U : Finset (Fin n)`, if every `P ∈ patterns` is disjoint from `U`, then\n`(patternFamily d patterns U).card = ∑ P ∈ patterns, Nat.choose U.card (d + 1 - P.card)`.\nThe sum is indexed by the unchanged Finset `patterns`, so this formula can be specialized directly to `perturbedStarPatterns` and its complementary filler."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T11:26:04Z"
+}

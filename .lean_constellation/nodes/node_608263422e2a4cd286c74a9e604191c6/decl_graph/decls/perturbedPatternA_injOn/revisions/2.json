@@ -1,0 +1,186 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "perturbedPatternA_inter_L"
+    ],
+    "anticipated_statement_dep_names": [],
+    "base_revision": 1,
+    "kind": "update",
+    "objective": "Advance the contract-derived a-map injectivity declaration from planned to proved. State injectivity on B.L.powerset of exactly Y ↦ {B.a} ∪ B.T ∪ Y, in a form directly usable by Finset.sum_image. Consume the accepted proved theorem perturbedPatternA_inter_L by intersecting equal images with B.L and recovering both Y values. This formalizes the one-to-one matching implicit in SourceIndex b_0009 / article/sections/02_proof.tex:49 and serves the later proper a-pattern weighted sum, with no hrd/hrn assumptions.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": "planned",
+    "summary": "Completed successfully. perturbedPatternA_injOn advanced from planned revision 1 to revision 2 at proved state; statement and proof formal checks passed, its proof consumes the accepted a-anchor recovery declaration, and graph_proved proof-policy satisfaction now holds.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": "perturbedPatternA_injOn",
+  "proof": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Powerset",
+          "name": "Finset.mem_powerset"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedPatternA_inter_L",
+          "node": "Main.PerturbedPatternCancellation",
+          "repo": null,
+          "revision": 2
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": false,
+        "contains_axiom": false,
+        "contains_sorry": false,
+        "diagnostics": {
+          "diagnostics": [],
+          "passed": true,
+          "raw_excerpt": "",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedPatternCancellation/Theorems/perturbedPatternA_injOn.lean",
+          "schema_version": 2,
+          "summary": "Command completed successfully"
+        },
+        "message": "Lean check passed.",
+        "policy": "proof_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": false,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [],
+          "opaque_count": 0,
+          "sorry_count": 0,
+          "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Prelude\nimport Mathlib.Data.Finset.Powerset\nimport Mathlib.Data.Set.Operations\nimport UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPatternA_inter_L\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedPatternA_injOn`\n\nFor every `B : PerturbedStarBlocks n r`, the map on `B.L.powerset` given by\n\n`Y ↦ {B.a} ∪ B.T ∪ Y`\n\nis injective. Equivalently, for all `Y₁, Y₂ ∈ B.L.powerset`, if `{B.a} ∪ B.T ∪ Y₁ = {B.a} ∪ B.T ∪\nY₂`, then `Y₁ = Y₂`.\n\nNo additional hypotheses, including `hrd` or `hrn`, are assumed.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Finset.powerset` from `Mathlib.Data.Finset.Powerset`\n- `Set.InjOn` from `Mathlib.Data.Set.Operations`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n\n## Proof outline\n\nUnfold the restricted injectivity goal by introducing `Y₁`, its membership `hY₁ : Y₁ ∈\n↑B.L.powerset`, `Y₂`, `hY₂`, and an equality of their a-anchored images. Change each coerced-set\nmembership to Finset membership in `B.L.powerset`, then use the verified theorem\n`Finset.mem_powerset` to obtain `hY₁L : Y₁ ⊆ B.L` and `hY₂L : Y₂ ⊆ B.L`.\n\nApply the accepted project theorem `perturbedPatternA_inter_L B Y₁ hY₁L` and its counterpart for\n`Y₂`. In a `calc` chain, rewrite `Y₁` as `(({B.a} ∪ B.T ∪ Y₁) ∩ B.L)`, use `congrArg (fun Z => Z ∩\nB.L)` on the assumed equality of a-images, and rewrite the resulting right-hand intersection to `Y₂`\nusing `perturbedPatternA_inter_L B Y₂ hY₂L`. Coercion normalization and `congrArg` are lightweight\nlocal Lean steps. This preserves exactly the required a-map, uses no `hrd` or `hrn` assumptions, and\nneeds no helper declaration.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Proof dependencies\n\n- `Finset.mem_powerset` from `Mathlib.Data.Finset.Powerset`\n- `Main.PerturbedPatternCancellation::perturbedPatternA_inter_L` → `perturbedPatternA_inter_L` from\n  `UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPatternA_inter_L`\n-/\ntheorem perturbedPatternA_injOn {n r : ℕ} (B : PerturbedStarBlocks n r) :\n    Set.InjOn (fun Y : Finset (Fin n) ↦ {B.a} ∪ B.T ∪ Y) ↑B.L.powerset := by\n  intro Y₁ hY₁ Y₂ hY₂ hEq\n  have hY₁L : Y₁ ⊆ B.L := Finset.mem_powerset.mp hY₁\n  have hY₂L : Y₂ ⊆ B.L := Finset.mem_powerset.mp hY₂\n  calc\n    Y₁ = (({B.a} ∪ B.T ∪ Y₁) ∩ B.L) := (perturbedPatternA_inter_L B Y₁ hY₁L).symm\n    _ = (({B.a} ∪ B.T ∪ Y₂) ∩ B.L) := congrArg (fun Z => Z ∩ B.L) hEq\n    _ = Y₂ := perturbedPatternA_inter_L B Y₂ hY₂L\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 49,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source’s exact removed-pattern parametrization `{1} ∪ T ∪ Y` is the matching whose one-to-one recovery is proved by this route.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 49,
+          "start_locator": null
+        }
+      ],
+      "text": "Unfold the restricted injectivity goal by introducing `Y₁`, its membership `hY₁ : Y₁ ∈ ↑B.L.powerset`, `Y₂`, `hY₂`, and an equality of their a-anchored images. Change each coerced-set membership to Finset membership in `B.L.powerset`, then use the verified theorem `Finset.mem_powerset` to obtain `hY₁L : Y₁ ⊆ B.L` and `hY₂L : Y₂ ⊆ B.L`.\n\nApply the accepted project theorem `perturbedPatternA_inter_L B Y₁ hY₁L` and its counterpart for `Y₂`. In a `calc` chain, rewrite `Y₁` as `(({B.a} ∪ B.T ∪ Y₁) ∩ B.L)`, use `congrArg (fun Z => Z ∩ B.L)` on the assumed equality of a-images, and rewrite the resulting right-hand intersection to `Y₂` using `perturbedPatternA_inter_L B Y₂ hY₂L`. Coercion normalization and `congrArg` are lightweight local Lean steps. This preserves exactly the required a-map, uses no `hrd` or `hrn` assumptions, and needs no helper declaration."
+    }
+  },
+  "revision": 2,
+  "state": "proved",
+  "statement": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Powerset",
+          "name": "Finset.powerset"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Set.Operations",
+          "name": "Set.InjOn"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": true,
+        "contains_axiom": false,
+        "contains_sorry": true,
+        "diagnostics": {
+          "diagnostics": [
+            {
+              "column": 9,
+              "line": 32,
+              "message": "declaration uses `sorry`",
+              "severity": "warning"
+            }
+          ],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPatternA_injOn', 'items': [{'severity': 'warning', 'pos': {'line': 32, 'column': 9}, 'endPos': {'line': 32, 'column': 32}, 'kind': None, 'data': 'declaration uses `sorry`', 'fileName': 'UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPatternA_injOn', 'content': '  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\\n-/\\ntheorem perturbedPatternA_injOn {n r : ℕ} (B : PerturbedStarBlocks n r) :\\n    Set.InjOn (fun Y : Finset (Fin n) ↦ {B.a} ∪ B.T ∪ Y) ↑B.L.powerset := by\\n  sorry'}], 'total_items': 1, 'error_count': 0, 'warning_count': 1, 'info_count': 0, 'sorry_count': 1}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedPatternCancellation/Theorems/perturbedPatternA_injOn.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 1 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": true,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [
+            {
+              "column": 3,
+              "excerpt": "sorry",
+              "kind": "sorry",
+              "line": 34
+            }
+          ],
+          "opaque_count": 0,
+          "sorry_count": 1,
+          "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Prelude\nimport Mathlib.Data.Finset.Powerset\nimport Mathlib.Data.Set.Operations\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedPatternA_injOn`\n\nFor every `B : PerturbedStarBlocks n r`, the map on `B.L.powerset` given by\n\n`Y ↦ {B.a} ∪ B.T ∪ Y`\n\nis injective. Equivalently, for all `Y₁, Y₂ ∈ B.L.powerset`, if `{B.a} ∪ B.T ∪ Y₁ = {B.a} ∪ B.T ∪\nY₂`, then `Y₁ = Y₂`.\n\nNo additional hypotheses, including `hrd` or `hrn`, are assumed.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Finset.powerset` from `Mathlib.Data.Finset.Powerset`\n- `Set.InjOn` from `Mathlib.Data.Set.Operations`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n-/\ntheorem perturbedPatternA_injOn {n r : ℕ} (B : PerturbedStarBlocks n r) :\n    Set.InjOn (fun Y : Finset (Fin n) ↦ {B.a} ∪ B.T ∪ Y) ↑B.L.powerset := by\n  sorry\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 49,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source line parametrizes the removed patterns by the exact constructor `{1} ∪ T ∪ Y`; this injectivity statement formalizes that one-to-one matching.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 49,
+          "start_locator": null
+        }
+      ],
+      "text": "For every `B : PerturbedStarBlocks n r`, the map on `B.L.powerset` given by\n\n`Y ↦ {B.a} ∪ B.T ∪ Y`\n\nis injective. Equivalently, for all `Y₁, Y₂ ∈ B.L.powerset`, if `{B.a} ∪ B.T ∪ Y₁ = {B.a} ∪ B.T ∪ Y₂`, then `Y₁ = Y₂`.\n\nNo additional hypotheses, including `hrd` or `hrn`, are assumed."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T16:17:37Z"
+}

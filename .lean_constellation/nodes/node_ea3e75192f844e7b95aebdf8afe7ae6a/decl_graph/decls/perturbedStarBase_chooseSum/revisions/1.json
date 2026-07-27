@@ -1,0 +1,81 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "perturbedStarCore_card",
+      "perturbedStarFiller_card"
+    ],
+    "anticipated_statement_dep_names": [],
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Formalize the first enumeration step of SourceIndex b_0009/article 48–49. For B : PerturbedStarBlocks n r and d, let the anchored base be exactly (perturbedStarCore B).powerset filtered by B.a ∈ P and P.card ≤ d+1, as in perturbedStarPatterns. Prove that the double Finset sum of Nat.choose (perturbedStarFiller B).card (d+1-P.card) over this base equals Nat.choose (n-1) d. Establish the unique decomposition of each (d+1)-set containing B.a into its core pattern and filler part, or an equivalent finite enumeration, using the core/filler complement and anchor avoidance. Consume proved perturbedStarCore_card and perturbedStarFiller_card plus the lower block/core/filler definitions and verified powerset/choose support. This exact equation is the first prerequisite of declared perturbedStarPatterns_chooseSum; do not replace the local base representation or add assumptions the parent cannot supply.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Blocked at Statement NL with a present NL artifact but no accepted formal statement or proof; the revision remains planned. The preserved consumer-side goal is the weighted sum over the explicit anchored base ((perturbedStarCore B).powerset filtered by B.a∈P and P.card≤d+1) equals Nat.choose (n-1) d. The reviewer required typed Statement dependencies on Finset.powerset and Finset.filter, but neither declaration has a repository MathlibIndex entry; existing Finset.card_powerset/card_powersetCard entries do not substitute. This is a Lean-specific index prerequisite, not missing mathematics or scope. Retry only after verifying and recording both declarations in their defining Mathlib modules and exposing them to the current node.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": null,
+  "proof": null,
+  "revision": 1,
+  "state": "planned",
+  "statement": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": "Both sides and each summand of the stated base enumeration directly use Nat.choose.",
+        "ref": {
+          "module": "Mathlib.Data.Nat.Choose.Basic",
+          "name": "Nat.choose"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The statement quantifies over the accepted block data B and its distinguished anchor.",
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The anchored base is expressed as the filtered powerset of this accepted core definition.",
+        "ref": {
+          "name": "perturbedStarCore",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "Each summand uses the cardinality of this accepted complementary filler.",
+        "ref": {
+          "name": "perturbedStarFiller",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": null,
+    "nl": {
+      "origin": [
+        {
+          "end_line": 49,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source identifies the full anchored star inside the core with all (d+1)-sets containing the first anchor and gives its binomial contribution.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 48,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers n, r, and d and construction data `B : PerturbedStarBlocks n r`,\n`∑ P ∈ ((perturbedStarCore B).powerset.filter (fun P => B.a ∈ P ∧ P.card ≤ d + 1)), Nat.choose (perturbedStarFiller B).card (d + 1 - P.card) = Nat.choose (n - 1) d`.\nThus the anchored base in exactly the representation used by `perturbedStarPatterns` enumerates all `(d + 1)`-subsets of `Fin n` containing `B.a`, by their core and complementary-filler parts."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T12:41:12Z"
+}

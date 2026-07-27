@@ -1,0 +1,199 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "completionFiber_card",
+      "completionFibers_pairwiseDisjoint"
+    ],
+    "anticipated_statement_dep_names": [],
+    "base_revision": 2,
+    "kind": "update",
+    "objective": "Retry the blocked revision from Statement NL onward after satisfying its only recorded prerequisite: Nat.choose is now compiler-inspected and present in the repository MathlibIndex/current-node hints from Mathlib.Data.Nat.Choose.Basic. Preserve SourceIndex b_0009/article 48–50 exactly: under per-pattern disjointness from U, card (patternFamily d patterns U) equals the Finset sum of Nat.choose U.card (d+1-P.card). Consume proved completionFiber_card and completionFibers_pairwiseDisjoint plus patternFamily and Finset.card_biUnion; do not alter objects, indices, assumptions, or conclusion. This proved lemma serves the later perturbedStarPatterns cancellation and public perturbedStarFamily_card.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": "planned",
+    "summary": "The targeted retry completed successfully after Nat.choose was curated. patternFamily_card_sum advanced from planned to committed proved state; Statement NL, formal statement, proof plan, and formal proof all passed, and required proof-policy satisfaction succeeded. Its exact source-derived sum shape and dependencies on completionFiber_card and completionFibers_pairwiseDisjoint are accepted, so it is ready for the perturbed-star cancellation calculation.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": "patternFamily_card_sum",
+  "proof": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": "Converts the cardinality of the disjoint pattern-family biUnion into the Finset sum of fiber cardinalities.",
+        "ref": {
+          "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+          "name": "Finset.card_biUnion"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "Rewrites every exact-completion fiber cardinality to the specified Nat.choose term.",
+        "ref": {
+          "name": "completionFiber_card",
+          "node": "Main.CountingAndMain",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "Provides the pairwise-disjointness hypothesis for the completion fibers indexed by patterns.",
+        "ref": {
+          "name": "completionFibers_pairwiseDisjoint",
+          "node": "Main.CountingAndMain",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The proof unfolds this accepted generic completion-family definition into the relevant Finset biUnion.",
+        "ref": {
+          "name": "patternFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": false,
+        "contains_axiom": false,
+        "contains_sorry": false,
+        "diagnostics": {
+          "diagnostics": [],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.CountingAndMain.Theorems.patternFamily_card_sum', 'items': [], 'total_items': 0, 'error_count': 0, 'warning_count': 0, 'info_count': 0, 'sorry_count': 0}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/patternFamily_card_sum.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 0 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "proof_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": false,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [],
+          "opaque_count": 0,
+          "sorry_count": 0,
+          "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Algebra.BigOperators.Group.Finset.Basic\nimport Mathlib.Data.Nat.Choose.Basic\nimport UniformMissingTraceFamily.Main.CountingAndMain.Theorems.completionFiber_card\nimport UniformMissingTraceFamily.Main.CountingAndMain.Theorems.completionFibers_pairwiseDisjoint\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `patternFamily_card_sum`\n\nFor natural numbers n and d, a finite pattern family `patterns : Finset (Finset (Fin n))`, and a\nfiller `U : Finset (Fin n)`, if every `P ∈ patterns` is disjoint from `U`, then\n`(patternFamily d patterns U).card = ∑ P ∈ patterns, Nat.choose U.card (d + 1 - P.card)`.\nThe sum is indexed by the unchanged Finset `patterns`, so this formula can be specialized directly\nto `perturbedStarPatterns` and its complementary filler.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 48–50\n\n## Statement dependencies\n\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PatternCriterion::patternFamily` → `patternFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily`\n\n## Proof outline\n\nUnfold the accepted definition `patternFamily d patterns U`, so the left-hand side is the\ncardinality of `patterns.biUnion` of the exact completion fibers.  Apply `Finset.card_biUnion` with\n`completionFibers_pairwiseDisjoint patterns U hdisj`; this changes the goal to the Finset sum of the\ncardinalities of those fibers, indexed by the unchanged `patterns`.\n\nFor each summand `P` with `P ∈ patterns`, apply the committed theorem `completionFiber_card P U\n(hdisj P hP)`.  Its right-hand side is exactly `Nat.choose U.card (d + 1 - P.card)`, so the\nresulting sum is definitionally the required conclusion.  The formal proof is an unfold/rewrite\nfollowed by a `Finset.sum_congr` (or equivalent simplification) and has no unresolved helper or\nexternal dependency.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, lines 48–50\n\n## Proof dependencies\n\n- `Finset.card_biUnion` from `Mathlib.Algebra.BigOperators.Group.Finset.Basic`\n- `Main.CountingAndMain::completionFiber_card` → `completionFiber_card` from\n  `UniformMissingTraceFamily.Main.CountingAndMain.Theorems.completionFiber_card`\n- `Main.CountingAndMain::completionFibers_pairwiseDisjoint` → `completionFibers_pairwiseDisjoint`\n  from `UniformMissingTraceFamily.Main.CountingAndMain.Theorems.completionFibers_pairwiseDisjoint`\n- `Main.PatternCriterion::patternFamily` → `patternFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily`\n-/\ntheorem patternFamily_card_sum {n d : ℕ}\n    (patterns : Finset (Finset (Fin n))) (U : Finset (Fin n))\n    (hdisj : ∀ P ∈ patterns, Disjoint P U) :\n    (patternFamily d patterns U).card =\n      ∑ P ∈ patterns, Nat.choose U.card (d + 1 - P.card) := by\n  unfold patternFamily\n  rw [Finset.card_biUnion]\n  · apply Finset.sum_congr rfl\n    intro P hP\n    exact completionFiber_card P U (hdisj P hP)\n  · exact completionFibers_pairwiseDisjoint patterns U hdisj\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 50,
+          "end_locator": null,
+          "kind": "source",
+          "note": "These source lines count the completion contribution pattern by pattern; the proof route formalizes that decomposition as a disjoint Finset biUnion and binomial summands.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 48,
+          "start_locator": null
+        }
+      ],
+      "text": "Unfold the accepted definition `patternFamily d patterns U`, so the left-hand side is the cardinality of `patterns.biUnion` of the exact completion fibers.  Apply `Finset.card_biUnion` with `completionFibers_pairwiseDisjoint patterns U hdisj`; this changes the goal to the Finset sum of the cardinalities of those fibers, indexed by the unchanged `patterns`.\n\nFor each summand `P` with `P ∈ patterns`, apply the committed theorem `completionFiber_card P U (hdisj P hP)`.  Its right-hand side is exactly `Nat.choose U.card (d + 1 - P.card)`, so the resulting sum is definitionally the required conclusion.  The formal proof is an unfold/rewrite followed by a `Finset.sum_congr` (or equivalent simplification) and has no unresolved helper or external dependency."
+    }
+  },
+  "revision": 3,
+  "state": "proved",
+  "statement": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": "The right-hand side of the stated cardinality equality directly uses the binomial coefficient Nat.choose.",
+        "ref": {
+          "module": "Mathlib.Data.Nat.Choose.Basic",
+          "name": "Nat.choose"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The left-hand side of the equality is this accepted generic completion-family definition.",
+        "ref": {
+          "name": "patternFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": true,
+        "contains_axiom": false,
+        "contains_sorry": true,
+        "diagnostics": {
+          "diagnostics": [
+            {
+              "column": 9,
+              "line": 27,
+              "message": "declaration uses `sorry`",
+              "severity": "warning"
+            }
+          ],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.CountingAndMain.Theorems.patternFamily_card_sum', 'items': [{'severity': 'warning', 'pos': {'line': 27, 'column': 9}, 'endPos': {'line': 27, 'column': 31}, 'kind': None, 'data': 'declaration uses `sorry`', 'fileName': 'UniformMissingTraceFamily.Main.CountingAndMain.Theorems.patternFamily_card_sum', 'content': '  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily`\\n-/\\ntheorem patternFamily_card_sum {n d : ℕ}\\n    (patterns : Finset (Finset (Fin n))) (U : Finset (Fin n))\\n    (hdisj : ∀ P ∈ patterns, Disjoint P U) :'}], 'total_items': 1, 'error_count': 0, 'warning_count': 1, 'info_count': 0, 'sorry_count': 1}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/patternFamily_card_sum.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 1 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": true,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [
+            {
+              "column": 3,
+              "excerpt": "sorry",
+              "kind": "sorry",
+              "line": 32
+            }
+          ],
+          "opaque_count": 0,
+          "sorry_count": 1,
+          "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `patternFamily_card_sum`\n\nFor natural numbers n and d, a finite pattern family `patterns : Finset (Finset (Fin n))`, and a\nfiller `U : Finset (Fin n)`, if every `P ∈ patterns` is disjoint from `U`, then\n`(patternFamily d patterns U).card = ∑ P ∈ patterns, Nat.choose U.card (d + 1 - P.card)`.\nThe sum is indexed by the unchanged Finset `patterns`, so this formula can be specialized directly\nto `perturbedStarPatterns` and its complementary filler.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 48–50\n\n## Statement dependencies\n\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PatternCriterion::patternFamily` → `patternFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily`\n-/\ntheorem patternFamily_card_sum {n d : ℕ}\n    (patterns : Finset (Finset (Fin n))) (U : Finset (Fin n))\n    (hdisj : ∀ P ∈ patterns, Disjoint P U) :\n    (patternFamily d patterns U).card =\n      ∑ P ∈ patterns, Nat.choose U.card (d + 1 - P.card) := by\n  sorry\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 50,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source counts completion contributions pattern by pattern and uses equal-sized matched completions; this statement is the generic Finset-sum decomposition supporting that count.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 48,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers n and d, a finite pattern family `patterns : Finset (Finset (Fin n))`, and a filler `U : Finset (Fin n)`, if every `P ∈ patterns` is disjoint from `U`, then\n`(patternFamily d patterns U).card = ∑ P ∈ patterns, Nat.choose U.card (d + 1 - P.card)`.\nThe sum is indexed by the unchanged Finset `patterns`, so this formula can be specialized directly to `perturbedStarPatterns` and its complementary filler."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T11:38:01Z"
+}

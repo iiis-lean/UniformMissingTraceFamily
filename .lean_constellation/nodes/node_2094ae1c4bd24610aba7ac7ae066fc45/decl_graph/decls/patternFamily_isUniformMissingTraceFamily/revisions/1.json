@@ -1,0 +1,244 @@
+{
+  "change": {
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Implement the required public interface from committed SourceIndex block b_0010 / article/sections/02_proof.tex lines 9–28 for the downstream Main.PerturbedStarCertificates consumer. Preserve explicit natural parameters n,d,s; core and filler regions C,U : Finset (Fin n); patterns : Finset (Finset (Fin n)); and a certificate function tau on patterns. Assume Disjoint C U and every P ∈ patterns satisfies P ⊆ C. For every P ∈ patterns require tau P ⊂ P, P.card - (tau P).card ≤ d+1-s (the source r), (tau P).card ≤ s, and exclusion of every Q ∈ patterns satisfying Q ∩ P = tau P together with Q.card ≤ (tau P).card + (d+1-s). Conclude exactly IsUniformMissingTraceFamily d s (patternFamily d patterns U); do not strengthen hypotheses, weaken the conclusion, or specialize patterns/tau to later T/L data. The proof should consume accepted IsUniformMissingTraceFamily, patternFamily, proved mem_patternFamily, and proved card_eq_of_mem_patternFamily. Follow source stages: derive P.card ≤ d+1; obtain each member representation P∪A; choose X⊆A of card s-(tau P).card using Finset.exists_subset_card_eq; set B=tau P∪X and prove B⊆F and B.card=s via core/filler disjointness; unpack any F'=Q∪A'; use the assumed intersection equality plus separation of C and U (with the verified intersection-distribution facts) to derive Q∩P=tau P and A'∩A=X; use filler cardinality to derive Q.card≤(tau P).card+(d+1-s), contradicting exclusion. All known source-visible lower declarations are accepted and their dependency closure is satisfied.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Blocked at proof_formal review after the public theorem reached accepted statement and proof-plan layers. Consumer-side formal goal: for explicit n,d,s,C,U,patterns,tau, with Disjoint C U, patterns contained in C, proper tau(P), gap bound P.card-(tau P).card ≤ d+1-s, tau-card bound ≤s, and exclusion of Q with Q∩P=tau P and Q.card≤tau-card+(d+1-s), prove IsUniformMissingTraceFamily d s (patternFamily d patterns U). The complete 3,619-character proof was captured and its Lean proof_formal check passed without sorry/axiom/admit/unsafe. Checked dependencies include IsUniformMissingTraceFamily, patternFamily, mem_patternFamily, card_eq_of_mem_patternFamily, Finset.exists_subset_card_eq, Finset.card_lt_card, Finset.card_union_of_disjoint, Finset.card_le_card, Finset.disjoint_left, Finset.inter_subset_left, and Finset.inter_union_distrib_left; dependency closure has no missing declarations. Blocker classification: runtime/reviewer visibility, not mathematical failure. Concrete mismatch: the frozen theorem header occupies 599 of the reviewer preview's 600 characters, so no proof text is visible, while the reviewer cannot access captured primary_formal_code or the synchronized owned file pre-commit. Retry condition: preserve the exact mathematical assumptions and conclusion but refactor the formal header so proof text becomes reviewer-visible, then rerun statement/proof stages; do not add mathematical assumptions or change C/U/patterns/tau semantics.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": "patternFamily_isUniformMissingTraceFamily",
+  "proof": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": "Turns A' ∩ A ⊆ A' into the cardinal lower bound needed for the exclusion inequality.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Card",
+          "name": "Finset.card_le_card"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": "The repaired universal line-17 bound uses strict properness tau R ⊂ R itself to obtain the required cardinal inequality.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Card",
+          "name": "Finset.card_lt_card"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": "Computes the cardinality of B = tau P ∪ X from core/filler disjointness.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Card",
+          "name": "Finset.card_union_of_disjoint"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": "Chooses X ⊆ A with cardinality s - (tau P).card once the derived bound is established.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Card",
+          "name": "Finset.exists_subset_card_eq"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": "The elementwise core/filler separation in the formal proof uses this characterization of Finset disjointness.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Disjoint",
+          "name": "Finset.disjoint_left"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": "Shows A' ∩ A ⊆ A' after the filler-component equality is obtained.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Lattice.Basic",
+          "name": "Finset.inter_subset_left"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": "Expands one layer of the alleged trace intersection (P ∪ A) ∩ (Q ∪ A').",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Lattice.Basic",
+          "name": "Finset.inter_union_distrib_left"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The route unfolds this accepted public predicate into its uniformity and missing-trace conjuncts.",
+        "ref": {
+          "name": "IsUniformMissingTraceFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "This proved helper supplies the uniform-cardinality conjunct after deriving the source-visible pattern-card bound.",
+        "ref": {
+          "name": "card_eq_of_mem_patternFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The route unpacks both F and F' into their allowed pattern and exact-cardinality filler witnesses.",
+        "ref": {
+          "name": "mem_patternFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": false,
+        "contains_axiom": false,
+        "contains_sorry": false,
+        "diagnostics": {
+          "diagnostics": [],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.PatternCriterion.Theorems.patternFamily_isUniformMissingTraceFamily', 'items': [], 'total_items': 0, 'error_count': 0, 'warning_count': 0, 'info_count': 0, 'sorry_count': 0}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PatternCriterion/Theorems/patternFamily_isUniformMissingTraceFamily.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 0 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "proof_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": false,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [],
+          "opaque_count": 0,
+          "sorry_count": 0,
+          "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PatternCriterion.Prelude\nimport Mathlib.Data.Finset.Card\nimport Mathlib.Data.Finset.Disjoint\nimport Mathlib.Data.Finset.Lattice.Basic\nimport UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily\nimport UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily\nimport UniformMissingTraceFamily.Main.PatternCriterion.Theorems.card_eq_of_mem_patternFamily\nimport UniformMissingTraceFamily.Main.PatternCriterion.Theorems.mem_patternFamily\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `patternFamily_isUniformMissingTraceFamily`\n\nFor natural numbers `n`, `d`, and `s`; finite core and filler regions `C U : Finset (Fin n)`; an\nallowed pattern family `patterns : Finset (Finset (Fin n))`; and a certificate function `tau :\nFinset (Fin n) → Finset (Fin n)`, assume:\n\n1. `C` and `U` are disjoint;\n2. every `P ∈ patterns` satisfies `P ⊆ C`; and\n3. for every `P ∈ patterns`:\n   - `tau P ⊂ P`;\n   - `P.card - (tau P).card ≤ d + 1 - s`;\n   - `(tau P).card ≤ s`; and\n   - there is no `Q ∈ patterns` such that both `Q ∩ P = tau P` and `Q.card ≤ (tau P).card + (d + 1 -\ns)`.\n\nThen\n```\nIsUniformMissingTraceFamily d s (patternFamily d patterns U).\n```\n\nThus the source’s proper-subpattern certificates, with the stated size and exclusion conditions,\ncertify the generic disjoint pattern-plus-filler construction as a `(d + 1)`-uniform family in which\nevery member has an `s`-element missing intersection trace.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 3–28\n\n## Statement dependencies\n\n- `Main.PatternCriterion::IsUniformMissingTraceFamily` → `IsUniformMissingTraceFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily`\n- `Main.PatternCriterion::patternFamily` → `patternFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily`\n\n## Proof outline\n\nBegin by proving the reusable source line-17 bound\n`h_pattern_card : ∀ R ∈ patterns, R.card ≤ d + 1`.\nFix `R ∈ patterns`. Apply the properness hypothesis `h_tau_proper R hR : tau R ⊂ R` itself to\n`Finset.card_lt_card`, obtaining `(tau R).card < R.card`; in particular `(tau R).card ≤ R.card`.\nCombine this strict-cardinality consequence with `h_tau_gap R hR` and `h_tau_card R hR`. Since the\ndifference `R.card - (tau R).card` is now the non-truncated gap from `tau R` to `R`, natural-number\narithmetic gives\n`R.card ≤ (tau R).card + (d + 1 - s) ≤ s + (d + 1 - s) = d + 1`.\nThis establishes `h_pattern_card` uniformly for every allowed pattern, exactly as in source line 17.\n\nUnfold `IsUniformMissingTraceFamily`. For its uniformity conjunct, apply\n`card_eq_of_mem_patternFamily C U patterns` to each family member, using `hCU`, `h_patterns_subset`,\nand the universal `h_pattern_card`.\n\nFor the missing-trace conjunct, fix `F ∈ patternFamily d patterns U` and use `mem_patternFamily` to\nwrite `F = P ∪ A`, where `P ∈ patterns`, `A ⊆ U`, and `A.card = d + 1 - P.card`. The certificate gap\nfor `P`, the strict-containment cardinal relation from `h_tau_proper P hP`, and `(tau P).card ≤ s`\nimply\n`s - (tau P).card ≤ A.card`.\nUse `Finset.exists_subset_card_eq` to choose `X ⊆ A` with `X.card = s - (tau P).card`, and set `B =\ntau P ∪ X`. The containments `tau P ⊆ P ⊆ C` and `X ⊆ A ⊆ U`, together with `hCU`, make the union\ndisjoint. Hence `B ⊆ F` and `Finset.card_union_of_disjoint` gives\n`B.card = (tau P).card + (s - (tau P).card) = s`.\n\nNow fix `F' ∈ patternFamily d patterns U`, and unpack it as `F' = Q ∪ A'`, with `Q ∈ patterns`, `A'\n⊆ U`, and `A'.card = d + 1 - Q.card`. Assume for contradiction that\n`B = F ∩ F'`.\nSubstitute the two representations and expand `(P ∪ A) ∩ (Q ∪ A')` with\n`Finset.inter_union_distrib_left` and `Finset.inter_union_distrib_right`.\n\nMake the core/filler comparison explicit. Intersect this assumed equality first with `C`. On the\nleft, `(tau P ∪ X) ∩ C = tau P`, since `tau P ⊆ C`, `X ⊆ U`, and `C` and `U` are disjoint. On the\nexpanded right, the terms involving a filler with a core pattern vanish by `hCU`; the filler-filler\nterm is also disjoint from `C`, leaving `P ∩ Q`. Thus `P ∩ Q = tau P`, hence `Q ∩ P = tau P`.\nIntersect the same equality with `U`: the left side reduces to `X`; on the right all terms meeting a\ncore vanish and the surviving filler term is `A ∩ A'`. Therefore `A' ∩ A = X` after commuting the\nintersection.\n\nFrom `A' ∩ A = X`, `Finset.inter_subset_left` and `Finset.card_le_card` yield `X.card ≤ A'.card`. At\nthis point invoke the universal source bound as `h_pattern_card Q hQ : Q.card ≤ d + 1`. Together\nwith `A'.card = d + 1 - Q.card`, this certifies that this subtraction is the genuine complement of\n`Q.card` in `d + 1`, rather than a truncated zero. Substitute\n`X.card = s - (tau P).card`, `A'.card = d + 1 - Q.card`, `(tau P).card ≤ s`, and `Q.card ≤ d + 1`\ninto `X.card ≤ A'.card`; ordinary natural-number arithmetic then gives\n`Q.card ≤ (tau P).card + (d + 1 - s)`.\nThis, together with `Q ∈ patterns` and `Q ∩ P = tau P`, contradicts `h_exclusion P hP`. Therefore `B\n≠ F ∩ F'` for every `F'`, completing the exact generic conclusion with no T/L specialization.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, lines 9–28\n\n## Proof dependencies\n\n- `Finset.card_le_card` from `Mathlib.Data.Finset.Card`\n- `Finset.card_lt_card` from `Mathlib.Data.Finset.Card`\n- `Finset.card_union_of_disjoint` from `Mathlib.Data.Finset.Card`\n- `Finset.exists_subset_card_eq` from `Mathlib.Data.Finset.Card`\n- `Finset.disjoint_left` from `Mathlib.Data.Finset.Disjoint`\n- `Finset.inter_subset_left` from `Mathlib.Data.Finset.Lattice.Basic`\n- `Finset.inter_union_distrib_left` from `Mathlib.Data.Finset.Lattice.Basic`\n- `Main.PatternCriterion::IsUniformMissingTraceFamily` → `IsUniformMissingTraceFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily`\n- `Main.PatternCriterion::card_eq_of_mem_patternFamily` → `card_eq_of_mem_patternFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Theorems.card_eq_of_mem_patternFamily`\n- `Main.PatternCriterion::mem_patternFamily` → `mem_patternFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Theorems.mem_patternFamily`\n-/\ntheorem patternFamily_isUniformMissingTraceFamily {n d s : ℕ}\n    (C U : Finset (Fin n)) (patterns : Finset (Finset (Fin n)))\n    (tau : Finset (Fin n) → Finset (Fin n))\n    (hCU : Disjoint C U) (h_patterns_subset : ∀ P ∈ patterns, P ⊆ C)\n    (h_tau_proper : ∀ P ∈ patterns, tau P ⊂ P)\n    (h_tau_gap : ∀ P ∈ patterns, P.card - (tau P).card ≤ d + 1 - s)\n    (h_tau_card : ∀ P ∈ patterns, (tau P).card ≤ s)\n    (h_exclusion : ∀ P ∈ patterns,\n      ¬ ∃ Q ∈ patterns, Q ∩ P = tau P ∧\n        Q.card ≤ (tau P).card + (d + 1 - s)) :\n    IsUniformMissingTraceFamily d s (patternFamily d patterns U) := by\n  have h_pattern_card : ∀ R ∈ patterns, R.card ≤ d + 1 := by\n    intro R hR\n    have hlt := Finset.card_lt_card (h_tau_proper R hR)\n    have hle : (tau R).card ≤ R.card := Nat.le_of_lt hlt\n    have hgap := h_tau_gap R hR\n    have hcard := h_tau_card R hR\n    omega\n  unfold IsUniformMissingTraceFamily\n  constructor\n  · intro F hF\n    exact card_eq_of_mem_patternFamily C U patterns F hCU h_patterns_subset\n      h_pattern_card hF\n  · intro F hF\n    rcases (mem_patternFamily patterns U F).mp hF with ⟨P, hP, A, hAU, hAcard, rfl⟩\n    have hXle : s - (tau P).card ≤ A.card := by\n      have hlt := Finset.card_lt_card (h_tau_proper P hP)\n      have hle : (tau P).card ≤ P.card := Nat.le_of_lt hlt\n      have hgap := h_tau_gap P hP\n      have hcard := h_tau_card P hP\n      omega\n    rcases Finset.exists_subset_card_eq hXle with ⟨X, hXA, hXcard⟩\n    refine ⟨tau P ∪ X, ?_, ?_, ?_⟩\n    · intro x hx\n      rw [Finset.mem_union] at hx ⊢\n      rcases hx with hx | hx\n      · exact Or.inl ((h_tau_proper P hP).1 hx)\n      · exact Or.inr (hXA hx)\n    · rw [Finset.card_union_of_disjoint\n        (hCU.mono ((h_tau_proper P hP).1.trans (h_patterns_subset P hP))\n          (hXA.trans hAU)), hXcard]\n      exact Nat.add_sub_of_le (h_tau_card P hP)\n    · intro F' hF'\n      rcases (mem_patternFamily patterns U F').mp hF' with ⟨Q, hQ, A', hA'U, hA'card, rfl⟩\n      intro hEq\n      apply h_exclusion P hP\n      refine ⟨Q, hQ, ?_, ?_⟩\n      · ext x\n        constructor\n        · intro hx\n          rw [Finset.mem_inter] at hx\n          have hxI : x ∈ (P ∪ A) ∩ (Q ∪ A') := by\n            rw [Finset.mem_inter, Finset.mem_union, Finset.mem_union]\n            exact ⟨Or.inl hx.2, Or.inl hx.1⟩\n          have hxB : x ∈ tau P ∪ X := hEq.symm ▸ hxI\n          rw [Finset.mem_union] at hxB\n          rcases hxB with hxT | hxX\n          · exact hxT\n          · exact False.elim ((Finset.disjoint_left.mp hCU\n              (h_patterns_subset P hP hx.2)) (hAU (hXA hxX)))\n        · intro hxT\n          have hxI : x ∈ (P ∪ A) ∩ (Q ∪ A') := hEq ▸ by\n            rw [Finset.mem_union]\n            exact Or.inl hxT\n          rw [Finset.mem_inter, Finset.mem_union, Finset.mem_union] at hxI\n          rw [Finset.mem_inter]\n          refine ⟨?_, (h_tau_proper P hP).1 hxT⟩\n          rcases hxI.2 with hxQ | hxA'\n          · exact hxQ\n          · exact False.elim ((Finset.disjoint_left.mp hCU\n              ((h_tau_proper P hP).1.trans (h_patterns_subset P hP) hxT)) (hA'U hxA'))\n      · have hXA' : X ⊆ A' := by\n          intro x hxX\n          have hxI : x ∈ (P ∪ A) ∩ (Q ∪ A') := hEq ▸ by\n            rw [Finset.mem_union]\n            exact Or.inr hxX\n          rw [Finset.mem_inter, Finset.mem_union, Finset.mem_union] at hxI\n          rcases hxI.2 with hxQ | hxA'\n          · exact False.elim ((Finset.disjoint_left.mp hCU\n              (h_patterns_subset Q hQ hxQ)) (hAU (hXA hxX)))\n          · exact hxA'\n        have hle := Finset.card_le_card hXA'\n        have hQcard := h_pattern_card Q hQ\n        have htcard := h_tau_card P hP\n        omega\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 28,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source criterion and its proof prescribe the tau hypotheses, witness B = tau(P) ∪ X, trace separation, and exclusion contradiction.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 9,
+          "start_locator": null
+        }
+      ],
+      "text": "Begin by proving the reusable source line-17 bound\n`h_pattern_card : ∀ R ∈ patterns, R.card ≤ d + 1`.\nFix `R ∈ patterns`. Apply the properness hypothesis `h_tau_proper R hR : tau R ⊂ R` itself to `Finset.card_lt_card`, obtaining `(tau R).card < R.card`; in particular `(tau R).card ≤ R.card`. Combine this strict-cardinality consequence with `h_tau_gap R hR` and `h_tau_card R hR`. Since the difference `R.card - (tau R).card` is now the non-truncated gap from `tau R` to `R`, natural-number arithmetic gives\n`R.card ≤ (tau R).card + (d + 1 - s) ≤ s + (d + 1 - s) = d + 1`.\nThis establishes `h_pattern_card` uniformly for every allowed pattern, exactly as in source line 17.\n\nUnfold `IsUniformMissingTraceFamily`. For its uniformity conjunct, apply `card_eq_of_mem_patternFamily C U patterns` to each family member, using `hCU`, `h_patterns_subset`, and the universal `h_pattern_card`.\n\nFor the missing-trace conjunct, fix `F ∈ patternFamily d patterns U` and use `mem_patternFamily` to write `F = P ∪ A`, where `P ∈ patterns`, `A ⊆ U`, and `A.card = d + 1 - P.card`. The certificate gap for `P`, the strict-containment cardinal relation from `h_tau_proper P hP`, and `(tau P).card ≤ s` imply\n`s - (tau P).card ≤ A.card`.\nUse `Finset.exists_subset_card_eq` to choose `X ⊆ A` with `X.card = s - (tau P).card`, and set `B = tau P ∪ X`. The containments `tau P ⊆ P ⊆ C` and `X ⊆ A ⊆ U`, together with `hCU`, make the union disjoint. Hence `B ⊆ F` and `Finset.card_union_of_disjoint` gives\n`B.card = (tau P).card + (s - (tau P).card) = s`.\n\nNow fix `F' ∈ patternFamily d patterns U`, and unpack it as `F' = Q ∪ A'`, with `Q ∈ patterns`, `A' ⊆ U`, and `A'.card = d + 1 - Q.card`. Assume for contradiction that\n`B = F ∩ F'`.\nSubstitute the two representations and expand `(P ∪ A) ∩ (Q ∪ A')` with `Finset.inter_union_distrib_left` and `Finset.inter_union_distrib_right`.\n\nMake the core/filler comparison explicit. Intersect this assumed equality first with `C`. On the left, `(tau P ∪ X) ∩ C = tau P`, since `tau P ⊆ C`, `X ⊆ U`, and `C` and `U` are disjoint. On the expanded right, the terms involving a filler with a core pattern vanish by `hCU`; the filler-filler term is also disjoint from `C`, leaving `P ∩ Q`. Thus `P ∩ Q = tau P`, hence `Q ∩ P = tau P`. Intersect the same equality with `U`: the left side reduces to `X`; on the right all terms meeting a core vanish and the surviving filler term is `A ∩ A'`. Therefore `A' ∩ A = X` after commuting the intersection.\n\nFrom `A' ∩ A = X`, `Finset.inter_subset_left` and `Finset.card_le_card` yield `X.card ≤ A'.card`. At this point invoke the universal source bound as `h_pattern_card Q hQ : Q.card ≤ d + 1`. Together with `A'.card = d + 1 - Q.card`, this certifies that this subtraction is the genuine complement of `Q.card` in `d + 1`, rather than a truncated zero. Substitute\n`X.card = s - (tau P).card`, `A'.card = d + 1 - Q.card`, `(tau P).card ≤ s`, and `Q.card ≤ d + 1` into `X.card ≤ A'.card`; ordinary natural-number arithmetic then gives\n`Q.card ≤ (tau P).card + (d + 1 - s)`.\nThis, together with `Q ∈ patterns` and `Q ∩ P = tau P`, contradicts `h_exclusion P hP`. Therefore `B ≠ F ∩ F'` for every `F'`, completing the exact generic conclusion with no T/L specialization."
+    }
+  },
+  "revision": 1,
+  "state": "proof_planned",
+  "statement": {
+    "deps": [
+      {
+        "kind": "repo_decl",
+        "reason": "The theorem conclusion is the public IsUniformMissingTraceFamily predicate.",
+        "ref": {
+          "name": "IsUniformMissingTraceFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The theorem conclusion applies the generic patternFamily construction.",
+        "ref": {
+          "name": "patternFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": true,
+        "contains_axiom": false,
+        "contains_sorry": true,
+        "diagnostics": {
+          "diagnostics": [
+            {
+              "column": 9,
+              "line": 45,
+              "message": "declaration uses `sorry`",
+              "severity": "warning"
+            }
+          ],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.PatternCriterion.Theorems.patternFamily_isUniformMissingTraceFamily', 'items': [{'severity': 'warning', 'pos': {'line': 45, 'column': 9}, 'endPos': {'line': 45, 'column': 50}, 'kind': None, 'data': 'declaration uses `sorry`', 'fileName': 'UniformMissingTraceFamily.Main.PatternCriterion.Theorems.patternFamily_isUniformMissingTraceFamily', 'content': '  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily`\\n-/\\ntheorem patternFamily_isUniformMissingTraceFamily {n d s : ℕ}\\n    (C U : Finset (Fin n)) (patterns : Finset (Finset (Fin n)))\\n    (tau : Finset (Fin n) → Finset (Fin n))'}], 'total_items': 1, 'error_count': 0, 'warning_count': 1, 'info_count': 0, 'sorry_count': 1}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PatternCriterion/Theorems/patternFamily_isUniformMissingTraceFamily.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 1 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": true,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [
+            {
+              "column": 3,
+              "excerpt": "sorry",
+              "kind": "sorry",
+              "line": 56
+            }
+          ],
+          "opaque_count": 0,
+          "sorry_count": 1,
+          "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PatternCriterion.Prelude\nimport UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily\nimport UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `patternFamily_isUniformMissingTraceFamily`\n\nFor natural numbers `n`, `d`, and `s`; finite core and filler regions `C U : Finset (Fin n)`; an\nallowed pattern family `patterns : Finset (Finset (Fin n))`; and a certificate function `tau :\nFinset (Fin n) → Finset (Fin n)`, assume:\n\n1. `C` and `U` are disjoint;\n2. every `P ∈ patterns` satisfies `P ⊆ C`; and\n3. for every `P ∈ patterns`:\n   - `tau P ⊂ P`;\n   - `P.card - (tau P).card ≤ d + 1 - s`;\n   - `(tau P).card ≤ s`; and\n   - there is no `Q ∈ patterns` such that both `Q ∩ P = tau P` and `Q.card ≤ (tau P).card + (d + 1 -\ns)`.\n\nThen\n```\nIsUniformMissingTraceFamily d s (patternFamily d patterns U).\n```\n\nThus the source’s proper-subpattern certificates, with the stated size and exclusion conditions,\ncertify the generic disjoint pattern-plus-filler construction as a `(d + 1)`-uniform family in which\nevery member has an `s`-element missing intersection trace.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 3–28\n\n## Statement dependencies\n\n- `Main.PatternCriterion::IsUniformMissingTraceFamily` → `IsUniformMissingTraceFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily`\n- `Main.PatternCriterion::patternFamily` → `patternFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily`\n-/\ntheorem patternFamily_isUniformMissingTraceFamily {n d s : ℕ}\n    (C U : Finset (Fin n)) (patterns : Finset (Finset (Fin n)))\n    (tau : Finset (Fin n) → Finset (Fin n))\n    (hCU : Disjoint C U) (h_patterns_subset : ∀ P ∈ patterns, P ⊆ C)\n    (h_tau_proper : ∀ P ∈ patterns, tau P ⊂ P)\n    (h_tau_gap : ∀ P ∈ patterns, P.card - (tau P).card ≤ d + 1 - s)\n    (h_tau_card : ∀ P ∈ patterns, (tau P).card ≤ s)\n    (h_exclusion : ∀ P ∈ patterns,\n      ¬ ∃ Q ∈ patterns, Q ∩ P = tau P ∧\n        Q.card ≤ (tau P).card + (d + 1 - s)) :\n    IsUniformMissingTraceFamily d s (patternFamily d patterns U) := by\n  sorry\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 28,
+          "end_locator": null,
+          "kind": "source",
+          "note": "Defines the core/filler template and proves that the stated proper-subpattern certificate conditions make it an s-witness family.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 3,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers `n`, `d`, and `s`; finite core and filler regions `C U : Finset (Fin n)`; an allowed pattern family `patterns : Finset (Finset (Fin n))`; and a certificate function `tau : Finset (Fin n) → Finset (Fin n)`, assume:\n\n1. `C` and `U` are disjoint;\n2. every `P ∈ patterns` satisfies `P ⊆ C`; and\n3. for every `P ∈ patterns`:\n   - `tau P ⊂ P`;\n   - `P.card - (tau P).card ≤ d + 1 - s`;\n   - `(tau P).card ≤ s`; and\n   - there is no `Q ∈ patterns` such that both `Q ∩ P = tau P` and `Q.card ≤ (tau P).card + (d + 1 - s)`.\n\nThen\n```\nIsUniformMissingTraceFamily d s (patternFamily d patterns U).\n```\n\nThus the source’s proper-subpattern certificates, with the stated size and exclusion conditions, certify the generic disjoint pattern-plus-filler construction as a `(d + 1)`-uniform family in which every member has an `s`-element missing intersection trace."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-22T11:08:05Z"
+}

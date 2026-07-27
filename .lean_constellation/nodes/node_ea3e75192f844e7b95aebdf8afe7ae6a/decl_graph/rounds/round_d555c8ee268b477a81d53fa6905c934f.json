@@ -1,0 +1,32 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-27T14:03:27Z",
+  "created_at": "2026-07-27T14:00:59Z",
+  "execution_completed_at": "2026-07-27T14:02:18Z",
+  "execution_reason": null,
+  "execution_result_kind": "success",
+  "node_path": "Main.CountingAndMain",
+  "objective": "Remove the two superseded private compatibility wrappers after closure preview confirmed the deletion set contains only those declarations. Their SourceIndex b_0009 semantic content is now provided by the exact proved lower-node interfaces, and perturbedStarBase_chooseSum plus perturbedStarPerturbation_chooseSum compile and are proof-policy satisfied while importing those providers directly. This cleanup restores graph scale and hygiene before proving perturbedStarPatterns_chooseSum and adding public outputs.",
+  "plan_closeout_acknowledged_at": "2026-07-27T14:03:27Z",
+  "plan_closeout_acknowledged_by": "a_69813ea8bd4a4ab38bca6ad41a76a566",
+  "result_kind": "success",
+  "result_reason": "Both unreferenced private compatibility wrappers were safely deleted; lower providers and surviving parents retain their semantics.",
+  "revision_refs": [
+    {
+      "change_id": "anchoredPowerset_chooseSum_reindex@rev:4",
+      "decl_name": "anchoredPowerset_chooseSum_reindex",
+      "revision": 4
+    },
+    {
+      "change_id": "perturbedStarProperPatterns_chooseSum@rev:4",
+      "decl_name": "perturbedStarProperPatterns_chooseSum",
+      "revision": 4
+    }
+  ],
+  "round_id": "round_d555c8ee268b477a81d53fa6905c934f",
+  "round_index": 14,
+  "started_at": "2026-07-27T14:02:00Z",
+  "status": "committed",
+  "strategy_id": "strategy_7cbc30f0d9cb46628fd30ebca588482b",
+  "summary": "Graph hygiene progressed as intended: both superseded private wrappers were safely deleted, with no downstream closure and no released-state impact. Their semantics remain available through the two proved lower-node providers, and the surviving proved base and perturbation theorems consume those providers directly. The active graph will return to nine declarations after closeout, within the contract’s expected scale. The known dependency closure for perturbedStarPatterns_chooseSum is now complete: proved perturbedStarBase_chooseSum and perturbedStarPerturbation_chooseSum exactly compose its accepted statement. The next action is a proof-only advancement of that declared combined theorem; no preparation or further helper work is needed."
+}

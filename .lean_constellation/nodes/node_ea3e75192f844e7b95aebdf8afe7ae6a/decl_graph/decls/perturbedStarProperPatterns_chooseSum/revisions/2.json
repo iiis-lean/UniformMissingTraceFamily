@@ -1,0 +1,194 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [],
+    "anticipated_statement_dep_names": [],
+    "base_revision": 1,
+    "kind": "update",
+    "objective": "Advance the unchanged compiler-confirmed SourceIndex b_0009 wrapper from proof_planned to proved. Its exact formal statement is already matched by the ready, non-stale, proof-accepted provider Main.PerturbedPatternCancellation::perturbedPattern_properWeights_add_full_eq_fullWeights: same B : PerturbedStarBlocks n r and d, proper-L a/T image sum, full b/T/L weight, full b-image sum, and no hrd/hrn assumptions. Proof Formal should import and apply that provider directly (with only definitional/syntactic alignment if needed), replacing the obsolete local injectivity/cancellation proof route. This wrapper remains temporarily as the existing consumer boundary for perturbedStarPerturbation_chooseSum and will be considered for deletion only after parents consume providers safely.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": "proof_planned",
+    "summary": "The proof-formal-only update preserved the accepted statement and proof-planned state. The captured Lean proof directly applies Main.PerturbedPatternCancellation::perturbedPattern_properWeights_add_full_eq_fullWeights and passed formal consistency, but the target could not be accepted because the retained Proof NL still specifies the obsolete local injectivity/equal-weight/erase-splitting construction. Blocker classification: proof-stage plan/formal drift, not source, provider, Mathlib, or scope. The consumer-side formal goal is unchanged: the proper-L a-pattern image weight plus the full-L b-pattern weight equals the full b-pattern image weight, with no hrd/hrn assumptions. The provider matches every object, assumption, and equality direction and is ready/proof-accepted. Retry by creating a new revision reset to declared, rewriting Proof NL to the direct-provider route, and then rerunning Proof Formal; do not retry perturbedStarPerturbation_chooseSum before this wrapper is proved.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": "perturbedStarProperPatterns_chooseSum",
+  "proof": {
+    "deps": [
+      {
+        "kind": "repo_decl",
+        "reason": "The final wrapper proof is the direct application of this exact proved public provider.",
+        "ref": {
+          "name": "perturbedPattern_properWeights_add_full_eq_fullWeights",
+          "node": "Main.PerturbedPatternCancellation",
+          "repo": null,
+          "revision": 2
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": false,
+        "contains_axiom": false,
+        "contains_sorry": false,
+        "diagnostics": {
+          "diagnostics": [],
+          "passed": true,
+          "raw_excerpt": "",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarProperPatterns_chooseSum.lean",
+          "schema_version": 2,
+          "summary": "Command completed successfully"
+        },
+        "message": "Lean check passed.",
+        "policy": "proof_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": false,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [],
+          "opaque_count": 0,
+          "sorry_count": 0,
+          "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Finset.Filter\nimport Mathlib.Data.Finset.Powerset\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarProperPatterns_chooseSum`\n\nFor natural numbers n, r, and d and `B : PerturbedStarBlocks n r`, let `w(P) = Nat.choose\n(perturbedStarFiller B).card (d + 1 - P.card)`.  Then\n`(∑ P ∈ (B.L.powerset.filter (fun Y => Y ≠ B.L)).image (fun Y => {B.a} ∪ B.T ∪ Y), w(P)) + w({B.b} ∪\nB.T ∪ B.L) = ∑ P ∈ B.L.powerset.image (fun Y => {B.b} ∪ B.T ∪ Y), w(P)`.\nThus each proper-Y deleted a-pattern has the same weight as its inserted b-pattern, and the full `Y\n= B.L` b-pattern is the sole extra insertion.  No r-form bounds are assumed.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 37–49\n\n## Statement dependencies\n\n- `Finset.filter` from `Mathlib.Data.Finset.Filter`\n- `Finset.powerset` from `Mathlib.Data.Finset.Powerset`\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n\n## Proof outline\n\nLet `S := B.L.powerset.filter (fun Y => Y ≠ B.L)`, `fₐ Y := {B.a} ∪ B.T ∪ Y`, `fᵦ Y := {B.b} ∪ B.T ∪\nY`, and let `w` be the displayed completion weight.  Prove `fₐ` is injective on `S` and `fᵦ` is\ninjective on `B.L.powerset` by intersecting an equality of images with `B.L`: anchor/block avoidance\nand `B.T_disjoint_L` reduce both intersections to the original `Y`.  For every proper `Y`, use the\nsame avoidance/disjointness facts and `Finset.card_union_of_disjoint` to prove `card (fₐ Y) = card\n(fᵦ Y)`, hence `w (fₐ Y) = w (fᵦ Y)`.\n\nApply `Finset.sum_image` to both proper images and `Finset.sum_congr` with the weight equality; this\nidentifies their total weights.  On the b-side, use membership in `B.L.powerset` to show `S =\nB.L.powerset.erase B.L`, then apply `Finset.sum_erase_add` to the domain sum (transported through\nthe injective `fᵦ` image).  This splits the full inserted-image sum into its proper-Y part plus `w\n(fᵦ B.L)`.  Substitute the equal proper-image sum and rearrange addition to obtain precisely the\naccepted identity.  No `hrd` or `hrn` is used.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, lines 37–49\n\n## Proof dependencies\n\n- `Main.PerturbedPatternCancellation::perturbedPattern_properWeights_add_full_eq_fullWeights` →\n  `perturbedPattern_properWeights_add_full_eq_fullWeights` from `UniformMissingTraceFamily.Main.Pert\n  urbedPatternCancellation.Theorems.perturbedPattern_properWeights_add_full_eq_fullWeights`\n-/\ntheorem perturbedStarProperPatterns_chooseSum {n r d : ℕ} (B : PerturbedStarBlocks n r) :\n    (∑ P ∈ (B.L.powerset.filter (fun Y => Y ≠ B.L)).image\n        (fun Y => {B.a} ∪ B.T ∪ Y),\n      Nat.choose (perturbedStarFiller B).card (d + 1 - P.card)) +\n        Nat.choose (perturbedStarFiller B).card\n          (d + 1 - ({B.b} ∪ B.T ∪ B.L).card) =\n      ∑ P ∈ B.L.powerset.image (fun Y => {B.b} ∪ B.T ∪ Y),\n        Nat.choose (perturbedStarFiller B).card (d + 1 - P.card) := by\n  exact perturbedPattern_properWeights_add_full_eq_fullWeights B d\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 49,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source pairs proper-Y deletions and insertions and leaves the full-L inserted pattern unpaired.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 37,
+          "start_locator": null
+        }
+      ],
+      "text": "Let `S := B.L.powerset.filter (fun Y => Y ≠ B.L)`, `fₐ Y := {B.a} ∪ B.T ∪ Y`, `fᵦ Y := {B.b} ∪ B.T ∪ Y`, and let `w` be the displayed completion weight.  Prove `fₐ` is injective on `S` and `fᵦ` is injective on `B.L.powerset` by intersecting an equality of images with `B.L`: anchor/block avoidance and `B.T_disjoint_L` reduce both intersections to the original `Y`.  For every proper `Y`, use the same avoidance/disjointness facts and `Finset.card_union_of_disjoint` to prove `card (fₐ Y) = card (fᵦ Y)`, hence `w (fₐ Y) = w (fᵦ Y)`.\n\nApply `Finset.sum_image` to both proper images and `Finset.sum_congr` with the weight equality; this identifies their total weights.  On the b-side, use membership in `B.L.powerset` to show `S = B.L.powerset.erase B.L`, then apply `Finset.sum_erase_add` to the domain sum (transported through the injective `fᵦ` image).  This splits the full inserted-image sum into its proper-Y part plus `w (fᵦ B.L)`.  Substitute the equal proper-image sum and rearrange addition to obtain precisely the accepted identity.  No `hrd` or `hrn` is used."
+    }
+  },
+  "revision": 2,
+  "state": "proof_planned",
+  "statement": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": "The stated finite sums directly use a filtered subset family.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Filter",
+          "name": "Finset.filter"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": "The stated finite sums directly range over a Finset powerset.",
+        "ref": {
+          "module": "Mathlib.Data.Finset.Powerset",
+          "name": "Finset.powerset"
+        }
+      },
+      {
+        "kind": "mathlib_decl",
+        "reason": "The displayed weights and binomial convolution directly use Nat.choose.",
+        "ref": {
+          "module": "Mathlib.Data.Nat.Choose.Basic",
+          "name": "Nat.choose"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The statement uses the accepted block data B, its anchors, and its T and L fields.",
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The exact weight w is expressed using the cardinality of this accepted complementary filler.",
+        "ref": {
+          "name": "perturbedStarFiller",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": true,
+        "contains_axiom": false,
+        "contains_sorry": true,
+        "diagnostics": {
+          "diagnostics": [
+            {
+              "column": 9,
+              "line": 34,
+              "message": "declaration uses `sorry`",
+              "severity": "warning"
+            }
+          ],
+          "passed": true,
+          "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarProperPatterns_chooseSum', 'items': [{'severity': 'warning', 'pos': {'line': 34, 'column': 9}, 'endPos': {'line': 34, 'column': 46}, 'kind': None, 'data': 'declaration uses `sorry`', 'fileName': 'UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarProperPatterns_chooseSum', 'content': '  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\\n-/\\ntheorem perturbedStarProperPatterns_chooseSum {n r d : ℕ} (B : PerturbedStarBlocks n r) :\\n    (∑ P ∈ (B.L.powerset.filter (fun Y => Y ≠ B.L)).image\\n        (fun Y => {B.a} ∪ B.T ∪ Y),'}], 'total_items': 1, 'error_count': 0, 'warning_count': 1, 'info_count': 0, 'sorry_count': 1}",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarProperPatterns_chooseSum.lean",
+          "schema_version": 2,
+          "summary": "Diagnostics returned 1 items"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": true,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [
+            {
+              "column": 3,
+              "excerpt": "sorry",
+              "kind": "sorry",
+              "line": 42
+            }
+          ],
+          "opaque_count": 0,
+          "sorry_count": 1,
+          "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Finset.Filter\nimport Mathlib.Data.Finset.Powerset\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarProperPatterns_chooseSum`\n\nFor natural numbers n, r, and d and `B : PerturbedStarBlocks n r`, let `w(P) = Nat.choose\n(perturbedStarFiller B).card (d + 1 - P.card)`.  Then\n`(∑ P ∈ (B.L.powerset.filter (fun Y => Y ≠ B.L)).image (fun Y => {B.a} ∪ B.T ∪ Y), w(P)) + w({B.b} ∪\nB.T ∪ B.L) = ∑ P ∈ B.L.powerset.image (fun Y => {B.b} ∪ B.T ∪ Y), w(P)`.\nThus each proper-Y deleted a-pattern has the same weight as its inserted b-pattern, and the full `Y\n= B.L` b-pattern is the sole extra insertion.  No r-form bounds are assumed.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 37–49\n\n## Statement dependencies\n\n- `Finset.filter` from `Mathlib.Data.Finset.Filter`\n- `Finset.powerset` from `Mathlib.Data.Finset.Powerset`\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n-/\ntheorem perturbedStarProperPatterns_chooseSum {n r d : ℕ} (B : PerturbedStarBlocks n r) :\n    (∑ P ∈ (B.L.powerset.filter (fun Y => Y ≠ B.L)).image\n        (fun Y => {B.a} ∪ B.T ∪ Y),\n      Nat.choose (perturbedStarFiller B).card (d + 1 - P.card)) +\n        Nat.choose (perturbedStarFiller B).card\n          (d + 1 - ({B.b} ∪ B.T ∪ B.L).card) =\n      ∑ P ∈ B.L.powerset.image (fun Y => {B.b} ∪ B.T ∪ Y),\n        Nat.choose (perturbedStarFiller B).card (d + 1 - P.card) := by\n  sorry\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 49,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source deletes proper-Y first-anchor patterns, inserts their second-anchor counterparts, and identifies the full-L pattern as the sole unpaired insertion.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 37,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers n, r, and d and `B : PerturbedStarBlocks n r`, let `w(P) = Nat.choose (perturbedStarFiller B).card (d + 1 - P.card)`.  Then\n`(∑ P ∈ (B.L.powerset.filter (fun Y => Y ≠ B.L)).image (fun Y => {B.a} ∪ B.T ∪ Y), w(P)) + w({B.b} ∪ B.T ∪ B.L) = ∑ P ∈ B.L.powerset.image (fun Y => {B.b} ∪ B.T ∪ Y), w(P)`.\nThus each proper-Y deleted a-pattern has the same weight as its inserted b-pattern, and the full `Y = B.L` b-pattern is the sole extra insertion.  No r-form bounds are assumed."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-27T13:24:45Z"
+}

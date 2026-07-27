@@ -1,0 +1,163 @@
+{
+  "boundary": "Owns IsUniformMissingTraceFamily, the pattern-plus-filler family over disjoint finite regions, its uniformity facts, and the generic certificate criterion from SourceIndex blocks b_0014 and b_0010. Excludes the special perturbed-star pattern system, its five cases, counting, and the final existential theorem. Expected scale: about 6–12 important Lean declarations including definitions and set/cardinality helper lemmas.",
+  "committed_at": "2026-07-22T11:30:05Z",
+  "constraints": "Preserve exactly the Finset (Finset (Fin n)) semantics of formal_target.lean. Do not specialize the generic criterion to the later T/L construction or alter the protected final theorem.",
+  "context_refs": [],
+  "contract_kind": "content",
+  "created_at": "2026-07-22T08:53:20Z",
+  "decl_graph_head": {
+    "IsUniformMissingTraceFamily": 1,
+    "card_eq_of_mem_patternFamily": 1,
+    "mem_patternFamily": 1,
+    "patternFamily": 1,
+    "patternFamily_isUniformMissingTraceFamily": 2
+  },
+  "deps": [],
+  "exports": [],
+  "goal": "Formalize the fixed-size missing-trace predicate and a reusable template-family construction criterion that turns local pattern certificates into uniform missing traces.",
+  "interfaces": [
+    {
+      "bound_decl": {
+        "name": "IsUniformMissingTraceFamily",
+        "node": "Main.PatternCriterion",
+        "repo": null,
+        "revision": 1
+      },
+      "expected_statement_lean_code": null,
+      "kind": "definition",
+      "name": "IsUniformMissingTraceFamily",
+      "note": "Preserve formal_target.lean lines 5–9 exactly in meaning and argument order: {n : ℕ} (d s : ℕ) (family : Finset (Finset (Fin n))) : Prop, with uniform card d+1 and for each F a B ⊆ F of card s unequal to F ∩ F' for every family member F'.",
+      "source_refs": [],
+      "summary": "A Finset family on Fin n is (d+1)-uniform and every member has an s-subset absent as an intersection trace."
+    },
+    {
+      "bound_decl": {
+        "name": "patternFamily",
+        "node": "Main.PatternCriterion",
+        "repo": null,
+        "revision": 1
+      },
+      "expected_statement_lean_code": null,
+      "kind": "definition",
+      "name": "patternFamily",
+      "note": "Source article/sections/02_proof.tex lines 3–7. Expose a reusable Finset-valued construction over Fin n (or an equivalently reusable finite ambient type) that later nodes can instantiate with core C, filler U, and pattern family 𝒫.",
+      "source_refs": [],
+      "summary": "Build the family of all P ∪ A where P is an allowed core pattern and A is a filler of the required cardinality in a disjoint region."
+    },
+    {
+      "bound_decl": {
+        "name": "patternFamily_isUniformMissingTraceFamily",
+        "node": "Main.PatternCriterion",
+        "repo": null,
+        "revision": 2
+      },
+      "expected_statement_lean_code": null,
+      "kind": "theorem",
+      "name": "patternFamily_isUniformMissingTraceFamily",
+      "note": "Consumer anchor: Main.PerturbedStarCertificates. Inputs must express disjoint C/U, allowed patterns P ⊆ C, r=d+1-s, a proper tau(P) with |P|-|tau(P)|≤r and |tau(P)|≤s, and exclusion of Q with Q∩P=tau(P) and |Q|≤|tau(P)|+r. Conclusion must provide IsUniformMissingTraceFamily d s for patternFamily; do not strengthen source hypotheses or weaken the conclusion. Source lines 9–28.",
+      "source_refs": [],
+      "summary": "The generic tau certificate hypotheses imply that the pattern-plus-filler family is a uniform missing-trace family."
+    }
+  ],
+  "mathlib_decls": [
+    {
+      "added_by": "worker",
+      "kind": null,
+      "module": "Mathlib.Data.Finset.Card",
+      "name": "Finset.card_union_of_disjoint",
+      "reason": "Uniform cardinality of P ∪ A under core/filler disjointness."
+    },
+    {
+      "added_by": "worker",
+      "kind": "lemma",
+      "module": "Mathlib.Data.Finset.Card",
+      "name": "Finset.exists_subset_card_eq",
+      "reason": "Choose the needed portion of a filler set for an s-element missing trace."
+    },
+    {
+      "added_by": "worker",
+      "kind": null,
+      "module": "Mathlib.Data.Finset.Card",
+      "name": "Finset.exists_subsuperset_card_eq",
+      "reason": "Exact-size selection/extension within a prescribed finite region."
+    },
+    {
+      "added_by": "worker",
+      "kind": null,
+      "module": "Mathlib.Data.Finset.Powerset",
+      "name": "Finset.powersetCard",
+      "reason": "Definition-level representation of all fixed-cardinality filler subsets."
+    },
+    {
+      "added_by": "worker",
+      "kind": null,
+      "module": "Mathlib.Data.Finset.Powerset",
+      "name": "Finset.mem_powersetCard",
+      "reason": "Eliminates/constructs filler membership as subset plus cardinality."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Lattice.Basic",
+      "name": "Finset.inter_union_distrib_left",
+      "reason": "Decomposes intersections of pattern-plus-filler unions."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Lattice.Basic",
+      "name": "Finset.inter_union_distrib_right",
+      "reason": "Normalizes the companion union/intersection form in trace arguments."
+    }
+  ],
+  "mathlib_modules": [
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Card",
+      "reason": "Cardinality arithmetic and exact-size subset/extension needed for uniformity and missing-trace witness selection."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Powerset",
+      "reason": "Defines and characterizes the fixed-cardinality filler family."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Lattice.Basic",
+      "reason": "Provides the Finset union/intersection normalization needed for trace decomposition."
+    }
+  ],
+  "objective": "Produce proved declarations for the public missing-trace predicate and generic pattern-family criterion, with enough proved helper facts to support the later explicit construction.",
+  "owned_refs": [
+    {
+      "added_by": "coordinator",
+      "reason": "Owns the exact public predicate semantics for uniform size and a fixed-size missing intersection trace.",
+      "ref": {
+        "kind": "source",
+        "ref": {
+          "end_line": 9,
+          "path": "formal_target.lean",
+          "start_line": 3
+        }
+      },
+      "ref_id": "mat_126404d6c008bf2c"
+    },
+    {
+      "added_by": "coordinator",
+      "reason": "Owns the generic pattern-plus-filler construction and the proved tau certificate criterion.",
+      "ref": {
+        "kind": "source",
+        "ref": {
+          "end_line": 28,
+          "path": "article/sections/02_proof.tex",
+          "start_line": 3
+        }
+      },
+      "ref_id": "mat_2ab4fb8bc21e2688"
+    }
+  ],
+  "status": "committed",
+  "success_criteria": "The predicate is compiler-confirmed with source-faithful semantics; the template family is well-defined and uniform; a proved criterion yields IsUniformMissingTraceFamily from the stated tau size and exclusion hypotheses; all public theorem-like outputs are proved-level satisfied.",
+  "summary": "Accepted ready outcome in proved mode. The committed boundary provides exact IsUniformMissingTraceFamily and patternFamily definitions plus the proved generic tau-certificate theorem; its actual C/U/pattern/tau signature matches the downstream PerturbedStarCertificates consumer without extra assumptions or weakened conclusion. No unresolved prerequisite remains within this node.",
+  "version": 1
+}

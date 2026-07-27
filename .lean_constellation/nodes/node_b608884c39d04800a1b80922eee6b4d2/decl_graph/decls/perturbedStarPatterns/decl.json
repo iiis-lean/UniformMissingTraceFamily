@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-07-22T13:04:11Z",
+  "current_revision": 1,
+  "kind": "definition",
+  "lifecycle": "active",
+  "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns",
+  "name": "perturbedStarPatterns",
+  "node_path": "Main.PerturbedStarCertificates",
+  "public": true,
+  "revision_ids": [
+    1
+  ],
+  "summary": "The allowed core patterns obtained by perturbing the anchored one-star along the T and L blocks.",
+  "updated_at": "2026-07-22T13:04:11Z"
+}

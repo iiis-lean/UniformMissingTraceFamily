@@ -1,0 +1,37 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-22T12:06:51Z",
+  "created_at": "2026-07-22T11:39:01Z",
+  "execution_completed_at": "2026-07-22T12:06:51Z",
+  "execution_reason": "DeclGraphRoundFlow finished with blocked.",
+  "execution_result_kind": "blocked",
+  "node_path": "Main.PerturbedStarCertificates",
+  "objective": "Establish the source b_0008 foundation: prove the immutable r=d+1-s parameter consequences, define canonical disjoint r-element blocks T and L in Fin n away from two distinguished points, and prove their exact cardinality, disjointness, and distinctness/avoidance properties for later core, pattern, counting, and five-certificate consumers.",
+  "plan_closeout_acknowledged_at": "2026-07-22T12:06:51Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "blocked",
+  "result_reason": "DeclGraphRoundFlow finished with blocked.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedStarParameterBounds@rev:1",
+      "decl_name": "perturbedStarParameterBounds",
+      "revision": 1
+    },
+    {
+      "change_id": "PerturbedStarBlocks@rev:1",
+      "decl_name": "PerturbedStarBlocks",
+      "revision": 1
+    },
+    {
+      "change_id": "exists_perturbedStarBlocks@rev:1",
+      "decl_name": "exists_perturbedStarBlocks",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_22b95f82c273468abb2a556a343dc2e3",
+  "round_index": 1,
+  "started_at": "2026-07-22T12:02:01Z",
+  "status": "committed",
+  "strategy_id": "strategy_140c2962785943968f6203e9ab1972fc",
+  "summary": "Round 1 made partial bottom-up progress: perturbedStarParameterBounds, PerturbedStarBlocks, and exists_perturbedStarBlocks all received accepted source-faithful Statement NL and were committed at specified, but none reached its requested target or proof-policy satisfaction. Formal candidates for the arithmetic theorem and block structure were checked; the structure candidate itself passed without sorry. The terminal blocker is a predictable tracked dependency sequence: exists_perturbedStarBlocks must preserve the formal conclusion ∃ PerturbedStarBlocks n r, but its theorem module cannot reference/import that provider until PerturbedStarBlocks is accepted declared. No state-only intermediate route was intentional, no source/interface drift or scope overflow was found, and no superseded graph branch needs cleanup. Known retry conditions: (1) advance PerturbedStarBlocks to declared and satisfied in a dedicated next round; (2) then advance/prove perturbedStarParameterBounds and retry exists_perturbedStarBlocks with its unchanged consumer-side statement and captured provider dependency; (3) use the verified Mathlib embeddings, card_map, and disjointness lemmas for the proof. The existing bottom-up strategy remains viable; next action should be a sequencing repair round for the provider only."
+}

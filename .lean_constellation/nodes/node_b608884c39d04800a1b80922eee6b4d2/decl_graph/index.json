@@ -1,0 +1,50 @@
+{
+  "decl_names": [
+    "PerturbedStarBlocks",
+    "exists_perturbedStarBlocks",
+    "perturbedStarCertificate_addedProper",
+    "perturbedStarCertificate_finalAdded",
+    "perturbedStarCertificate_largeAvoiding",
+    "perturbedStarCertificate_largeMeeting",
+    "perturbedStarCertificate_smallStar",
+    "perturbedStarCore",
+    "perturbedStarFamily",
+    "perturbedStarFiller",
+    "perturbedStarFinalIntersection_excluded",
+    "perturbedStarParameterBounds",
+    "perturbedStarPatterns",
+    "perturbedStarTau",
+    "perturbedStar_isUniformMissingTraceFamily"
+  ],
+  "node_id": "node_b608884c39d04800a1b80922eee6b4d2",
+  "node_path": "Main.PerturbedStarCertificates",
+  "round_ids": [
+    "round_05bc55b7b70f4ca882d8ea5b8a13fb19",
+    "round_08445989329c44c48fe8d127e225781b",
+    "round_13d2892b652c4462b5534a250aabe3bf",
+    "round_17cdf0f27f25453dbcadbd5fee0d2c9e",
+    "round_22b95f82c273468abb2a556a343dc2e3",
+    "round_2940862f49ee43279a78931865fefe65",
+    "round_374e03c5c724480bb86ad2b5f0fe5d1e",
+    "round_5f42734902fb4b51b50e53a65151f7a5",
+    "round_663378cf5b544218a633502c90e1966f",
+    "round_6cdd22e7cddd43e9bfd8a23c45751ef0",
+    "round_6fe64cebb3204900ae88e5d48680d580",
+    "round_862ac8b13a76475baa769b24ca59725a",
+    "round_a44d9a6eb1cf46d2b4a8cd411253947c",
+    "round_b2821044b2eb4c7f959be8241b0920e9",
+    "round_c615ef666ae64205bf00df2de3844de3",
+    "round_d591ab8e8b6f494da9f7320950cbc784",
+    "round_deca55fba5514fca9a2ad8b5b23eba63",
+    "round_df13249cb85e463286c7f3088cbe754d",
+    "round_f9e0005fb2f0434c9d3d4a7160860629",
+    "round_fada8d146e6241a08d0ecd1d8382e764",
+    "round_fffa24189c11427da2ea8c2e084b8637"
+  ],
+  "schema_version": 1,
+  "strategy_ids": [
+    "strategy_140c2962785943968f6203e9ab1972fc"
+  ],
+  "summary": "DeclGraph index rebuilt for Main.PerturbedStarCertificates: 15 decls, 21 rounds, 1 strategies.",
+  "updated_at": "2026-07-27T15:27:30Z"
+}

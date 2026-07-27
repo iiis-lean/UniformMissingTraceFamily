@@ -1,0 +1,91 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "perturbedStarCore_card",
+      "perturbedStarFiller_card"
+    ],
+    "anticipated_statement_dep_names": [],
+    "base_revision": null,
+    "kind": "create",
+    "objective": "Formalize the second cancellation step of SourceIndex b_0009/article 48–50 in the exact representation of perturbedStarPatterns. For B : PerturbedStarBlocks n r with hrd : 2*r ≤ d and hrn : 2+2*r ≤ n, prove that the weighted sum over perturbedStarPatterns d B equals the weighted sum over the anchored base ((perturbedStarCore B).powerset filtered by B.a ∈ P and P.card ≤ d+1) plus Nat.choose (n-2*r-2) (d-2*r). Prove injectivity of Y ↦ {B.a}∪B.T∪Y and Y ↦ {B.b}∪B.T∪Y, show every proper Y deletion lies in the base under hrd, show the a- and b-pattern weights agree because their cards agree, establish the relevant disjoint union/difference facts, and isolate Y=B.L as the sole unpaired insertion with the displayed weight using card_L and perturbedStarFiller_card. Consume proved perturbedStarCore_card and perturbedStarFiller_card and verified Finset card/image/union/sdiff support. This equation is the second prerequisite of declared perturbedStarPatterns_chooseSum; preserve its r-form bounds and exact Nat.choose indices.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": null,
+    "summary": "Blocked at Statement NL with a present NL artifact but no accepted formal statement or proof; the revision remains planned. The preserved consumer goal is the exact r-form equation saying the weighted perturbedStarPatterns sum equals the explicit filtered anchored-base sum plus Nat.choose (n-2*r-2) (d-2*r), under 2*r≤d and 2+2*r≤n, by proper-Y pairing and the sole Y=B.L insertion. As for its sibling, the precise mismatch is MathlibIndex metadata: the typed statement representation directly uses Finset.powerset and Finset.filter, whose declaration entries are absent. Retry after both are verified, indexed, and hinted; current mathematical providers perturbedStarCore_card and perturbedStarFiller_card remain proved and sufficient at this stage.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": null,
+  "proof": null,
+  "revision": 1,
+  "state": "planned",
+  "statement": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": "The weighted sums and the displayed unpaired contribution directly use Nat.choose.",
+        "ref": {
+          "module": "Mathlib.Data.Nat.Choose.Basic",
+          "name": "Nat.choose"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The statement quantifies over the accepted block data B.",
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The unchanged anchored-base sum is expressed as a filtered powerset of this accepted core definition.",
+        "ref": {
+          "name": "perturbedStarCore",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "Every weight uses the cardinality of this accepted complementary filler.",
+        "ref": {
+          "name": "perturbedStarFiller",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The left-hand weighted sum is indexed by this accepted perturbed pattern family.",
+        "ref": {
+          "name": "perturbedStarPatterns",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": null,
+    "nl": {
+      "origin": [
+        {
+          "end_line": 50,
+          "end_locator": null,
+          "kind": "source",
+          "note": "The source defines the exact base/deletion/insertion representation and shows the proper-Y cancellations leave only the final Y=B.L binomial contribution.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 35,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers n, r, and d, construction data `B : PerturbedStarBlocks n r`, and hypotheses `2 * r ≤ d` and `2 + 2 * r ≤ n`,\n`∑ P ∈ perturbedStarPatterns d B, Nat.choose (perturbedStarFiller B).card (d + 1 - P.card) = (∑ P ∈ ((perturbedStarCore B).powerset.filter (fun P => B.a ∈ P ∧ P.card ≤ d + 1)), Nat.choose (perturbedStarFiller B).card (d + 1 - P.card)) + Nat.choose (n - 2 * r - 2) (d - 2 * r)`.\nEvery proper-`B.L` deletion is paired with its equal-cardinality insertion at the other anchor; the insertion for `Y = B.L` is the sole unpaired term.  The statement retains the exact r-form bounds and Nat.choose indices."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T12:41:21Z"
+}

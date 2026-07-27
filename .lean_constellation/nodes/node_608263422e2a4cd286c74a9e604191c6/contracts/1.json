@@ -1,0 +1,291 @@
+{
+  "boundary": "Owns construction-specific lemmas recovering Y by intersection with B.L, injectivity of Y ↦ {B.a}∪B.T∪Y and Y ↦ {B.b}∪B.T∪Y, equality of corresponding pattern cards and Nat.choose weights, identification of the proper-Y filter with powerset.erase B.L, transport of erase splitting through the injective b-image, and the resulting weighted cancellation interface. It excludes generic anchored-powerset enumeration, the parent perturbedStarPerturbation_chooseSum, global pattern-family cardinality, and the final theorem. Context is SourceIndex b_0009/article lines 48–50. Expected scale: about 5–10 important declarations, all theorem-like roles proved in graph_proved mode.",
+  "committed_at": "2026-07-27T13:07:50Z",
+  "constraints": "Use exactly Y ↦ {B.a} ∪ B.T ∪ Y and Y ↦ {B.b} ∪ B.T ∪ Y. Add no hrd or hrn assumptions. Do not redesign perturbedStarPatterns or re-prove the five missing-trace certificate cases.",
+  "context_refs": [
+    {
+      "added_by": "coordinator",
+      "reason": "Source counting context states matched proper-pattern cancellation and the sole full-L insertion; this node owns the construction-specific map and sum-transport machinery.",
+      "ref": {
+        "kind": "source",
+        "ref": {
+          "end_line": 51,
+          "path": "article/sections/02_proof.tex",
+          "start_line": 41
+        }
+      },
+      "ref_id": "mat_e0b5e99a08f17766"
+    }
+  ],
+  "contract_kind": "content",
+  "created_at": "2026-07-26T13:40:33Z",
+  "decl_graph_head": {
+    "perturbedPatternA_injOn": 2,
+    "perturbedPatternA_inter_L": 2,
+    "perturbedPatternB_injOn": 2,
+    "perturbedPatternB_inter_L": 2,
+    "perturbedPatternB_properImage_eq_erase": 2,
+    "perturbedPattern_card_eq": 1,
+    "perturbedPattern_chooseWeight_eq": 2,
+    "perturbedPattern_properDomain_eq_erase": 1,
+    "perturbedPattern_properWeights_add_full_eq_fullWeights": 2
+  },
+  "deps": [
+    {
+      "added_by": "coordinator",
+      "dep_id": "dep_21e64735cdad69f6",
+      "expected_decl_refs": [
+        {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        },
+        {
+          "name": "perturbedStarFiller",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      ],
+      "reason": "Use the committed PerturbedStarBlocks structure, its anchor/block avoidance and disjointness fields, and perturbedStarFiller in the exact pattern maps and weights.",
+      "target": {
+        "node": "Main.PerturbedStarCertificates",
+        "repo": null
+      }
+    }
+  ],
+  "exports": [],
+  "goal": "Develop proved injective pattern-map and finite-sum transport results for the matched deleted/inserted perturbed-star patterns and their sole full-L excess.",
+  "interfaces": [
+    {
+      "bound_decl": {
+        "name": "perturbedPattern_properWeights_add_full_eq_fullWeights",
+        "node": "Main.PerturbedPatternCancellation",
+        "repo": null,
+        "revision": 2
+      },
+      "expected_statement_lean_code": null,
+      "kind": "theorem",
+      "name": "perturbedPattern_properWeights_add_full_eq_fullWeights",
+      "note": "Consumer anchor: private Main.CountingAndMain::perturbedStarProperPatterns_chooseSum@1. Required shape for {n r d : ℕ} (B : PerturbedStarBlocks n r): the sum over (B.L.powerset.filter (fun Y => Y ≠ B.L)).image (fun Y => {B.a} ∪ B.T ∪ Y), weighted by Nat.choose (perturbedStarFiller B).card (d+1-P.card), plus the weight of {B.b} ∪ B.T ∪ B.L, equals the corresponding weighted sum over B.L.powerset.image (fun Y => {B.b} ∪ B.T ∪ Y). Add no hrd/hrn assumptions. Preserve constructors, indices, and conclusion direction exactly.",
+      "source_refs": [],
+      "summary": "Proper deleted a-pattern weights plus the full-L b-pattern weight equal the full b-pattern image weight."
+    }
+  ],
+  "mathlib_decls": [
+    {
+      "added_by": "coordinator",
+      "kind": "theorem",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "name": "Finset.sum_image",
+      "reason": "Transport weighted sums through injective pattern maps."
+    },
+    {
+      "added_by": "coordinator",
+      "kind": "theorem",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "name": "Finset.sum_erase_add",
+      "reason": "Split the full-L term from the powerset sum."
+    },
+    {
+      "added_by": "coordinator",
+      "kind": "lemma",
+      "module": "Mathlib.Data.Finset.Card",
+      "name": "Finset.card_union_of_disjoint",
+      "reason": "Prove equal cardinalities of matched anchor/T/Y patterns."
+    },
+    {
+      "added_by": "coordinator",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Disjoint",
+      "name": "Finset.disjoint_left",
+      "reason": "Use anchor avoidance and T/L disjointness elementwise."
+    },
+    {
+      "added_by": "coordinator",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Powerset",
+      "name": "Finset.mem_powerset",
+      "reason": "Normalize Y subset membership in pattern-map domains."
+    },
+    {
+      "added_by": "coordinator",
+      "kind": "def",
+      "module": "Mathlib.Data.Nat.Choose.Basic",
+      "name": "Nat.choose",
+      "reason": "Transport equal pattern cardinalities to equal completion weights."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Erase",
+      "name": "Finset.mem_erase",
+      "reason": "Normalize membership in B.L.powerset.erase B.L."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Image",
+      "name": "Finset.image_erase",
+      "reason": "Transport erase from the proper source domain through the injective b-map."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Lattice.Basic",
+      "name": "Finset.mem_inter",
+      "reason": "Normalizes intersection membership in the two recovery proof routes."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Lattice.Basic",
+      "name": "Finset.mem_union",
+      "reason": "Normalizes union membership in the two recovery proof routes."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Insert",
+      "name": "Finset.mem_singleton",
+      "reason": "Turns an anchor-membership branch into the anchor exclusion contradiction in the two recovery proof routes."
+    },
+    {
+      "added_by": "worker",
+      "kind": "def",
+      "module": "Mathlib.Data.Set.Operations",
+      "name": "Set.InjOn",
+      "reason": "The a- and b-pattern map formal statements are expressed as Set.InjOn on ↑B.L.powerset."
+    },
+    {
+      "added_by": "worker",
+      "kind": "def",
+      "module": "Mathlib.Data.Finset.Erase",
+      "name": "Finset.erase",
+      "reason": "Used directly in the proper-domain statement B.L.powerset.erase B.L."
+    },
+    {
+      "added_by": "worker",
+      "kind": "def",
+      "module": "Mathlib.Data.Finset.Card",
+      "name": "Finset.card",
+      "reason": "Used directly by perturbedPattern_card_eq to state equality of the two pattern sizes."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Filter",
+      "name": "Finset.mem_filter",
+      "reason": "Converts filtered powerset membership into Y ⊆ B.L and Y ≠ B.L in the proper-domain proof route."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Defs",
+      "name": "Finset.ext",
+      "reason": "Reduces equality of the proper-domain filter and erase Finsets to elementwise membership."
+    },
+    {
+      "added_by": "worker",
+      "kind": "def",
+      "module": "Mathlib.Data.Finset.Image",
+      "name": "Finset.image",
+      "reason": "Required typed Statement dependency for the proper/full perturbed b-pattern image equality and later finite-sum transport."
+    },
+    {
+      "added_by": "worker",
+      "kind": "def",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Defs",
+      "name": "Finset.sum",
+      "reason": "Required typed Statement dependency for the public finite weighted-sum cancellation interface."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "name": "Finset.sum_congr",
+      "reason": "Replaces each proper a-pattern weight with the matched b-pattern weight on the common finite domain."
+    },
+    {
+      "added_by": "worker",
+      "kind": "theorem",
+      "module": "Mathlib.Data.Finset.Image",
+      "name": "Finset.mem_image",
+      "reason": "Builds the full-L b-pattern membership needed to apply Finset.sum_erase_add."
+    }
+  ],
+  "mathlib_modules": [
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "reason": "Required for sum_image and sum_erase_add."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Card",
+      "reason": "Required for card_union_of_disjoint."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Disjoint",
+      "reason": "Required for disjoint_left."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Powerset",
+      "reason": "Required for mem_powerset and powerset domain."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Erase",
+      "reason": "Required for mem_erase in proper-filter normalization."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Image",
+      "reason": "Required for image_erase under the injective b-map."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Nat.Choose.Basic",
+      "reason": "Required for Nat.choose completion weights."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Lattice.Basic",
+      "reason": "Required for Finset.mem_inter and Finset.mem_union in the two recovery proof routes."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Insert",
+      "reason": "Required for Finset.mem_singleton in the two recovery proof routes."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Set.Operations",
+      "reason": "Supplies Set.InjOn used directly by both restricted-injectivity statement headers."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Filter",
+      "reason": "Required to normalize B.L.powerset.filter membership in the proper-domain proof route."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Data.Finset.Defs",
+      "reason": "Required for Finset.ext in the proper-domain Finset equality proof route."
+    },
+    {
+      "added_by": "worker",
+      "module": "Mathlib.Algebra.BigOperators.Group.Finset.Defs",
+      "reason": "Defining module for Finset.sum, used directly in the public weighted-sum statement."
+    }
+  ],
+  "objective": "Prove a public proper/full perturbed-pattern weighted-sum identity with exactly the constructors and no-hrd/no-hrn shape consumed by Main.CountingAndMain::perturbedStarProperPatterns_chooseSum@1.",
+  "owned_refs": [],
+  "status": "committed",
+  "success_criteria": "The public cancellation theorem is proved for every B : PerturbedStarBlocks n r and d, with proper a-pattern weights plus the full-L b weight equal to the full b-image weight; injectivity, recovery, equal-card/weight, and erase/image transport are represented in its proved dependency closure.",
+  "summary": "Accepted ready in graph_proved mode. Nine intentional theorem declarations are proved and proof-policy satisfied. The bound public revision 2 perturbedPattern_properWeights_add_full_eq_fullWeights exactly matches Main.CountingAndMain::perturbedStarProperPatterns_chooseSum@1 in quantified objects and indices, a/b image constructors, filler-based Nat.choose weights, no-hrd/no-hrn assumptions, and conclusion direction. The node provides the complete construction-specific recovery, injectivity, equal-card/weight, proper-domain, and erase/image transport boundary; no prerequisite remains inside this node.",
+  "version": 1
+}

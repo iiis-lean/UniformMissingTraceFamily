@@ -1,0 +1,32 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-26T12:39:22Z",
+  "created_at": "2026-07-26T12:32:36Z",
+  "execution_completed_at": "2026-07-26T12:39:22Z",
+  "execution_reason": "DeclGraphRoundFlow finished with blocked.",
+  "execution_result_kind": "blocked",
+  "node_path": "Main.CountingAndMain",
+  "objective": "Prove the two tracked prerequisites required before retrying perturbedStarPatterns_chooseSum: enumerate the weighted anchored base as the full star count, and prove that deleting proper-Y a-patterns and inserting their b-counterparts plus Y=B.L changes that base sum by exactly the final binomial term.",
+  "plan_closeout_acknowledged_at": "2026-07-26T12:39:22Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "blocked",
+  "result_reason": "DeclGraphRoundFlow finished with blocked.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedStarBase_chooseSum@rev:1",
+      "decl_name": "perturbedStarBase_chooseSum",
+      "revision": 1
+    },
+    {
+      "change_id": "perturbedStarPerturbation_chooseSum@rev:1",
+      "decl_name": "perturbedStarPerturbation_chooseSum",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_2f5e46a1294e4df7b2db668ced25ecce",
+  "round_index": 8,
+  "started_at": "2026-07-26T12:34:19Z",
+  "status": "committed",
+  "strategy_id": "strategy_746a2d92b99d454db9e1556c2088f3e8",
+  "summary": "No accepted declaration state advanced: both prerequisite helpers stopped at Statement NL and remain planned/not proof-policy satisfied. Their source-derived goals and provider closure remain valid. The only blocker is a small Lean-specific repository MathlibIndex gap for direct typed dependencies Finset.powerset and Finset.filter; card-level powerset entries already present do not satisfy it. Retry conditions are to compiler-inspect and curate both declarations, attach them to their modules/current-node hints, then rerun these two helpers from planned to proved. The blocked parent perturbedStarPatterns_chooseSum must continue to wait. No resource, visible-provider, source, or scope escalation is required, and the strategy remains viable."
+}

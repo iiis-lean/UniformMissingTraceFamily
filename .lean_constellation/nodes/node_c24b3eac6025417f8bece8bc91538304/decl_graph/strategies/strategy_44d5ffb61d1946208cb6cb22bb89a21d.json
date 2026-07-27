@@ -1,0 +1,16 @@
+{
+  "closed_at": "2026-07-26T15:01:24Z",
+  "closed_reason": "The strategy achieved its intended public theorem and dependency closure with no unresolved graph work.",
+  "created_at": "2026-07-26T14:07:42Z",
+  "created_round_ids": [
+    "round_bae85cb7adfd4da3ac167306a006daf4",
+    "round_dfd3273c1a8640c4ada5c86816b33011",
+    "round_796180c150b847cd9ade38a1867411ec"
+  ],
+  "node_path": "Main.AnchoredPowersetEnumeration",
+  "objective": "Prove the anchored weighted-powerset convolution bottom-up from two reusable generic stages: first reindex anchored subsets by erase/insert and prove a powersetCard constant-weight evaluation; then combine powerset fiber decomposition and vanishing outside range(d+1) to prove the public anchoredPowerset_weightedSum_eq_chooseSum interface.",
+  "rationale": "SourceIndex b_0009 and article/sections/02_proof.tex:41-51 motivate the anchored-star contribution, while contract v1 fixes the generic abstraction and exact consumer shape. Under graph_proved, theorem-like foundations must be proved before the public theorem. Verified Mathlib support supplies sum_bij, insert_erase_invOn, sum_powerset, sum_powersetCard, and choose_eq_zero_of_lt. The route stays within the expected 4-8 declaration allowance, introduces no hypotheses beyond [DecidableEq α] and ha : a ∈ C at the public boundary, preserves Nat subtraction indices, and excludes construction-specific/final counting claims.",
+  "status": "closed",
+  "strategy_id": "strategy_44d5ffb61d1946208cb6cb22bb89a21d",
+  "summary": "Completed the bottom-up graph_proved route: proved erase/insert reindexing, powersetCard fiber evaluation, filtered powerset convolution, and the exact public anchored weighted-sum interface; all declarations are proof-policy satisfied and the required interface is bound."
+}

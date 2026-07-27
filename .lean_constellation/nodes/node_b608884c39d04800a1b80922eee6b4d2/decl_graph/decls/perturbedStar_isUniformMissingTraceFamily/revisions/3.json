@@ -1,0 +1,308 @@
+{
+  "change": {
+    "anticipated_proof_dep_names": [
+      "exists_perturbedStarBlocks",
+      "perturbedStarCertificate_addedProper",
+      "perturbedStarCertificate_finalAdded",
+      "perturbedStarCertificate_largeAvoiding",
+      "perturbedStarCertificate_largeMeeting",
+      "perturbedStarCertificate_smallStar",
+      "perturbedStarParameterBounds"
+    ],
+    "anticipated_statement_dep_names": [
+      "PerturbedStarBlocks",
+      "perturbedStarFamily"
+    ],
+    "base_revision": 2,
+    "kind": "update",
+    "objective": "Resume the frozen contract-required theorem after satisfying round 19's sole retry condition: `.lake/packages/mathlib` is now present and `lake env lean --version` succeeds in the rebased workspace. Preserve revision 2's accepted Statement NL exactly: for d,s,n : ℕ with hd : 4≤d, hslow : (d+3)/2≤s, hshigh : s≤d-1, and hn : 2*(d+1)≤n, conclude `∃ B : PerturbedStarBlocks n (d+1-s), IsUniformMissingTraceFamily d s (perturbedStarFamily d B)`. Run Statement Formal, Proof NL, and Proof Formal only. Use the already satisfied parameter-bound and block-existence theorems, accepted construction definitions, all five separately proved certificate branches, and visible proved `Main.PatternCriterion.patternFamily_isUniformMissingTraceFamily`. Do not change the statement, hypotheses, explicit existential family object, case decomposition, or dependency route.",
+    "require_target_state_satisfied": true,
+    "reset_to_state": "specified",
+    "summary": "Round 20 preserved the contract-required consumer goal and advanced revision 3 from specified to declared: for d,s,n : ℕ with hd : 4 ≤ d, hslow : (d+3)/2 ≤ s, hshigh : s ≤ d-1, and hn : 2*(d+1) ≤ n, the accepted formal statement concludes ∃ B : PerturbedStarBlocks n (d+1-s), IsUniformMissingTraceFamily d s (perturbedStarFamily d B). Statement Formal passed after Mathlib restoration. Proof NL produced the source-faithful final assembly plan using perturbedStarParameterBounds, exists_perturbedStarBlocks, the visible patternFamily_isUniformMissingTraceFamily criterion, and all five separately proved certificate theorems. The stage then blocked on five deterministic round-draft dependency checks: the proof plan also records the declared definitional providers perturbedStarCore, perturbedStarFamily, perturbedStarFiller, perturbedStarPatterns, and perturbedStarTau, whereas this retry's anticipated-proof metadata deliberately listed only theorem-like providers after round 18 rejected those definitions as proof-stage anticipated dependencies. Classification: Lean/workflow dependency-stage metadata mismatch, not source/contract drift, missing mathematical helper, visible provider failure, or scope overflow. All theorem providers and the five case branches are checked and recursively satisfied; dependency closure reports no missing declarations. Parent retry condition: plan an isolated continuation from declared state whose dependency metadata represents these five declared definitional providers in the stage-valid category while preserving the accepted formal statement and Proof NL route, then run Proof NL/Proof Formal without redesigning the theorem.",
+    "target_state": "proved"
+  },
+  "lean_decl_name": "perturbedStar_isUniformMissingTraceFamily",
+  "proof": {
+    "deps": [
+      {
+        "kind": "mathlib_decl",
+        "reason": null,
+        "ref": {
+          "module": "Mathlib.Data.Finset.Disjoint",
+          "name": "Finset.disjoint_left"
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "patternFamily_isUniformMissingTraceFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "exists_perturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 3
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedStarCertificate_addedProper",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedStarCertificate_finalAdded",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedStarCertificate_largeAvoiding",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedStarCertificate_largeMeeting",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedStarCertificate_smallStar",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedStarCore",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedStarFamily",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedStarFiller",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedStarParameterBounds",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 3
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedStarPatterns",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": null,
+        "ref": {
+          "name": "perturbedStarTau",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": null,
+    "nl": {
+      "origin": [
+        {
+          "end_line": 72,
+          "end_locator": null,
+          "kind": "source",
+          "note": "Lines 58–72 partition the source selector verification into the five certificate cases, which are invoked unchanged in the final universal certificate.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 58,
+          "start_locator": null
+        },
+        {
+          "end_line": 39,
+          "end_locator": null,
+          "kind": "source",
+          "note": "Lines 30–39 derive the r-bounds, choose the disjoint blocks, define the core/filler, and specify the perturbed-star patterns used by the final criterion application.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 30,
+          "start_locator": null
+        }
+      ],
+      "text": "Put `r := d + 1 - s`. Apply `perturbedStarParameterBounds d s n hd hslow hshigh hn` and retain its five consequences\n```\nhrtwo : 2 ≤ r,  hrs : r + 1 ≤ s,  hroom : 2 + 2*r ≤ n\n```\n(the recorded truncation-safe equality and `2*r≤d` are preserved as part of the parameter theorem but are not needed again here).  Obtain `B : PerturbedStarBlocks n r` from `exists_perturbedStarBlocks n r hroom`, and refine the stated existential with this exact `B`.\n\nUnfold `perturbedStarFamily` only at the final application and invoke\n`patternFamily_isUniformMissingTraceFamily` with\n```\nC := perturbedStarCore B,\nU := perturbedStarFiller B,\npatterns := perturbedStarPatterns d B,\ntau := perturbedStarTau B.\n```\nThe core/filler disjointness follows from the definition\n`perturbedStarFiller B = Finset.univ \\\\ perturbedStarCore B`: an element cannot be both in the core and outside it.  For every allowed pattern, unfold `perturbedStarPatterns`.  In its base-minus-deleted branch the required containment in the core is already a base condition; in its inserted branch, `P = {B.b} ∪ B.T ∪ Y` with `Y ⊆ B.L`, which is visibly a subset of `perturbedStarCore B = {B.a,B.b} ∪ B.T ∪ B.L`.\n\nIt remains to supply the generic criterion’s four-clause certificate for arbitrary `P ∈ perturbedStarPatterns d B`.  Expose the two branches of the accepted pattern definition.\n\n* In the inserted branch obtain `Y ⊆ B.L` and `P = {B.b} ∪ B.T ∪ Y`.  Split on `Y = B.L`.  In the equality branch, substitute and apply `perturbedStarCertificate_finalAdded d s n r B hr hrtwo hrs`.  Otherwise apply `perturbedStarCertificate_addedProper d s n r B Y hYsub hYne hr hrtwo hrs`, then substitute by the displayed equality.\n* In the base-minus-deleted branch retain the defining facts `B.a ∈ P` and `P.card ≤ d+1`.  Split on `P.card ≤ r`.  This is `perturbedStarCertificate_smallStar d s n r B P hP ha hcard hr`.  In the complementary branch obtain `r < P.card`, and split on `P ∩ B.T = ∅`.  Apply `perturbedStarCertificate_largeAvoiding` in the empty-intersection case and `perturbedStarCertificate_largeMeeting` in the nonempty case, each with `hP, ha, hrlt, hr, hrtwo` and the appropriate intersection hypothesis.\n\nThis is an exhaustive partition of the accepted definition and gives precisely the bundled properness, gap, selector-size, and excluded-intersection clauses required by the visible generic theorem.  Its conclusion is\n`IsUniformMissingTraceFamily d s (patternFamily d (perturbedStarPatterns d B) (perturbedStarFiller B))`, which is definitionally `IsUniformMissingTraceFamily d s (perturbedStarFamily d B)`."
+    }
+  },
+  "revision": 3,
+  "state": "declared",
+  "statement": {
+    "deps": [
+      {
+        "kind": "repo_decl",
+        "reason": "This visible generic predicate is the conclusion's required missing-trace property.",
+        "ref": {
+          "name": "IsUniformMissingTraceFamily",
+          "node": "Main.PatternCriterion",
+          "repo": null,
+          "revision": 1
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The existential witness B is explicitly typed by this accepted construction-data structure.",
+        "ref": {
+          "name": "PerturbedStarBlocks",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 2
+        }
+      },
+      {
+        "kind": "repo_decl",
+        "reason": "The conclusion explicitly asserts the missing-trace property of this public perturbed-star family.",
+        "ref": {
+          "name": "perturbedStarFamily",
+          "node": "Main.PerturbedStarCertificates",
+          "repo": null,
+          "revision": 1
+        }
+      }
+    ],
+    "formal": {
+      "check": {
+        "allow_sorry": true,
+        "contains_axiom": false,
+        "contains_sorry": true,
+        "diagnostics": {
+          "diagnostics": [
+            {
+              "column": 8,
+              "line": 39,
+              "message": "declaration uses `sorry`",
+              "severity": "warning"
+            }
+          ],
+          "passed": true,
+          "raw_excerpt": "{\"caption\":\"\",\"data\":\"declaration uses `sorry`\",\"endPos\":{\"column\":49,\"line\":39},\"fileName\":\"UniformMissingTraceFamily/Main/PerturbedStarCertificates/Theorems/perturbedStar_isUniformMissingTraceFamily.lean\",\"isSilent\":false,\"keepFullRange\":false,\"kind\":\"hasSorry\",\"pos\":{\"column\":8,\"line\":39},\"severity\":\"warning\"}\n",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Theorems/perturbedStar_isUniformMissingTraceFamily.lean",
+          "schema_version": 2,
+          "summary": "Command completed successfully"
+        },
+        "message": "Lean check passed.",
+        "policy": "statement_formal",
+        "scan": {
+          "admit_count": 0,
+          "axiom_count": 0,
+          "contains_admit": false,
+          "contains_axiom": false,
+          "contains_opaque": false,
+          "contains_sorry": true,
+          "contains_unsafe": false,
+          "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+          "occurrences": [
+            {
+              "column": 3,
+              "excerpt": "sorry",
+              "kind": "sorry",
+              "line": 44
+            }
+          ],
+          "opaque_count": 0,
+          "sorry_count": 1,
+          "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
+          "unsafe_count": 0
+        },
+        "status": "passed"
+      },
+      "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFamily\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStar_isUniformMissingTraceFamily`\n\nFor natural numbers `d`, `s`, and `n`, assume `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤\nd - 1`, and `hn : 2 * (d + 1) ≤ n`. Then there exists construction data\n\n`B : PerturbedStarBlocks n (d + 1 - s)`\n\nsuch that\n\n`IsUniformMissingTraceFamily d s (perturbedStarFamily d B)`.\n\nThe existential construction preserves the explicit perturbed-star family needed by downstream\ncounting; its missing-trace certificate is supplied by the five separate source cases through the\ngeneric pattern-family criterion.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 30–39\n- Source `article/sections/02_proof.tex`, lines 53–73\n\n## Statement dependencies\n\n- `Main.PatternCriterion::IsUniformMissingTraceFamily` → `IsUniformMissingTraceFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFamily` → `perturbedStarFamily` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFamily`\n-/\ntheorem perturbedStar_isUniformMissingTraceFamily (d s n : ℕ) (hd : 4 ≤ d)\n    (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    ∃ B : PerturbedStarBlocks n (d + 1 - s),\n      IsUniformMissingTraceFamily d s (perturbedStarFamily d B) := by\n  sorry\n"
+    },
+    "nl": {
+      "origin": [
+        {
+          "end_line": 39,
+          "end_locator": null,
+          "kind": "source",
+          "note": "This source block supplies the parameterized perturbed-star construction and explicit family asserted existentially.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 30,
+          "start_locator": null
+        },
+        {
+          "end_line": 73,
+          "end_locator": null,
+          "kind": "source",
+          "note": "This source block supplies the five-case certificate establishing the stated missing-trace property.",
+          "ref": null,
+          "resource_key": null,
+          "source_path": "article/sections/02_proof.tex",
+          "start_line": 53,
+          "start_locator": null
+        }
+      ],
+      "text": "For natural numbers `d`, `s`, and `n`, assume `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤ d - 1`, and `hn : 2 * (d + 1) ≤ n`. Then there exists construction data\n\n`B : PerturbedStarBlocks n (d + 1 - s)`\n\nsuch that\n\n`IsUniformMissingTraceFamily d s (perturbedStarFamily d B)`.\n\nThe existential construction preserves the explicit perturbed-star family needed by downstream counting; its missing-trace certificate is supplied by the five separate source cases through the generic pattern-family criterion."
+    }
+  },
+  "status": "committed",
+  "updated_at": "2026-07-26T10:14:54Z"
+}

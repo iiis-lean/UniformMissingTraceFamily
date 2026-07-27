@@ -1,0 +1,32 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-26T12:17:17Z",
+  "created_at": "2026-07-26T12:04:05Z",
+  "execution_completed_at": "2026-07-26T12:17:17Z",
+  "execution_reason": "DeclGraphRoundFlow finished with blocked.",
+  "execution_result_kind": "blocked",
+  "node_path": "Main.CountingAndMain",
+  "objective": "Prove the construction-specific prerequisites for the public cardinality theorem from SourceIndex b_0009: perturbedStarPatterns are disjoint from the complementary filler, and their binomial completion weights cancel in matched deleted/inserted pairs leaving the full star plus the final unpaired contribution.",
+  "plan_closeout_acknowledged_at": "2026-07-26T12:17:17Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "blocked",
+  "result_reason": "DeclGraphRoundFlow finished with blocked.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedStarPatterns_disjoint_filler@rev:1",
+      "decl_name": "perturbedStarPatterns_disjoint_filler",
+      "revision": 1
+    },
+    {
+      "change_id": "perturbedStarPatterns_chooseSum@rev:1",
+      "decl_name": "perturbedStarPatterns_chooseSum",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_c5d25c45b86f4373b634000029e60b3a",
+  "round_index": 6,
+  "started_at": "2026-07-26T12:06:31Z",
+  "status": "committed",
+  "strategy_id": "strategy_746a2d92b99d454db9e1556c2088f3e8",
+  "summary": "The round made statement-layer progress: both construction helpers reached committed declared state with compiler-passed formal statements. Neither became proved or proof-policy satisfied. perturbedStarPatterns_disjoint_filler has a complete local Proof NL route and can be retried from declared state independently. perturbedStarPatterns_chooseSum is a blocked parent: existing generic counting declarations do not supply the source-specific enumeration of the anchored base or the proper-Y deletion/insertion cancellation. Its retry conditions are two predictable tracked helpers within this node—an anchored-base weighted enumeration yielding Nat.choose (n-1) d, and a perturbation cancellation/split isolating Y=B.L with weight Nat.choose (n-2*r-2) (d-2*r)—both proved under assumptions consumable by the accepted parent statement. The strategy remains viable and within scope; the next step is an isolated disjointness proof advancement, followed by the helper round, not a parent retry or resource request."
+}

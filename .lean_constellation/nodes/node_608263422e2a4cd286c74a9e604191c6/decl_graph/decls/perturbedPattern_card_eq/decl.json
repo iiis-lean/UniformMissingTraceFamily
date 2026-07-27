@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-07-26T16:18:25Z",
+  "current_revision": 1,
+  "kind": "theorem",
+  "lifecycle": "active",
+  "module": "UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPattern_card_eq",
+  "name": "perturbedPattern_card_eq",
+  "node_path": "Main.PerturbedPatternCancellation",
+  "public": false,
+  "revision_ids": [
+    1
+  ],
+  "summary": "Matched a- and b-anchored perturbed patterns have equal cardinality.",
+  "updated_at": "2026-07-26T16:18:25Z"
+}

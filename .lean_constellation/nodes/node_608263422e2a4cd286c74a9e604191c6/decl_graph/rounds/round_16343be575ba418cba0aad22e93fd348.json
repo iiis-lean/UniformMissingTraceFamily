@@ -1,0 +1,42 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-26T15:36:58Z",
+  "created_at": "2026-07-26T15:34:59Z",
+  "execution_completed_at": "2026-07-26T15:36:58Z",
+  "execution_reason": "Draft validation rejected same-round proof dependencies; no child flow executed. Superseded by a recovery-only batch.",
+  "execution_result_kind": "failed",
+  "node_path": "Main.PerturbedPatternCancellation",
+  "objective": "Prove the four bottom-up finite-set foundations for the two exact perturbed-pattern maps: recovery of a subset Y ⊆ B.L by intersection with B.L for each anchor, then injectivity of each map on B.L.powerset. These foundations consume PerturbedStarBlocks disjointness/avoidance fields and serve later matched-weight and image/sum transport declarations.",
+  "plan_closeout_acknowledged_at": "2026-07-26T15:36:58Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "failed",
+  "result_reason": "Draft validation rejected same-round proof dependencies; no child flow executed. Superseded by a recovery-only batch.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedPatternA_inter_L@rev:1",
+      "decl_name": "perturbedPatternA_inter_L",
+      "revision": 1
+    },
+    {
+      "change_id": "perturbedPatternB_inter_L@rev:1",
+      "decl_name": "perturbedPatternB_inter_L",
+      "revision": 1
+    },
+    {
+      "change_id": "perturbedPatternA_injOn@rev:1",
+      "decl_name": "perturbedPatternA_injOn",
+      "revision": 1
+    },
+    {
+      "change_id": "perturbedPatternB_injOn@rev:1",
+      "decl_name": "perturbedPatternB_injOn",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_16343be575ba418cba0aad22e93fd348",
+  "round_index": 1,
+  "started_at": null,
+  "status": "committed",
+  "strategy_id": "strategy_ff5e1a1c26fc4bac9ab8fc7bd94fdb97",
+  "summary": "Draft validation rejected the initial four-declaration batch because each injectivity proof depended on a recovery theorem created in the same round. No child flow ran and no artifacts were produced. Supersede this draft with a smaller recovery-only round; injectivity remains for the following round after recovery is proved."
+}

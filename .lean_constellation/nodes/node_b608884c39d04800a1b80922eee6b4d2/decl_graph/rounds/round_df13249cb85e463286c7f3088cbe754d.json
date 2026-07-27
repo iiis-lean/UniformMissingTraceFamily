@@ -1,0 +1,27 @@
+{
+  "change_summaries": {},
+  "committed_at": "2026-07-22T15:27:49Z",
+  "created_at": "2026-07-22T15:13:03Z",
+  "execution_completed_at": "2026-07-22T15:27:49Z",
+  "execution_reason": "DeclGraphRoundFlow finished with completed.",
+  "execution_result_kind": "success",
+  "node_path": "Main.PerturbedStarCertificates",
+  "objective": "Prove the fifth and final mandatory source b_0012 certificate branch (article/sections/02_proof.tex line 72): for a large allowed a-anchored pattern meeting T, choose t0 and an exact-cardinality selector avoiding both a and t0, then establish the generic four-clause certificate bundle.",
+  "plan_closeout_acknowledged_at": "2026-07-22T15:27:49Z",
+  "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
+  "result_kind": "success",
+  "result_reason": "DeclGraphRoundFlow finished with completed.",
+  "revision_refs": [
+    {
+      "change_id": "perturbedStarCertificate_largeMeeting@rev:1",
+      "decl_name": "perturbedStarCertificate_largeMeeting",
+      "revision": 1
+    }
+  ],
+  "round_id": "round_df13249cb85e463286c7f3088cbe754d",
+  "round_index": 17,
+  "started_at": "2026-07-22T15:14:19Z",
+  "status": "committed",
+  "strategy_id": "strategy_140c2962785943968f6203e9ab1972fc",
+  "summary": "Round 17 completed the fifth and final mandatory source certificate branch. `perturbedStarCertificate_largeMeeting` reached proved state and is proof-policy satisfied. Together with the four previously proved case theorems, the complete source b_0012 case decomposition is now available. The active bottom-up strategy remains valid; the next graph_proved action is the single contract-required public assembly theorem through `Main.PatternCriterion.patternFamily_isUniformMissingTraceFamily`. No unresolved dependency, graph-hygiene issue, state-only intermediate, or scope overflow is present."
+}
