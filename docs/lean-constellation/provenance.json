@@ -1,11 +1,11 @@
 {
   "build_command": "lake build",
-  "generated_at": "2026-07-27T15:44:11Z",
+  "generated_at": "2026-07-28T04:58:43Z",
   "lean_toolchain": "leanprover/lean4:v4.32.0",
-  "release_id": "release_0003a13681d5421fa9638ca420c857a2",
+  "release_id": "release_264b1a8d57364941b10df68dfd6631cf",
   "repo_key": "UniformMissingTraceFamily",
   "schema_version": 1,
-  "semantic_manifest_digest": "2718ed49e86ccef55b0cc454fb2dd02348a3d8185e76b5cc026e37f4dabf508d",
+  "semantic_manifest_digest": "1eb248614b4d43ba8994dfc3e2d380a64a229dae6fd950f1a646e5534c81e6da",
   "source_files": {
     "README.md": "3eba4f01e8272b22d19472f10fb3171e183a106126632f8b5e84b85001ccb47d",
     "article/main.tex": "f9aa76c4214cd20f0f7de263031e7811d30d1e7150aebf77cd4299a27491b079",

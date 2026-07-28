@@ -1,7 +1,7 @@
 <!-- BEGIN Lean Constellation: project-summary -->
 # UniformMissingTraceFamily
 
-UniformMissingTraceFamily is ready as a graph_proved native repository. All five content nodes and Main contract v1 are committed; the complete theorem/helper graph is proved; the sole public export is the immutable exists_uniformMissingTraceFamily_strictlyLargerThanStar@1 with its exact protected statement; source and release compatibility are intact; and the candidate release gate passes with no blocking issues.
+Publish the completed graph_proved UniformMissingTraceFamily repository after the controlled Main public Statement closure migration. Main contract v2 adds only the required public export of Main.PatternCriterion.IsUniformMissingTraceFamily@1; mathematical Decl truth and proof availability are unchanged.
 
 ## Build
 
@@ -9,7 +9,7 @@ UniformMissingTraceFamily is ready as a graph_proved native repository. All five
 lake build
 ```
 
-Current Lean Constellation Release: `release_0003a13681d5421fa9638ca420c857a2`.
+Current Lean Constellation Release: `release_264b1a8d57364941b10df68dfd6631cf`.
 
 ## Public declarations
 

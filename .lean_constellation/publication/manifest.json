@@ -11,8 +11,8 @@
       "disposition": "include",
       "path": ".lean_constellation/index/nodes.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "de311405cb7c67c96823827d0fe8117882d0c60e99ad11bea74156de4dd57a9a",
-      "size_bytes": 2156
+      "sha256": "40064af8253f3526239a930dcd14adab8145bcd5a50467eaabe7eccd1bd872d0",
+      "size_bytes": 2162
     },
     {
       "disposition": "include",
@@ -116,7 +116,7 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_2094ae1c4bd24610aba7ac7ae066fc45/decl_graph/index.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "e6f74c993329653c3dae59ee319c8b17c265fd5dc41b58f4b91aae2034c84b63",
+      "sha256": "8f9d7bd55788ad2fe7b51677bff69829cba2b9887b82b8e3c2db8219ce6f0224",
       "size_bytes": 772
     },
     {
@@ -354,7 +354,7 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/index.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "75349f78ab4633904acabd83b72dec8a486c007bd195a459d781a1f8affbe8f6",
+      "sha256": "d72f2286a7aeeed6866e7d4832d0857495fd92581399d8bf9d1a1186ace51cfb",
       "size_bytes": 1122
     },
     {
@@ -436,9 +436,16 @@
     },
     {
       "disposition": "include",
+      "path": ".lean_constellation/nodes/node_8178f6ab0b0449cf94f3be8b2fb3ccf5/contracts/2.json",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "5ec354fd342e2dfd1d62667e762d5f9d4c050727eb156bb472994160592c8f1a",
+      "size_bytes": 3573
+    },
+    {
+      "disposition": "include",
       "path": ".lean_constellation/nodes/node_8178f6ab0b0449cf94f3be8b2fb3ccf5/node.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "617267acfe49b17a5fd13a9c71b6d80ab5d4f7a74f24c515239f0ecc0069021d",
+      "sha256": "285bd598a42974bad6b5ae37d8d362f1a1d6b611338d0905983f71dc92f792bc",
       "size_bytes": 217
     },
     {
@@ -725,7 +732,7 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/index.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "f93c240472d0e56ed6103b364f9514007f500ebf80a41e6825f1bd6cf6c123d2",
+      "sha256": "bedfaa2c094b56d6678da3aa710b8d11f331b6684f1d1ecc8df0e71112f7d54a",
       "size_bytes": 1907
     },
     {
@@ -956,7 +963,7 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_c24b3eac6025417f8bece8bc91538304/decl_graph/index.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "e210f05fee37ad5b742f484063cabe68e4ddc7d8613ba6f27b63b988c3272e69",
+      "sha256": "c69b1a04a961954c3dbc011c4e80bc52353a19de8bb0e70eb4b93656af7409c2",
       "size_bytes": 702
     },
     {
@@ -1334,7 +1341,7 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/index.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "26397dd2c3c043e6504ae064337654a43c9ff6075a52a239d3c4576a0d906b1b",
+      "sha256": "c7e57ea50dc8db91ed447e66c231d118729c41a3a4c94f38a2531f1d3b550f0d",
       "size_bytes": 1795
     },
     {
@@ -1500,10 +1507,17 @@
     },
     {
       "disposition": "include",
+      "path": ".lean_constellation/releases/release_264b1a8d57364941b10df68dfd6631cf.json",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "1fba284702e707bec59ebf24558f96faa391bcd75ee8ee5432ceb49ecbcd2546",
+      "size_bytes": 1168
+    },
+    {
+      "disposition": "include",
       "path": ".lean_constellation/repo.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "a1068122574aba985c1763e631ccb2ead51d40b10bb18632927167acba6eb747",
-      "size_bytes": 460
+      "sha256": "7aa0a579c57ef8d30e0746445bb2fb4b581b2a8a1e5c85e834261fae0f3ef2d2",
+      "size_bytes": 348
     },
     {
       "disposition": "include",
@@ -1523,7 +1537,7 @@
       "disposition": "include",
       "path": ".lean_constellation/repo_publication.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "3cf19dd860e125050c34ed5ac46d9025fcb6e578a905d6f154595f96f56f19e6",
+      "sha256": "06ec6fdea35130827f4b7528bfe7dc9bad866c0d38ae510ecee86f5a4f4b67d7",
       "size_bytes": 131
     },
     {
@@ -14886,8 +14900,8 @@
       "disposition": "include",
       "path": "README.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "616579ad5593c66769734cbccd04a9e917ac574d01019686af880f331300dc65",
-      "size_bytes": 1905
+      "sha256": "8f60c2232c64f3ae4d22cefda30f239c42238ef13062df7caacc4bbd7b950b5e",
+      "size_bytes": 1793
     },
     {
       "disposition": "include",
@@ -15040,8 +15054,8 @@
       "disposition": "include",
       "path": "UniformMissingTraceFamily/Main/Interfaces.lean",
       "reason": "portable_project_or_business_truth",
-      "sha256": "350705872fd393ce53a0a0856984667bf7ff4530376b172952edb3f1205abf4c",
-      "size_bytes": 205
+      "sha256": "9a12ff6ed441d607426fec7a37d6786643a3770b67809e9148969a8077d4f150",
+      "size_bytes": 293
     },
     {
       "disposition": "include",
@@ -15313,14 +15327,14 @@
       "disposition": "include",
       "path": "docs/lean-constellation/provenance.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "d127b032cf905f69a8a04056874bf17a29d8ccfcc34accb248aa551f8e562a7b",
+      "sha256": "3542278cbdd34e90210968c9d85121f43d4aab6e815faaddf7352a6a6adadaa4",
       "size_bytes": 1347
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/public-api.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "8f4bd9db1edbc01222f605823d2717e2b2e098aa884ecb57d61264797df470bb",
+      "sha256": "e484b1b86a414a7da1b8e63408d3cca9f6c148bbbcd89821d9db4704e89c1f57",
       "size_bytes": 62920
     },
     {
@@ -15345,11 +15359,11 @@
       "size_bytes": 25
     }
   ],
-  "generated_at": "2026-07-27T15:44:11Z",
-  "included_file_count": 294,
-  "included_size_bytes": 2218627,
-  "manifest_digest": "6018c345643124f337889b195bfea344d4cc30495e0f09229d90c59aa93ef35e",
+  "generated_at": "2026-07-28T04:58:43Z",
+  "included_file_count": 296,
+  "included_size_bytes": 2223238,
+  "manifest_digest": "a2fff176c279fdc6d8344fde266f49f6a24d1d1ebf1c0d480a6759dd257bd344",
   "repo_key": "UniformMissingTraceFamily",
   "schema_version": 1,
-  "summary": "Publication manifest includes 294 files (2218627 bytes)."
+  "summary": "Publication manifest includes 296 files (2223238 bytes)."
 }

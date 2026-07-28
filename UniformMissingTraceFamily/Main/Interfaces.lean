@@ -5,3 +5,4 @@ Node: Main
 -/
 
 import UniformMissingTraceFamily.Main.CountingAndMain.Theorems.exists_uniformMissingTraceFamily_strictlyLargerThanStar
+import UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily

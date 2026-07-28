@@ -388,7 +388,7 @@
       "summary": "The explicit perturbed-star construction yields a uniform family with the fixed missing-trace property."
     }
   ],
-  "release_id": "release_0003a13681d5421fa9638ca420c857a2",
+  "release_id": "release_264b1a8d57364941b10df68dfd6631cf",
   "repo_key": "UniformMissingTraceFamily",
   "schema_version": 1,
   "summary": "Exported 24 public declarations."

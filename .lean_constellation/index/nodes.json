@@ -10,11 +10,11 @@
   "entries": [
     {
       "active": true,
-      "active_contract_version": 1,
+      "active_contract_version": 2,
       "kind": "scope",
       "lifecycle": "active",
       "node_id": "node_8178f6ab0b0449cf94f3be8b2fb3ccf5",
-      "open_contract_version": 1,
+      "open_contract_version": null,
       "path": "Main"
     },
     {
@@ -32,7 +32,7 @@
       "kind": "content",
       "lifecycle": "active",
       "node_id": "node_ea3e75192f844e7b95aebdf8afe7ae6a",
-      "open_contract_version": 1,
+      "open_contract_version": null,
       "path": "Main.CountingAndMain"
     },
     {
@@ -63,7 +63,7 @@
       "path": "Main.PerturbedStarCertificates"
     }
   ],
-  "rebuilt_at": "2026-07-27T15:27:30Z",
+  "rebuilt_at": "2026-07-28T04:04:36Z",
   "schema_version": 1,
   "summary": "Indexed 6 nodes; 6 active paths."
 }
