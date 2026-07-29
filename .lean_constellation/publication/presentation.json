@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "title": "Uniform Missing-Trace Families in Lean",
+  "title": "Uniform Missing Trace Family",
   "description": "A Lean 4 formalization of the uniform missing-trace family construction underlying the disproof of the uniform witness conjecture.",
   "topics": [
     "lean4",
