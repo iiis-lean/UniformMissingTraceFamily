@@ -1,7 +1,7 @@
 <!-- BEGIN Lean Constellation: project-summary -->
-# Uniform Missing-Trace Families in Lean
+<h1><img src="docs/lean-constellation/assets/lean-constellation-mark.svg" alt="Lean Constellation mark" width="42" align="absmiddle"> Uniform Missing-Trace Families in Lean</h1>
 
-![completion: graph proved](https://img.shields.io/static/v1?label=completion&message=graph+proved&color=2f855a) ![proofs: proved](https://img.shields.io/static/v1?label=proofs&message=proved&color=2f855a) ![Lean: 4.32.0](https://img.shields.io/static/v1?label=Lean&message=4.32.0&color=0b6e4f) [![source: arXiv 2606.24776](https://img.shields.io/static/v1?label=source&message=arXiv+2606.24776&color=b31b1b)](https://arxiv.org/abs/2606.24776)
+![status: proved](https://img.shields.io/static/v1?label=status&message=proved&color=0f8f88&style=flat-square) ![Lean: 4.32.0](https://img.shields.io/static/v1?label=Lean&message=4.32.0&color=6b4fbb&style=flat-square) [![source: arXiv 2606.24776](https://img.shields.io/static/v1?label=source&message=arXiv+2606.24776&color=b31b1b&style=flat-square)](https://arxiv.org/abs/2606.24776)
 
 A Lean 4 formalization of the uniform missing-trace family construction underlying the disproof of the uniform witness conjecture.
 
@@ -62,4 +62,10 @@ If you use the Lean implementation, cite this repository in addition to the pape
 - The reproduced and reorganized article source under `.lean_constellation/source/article/` remains attributed to Zixiang Xu and is distributed under Creative Commons Attribution 4.0; see [`LICENSES/CC-BY-4.0.md`](LICENSES/CC-BY-4.0.md).
 
 No repository license changes the authorship or attribution of the original paper.
+
+<p align="center">
+  <img src="docs/lean-constellation/assets/lean-constellation-mark.svg" alt="Lean Constellation" width="72">
+  <br>
+  <sub>Generated with <strong>Lean Constellation</strong></sub>
+</p>
 <!-- END Lean Constellation: project-summary -->
