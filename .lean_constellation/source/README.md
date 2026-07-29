@@ -7,6 +7,19 @@ The main material is a complete mathematical reconstruction of Zixiang Xu,
 The reconstruction is based on the author's TeX source and was checked against
 the five-page arXiv PDF.
 
+Original paper: <https://arxiv.org/abs/2606.24776>
+
+The article source is attributed to Zixiang Xu and distributed under the
+Creative Commons Attribution 4.0 license selected for the arXiv submission.
+See `../../LICENSES/CC-BY-4.0.md`.
+
+Changes in this repository are organizational: the TeX source is split into a
+structured SourceCorpus, source comments and arXiv page furniture are omitted,
+and a separate Lean formal target and formalization are provided. The
+mathematical result and proof remain the work of the original author. The Lean
+formalization was produced independently by IIIS Lean using Lean Constellation
+and does not imply endorsement by the paper author.
+
 ## Reading order
 
 1. Read or compile `article/main.tex`. It inputs the article sections in their

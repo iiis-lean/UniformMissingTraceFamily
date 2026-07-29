@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: >-
+  If you use this Lean formalization, please cite both this repository and the
+  original paper by Zixiang Xu.
+title: UniformMissingTraceFamily
+type: software
+authors:
+  - name: IIIS Lean
+abstract: >-
+  An independent Lean 4 formalization of the principal construction and
+  theorem in Zixiang Xu's A disproof of the uniform witness conjecture.
+repository-code: https://github.com/iiis-lean/UniformMissingTraceFamily
+url: https://github.com/iiis-lean/UniformMissingTraceFamily
+license: Apache-2.0
+version: release_264b1a8d57364941b10df68dfd6631cf
+date-released: 2026-07-29
+keywords:
+  - Lean 4
+  - Mathlib
+  - formalization
+  - extremal set theory
+  - VC dimension
+  - uniform witness conjecture
+references:
+  - type: article
+    authors:
+      - family-names: Xu
+        given-names: Zixiang
+    title: A disproof of the uniform witness conjecture
+    year: 2026
+    collection-title: arXiv preprint
+    identifiers:
+      - type: doi
+        value: 10.48550/arXiv.2606.24776
+    url: https://arxiv.org/abs/2606.24776

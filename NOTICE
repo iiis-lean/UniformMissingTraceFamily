@@ -1,0 +1,13 @@
+UniformMissingTraceFamily
+Copyright 2026 IIIS Lean contributors
+
+The original mathematical results and proof formalized by this repository are
+due to Zixiang Xu and were published as:
+
+  Zixiang Xu, "A disproof of the uniform witness conjecture",
+  arXiv:2606.24776v1 [math.CO], 2026.
+  https://arxiv.org/abs/2606.24776
+
+The article source retained under `.lean_constellation/source/article/` is
+distributed under Creative Commons Attribution 4.0. See
+`LICENSES/CC-BY-4.0.md`.
