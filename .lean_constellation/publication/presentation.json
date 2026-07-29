@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "title": "Uniform Missing-Trace Families in Lean",
+  "description": "A Lean 4 formalization of the uniform missing-trace family construction underlying the disproof of the uniform witness conjecture.",
+  "topics": [
+    "lean4",
+    "mathlib",
+    "formalization",
+    "lean-constellation",
+    "extremal-set-theory"
+  ],
+  "badges": [
+    {
+      "label": "source",
+      "message": "arXiv 2606.24776",
+      "color": "b31b1b",
+      "link": "https://arxiv.org/abs/2606.24776"
+    }
+  ],
+  "about_markdown": "This repository contains an independent Lean 4 formalization of the main construction and theorem from:\n\n> Zixiang Xu, *A disproof of the uniform witness conjecture*,\n> arXiv:2606.24776v1 [math.CO], 2026.\n> <https://arxiv.org/abs/2606.24776>\n\nThe original mathematical results and proof are due to Zixiang Xu. The Lean formalization was produced by IIIS Lean using Lean Constellation. It is not presented as work by, or endorsed by, the original author unless explicitly stated otherwise.\n\nThe article source retained under `.lean_constellation/source/article/` is based on the author's arXiv TeX source. It was reorganized into a structured SourceCorpus and checked against arXiv version 1; these organizational changes do not claim authorship of the mathematical content.",
+  "citation_markdown": "If you use the mathematical result, cite the original paper:\n\n```bibtex\n@article{Xu2026UniformWitness,\n  author        = {Zixiang Xu},\n  title         = {A disproof of the uniform witness conjecture},\n  journal       = {arXiv preprint},\n  year          = {2026},\n  eprint        = {2606.24776},\n  archivePrefix = {arXiv},\n  primaryClass  = {math.CO},\n  doi           = {10.48550/arXiv.2606.24776},\n  url           = {https://arxiv.org/abs/2606.24776}\n}\n```\n\nIf you use the Lean implementation, cite this repository in addition to the paper. Machine-readable citation metadata is available in [`CITATION.cff`](CITATION.cff).",
+  "licensing_markdown": "- Lean source code, generated Lean Constellation metadata, and repository documentation outside the article SourceCorpus are licensed under the Apache License 2.0; see [`LICENSE`](LICENSE).\n- The reproduced and reorganized article source under `.lean_constellation/source/article/` remains attributed to Zixiang Xu and is distributed under Creative Commons Attribution 4.0; see [`LICENSES/CC-BY-4.0.md`](LICENSES/CC-BY-4.0.md).\n\nNo repository license changes the authorship or attribution of the original paper."
+}

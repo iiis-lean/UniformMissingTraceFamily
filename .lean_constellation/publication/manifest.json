@@ -1503,7 +1503,14 @@
       "path": ".lean_constellation/publication/manifest.json",
       "reason": "publication_manifest_self",
       "sha256": null,
-      "size_bytes": 541706
+      "size_bytes": 100411
+    },
+    {
+      "disposition": "include",
+      "path": ".lean_constellation/publication/presentation.json",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "1444c59e2695e261dea04169a5e75031e786fc7be66fe1c73220960520fa9775",
+      "size_bytes": 2530
     },
     {
       "disposition": "include",
@@ -1649,8 +1656,8 @@
       "disposition": "include",
       "path": "README.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "1340fce85d78bb6991cc8e907cb6fff352d1f74d731b666a38ae9db8bf06a8e9",
-      "size_bytes": 3720
+      "sha256": "9df151fb8279f642ab1e484c1a62a8e43b98a02c703bc15fdb5665b20463f9c6",
+      "size_bytes": 7491
     },
     {
       "disposition": "include",
@@ -2069,22 +2076,22 @@
       "disposition": "include",
       "path": "docs/lean-constellation/PUBLIC_API.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "0ea3f9275b77e4dfd1a7391b547f6d8a6cb9f7026117ea9d6c22c4b7b4daf5bb",
-      "size_bytes": 53140
+      "sha256": "bfd9309c5090e4518a76c54c94b935bbb2193ac2c51192513745a251ec436abe",
+      "size_bytes": 157056
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/provenance.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "3542278cbdd34e90210968c9d85121f43d4aab6e815faaddf7352a6a6adadaa4",
-      "size_bytes": 1347
+      "sha256": "4ce371c81c032a19755279805be21d519bf363012a9b42f636d39e2269bde8b4",
+      "size_bytes": 1329
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/public-api.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "e484b1b86a414a7da1b8e63408d3cca9f6c148bbbcd89821d9db4704e89c1f57",
-      "size_bytes": 62920
+      "sha256": "830424c6d8ae1b9dd194cc23930a9d45110d8c22465df9879dedd91be892a617",
+      "size_bytes": 166477
     },
     {
       "disposition": "include",
@@ -2108,11 +2115,11 @@
       "size_bytes": 25
     }
   ],
-  "generated_at": "2026-07-28T04:58:43Z",
-  "included_file_count": 300,
-  "included_size_bytes": 2240009,
-  "manifest_digest": "200965ab09dd81eb8c0311203a3a6298f0e349b5ab60f08971d0482a3c685706",
+  "generated_at": null,
+  "included_file_count": 301,
+  "included_size_bytes": 2453765,
+  "manifest_digest": "ab17c37173fe394745e3f942e2587d5e2517f14a7148445aa42cf1583ab4b329",
   "repo_key": "UniformMissingTraceFamily",
   "schema_version": 1,
-  "summary": "Publication manifest includes 300 files (2240009 bytes)."
+  "summary": "Publication manifest includes 301 files (2453765 bytes)."
 }

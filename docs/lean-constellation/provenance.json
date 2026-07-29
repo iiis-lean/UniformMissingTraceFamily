@@ -1,6 +1,6 @@
 {
   "build_command": "lake build",
-  "generated_at": "2026-07-28T04:58:43Z",
+  "generated_at": null,
   "lean_toolchain": "leanprover/lean4:v4.32.0",
   "release_id": "release_264b1a8d57364941b10df68dfd6631cf",
   "repo_key": "UniformMissingTraceFamily",
