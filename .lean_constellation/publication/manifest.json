@@ -2104,8 +2104,8 @@
       "disposition": "include",
       "path": "docs/lean-constellation/assets/public-boundaries.svg",
       "reason": "portable_project_or_business_truth",
-      "sha256": "f6d437e7c5663c9baccd9233f7af74d29c5f7b83d823141e4d70deec15542623",
-      "size_bytes": 57120
+      "sha256": "3e64bfff8ccb044fbc3936a879c07d5614357673398f96274009147fb4a77ca2",
+      "size_bytes": 56612
     },
     {
       "disposition": "include",
@@ -2327,9 +2327,9 @@
   ],
   "generated_at": null,
   "included_file_count": 330,
-  "included_size_bytes": 2535021,
-  "manifest_digest": "6f947f7cd12580faca1e2e9940a1e954e9eb48d27992c39a464b7d6994013bac",
+  "included_size_bytes": 2534513,
+  "manifest_digest": "469c4667499380994bcb1f58410ba3e7fe6ff42c914d7d103c2b2b2b1c5bc041",
   "repo_key": "UniformMissingTraceFamily",
   "schema_version": 2,
-  "summary": "Publication manifest includes 330 files (2535021 bytes)."
+  "summary": "Publication manifest includes 330 files (2534513 bytes)."
 }
