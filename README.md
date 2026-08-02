@@ -20,9 +20,9 @@ lake build
 
 ## Public API
 
-This repository exports **24 public declarations** across **5 nodes**.
+This repository exports **2 public declarations** across **2 nodes**.
 
-Browse the [Public API index](docs/lean-constellation/PUBLIC_API.md) for the dependency graph, declaration index, final Lean code, dependencies, and sources.
+Browse the [Public API index](docs/lean-constellation/PUBLIC_API.md) for the dependency graph, declaration index, final Lean code, dependencies, and sources. The [public boundary catalog](docs/lean-constellation/PUBLIC_BOUNDARIES.md) documents internal Content-public declarations and Scope propagation.
 
 ## About this formalization
 

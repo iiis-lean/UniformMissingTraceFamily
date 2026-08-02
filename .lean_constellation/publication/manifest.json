@@ -1503,14 +1503,14 @@
       "path": ".lean_constellation/publication/manifest.json",
       "reason": "publication_manifest_self",
       "sha256": null,
-      "size_bytes": 100411
+      "size_bytes": 0
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/publication/presentation.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "1444c59e2695e261dea04169a5e75031e786fc7be66fe1c73220960520fa9775",
-      "size_bytes": 2530
+      "sha256": "4fc251f924b0b4168bf730fef97472c98fdb2b6e38159ccf4de85c76e8ae2bce",
+      "size_bytes": 2520
     },
     {
       "disposition": "include",
@@ -1656,8 +1656,8 @@
       "disposition": "include",
       "path": "README.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "00c4493256891d7b3b8cbbbeb7f3eed9aa6e133f93da29bd0610ca27f4eb8023",
-      "size_bytes": 3086
+      "sha256": "e72e39439d21f8be6d8d9eb5b6f343045491b56460764a7605ee6fd08684efdb",
+      "size_bytes": 3848
     },
     {
       "disposition": "include",
@@ -2076,8 +2076,204 @@
       "disposition": "include",
       "path": "docs/lean-constellation/PUBLIC_API.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "9b11bd6a14cdec631f39065096db0d9c848a7f4c8503b56a64f625a4de877914",
-      "size_bytes": 6662
+      "sha256": "54f167c5012a48a1a5b62dd06c3beae533bbd75960bb454c1bdec282036f64a6",
+      "size_bytes": 1007
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/PUBLIC_BOUNDARIES.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "fbc9841ebc8e651d6c98a853fcddd3e0094b3004998de599b7efdebafef9d3c5",
+      "size_bytes": 5140
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/assets/lean-constellation-mark.svg",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "8c90a293e5990f98f2b7cb33649d14de60a60c8fb8d2826a80b828b640208371",
+      "size_bytes": 759
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/assets/public-api.svg",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "cbcf17da24ca6a95eaac1ef5a7529e496fecefd2d31949d27e1ca6bbd20b8390",
+      "size_bytes": 5449
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/assets/public-boundaries.svg",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "f6d437e7c5663c9baccd9233f7af74d29c5f7b83d823141e4d70deec15542623",
+      "size_bytes": 57120
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-anchoredpowersetenumeration-anchoredpowerset-weightedsum-eq-choosesum.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "057b96a127be928597f1f1343a9cd8f19d05a74a2723d5bc8767ef076126d52d",
+      "size_bytes": 7053
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-countingandmain-exists-uniformmissingtracefamily-strictlylargerthanstar.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "f93d46eb9c4f6b88bed7f0ffcb8af34d38dfedc38783cbcb95ec364082f83028",
+      "size_bytes": 5699
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-countingandmain-perturbedstarfamily-card.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "ae56ebb5cf64f583fa48ea4f4eba3d82b85c9b5650bff8230e9efffcd2795f3a",
+      "size_bytes": 4577
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-patterncriterion-card-eq-of-mem-patternfamily.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "346acac791d38530f362481221bffd17b59f4e48be4b49f6f2c7f3823ee35ffa",
+      "size_bytes": 4125
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-patterncriterion-isuniformmissingtracefamily.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "f73821e1a710abf31aaeee62c2b1ae3c2bca11f97766b3bfe1953638e94cf62a",
+      "size_bytes": 1552
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-patterncriterion-mem-patternfamily.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "4940e69d85ee40e12c09d110bfa1607f4e1723b5f70a246b9d080ede1de4e26c",
+      "size_bytes": 3976
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-patterncriterion-patternfamily-isuniformmissingtracefamily.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "3bc9ba10f9a1ba839c0cd63dfc8f782051eadd9a4b48825b3f0020f0b5f1bf59",
+      "size_bytes": 10628
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-patterncriterion-patternfamily.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "71b1225da8fbf36c89c8b50b219ced2d7121d2544585bdc3293b71ae7057caf2",
+      "size_bytes": 1895
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedpatterncancellation-perturbedpattern-properweights-add-full-eq-fullweights.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "e60f4cae8e64a4ca6e1baad051252d682ea15897d2aadbf46aaf2dc292788658",
+      "size_bytes": 9629
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-exists-perturbedstarblocks.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "270e7771e67cc410a5be4928f8b15d8aa09dbeab3113bf327994376862658fdf",
+      "size_bytes": 7635
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstar-isuniformmissingtracefamily.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "88aea3357456b1e3ab48691107dbc30080888fdf9cc29b99de2c59e6fa4db5a7",
+      "size_bytes": 11492
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarblocks.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "0eba7e1342c9bb330e1bf7682c9e255640ae2144c9f46bce2fae547ee63d1910",
+      "size_bytes": 1716
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarcertificate-addedproper.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "c2e52a07d2310f7b2e1a93978943f74c0bea480961081cb4fe1c261f8130c687",
+      "size_bytes": 13873
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarcertificate-finaladded.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "b9c11cbab8c01f1f85ad6cb86fe361e3168cdefc296a0c6a045a16287d142ec3",
+      "size_bytes": 11724
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarcertificate-largeavoiding.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "92fa74fa39fa9ceee66eb7b5c955c7356492eff02057d8d2b3d3b07169be93c0",
+      "size_bytes": 15493
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarcertificate-largemeeting.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "987f2eef34143b162aba8d5fff804d3fe2bc9f7f92a93f9cc1059ebc8a3cce90",
+      "size_bytes": 13706
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarcertificate-smallstar.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "54f7299241fae6d37b0a371a6ca2782f570fa53455c9a1088f6b2179afad6f85",
+      "size_bytes": 10222
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarcore.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "faea27a16bd241150b053e2d9ac2099f15611773be5c5c8547cdbebc166386e3",
+      "size_bytes": 1787
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarfamily.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "8736769c888fd1c0f5da25c3c2f63a9f92b9776a4b80d14927d611136b86e660",
+      "size_bytes": 2903
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarfiller.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "ef3f1e1278924cf3ab08bbb17ee49da3368fb9a103c418b7d1c11b5b9a1a09da",
+      "size_bytes": 2075
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarfinalintersection-excluded.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "e82794613567da31fbf814ffe8ca6e5531a6e49c564097a20e5e4fe0dbed8309",
+      "size_bytes": 9159
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarparameterbounds.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "ff2dbb379f0e33bb95eb8a96f2b402cc368f74218611dec1ee40811abdc6e2b5",
+      "size_bytes": 2909
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarpatterns.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "a664ff32a329ce1f72bf726a29c4190125610d3f97f029dbb025aac94681c070",
+      "size_bytes": 2893
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstartau.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "e67658afe0d7fb33b60d3bb28f9b971c1b2aee0448fe2ea0dd979b871aa00674",
+      "size_bytes": 3886
     },
     {
       "disposition": "include",
@@ -2088,178 +2284,17 @@
     },
     {
       "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-anchoredpowersetenumeration-anchoredpowerset-weightedsum-eq-choosesum.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "5f296f26ea88e231d078c4379587d98d09b57fcfa219b93f41a6188e1aa27698",
-      "size_bytes": 7011
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-countingandmain-exists-uniformmissingtracefamily-strictlylargerthanstar.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "6ff901773c5bf05bd90894fc496ec7b4090bfb4eb606f872b580ba44074a61b4",
-      "size_bytes": 5657
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-countingandmain-perturbedstarfamily-card.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "5c11424a0453f439d1ac3153c09778d140bbd3fad8a6af9cc42715d14db73feb",
-      "size_bytes": 4535
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-patterncriterion-card-eq-of-mem-patternfamily.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "7b9101ba741bbf874de4d2c5450cd80f0205fed0d0879a13b75a664c430b28e1",
-      "size_bytes": 4083
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-patterncriterion-isuniformmissingtracefamily.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "7eef46e223b5934a075c8f0abbf9a26d271c0ab85f33b49a770a9f30f5982fe3",
-      "size_bytes": 1510
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-patterncriterion-mem-patternfamily.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "74a1640a60fcc82770fe6611bdaefb0c9e0f2709f38878aa6776b95c2b0d9c08",
-      "size_bytes": 3934
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-patterncriterion-patternfamily-isuniformmissingtracefamily.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "819ed3f5837868879ced22db021dd86cad9bf6432c2826834e736d1e6ea7e84e",
-      "size_bytes": 10586
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-patterncriterion-patternfamily.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "3c828c0a5e8dc566018d3978a32d15c98fb6c1d6e47f343c1aecb8314056cbc5",
-      "size_bytes": 1853
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-perturbedpatterncancellation-perturbedpattern-properweights-add-full-eq-fullweights.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "686c2928fe73a31d32bccdfda7565e4e320dab745a6df141ec3b1e06388addfd",
-      "size_bytes": 9587
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-perturbedstarcertificates-exists-perturbedstarblocks.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "042d75579571285d99a1537954f97c7bfd13f900b750af7466ed9f30d3cb7183",
-      "size_bytes": 7593
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-perturbedstarcertificates-perturbedstar-isuniformmissingtracefamily.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "fde9e19b4040773ffc5a02e3892248bd0732e34851264b2d9ba73666953071f9",
-      "size_bytes": 11450
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-perturbedstarcertificates-perturbedstarblocks.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "e667b353bb2f3fb680ab29f80266e6bf144bbaa917e531d71dd653dca7f22de0",
-      "size_bytes": 1674
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-perturbedstarcertificates-perturbedstarcertificate-addedproper.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "52fddf34e528f29161bb9336d5d3da1594c21500751bb46c67fc7eeb273f73b1",
-      "size_bytes": 13831
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-perturbedstarcertificates-perturbedstarcertificate-finaladded.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "299c5705ac61b9d9dbe17e7230c468c0b3adf7b9fdb5803b5a240fb426b9cb5a",
-      "size_bytes": 11682
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-perturbedstarcertificates-perturbedstarcertificate-largeavoiding.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "3db5543a3e9fd9fa65ab4151bc69084a459884588521aa480b6416ec9ea7c1df",
-      "size_bytes": 15451
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-perturbedstarcertificates-perturbedstarcertificate-largemeeting.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "3c769634ea5e8a5923a0ec966b72acc6a3d9df0942d058a58e52ed426729b7eb",
-      "size_bytes": 13664
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-perturbedstarcertificates-perturbedstarcertificate-smallstar.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "64208a7193a5297b80b2b36f0d33724a0a7542e6b43cc39e738de37d09fb8745",
-      "size_bytes": 10180
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-perturbedstarcertificates-perturbedstarcore.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "33d1ada8f890cdfc90e2a343dc2af091eabd12f44b6e82af248dbb0435b088f6",
-      "size_bytes": 1745
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-perturbedstarcertificates-perturbedstarfamily.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "da9be5f854d3ccaf103b7185e20ac7bde25525db99c613ccddd142a559e6400f",
-      "size_bytes": 2861
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-perturbedstarcertificates-perturbedstarfiller.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "47402c022561a3a1e04b94552dbd4661d52997a69475677a4a10bfa49bd321ec",
-      "size_bytes": 2033
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-perturbedstarcertificates-perturbedstarfinalintersection-excluded.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "b0271aaf03098cfe4e1958432a1f0a25b8e7e625df04677c79437b8a335bb4b5",
-      "size_bytes": 9117
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-perturbedstarcertificates-perturbedstarparameterbounds.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "f40a62255015823bca89f0b88ddaf7d3ece90fd50928daf0ac04e6977f5f6ae9",
-      "size_bytes": 2867
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-perturbedstarcertificates-perturbedstarpatterns.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "06eca489f1c4137eb34cd703312acbe94e96a9c1ef118254bfd591f9da1922c9",
-      "size_bytes": 2851
-    },
-    {
-      "disposition": "include",
-      "path": "docs/lean-constellation/public-api/main-perturbedstarcertificates-perturbedstartau.md",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "b5b1e4ed530845146cc8ae9f094a76a11762d3df4536df7b69687bda646a1860",
-      "size_bytes": 3844
-    },
-    {
-      "disposition": "include",
       "path": "docs/lean-constellation/public-api.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "830424c6d8ae1b9dd194cc23930a9d45110d8c22465df9879dedd91be892a617",
-      "size_bytes": 166477
+      "sha256": "c307f9688fa61c7c670da98409db1cc209f5385312b450b954f348e900db3eb5",
+      "size_bytes": 7916
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/public-boundaries.json",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "c9917ec7b43d9c3408378e423ea6a25d717edf00ca6bf922dd05b99763002e19",
+      "size_bytes": 170444
     },
     {
       "disposition": "include",
@@ -2283,11 +2318,18 @@
       "size_bytes": 25
     }
   ],
+  "excluded_directories": [
+    {
+      "path": ".git",
+      "reason": "runtime_or_git_state",
+      "recursive": true
+    }
+  ],
   "generated_at": null,
-  "included_file_count": 325,
-  "included_size_bytes": 2458565,
-  "manifest_digest": "a5d3d87a079696916d22b807d4c1896e117ee442a3afb6f2a07703404e9ab0e2",
+  "included_file_count": 330,
+  "included_size_bytes": 2535021,
+  "manifest_digest": "6f947f7cd12580faca1e2e9940a1e954e9eb48d27992c39a464b7d6994013bac",
   "repo_key": "UniformMissingTraceFamily",
-  "schema_version": 1,
-  "summary": "Publication manifest includes 325 files (2458565 bytes)."
+  "schema_version": 2,
+  "summary": "Publication manifest includes 330 files (2535021 bytes)."
 }

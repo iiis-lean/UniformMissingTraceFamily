@@ -1,4 +1,4 @@
-[← Public API index](../PUBLIC_API.md)
+[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md)
 
 # `mem_patternFamily`
 
