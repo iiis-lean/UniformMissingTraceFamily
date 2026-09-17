@@ -70,3 +70,9 @@ No repository license changes the authorship or attribution of the original pape
   <sub>Generated with <strong>Lean Constellation</strong></sub>
 </p>
 <!-- END Lean Constellation: project-summary -->
+
+## Publication package
+
+- [Source texts and attribution](SOURCE_AVAILABILITY.md)
+- [Publication provenance and export semantics](PUBLICATION_PROVENANCE.md)
+- [Published file checksums](publication-files.json)
