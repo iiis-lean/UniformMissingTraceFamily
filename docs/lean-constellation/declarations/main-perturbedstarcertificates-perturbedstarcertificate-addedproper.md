@@ -1,4 +1,4 @@
-[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md)
+[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md) · [Complete graph](../DECLARATION_GRAPH.md)
 
 # `perturbedStarCertificate_addedProper`
 
@@ -10,9 +10,107 @@ The tau certificate satisfies the generic criterion for an inserted b/T pattern 
 - State: `proved`
 - Revision status: `committed`
 - Repository completion: `graph_proved`
-- Formal code: final proof projection
+- Compatibility `formal_code`: final proof projection
 
-## Lean code
+## Statement NL
+
+For natural numbers d, s, n, and r, let `B : PerturbedStarBlocks n r` and let `Y : Finset (Fin n)` satisfy `Y ⊆ B.L` and `Y ≠ B.L`. Assume `r = d + 1 - s`, `2 ≤ r`, and `r + 1 ≤ s`, and put `P = {B.b} ∪ B.T ∪ Y`. Then the proper-added selector guard applies, so `perturbedStarTau B P = B.T`, and the following four-clause certificate bundle holds:
+
+1. `perturbedStarTau B P ⊂ P`.
+2. `P.card - (perturbedStarTau B P).card ≤ d + 1 - s`.
+3. `(perturbedStarTau B P).card ≤ s`.
+4. There is no `Q ∈ perturbedStarPatterns d B` such that both `Q ∩ P = perturbedStarTau B P` and `Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s)`.
+
+This is the inserted-pattern case indexed by a proper subset of `B.L`; it supplies exactly the certificate shape required by the generic pattern-family criterion.
+
+## Statement Formal
+
+```lean
+-- lean-constellation: managed-imports-begin
+import UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude
+import UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns
+import UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau
+import UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks
+-- lean-constellation: managed-imports-end
+
+-- lean-constellation: declaration-source-begin
+
+/--
+# lean-constellation target: `perturbedStarCertificate_addedProper`
+
+For natural numbers d, s, n, and r, let `B : PerturbedStarBlocks n r` and let `Y : Finset (Fin n)`
+satisfy `Y ⊆ B.L` and `Y ≠ B.L`. Assume `r = d + 1 - s`, `2 ≤ r`, and `r + 1 ≤ s`, and put `P =
+{B.b} ∪ B.T ∪ Y`. Then the proper-added selector guard applies, so `perturbedStarTau B P = B.T`, and
+the following four-clause certificate bundle holds:
+
+1. `perturbedStarTau B P ⊂ P`.
+2. `P.card - (perturbedStarTau B P).card ≤ d + 1 - s`.
+3. `(perturbedStarTau B P).card ≤ s`.
+4. There is no `Q ∈ perturbedStarPatterns d B` such that both `Q ∩ P = perturbedStarTau B P` and
+`Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s)`.
+
+This is the inserted-pattern case indexed by a proper subset of `B.L`; it supplies exactly the
+certificate shape required by the generic pattern-family criterion.
+
+## Sources
+
+- Source `article/sections/02_proof.tex`, lines 60–61
+
+## Statement dependencies
+
+- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from
+  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`
+- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from
+  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`
+- `Main.PerturbedStarCertificates::perturbedStarTau` → `perturbedStarTau` from
+  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau`
+-/
+theorem perturbedStarCertificate_addedProper (d s n r : ℕ)
+    (B : PerturbedStarBlocks n r) (Y : Finset (Fin n))
+    (hYsub : Y ⊆ B.L) (hYne : Y ≠ B.L)
+    (hr : r = d + 1 - s) (hrtwo : 2 ≤ r) (hrs : r + 1 ≤ s) :
+    let P := {B.b} ∪ B.T ∪ Y
+    perturbedStarTau B P ⊂ P ∧
+      P.card - (perturbedStarTau B P).card ≤ d + 1 - s ∧
+      (perturbedStarTau B P).card ≤ s ∧
+      ¬ ∃ Q ∈ perturbedStarPatterns d B,
+        Q ∩ P = perturbedStarTau B P ∧
+          Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s) := by
+  sorry
+```
+
+## Proof NL
+
+Let `P := {B.b} ∪ B.T ∪ Y`. The proper-added selector in `perturbedStarTau` is true with witness `Y`, using `hYsub`, `hYne`, and the defining equality for `P`. Unfolding that first selector gives
+```
+perturbedStarTau B P = B.T.
+```
+
+The fields of `B` make the unions in `P` disjoint: `B.b_not_mem_T` and `B.b_not_mem_L`, together with `hYsub`, exclude `B.b` from the two blocks, while `B.T_disjoint_L`, transferred elementwise with `Finset.disjoint_left`, gives `Disjoint B.T Y`. Therefore `B.T ⊂ P`: it is a subset of the displayed union, while `B.b ∈ P` and `B.b ∉ B.T`.
+
+For the first size bound, `hYsub` and `hYne` give the strict subset `Y ⊂ B.L`; `Finset.card_lt_card` and `B.card_L` give `Y.card < r`. Apply `Finset.card_union_of_disjoint` twice to the pairwise-disjoint displayed union:
+```
+P.card = 1 + r + Y.card.
+```
+After rewriting `B.T.card` as `r` and `d + 1 - s` as `r` using `hr`, natural-number arithmetic proves
+```
+P.card - B.T.card = 1 + Y.card ≤ r.
+```
+The tau-cardinality clause is `B.card_T` followed by `r ≤ s`, which follows from `hrs : r + 1 ≤ s`.
+
+For the exclusion clause, assume `Q ∈ perturbedStarPatterns d B`, `Q ∩ P = B.T`, and the stated size bound. Unfold `perturbedStarPatterns` and simplify membership in `Finset.powerset`, images, filters, the union, and the difference (using `Finset.mem_powerset`). This yields the two construction branches below.
+
+* In the inserted branch, there is `Z ⊆ B.L` with `Q = {B.b} ∪ B.T ∪ Z`. Thus `B.b ∈ Q ∩ P`, while `B.b ∉ B.T` by `B.b_not_mem_T`, contradicting the intersection equality.
+
+* In the base-minus-deleted branch, unfold `perturbedStarCore` in the base membership to obtain `Q ⊆ {B.a, B.b} ∪ B.T ∪ B.L` and `B.a ∈ Q`. The intersection equality, `B.a_ne_b`, the four anchor-avoidance fields, and `B.T_disjoint_L` force `B.b ∉ Q`, `B.T ⊆ Q`, and the representation
+  ```
+  Q = {B.a} ∪ B.T ∪ Z,  Z ⊆ B.L,  Z ∩ Y = ∅,
+  ```
+  for `Z := Q ∩ B.L`. If `Z ≠ B.L`, this representation and `Finset.mem_powerset` put `Q` in the exact deleted image, contradicting the base-minus-deleted membership. Hence `Z = B.L`. Then `B.L ∩ Y = ∅` and `hYsub` force `Y = ∅`. Pairwise-disjoint union cardinalities, again from `Finset.disjoint_left` and `Finset.card_union_of_disjoint`, give `Q.card = 1 + 2*r`. But the assumed size bound, `B.card_T`, and `hr` give `Q.card ≤ 2*r`; `omega` is the final contradiction.
+
+Rewriting by the tau equality supplies exactly the four requested conjuncts. The supplied hypothesis `hrtwo` is retained unchanged; this case uses `hrs` for its only needed tau-size comparison.
+
+## Proof Formal
 
 ```lean
 -- lean-constellation: managed-imports-begin

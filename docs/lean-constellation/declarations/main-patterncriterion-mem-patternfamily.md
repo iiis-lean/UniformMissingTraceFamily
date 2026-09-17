@@ -1,4 +1,4 @@
-[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md)
+[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md) · [Complete graph](../DECLARATION_GRAPH.md)
 
 # `mem_patternFamily`
 
@@ -10,9 +10,66 @@ Membership in patternFamily is equivalent to admitting an allowed pattern and an
 - State: `proved`
 - Revision status: `committed`
 - Repository completion: `graph_proved`
-- Formal code: final proof projection
+- Compatibility `formal_code`: final proof projection
 
-## Lean code
+## Statement NL
+
+For natural numbers `n` and `d`, an allowed pattern family `patterns : Finset (Finset (Fin n))`, a filler region `U : Finset (Fin n)`, and `F : Finset (Fin n)`, membership in the pattern-plus-filler family is characterized by
+```
+F ∈ patternFamily d patterns U ↔
+  ∃ P : Finset (Fin n), P ∈ patterns ∧
+    ∃ A : Finset (Fin n), A ⊆ U ∧ A.card = d + 1 - P.card ∧ F = P ∪ A.
+```
+Thus a member is exactly the union of an allowed pattern and a filler subset of `U` whose cardinality supplies the remaining positions to reach size `d + 1`.
+
+## Statement Formal
+
+```lean
+-- lean-constellation: managed-imports-begin
+import UniformMissingTraceFamily.Main.PatternCriterion.Prelude
+import UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily
+-- lean-constellation: managed-imports-end
+
+-- lean-constellation: declaration-source-begin
+
+/--
+# lean-constellation target: `mem_patternFamily`
+
+For natural numbers `n` and `d`, an allowed pattern family `patterns : Finset (Finset (Fin n))`, a
+filler region `U : Finset (Fin n)`, and `F : Finset (Fin n)`, membership in the pattern-plus-filler
+family is characterized by
+```
+F ∈ patternFamily d patterns U ↔
+  ∃ P : Finset (Fin n), P ∈ patterns ∧
+    ∃ A : Finset (Fin n), A ⊆ U ∧ A.card = d + 1 - P.card ∧ F = P ∪ A.
+```
+Thus a member is exactly the union of an allowed pattern and a filler subset of `U` whose
+cardinality supplies the remaining positions to reach size `d + 1`.
+
+## Sources
+
+- Source `article/sections/02_proof.tex`, lines 3–7
+
+## Statement dependencies
+
+- `Main.PatternCriterion::patternFamily` → `patternFamily` from
+  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily`
+-/
+theorem mem_patternFamily {n d : ℕ} (patterns : Finset (Finset (Fin n)))
+    (U F : Finset (Fin n)) :
+    F ∈ patternFamily d patterns U ↔
+      ∃ P : Finset (Fin n), P ∈ patterns ∧
+        ∃ A : Finset (Fin n), A ⊆ U ∧ A.card = d + 1 - P.card ∧ F = P ∪ A := by
+  sorry
+```
+
+## Proof NL
+
+Unfold `patternFamily d patterns U`. Apply `Finset.mem_biUnion` to membership in the outer biunion, obtaining an allowed pattern `P ∈ patterns` and membership of `F` in the corresponding image. Apply `Finset.mem_image` to that image membership, obtaining a filler `A ∈ U.powersetCard (d + 1 - P.card)` and an equality `P ∪ A = F`. Take the symmetry of this image equality to obtain the accepted witness conclusion `F = P ∪ A`. Finally, apply `Finset.mem_powersetCard` to split the filler membership into `A ⊆ U` and `A.card = d + 1 - P.card`. This proves the forward implication.
+
+Conversely, given `P ∈ patterns`, `A ⊆ U`, `A.card = d + 1 - P.card`, and `F = P ∪ A`, use `Finset.mem_powersetCard` in the reverse direction to place `A` in `U.powersetCard (d + 1 - P.card)`. To reintroduce `A` through `Finset.mem_image`, use the supplied equality in reverse, namely `P ∪ A = F`. Then reintroduce `P` through `Finset.mem_biUnion` to obtain `F ∈ patternFamily d patterns U`. The proof is generic in `Fin n` and uses no disjointness or perturbed-star-specific data.
+
+## Proof Formal
 
 ```lean
 -- lean-constellation: managed-imports-begin

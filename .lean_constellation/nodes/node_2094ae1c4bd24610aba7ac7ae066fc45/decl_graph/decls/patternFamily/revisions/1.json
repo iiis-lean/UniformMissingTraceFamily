@@ -4,7 +4,6 @@
     "kind": "create",
     "objective": "Implement the public construction from SourceIndex block b_0010 / article/sections/02_proof.tex lines 3–7 as a reusable Finset-valued family over Fin n (or equivalently reusable finite ambient type): members are exactly P ∪ A with P in the allowed pattern family and A ⊆ U of card d+1-|P|. Use the verified Finset.powersetCard and Finset.mem_powersetCard support; do not bake in later perturbed-star T/L data. This foundation serves its contract interface, subsequent uniformity/trace helpers, and the final generic tau-certificate theorem.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
     "summary": "Completed creation of the public definition at declared state. The accepted Lean statement realizes article/sections/02_proof.tex lines 3–7 as the biUnion of P ∪ A over allowed patterns P and fillers A in U.powersetCard (d+1-P.card), without imposing perturbed-star-specific data. Lean statement checking passed; the statement records the verified Finset.powersetCard dependency, and declared-level proof-policy satisfaction holds.",
     "target_state": "declared"
   },
@@ -36,6 +35,11 @@
           "schema_version": 2,
           "summary": "Command completed successfully"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "b69e5138752b437e959a9bbe99d942473694ecd27925564457e5ce99a8e7f984",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -53,7 +57,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PatternCriterion/Defs/patternFamily.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PatternCriterion.Prelude\nimport Mathlib.Data.Finset.Powerset\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `patternFamily`\n\nFor a natural number `n`, a target size parameter `d`, an allowed pattern family `patterns : Finset\n(Finset (Fin n))`, and a filler region `U : Finset (Fin n)`, `patternFamily d patterns U` is the\nfinite family of all unions `P ∪ A` where `P ∈ patterns` and `A` is a subset of `U` of cardinality\n`d + 1 - P.card`; equivalently, `A ∈ U.powersetCard (d + 1 - P.card)`.\n\nThis construction records only the allowed core-pattern component and the exact-size filler\ncomponent. It does not itself impose disjointness or specialize the patterns to the later\nperturbed-star construction.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 3–7\n\n## Statement dependencies\n\n- `Finset.powersetCard` from `Mathlib.Data.Finset.Powerset`\n-/\ndef patternFamily {n : ℕ} (d : ℕ) (patterns : Finset (Finset (Fin n)))\n    (U : Finset (Fin n)) : Finset (Finset (Fin n)) :=\n  patterns.biUnion fun P => (U.powersetCard (d + 1 - P.card)).image fun A => P ∪ A\n"
     },

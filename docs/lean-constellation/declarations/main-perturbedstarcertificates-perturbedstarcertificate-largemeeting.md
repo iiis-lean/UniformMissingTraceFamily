@@ -1,4 +1,4 @@
-[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md)
+[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md) · [Complete graph](../DECLARATION_GRAPH.md)
 
 # `perturbedStarCertificate_largeMeeting`
 
@@ -10,9 +10,134 @@ The tau certificate satisfies the generic criterion for a large a-anchored patte
 - State: `proved`
 - Revision status: `committed`
 - Repository completion: `graph_proved`
-- Formal code: final proof projection
+- Compatibility `formal_code`: final proof projection
 
-## Lean code
+## Statement NL
+
+For natural numbers `d`, `s`, `n`, and `r`, let `B : PerturbedStarBlocks n r` and `P : Finset (Fin n)`. Assume `P ∈ perturbedStarPatterns d B`, `B.a ∈ P`, `r < P.card`, `P ∩ B.T ≠ ∅`, `r = d + 1 - s`, and `2 ≤ r`. The accepted fifth selector branch applies: for its chosen `t0 ∈ P ∩ B.T`, `perturbedStarTau B P` is the chosen subset of `P \ {B.a, t0}` of cardinality `P.card - r`. Then the following four-clause certificate bundle holds:
+
+1. `perturbedStarTau B P ⊂ P`.
+2. `P.card - (perturbedStarTau B P).card ≤ d + 1 - s`.
+3. `(perturbedStarTau B P).card ≤ s`.
+4. There is no `Q ∈ perturbedStarPatterns d B` such that both `Q ∩ P = perturbedStarTau B P` and `Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s)`.
+
+This is the distinct large a-anchored case meeting `T`: the selector omits both `B.a` and `t0`, which excludes the competing base and inserted pattern branches.
+
+## Statement Formal
+
+```lean
+-- lean-constellation: managed-imports-begin
+import UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude
+import UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns
+import UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau
+import UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks
+-- lean-constellation: managed-imports-end
+
+-- lean-constellation: declaration-source-begin
+
+/--
+# lean-constellation target: `perturbedStarCertificate_largeMeeting`
+
+For natural numbers `d`, `s`, `n`, and `r`, let `B : PerturbedStarBlocks n r` and `P : Finset (Fin
+n)`. Assume `P ∈ perturbedStarPatterns d B`, `B.a ∈ P`, `r < P.card`, `P ∩ B.T ≠ ∅`, `r = d + 1 -
+s`, and `2 ≤ r`. The accepted fifth selector branch applies: for its chosen `t0 ∈ P ∩ B.T`,
+`perturbedStarTau B P` is the chosen subset of `P \ {B.a, t0}` of cardinality `P.card - r`. Then the
+following four-clause certificate bundle holds:
+
+1. `perturbedStarTau B P ⊂ P`.
+2. `P.card - (perturbedStarTau B P).card ≤ d + 1 - s`.
+3. `(perturbedStarTau B P).card ≤ s`.
+4. There is no `Q ∈ perturbedStarPatterns d B` such that both `Q ∩ P = perturbedStarTau B P` and
+`Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s)`.
+
+This is the distinct large a-anchored case meeting `T`: the selector omits both `B.a` and `t0`,
+which excludes the competing base and inserted pattern branches.
+
+## Sources
+
+- Source `article/sections/02_proof.tex`, line 72
+
+## Statement dependencies
+
+- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from
+  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`
+- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from
+  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`
+- `Main.PerturbedStarCertificates::perturbedStarTau` → `perturbedStarTau` from
+  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau`
+-/
+theorem perturbedStarCertificate_largeMeeting (d s n r : ℕ)
+    (B : PerturbedStarBlocks n r) (P : Finset (Fin n))
+    (hP : P ∈ perturbedStarPatterns d B) (ha : B.a ∈ P)
+    (hrlt : r < P.card) (hmeeting : P ∩ B.T ≠ ∅)
+    (hr : r = d + 1 - s) (hrtwo : 2 ≤ r) :
+    perturbedStarTau B P ⊂ P ∧
+      P.card - (perturbedStarTau B P).card ≤ d + 1 - s ∧
+      (perturbedStarTau B P).card ≤ s ∧
+      ¬ ∃ Q ∈ perturbedStarPatterns d B,
+        Q ∩ P = perturbedStarTau B P ∧
+          Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s) := by
+  sorry
+```
+
+## Proof NL
+
+First unfold `perturbedStarPatterns` at `hP`. The inserted branch is impossible because every inserted set has the form `{B.b} ∪ B.T ∪ Z` with `Z ⊆ B.L` and therefore omits `B.a`, by `B.a_ne_b`, `B.a_not_mem_T`, and `B.a_not_mem_L`. Thus `P` lies in the bounded a-anchored base-minus-deleted component. Retain
+```
+hcore : P ⊆ perturbedStarCore B,   hbasecard : P.card ≤ d + 1.
+```
+
+Use `hmeeting : P ∩ B.T ≠ ∅` to choose an initial witness `t0w ∈ P ∩ B.T`. Hence `t0w ∈ P`, `t0w ∈ B.T`, and `t0w ≠ B.a` by `B.a_not_mem_T`. The anchor itself is in `P`, so two applications of `Finset.card_erase_of_mem`, first for `B.a` and then for `t0w`, identify the cardinality of
+```
+P \ {B.a, t0w}
+```
+as `P.card - 2`. Since `2 ≤ r`, natural-number arithmetic yields
+```
+P.card - r ≤ (P \ {B.a, t0w}).card.
+```
+Apply `Finset.exists_subset_card_eq` to obtain `Qw ⊆ P \ {B.a,t0w}` with
+`Qw.card = P.card-r`. This establishes the fifth guard existential
+```
+hpair : ∃ t0, t0 ∈ P ∩ B.T ∧
+  ∃ Q, Q ⊆ P \ {B.a,t0} ∧ Q.card = P.card-r.
+```
+
+For the actual selector, define the exact true guard
+```
+hlarge : B.a ∈ P ∧ r < P.card ∧ P ∩ B.T ≠ ∅ ∧ hpair
+  := ⟨ha, hrlt, hmeeting, hpair⟩,
+t0 := Classical.choose hlarge.2.2.2,
+tau := Classical.choose (Classical.choose_spec hlarge.2.2.2).2.
+```
+These are deliberately the canonical `Classical.choose` values in the fifth branch of `perturbedStarTau`, not the preliminary witnesses `t0w,Qw`. The two successive `Classical.choose_spec` facts give
+```
+ht0 : t0 ∈ P ∩ B.T,
+htau_sub : tau ⊆ P \ {B.a,t0},
+htau_card : tau.card = P.card-r.
+```
+
+The proper-added and final-added guards are false because they omit `B.a`, the small-star guard is false by `hrlt`, and the fourth (large-avoiding) guard is false because it requires `P ∩ B.T = ∅`, contradicting `hmeeting`. Unfold `perturbedStarTau` with these false guards and the true `hlarge`. Its fifth branch returns the displayed two canonical choices, yielding
+```
+htau : perturbedStarTau B P = tau.
+```
+Rewrite the requested four clauses using `htau`.
+
+From `htau_sub`, `tau ⊆ P`, but `B.a ∈ P` and `B.a ∉ tau` because the selector lies in `P \ {B.a,t0}`; therefore `tau ⊂ P`. Using `htau_card` and `hrlt`, derive
+```
+P.card - tau.card = r.
+```
+Rewrite `r` with `hr` for the gap clause. For the selector-size clause, `hbasecard` and `r < P.card` imply `r < d+1`; with `hr` and `htau_card`, natural-number arithmetic proves `tau.card ≤ s`.
+
+For the exclusion clause, assume `Q ∈ perturbedStarPatterns d B`,
+`Q ∩ P = tau`, and the stated size bound. Unfold the pattern definition and split the two branches.
+
+* A base-minus-deleted `Q` contains `B.a`. Since `B.a ∈ P` while `B.a ∉ tau` by `htau_sub`, its intersection with `P` cannot equal `tau`.
+
+* An inserted `Q` is `{B.b} ∪ B.T ∪ Z`. The canonical `ht0` gives `t0 ∈ P ∩ B.T`, so `t0 ∈ Q ∩ P`. But `t0 ∉ tau` because `htau_sub` avoids `{B.a,t0}`. Thus this intersection also cannot equal `tau`.
+
+Both pattern branches are impossible, proving the fourth clause. Rewriting back by `htau` gives the exact required bundle.
+
+## Proof Formal
 
 ```lean
 -- lean-constellation: managed-imports-begin

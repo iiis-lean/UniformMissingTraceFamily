@@ -1,15 +1,9 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [
-      "perturbedPatternB_injOn",
-      "perturbedPattern_properDomain_eq_erase"
-    ],
-    "anticipated_statement_dep_names": [],
     "base_revision": null,
     "kind": "create",
     "objective": "For every B : PerturbedStarBlocks n r, identify the image under exactly Y ↦ {B.b} ∪ B.T ∪ Y of the proper domain {Y ∈ B.L.powerset | Y ≠ B.L} with (B.L.powerset.image fun Y => {B.b} ∪ B.T ∪ Y).erase ({B.b} ∪ B.T ∪ B.L). This formalizes the sole unmatched Y = B.L pattern in SourceIndex b_0009 / article/sections/02_proof.tex:49. Consume the proved perturbedPattern_properDomain_eq_erase and perturbedPatternB_injOn, using verified erase/image support or a restricted-injectivity extensional proof. Add no hrd/hrn assumptions. The equality must directly support Finset.sum_erase_add in the public cancellation proof.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
     "summary": "Blocked at Statement NL. The preserved consumer-side formal goal is the equality between the image of {Y ∈ B.L.powerset | Y ≠ B.L} under exactly Y ↦ {B.b} ∪ B.T ∪ Y and the full B.L.powerset image with {B.b} ∪ B.T ∪ B.L erased. The checked lower declarations perturbedPattern_properDomain_eq_erase and perturbedPatternB_injOn are both proved and semantically match the domain and restricted-injectivity needs. Statement NL is present, but statement formal/proof artifacts are absent and the revision remains planned. Concrete blocker classification: reviewer-required typed Statement dependency Finset.image is compiler-verified in Mathlib.Data.Finset.Image but missing from the repo MathlibIndex, so it cannot be recorded. Retry after adding that exact index entry (and current-node hint if needed); no source, representation, assumption, or scope mismatch was reported.",
     "target_state": "proved"
   },

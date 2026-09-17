@@ -1,12 +1,11 @@
 {
-  "change_summaries": {},
   "committed_at": "2026-07-22T13:08:54Z",
   "created_at": "2026-07-22T13:03:59Z",
   "execution_completed_at": "2026-07-22T13:08:54Z",
   "execution_reason": "DeclGraphRoundFlow finished with completed.",
   "execution_result_kind": "success",
   "node_path": "Main.PerturbedStarCertificates",
-  "objective": "Declare the source b_0008 allowed perturbed-star pattern collection on the accepted core, preserving the deleted proper-L branch and the complete inserted b/T branch as the immediate provider for the required public perturbedStarFamily and the five certificate cases.",
+  "objective": "The source b_0008 allowed perturbed-star pattern collection on the accepted core contains the deleted proper-L branch and the complete inserted b/T branch, providing the required public perturbedStarFamily and five certificate cases.",
   "plan_closeout_acknowledged_at": "2026-07-22T13:08:54Z",
   "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
   "result_kind": "success",
@@ -23,5 +22,6 @@
   "started_at": "2026-07-22T13:05:05Z",
   "status": "committed",
   "strategy_id": "strategy_140c2962785943968f6203e9ab1972fc",
-  "summary": "Round 8 made the intended source-faithful progress: `perturbedStarPatterns` is declared and proof-policy satisfied, with all three construction branches explicit for later membership, counting, and five-case certificate reasoning. No state-only intermediate, missing dependency, superseded branch, retry-named artifact, graph-hygiene issue, or scope overflow remains. The strategy remains viable; the immediate next layer is the required public `perturbedStarFamily`, defined by applying the accepted generic `patternFamily` to these patterns and the accepted filler."
+  "summary": "Round 8 made the intended source-faithful progress: `perturbedStarPatterns` is declared and proof-policy satisfied, with all three construction branches explicit for later membership, counting, and five-case certificate reasoning. No state-only intermediate, missing dependency, superseded branch, retry-named artifact, graph-hygiene issue, or scope overflow remains.",
+  "execution_constraints": "Define the required public `perturbedStarFamily` by applying the accepted generic `patternFamily` to these patterns and the accepted filler."
 }

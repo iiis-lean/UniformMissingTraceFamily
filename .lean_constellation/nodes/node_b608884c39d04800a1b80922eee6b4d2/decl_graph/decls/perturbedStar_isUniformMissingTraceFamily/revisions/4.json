@@ -1,27 +1,10 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [
-      "exists_perturbedStarBlocks",
-      "perturbedStarCertificate_addedProper",
-      "perturbedStarCertificate_finalAdded",
-      "perturbedStarCertificate_largeAvoiding",
-      "perturbedStarCertificate_largeMeeting",
-      "perturbedStarCertificate_smallStar",
-      "perturbedStarParameterBounds"
-    ],
-    "anticipated_statement_dep_names": [
-      "PerturbedStarBlocks",
-      "perturbedStarCore",
-      "perturbedStarFamily",
-      "perturbedStarFiller",
-      "perturbedStarPatterns",
-      "perturbedStarTau"
-    ],
     "base_revision": 3,
     "kind": "update",
     "objective": "Continue the contract-required public theorem from its accepted declared revision 3, anchored in article/sections/02_proof.tex lines 30–39 and 53–73. Preserve exactly the compiled consumer goal: for d,s,n with hd : 4 ≤ d, hslow : (d+3)/2 ≤ s, hshigh : s ≤ d-1, and hn : 2*(d+1) ≤ n, conclude ∃ B : PerturbedStarBlocks n (d+1-s), IsUniformMissingTraceFamily d s (perturbedStarFamily d B). Retain the accepted Proof NL decomposition through perturbedStarParameterBounds, exists_perturbedStarBlocks, the visible proved Main.PatternCriterion.patternFamily_isUniformMissingTraceFamily, and all five separately proved certificate cases. Represent the declared construction providers PerturbedStarBlocks, perturbedStarCore, perturbedStarFamily, perturbedStarFiller, perturbedStarPatterns, and perturbedStarTau in declaration-side anticipated closure, while proof-side anticipation contains only theorem-like providers, resolving the round-18/20 stage-classification loop. Do not change hypotheses, existential witness, family object, case split, or dependency meaning.",
     "require_target_state_satisfied": true,
-    "reset_to_state": "declared",
+    "start_stage": "proof_nl",
     "summary": "Round 21 completed the isolated declared-to-proved continuation for the contract-required public theorem. Revision 4 preserved the accepted formal statement exactly: under hd : 4 ≤ d, hslow : (d+3)/2 ≤ s, hshigh : s ≤ d-1, and hn : 2*(d+1) ≤ n, it constructs B : PerturbedStarBlocks n (d+1-s) and proves IsUniformMissingTraceFamily d s (perturbedStarFamily d B). Proof NL and Proof Formal both passed using perturbedStarParameterBounds, exists_perturbedStarBlocks, the visible generic pattern criterion, the accepted construction definitions, and all five separately proved certificate cases. The revision reached proved state and is recursively proof-policy satisfied. The dependency-stage repair was successful; there are no unresolved retry conditions, blockers, statement drift, or cleanup candidates for this declaration.",
     "target_state": "proved"
   },
@@ -130,6 +113,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 0 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "3f9e1ca044bf07e56345411ec1782e58ca946e8c0a0c009b506cd65770ad6385",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "proof_formal",
         "scan": {
@@ -147,7 +135,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStar_isUniformMissingTraceFamily",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Theorems/perturbedStar_isUniformMissingTraceFamily.lean",
+          "repo_kind": "native",
+          "stage": "proof"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport Mathlib.Data.Finset.Disjoint\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFamily\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.exists_perturbedStarBlocks\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarCertificate_addedProper\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarCertificate_finalAdded\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarCertificate_largeAvoiding\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarCertificate_largeMeeting\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarCertificate_smallStar\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarParameterBounds\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStar_isUniformMissingTraceFamily`\n\nFor natural numbers `d`, `s`, and `n`, assume `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤\nd - 1`, and `hn : 2 * (d + 1) ≤ n`. Then there exists construction data\n\n`B : PerturbedStarBlocks n (d + 1 - s)`\n\nsuch that\n\n`IsUniformMissingTraceFamily d s (perturbedStarFamily d B)`.\n\nThe existential construction preserves the explicit perturbed-star family needed by downstream\ncounting; its missing-trace certificate is supplied by the five separate source cases through the\ngeneric pattern-family criterion.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 30–39\n- Source `article/sections/02_proof.tex`, lines 53–73\n\n## Statement dependencies\n\n- `Main.PatternCriterion::IsUniformMissingTraceFamily` → `IsUniformMissingTraceFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFamily` → `perturbedStarFamily` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFamily`\n\n## Proof outline\n\nPut `r := d + 1 - s`. Apply `perturbedStarParameterBounds d s n hd hslow hshigh hn` and retain\n```\nhrtwo : 2 ≤ r,  hrs : r + 1 ≤ s,  hroom : 2 + 2*r ≤ n.\n```\n(The theorem’s truncation-safe equality and `2*r≤d` remain available but are not needed in this\nfinal assembly.)  Extract `B : PerturbedStarBlocks n r` from `exists_perturbedStarBlocks n r hroom`,\nand use this exact witness for the existential conclusion.\n\nUnfold `perturbedStarFamily` at the final step and apply the visible theorem\n`patternFamily_isUniformMissingTraceFamily` with\n```\nC := perturbedStarCore B,\nU := perturbedStarFiller B,\npatterns := perturbedStarPatterns d B,\ntau := perturbedStarTau B.\n```\nFor the first premise, use `perturbedStarFiller B = Finset.univ \\\\ perturbedStarCore B` and\n`Finset.disjoint_left`: a point in the core cannot belong to its complement.  For the second, unfold\n`perturbedStarPatterns`.  A base-minus-deleted pattern carries the base containment in\n`perturbedStarCore B`; an inserted pattern is `{B.b} ∪ B.T ∪ Y` for `Y ⊆ B.L`, hence lies in\n`{B.a,B.b} ∪ B.T ∪ B.L = perturbedStarCore B`.\n\nFor the generic theorem’s universal four-clause certificate premise, fix `P ∈ perturbedStarPatterns\nd B` and expose the accepted base-minus-deleted versus inserted definition branches.\n\n* An inserted branch has `Y ⊆ B.L` and `P = {B.b} ∪ B.T ∪ Y`.  If `Y = B.L`, substitute and invoke\n`perturbedStarCertificate_finalAdded d s n r B hr hrtwo hrs`.  If `Y ≠ B.L`, substitute and invoke\n`perturbedStarCertificate_addedProper d s n r B Y hYsub hYne hr hrtwo hrs`.\n* A base-minus-deleted branch supplies `B.a ∈ P` and `P.card ≤ d+1`.  Split on `P.card ≤ r` and\ninvoke `perturbedStarCertificate_smallStar d s n r B P hP ha hcard hr`.  Otherwise obtain `r <\nP.card`; split on `P ∩ B.T = ∅`.  The empty case is `perturbedStarCertificate_largeAvoiding`, and\nthe nonempty case is `perturbedStarCertificate_largeMeeting`, both applied with `hP, ha, hrlt, hr,\nhrtwo` and their corresponding intersection hypothesis.\n\nThese cases exhaust the exact accepted pattern definition and yield the required properness, gap,\nselector-cardinality, and excluded-intersection bundle.  The generic conclusion is definitionally\n`IsUniformMissingTraceFamily d s (perturbedStarFamily d B)`, so it closes the unchanged existential\ntheorem.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, lines 30–39\n- Source `article/sections/02_proof.tex`, lines 53–73\n\n## Proof dependencies\n\n- `Finset.disjoint_left` from `Mathlib.Data.Finset.Disjoint`\n- `Main.PatternCriterion::patternFamily_isUniformMissingTraceFamily` →\n  `patternFamily_isUniformMissingTraceFamily` from `UniformMissingTraceFamily.Main.PatternCriterion.\n  Theorems.patternFamily_isUniformMissingTraceFamily`\n- `Main.PerturbedStarCertificates::exists_perturbedStarBlocks` → `exists_perturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.exists_perturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarCertificate_addedProper` →\n  `perturbedStarCertificate_addedProper` from `UniformMissingTraceFamily.Main.PerturbedStarCertifica\n  tes.Theorems.perturbedStarCertificate_addedProper`\n- `Main.PerturbedStarCertificates::perturbedStarCertificate_finalAdded` →\n  `perturbedStarCertificate_finalAdded` from `UniformMissingTraceFamily.Main.PerturbedStarCertificat\n  es.Theorems.perturbedStarCertificate_finalAdded`\n- `Main.PerturbedStarCertificates::perturbedStarCertificate_largeAvoiding` →\n  `perturbedStarCertificate_largeAvoiding` from `UniformMissingTraceFamily.Main.PerturbedStarCertifi\n  cates.Theorems.perturbedStarCertificate_largeAvoiding`\n- `Main.PerturbedStarCertificates::perturbedStarCertificate_largeMeeting` →\n  `perturbedStarCertificate_largeMeeting` from `UniformMissingTraceFamily.Main.PerturbedStarCertific\n  ates.Theorems.perturbedStarCertificate_largeMeeting`\n- `Main.PerturbedStarCertificates::perturbedStarCertificate_smallStar` →\n  `perturbedStarCertificate_smallStar` from `UniformMissingTraceFamily.Main.PerturbedStarCertificate\n  s.Theorems.perturbedStarCertificate_smallStar`\n- `Main.PerturbedStarCertificates::perturbedStarParameterBounds` → `perturbedStarParameterBounds`\n  from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarParameterBounds`\n-/\ntheorem perturbedStar_isUniformMissingTraceFamily (d s n : ℕ) (hd : 4 ≤ d)\n    (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    ∃ B : PerturbedStarBlocks n (d + 1 - s),\n      IsUniformMissingTraceFamily d s (perturbedStarFamily d B) := by\n  classical\n  rcases perturbedStarParameterBounds d s n hd hslow hshigh hn with\n    ⟨hrtwo, hrs, _, _, hroom⟩\n  obtain ⟨B⟩ := exists_perturbedStarBlocks n (d + 1 - s) hroom\n  refine ⟨B, ?_⟩\n  unfold perturbedStarFamily\n  refine patternFamily_isUniformMissingTraceFamily (perturbedStarCore B)\n    (perturbedStarFiller B) (perturbedStarPatterns d B) (perturbedStarTau B) ?_ ?_ ?_\n  · rw [Finset.disjoint_left]\n    intro x hxcore hxfiller\n    simp only [perturbedStarFiller, Finset.mem_sdiff, Finset.mem_univ, true_and] at hxfiller\n    exact hxfiller hxcore\n  · intro P hP\n    have hPcases :\n        ((P ⊆ insert B.a (insert B.b (B.T ∪ B.L)) ∧ B.a ∈ P ∧\n            P.card ≤ d + 1) ∧\n          ∀ Y ⊆ B.L, Y ≠ B.L → ¬ insert B.a (B.T ∪ Y) = P) ∨\n        ∃ Y ⊆ B.L, insert B.b (B.T ∪ Y) = P := by\n      simpa [perturbedStarPatterns, perturbedStarCore] using hP\n    rcases hPcases with hbase | hinserted\n    · simpa [perturbedStarCore, Finset.union_assoc] using hbase.1.1\n    · rcases hinserted with ⟨Y, hYsub, hYP⟩\n      intro x hx\n      rw [← hYP] at hx\n      simp only [Finset.mem_insert, Finset.mem_union] at hx\n      simp only [perturbedStarCore, Finset.mem_insert, Finset.mem_union,\n        Finset.mem_singleton]\n      rcases hx with hxb | hxTY\n      · exact Or.inl (Or.inl (Or.inr hxb))\n      · rcases hxTY with hxT | hxY\n        · exact Or.inl (Or.inr hxT)\n        · exact Or.inr (hYsub hxY)\n  · intro P hP\n    have hPcases :\n        ((P ⊆ insert B.a (insert B.b (B.T ∪ B.L)) ∧ B.a ∈ P ∧\n            P.card ≤ d + 1) ∧\n          ∀ Y ⊆ B.L, Y ≠ B.L → ¬ insert B.a (B.T ∪ Y) = P) ∨\n        ∃ Y ⊆ B.L, insert B.b (B.T ∪ Y) = P := by\n      simpa [perturbedStarPatterns, perturbedStarCore] using hP\n    rcases hPcases with hbase | hinserted\n    · have ha : B.a ∈ P := hbase.1.2.1\n      by_cases hsmall : P.card ≤ d + 1 - s\n      · exact perturbedStarCertificate_smallStar d s n (d + 1 - s) B P hP ha hsmall rfl\n      · have hrlt : d + 1 - s < P.card := Nat.lt_of_not_ge hsmall\n        by_cases havoid : P ∩ B.T = ∅\n        · exact perturbedStarCertificate_largeAvoiding d s n (d + 1 - s) B P hP ha hrlt\n            havoid rfl hrtwo\n        · exact perturbedStarCertificate_largeMeeting d s n (d + 1 - s) B P hP ha hrlt\n            havoid rfl hrtwo\n    · rcases hinserted with ⟨Y, hYsub, hYP⟩\n      by_cases hYeq : Y = B.L\n      · subst Y\n        rw [← hYP]\n        simpa [Finset.union_assoc] using\n          (perturbedStarCertificate_finalAdded d s n (d + 1 - s) B rfl hrtwo hrs)\n      · rw [← hYP]\n        simpa [Finset.union_assoc] using\n          (perturbedStarCertificate_addedProper d s n (d + 1 - s) B Y hYsub hYeq rfl hrtwo hrs)\n"
     },
@@ -234,6 +230,11 @@
           "schema_version": 2,
           "summary": "Command completed successfully"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "476bfa44b842abf5f362a57f4f801537c41fd11bfd30c968b526b8a24bfe4867",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -258,7 +259,15 @@
           "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStar_isUniformMissingTraceFamily",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Theorems/perturbedStar_isUniformMissingTraceFamily.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFamily\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStar_isUniformMissingTraceFamily`\n\nFor natural numbers `d`, `s`, and `n`, assume `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤\nd - 1`, and `hn : 2 * (d + 1) ≤ n`. Then there exists construction data\n\n`B : PerturbedStarBlocks n (d + 1 - s)`\n\nsuch that\n\n`IsUniformMissingTraceFamily d s (perturbedStarFamily d B)`.\n\nThe existential construction preserves the explicit perturbed-star family needed by downstream\ncounting; its missing-trace certificate is supplied by the five separate source cases through the\ngeneric pattern-family criterion.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 30–39\n- Source `article/sections/02_proof.tex`, lines 53–73\n\n## Statement dependencies\n\n- `Main.PatternCriterion::IsUniformMissingTraceFamily` → `IsUniformMissingTraceFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFamily` → `perturbedStarFamily` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFamily`\n-/\ntheorem perturbedStar_isUniformMissingTraceFamily (d s n : ℕ) (hd : 4 ≤ d)\n    (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    ∃ B : PerturbedStarBlocks n (d + 1 - s),\n      IsUniformMissingTraceFamily d s (perturbedStarFamily d B) := by\n  sorry\n"
     },

@@ -1,7 +1,7 @@
 {
-  "boundary": "Owns the parameter consequences for r=d+1-s used by the construction, selection/encoding of disjoint blocks T and L, the fixed core C and filler U, the perturbed-star pattern family, and all five tau certificate cases from SourceIndex blocks b_0008 and b_0012. Excludes the generic criterion, global family cardinality calculation, positivity of the binomial excess, and the final protected theorem. Expected scale: about 8–15 important declarations including construction definitions and case lemmas.",
+  "boundary": "Owns the parameter consequences for r=d+1-s used by the construction, selection/encoding of disjoint blocks T and L, the fixed core C and filler U, the perturbed-star pattern family, and all five tau certificate cases from SourceIndex blocks b_0008 and b_0012. Excludes the generic criterion, global family cardinality calculation, positivity of the binomial excess, and the final protected theorem.",
   "committed_at": "2026-07-26T10:35:58Z",
-  "constraints": "Do not omit or merge away any of the five semantic certificate cases. Keep natural-number truncation and Fin n distinctness obligations explicit and justified.",
+  "constraints": "All five semantic certificate cases remain separate, and natural-number truncation and Fin n distinctness obligations are explicit and justified.",
   "context_refs": [],
   "contract_kind": "content",
   "created_at": "2026-07-22T08:53:20Z",
@@ -161,7 +161,7 @@
       "reason": "Provides omega for the linear natural-number bounds around r=d+1-s and the block-size inequality 2*r≤n."
     }
   ],
-  "objective": "After the generic criterion is available, produce a source-faithful explicit construction and a proved certificate theorem covering added proper-L patterns, the final added pattern, small star patterns, large star patterns avoiding T, and large star patterns meeting T.",
+  "objective": "The source-faithful explicit construction and proved certificate theorem cover added proper-L patterns, the final added pattern, small star patterns, large star patterns avoiding T, and large star patterns meeting T, with the generic criterion as their public dependency.",
   "owned_refs": [
     {
       "added_by": "coordinator",
@@ -193,5 +193,7 @@
   "status": "committed",
   "success_criteria": "The construction is defined under the immutable parameter hypotheses; all five certificate branches are represented in the proved dependency closure; the resulting public certificate theorem has exactly the capability needed by final assembly.",
   "summary": "Accepted ready outcome in graph_proved mode. The committed boundary provides explicit PerturbedStarBlocks data, perturbedStarFamily d B, proved construction existence, all five distinct certificate-case theorems, and a proved theorem producing B : PerturbedStarBlocks n (d+1-s) with IsUniformMissingTraceFamily d s (perturbedStarFamily d B). The actual signatures fit the CountingAndMain consumer's exact-family counting and final existential assembly; no unresolved prerequisite remains within this node.",
-  "version": 1
+  "task_completion_mode": "graph_proved",
+  "version": 1,
+  "execution_constraints": "Begin once the generic criterion is available; keep the implementation within about 8–15 important declarations, including construction definitions and case lemmas."
 }

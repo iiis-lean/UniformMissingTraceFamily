@@ -1,4 +1,4 @@
-[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md)
+[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md) · [Complete graph](../DECLARATION_GRAPH.md)
 
 # `perturbedStarFiller`
 
@@ -10,9 +10,17 @@ The filler region complementary to the fixed perturbed-star core.
 - State: `declared`
 - Revision status: `committed`
 - Repository completion: `graph_proved`
-- Formal code: final statement projection
+- Compatibility `formal_code`: final statement projection
 
-## Lean code
+## Statement NL
+
+For natural numbers n and r and construction data `B : PerturbedStarBlocks n r`, `perturbedStarFiller B` is the finite subset of `Fin n` defined by
+
+`(Finset.univ : Finset (Fin n)) \ perturbedStarCore B`.
+
+Thus it is exactly the complement of the fixed core within `Fin n`; no additional elements, hypotheses, or semantic conditions are introduced.
+
+## Statement Formal
 
 ```lean
 -- lean-constellation: managed-imports-begin
@@ -48,6 +56,14 @@ hypotheses, or semantic conditions are introduced.
 def perturbedStarFiller {n r : ℕ} (B : PerturbedStarBlocks n r) : Finset (Fin n) :=
   (Finset.univ : Finset (Fin n)) \ perturbedStarCore B
 ```
+
+## Proof NL
+
+Not recorded.
+
+## Proof Formal
+
+Not recorded.
 
 ## Statement dependencies
 

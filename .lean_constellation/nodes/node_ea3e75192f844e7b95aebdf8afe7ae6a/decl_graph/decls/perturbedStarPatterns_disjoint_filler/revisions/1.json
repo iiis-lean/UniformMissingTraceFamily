@@ -1,12 +1,9 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [],
-    "anticipated_statement_dep_names": [],
     "base_revision": null,
     "kind": "create",
     "objective": "Formalize the structural prerequisite implicit in SourceIndex b_0009 and the construction definitions at article/sections/02_proof.tex 35–49: for every P ∈ perturbedStarPatterns d B, prove Disjoint P (perturbedStarFiller B). Use that base, deleted, and inserted patterns lie in perturbedStarCore B and that the filler is univ \\ core. Consume the lower public perturbedStarPatterns, perturbedStarCore, and perturbedStarFiller definitions. This serves patternFamily_card_sum in the later public perturbedStarFamily_card proof and must introduce no parameter bounds or change the pattern family.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
     "summary": "The declaration reached committed declared state with a compiler-passed formal statement and a present Proof NL plan, but no formal proof because the shared round stopped at Proof NL on its sibling. Its accepted consumer-side statement is: for B : PerturbedStarBlocks n r, P ∈ perturbedStarPatterns d B implies Disjoint P (perturbedStarFiller B), with no parameter bounds. The proof plan checks Finset.disjoint_left and Finset.mem_powerset and requires only local unfolding/subset reasoning; no missing tracked helper was identified for this declaration. Retry from reset_to_state=declared to proved, preferably isolated from the blocked cancellation parent.",
     "target_state": "proved"
   },
@@ -133,6 +130,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 1 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "6d924354ffafc0fc7e82fbfa41ed5ad94db74725e3040fd8c5cc3e82c2ff7958",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -157,7 +159,15 @@
           "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarPatterns_disjoint_filler",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarPatterns_disjoint_filler.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarPatterns_disjoint_filler`\n\nFor natural numbers n, r, and d and construction data `B : PerturbedStarBlocks n r`, every pattern\n`P ∈ perturbedStarPatterns d B` is disjoint from the complementary filler `perturbedStarFiller B`.\nEquivalently, `Disjoint P (perturbedStarFiller B)` holds for each such P, because every base,\ndeleted, or inserted pattern lies in `perturbedStarCore B`, while the filler is its complement in\n`Fin n`.  No parameter bounds are assumed.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 34–39\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\n-/\ntheorem perturbedStarPatterns_disjoint_filler {n r d : ℕ}\n    (B : PerturbedStarBlocks n r) (P : Finset (Fin n))\n    (hP : P ∈ perturbedStarPatterns d B) : Disjoint P (perturbedStarFiller B) := by\n  sorry\n"
     },

@@ -1,15 +1,9 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [
-      "perturbedStarCore_card",
-      "perturbedStarFiller_card"
-    ],
-    "anticipated_statement_dep_names": [],
     "base_revision": null,
     "kind": "create",
     "objective": "Formalize the first enumeration step of SourceIndex b_0009/article 48–49. For B : PerturbedStarBlocks n r and d, let the anchored base be exactly (perturbedStarCore B).powerset filtered by B.a ∈ P and P.card ≤ d+1, as in perturbedStarPatterns. Prove that the double Finset sum of Nat.choose (perturbedStarFiller B).card (d+1-P.card) over this base equals Nat.choose (n-1) d. Establish the unique decomposition of each (d+1)-set containing B.a into its core pattern and filler part, or an equivalent finite enumeration, using the core/filler complement and anchor avoidance. Consume proved perturbedStarCore_card and perturbedStarFiller_card plus the lower block/core/filler definitions and verified powerset/choose support. This exact equation is the first prerequisite of declared perturbedStarPatterns_chooseSum; do not replace the local base representation or add assumptions the parent cannot supply.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
     "summary": "Blocked at Statement NL with a present NL artifact but no accepted formal statement or proof; the revision remains planned. The preserved consumer-side goal is the weighted sum over the explicit anchored base ((perturbedStarCore B).powerset filtered by B.a∈P and P.card≤d+1) equals Nat.choose (n-1) d. The reviewer required typed Statement dependencies on Finset.powerset and Finset.filter, but neither declaration has a repository MathlibIndex entry; existing Finset.card_powerset/card_powersetCard entries do not substitute. This is a Lean-specific index prerequisite, not missing mathematics or scope. Retry only after verifying and recording both declarations in their defining Mathlib modules and exposing them to the current node.",
     "target_state": "proved"
   },

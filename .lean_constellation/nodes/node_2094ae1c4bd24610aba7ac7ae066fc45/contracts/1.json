@@ -1,7 +1,7 @@
 {
-  "boundary": "Owns IsUniformMissingTraceFamily, the pattern-plus-filler family over disjoint finite regions, its uniformity facts, and the generic certificate criterion from SourceIndex blocks b_0014 and b_0010. Excludes the special perturbed-star pattern system, its five cases, counting, and the final existential theorem. Expected scale: about 6–12 important Lean declarations including definitions and set/cardinality helper lemmas.",
+  "boundary": "Owns IsUniformMissingTraceFamily, the pattern-plus-filler family over disjoint finite regions, its uniformity facts, and the generic certificate criterion from SourceIndex blocks b_0014 and b_0010. Excludes the special perturbed-star pattern system, its five cases, counting, and the final existential theorem.",
   "committed_at": "2026-07-22T11:30:05Z",
-  "constraints": "Preserve exactly the Finset (Finset (Fin n)) semantics of formal_target.lean. Do not specialize the generic criterion to the later T/L construction or alter the protected final theorem.",
+  "constraints": "The formal_target.lean semantics are exactly Finset (Finset (Fin n)); the generic criterion remains unspecialized to the later T/L construction, and the protected final theorem remains unaltered.",
   "context_refs": [],
   "contract_kind": "content",
   "created_at": "2026-07-22T08:53:20Z",
@@ -159,5 +159,7 @@
   "status": "committed",
   "success_criteria": "The predicate is compiler-confirmed with source-faithful semantics; the template family is well-defined and uniform; a proved criterion yields IsUniformMissingTraceFamily from the stated tau size and exclusion hypotheses; all public theorem-like outputs are proved-level satisfied.",
   "summary": "Accepted ready outcome in proved mode. The committed boundary provides exact IsUniformMissingTraceFamily and patternFamily definitions plus the proved generic tau-certificate theorem; its actual C/U/pattern/tau signature matches the downstream PerturbedStarCertificates consumer without extra assumptions or weakened conclusion. No unresolved prerequisite remains within this node.",
-  "version": 1
+  "task_completion_mode": "graph_proved",
+  "version": 1,
+  "execution_constraints": "Keep the implementation to about 6–12 important Lean declarations, including definitions and set/cardinality helper lemmas."
 }

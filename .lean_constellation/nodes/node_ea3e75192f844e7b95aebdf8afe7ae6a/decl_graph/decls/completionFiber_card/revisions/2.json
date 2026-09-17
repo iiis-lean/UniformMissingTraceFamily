@@ -1,12 +1,10 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [],
-    "anticipated_statement_dep_names": [],
     "base_revision": 1,
     "kind": "update",
     "objective": "Advance the independent planned one-fiber counting lemma to proved, preserving SourceIndex b_0009/article 48–50: if P is disjoint from U, the image of U.powersetCard (d+1-P.card) under A ↦ P∪A has card Nat.choose U.card (d+1-P.card). Use verified Finset.card_powersetCard and card_image_of_injective; this serves the deferred patternFamily_card_sum and all later cancellation counts.",
     "require_target_state_satisfied": true,
-    "reset_to_state": "planned",
+    "start_stage": "statement_nl",
     "summary": "Completed the intended update from planned to proved. Statement and proof checks passed for the exact binomial cardinality of a completion fiber under pattern/filler disjointness; the committed proved declaration now supplies the one-fiber count needed by patternFamily_card_sum and the source cancellation calculation.",
     "target_state": "proved"
   },
@@ -59,6 +57,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 0 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "f7418ccb46907048166a23ce9586f7046060f40d4b18f387bfe46c3ac8e9d915",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "proof_formal",
         "scan": {
@@ -76,7 +79,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.completionFiber_card",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/completionFiber_card.lean",
+          "repo_kind": "native",
+          "stage": "proof"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Finset.Card\nimport Mathlib.Data.Finset.Disjoint\nimport Mathlib.Data.Finset.Powerset\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `completionFiber_card`\n\nFor natural numbers n and d, a pattern `P : Finset (Fin n)`, and a filler `U : Finset (Fin n)` with\n`Disjoint P U`, the image of `U.powersetCard (d + 1 - P.card)` under `A ↦ P ∪ A` has cardinality\n`Nat.choose U.card (d + 1 - P.card)`.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 48–50\n\n## Statement dependencies\n\n- `Finset.powersetCard` from `Mathlib.Data.Finset.Powerset`\n\n## Proof outline\n\nLet `k := d + 1 - P.card` and abbreviate the completion map by `f A := P ∪ A`.  Prove `Set.InjOn f\n(↑(U.powersetCard k) : Set (Finset (Fin n)))`: if `A` and `A'` are members of this powerset-card\nFinset and `P ∪ A = P ∪ A'`, then `Finset.mem_powersetCard` gives `A ⊆ U` and `A' ⊆ U`.  Since\n`Disjoint P U`, elementwise extensionality (using `Finset.disjoint_left`) shows that removing `P`\nfrom the equal unions recovers `A = A'`.  This is a lightweight local set calculation; no new helper\nis needed.\n\nApply the restricted-domain cardinality transport `Finset.card_image_of_injOn` to obtain the\ncardinality of the displayed image as `(U.powersetCard k).card`, then rewrite it with\n`Finset.card_powersetCard`.  The global theorem `Finset.card_image_of_injective` is not applicable\ndirectly because `A ↦ P ∪ A` is not injective on arbitrary Finsets; the verified `InjOn` variant\nstates exactly the required domain-local fact.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, lines 48–50\n\n## Proof dependencies\n\n- `Finset.card_image_of_injOn` from `Mathlib.Data.Finset.Card`\n- `Finset.disjoint_left` from `Mathlib.Data.Finset.Disjoint`\n- `Finset.card_powersetCard` from `Mathlib.Data.Finset.Powerset`\n- `Finset.mem_powersetCard` from `Mathlib.Data.Finset.Powerset`\n-/\ntheorem completionFiber_card {n d : ℕ} (P U : Finset (Fin n)) (hPU : Disjoint P U) :\n    ((U.powersetCard (d + 1 - P.card)).image (fun A => P ∪ A)).card =\n      Nat.choose U.card (d + 1 - P.card) := by\n  rw [Finset.card_image_of_injOn]\n  · exact Finset.card_powersetCard _ _\n  · intro A hA A' hA' hEq\n    change P ∪ A = P ∪ A' at hEq\n    apply Finset.ext\n    intro x\n    constructor\n    · intro hxA\n      have hxU : x ∈ U := (Finset.mem_powersetCard.mp hA).1 hxA\n      have hxUnion : x ∈ P ∪ A' := by\n        rw [← hEq]\n        exact Finset.mem_union_right P hxA\n      rcases Finset.mem_union.mp hxUnion with hxP | hxA'\n      · exact False.elim ((Finset.disjoint_left.mp hPU) hxP hxU)\n      · exact hxA'\n    · intro hxA'\n      have hxU : x ∈ U := (Finset.mem_powersetCard.mp hA').1 hxA'\n      have hxUnion : x ∈ P ∪ A := by\n        rw [hEq]\n        exact Finset.mem_union_right P hxA'\n      rcases Finset.mem_union.mp hxUnion with hxP | hxA\n      · exact False.elim ((Finset.disjoint_left.mp hPU) hxP hxU)\n      · exact hxA\n"
     },
@@ -130,6 +141,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 1 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "cc5955f86d6406dbd1b5f76fb2a23a28bbc3c0a624b3d9358fa613a53b468ffd",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -154,7 +170,15 @@
           "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.completionFiber_card",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/completionFiber_card.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Finset.Powerset\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `completionFiber_card`\n\nFor natural numbers n and d, a pattern `P : Finset (Fin n)`, and a filler `U : Finset (Fin n)` with\n`Disjoint P U`, the image of `U.powersetCard (d + 1 - P.card)` under `A ↦ P ∪ A` has cardinality\n`Nat.choose U.card (d + 1 - P.card)`.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 48–50\n\n## Statement dependencies\n\n- `Finset.powersetCard` from `Mathlib.Data.Finset.Powerset`\n-/\ntheorem completionFiber_card {n d : ℕ} (P U : Finset (Fin n)) (hPU : Disjoint P U) :\n    ((U.powersetCard (d + 1 - P.card)).image (fun A => P ∪ A)).card =\n      Nat.choose U.card (d + 1 - P.card) := by\n  sorry\n"
     },

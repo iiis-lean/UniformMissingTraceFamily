@@ -1,12 +1,9 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [],
-    "anticipated_statement_dep_names": [],
     "base_revision": null,
     "kind": "create",
     "objective": "Formalize the construction-cardinality fact implicit in SourceIndex b_0009 and article/sections/02_proof.tex 41–51: for B : PerturbedStarBlocks n r, prove (perturbedStarCore B).card = 2 + 2 * r (up to definitionally equivalent Nat arithmetic), using B.a_ne_b, the T/L disjointness, anchor-avoidance fields, and B.card_T/B.card_L. This consumes the lower public PerturbedStarBlocks and perturbedStarCore definitions and serves perturbedStarFiller_card plus the later unpaired-pattern binomial upper index; do not add parameter-range hypotheses.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
     "summary": "DeclGraphRoundFlow failed for change perturbedStarCore_card@rev:1.",
     "target_state": "proved"
   },

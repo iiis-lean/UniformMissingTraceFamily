@@ -1,12 +1,9 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [],
-    "anticipated_statement_dep_names": [],
     "base_revision": null,
     "kind": "create",
     "objective": "Create the reusable Lean counting lemma implementing one summand of patternFamily, as required by SourceIndex b_0009/article/sections/02_proof.tex 48–50: if a finite pattern P is disjoint from filler U, the image of U.powersetCard (d + 1 - P.card) under A ↦ P ∪ A has cardinality Nat.choose U.card (d + 1 - P.card). Use Finset.card_powersetCard and Finset.card_image_of_injective, proving injectivity from disjointness. This consumes Mathlib support and serves patternFamily_card_sum and every later star/deleted/inserted pattern count; preserve the exact d+1-P.card index and add no construction-specific hypotheses.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
     "summary": "DeclGraphRoundFlow failed for change completionFiber_card@rev:1.",
     "target_state": "proved"
   },

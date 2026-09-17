@@ -1,4 +1,4 @@
-[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md)
+[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md) · [Complete graph](../DECLARATION_GRAPH.md)
 
 # `card_eq_of_mem_patternFamily`
 
@@ -10,9 +10,74 @@ Every member of a pattern family has cardinality d+1 when allowed patterns lie i
 - State: `proved`
 - Revision status: `committed`
 - Repository completion: `graph_proved`
-- Formal code: final proof projection
+- Compatibility `formal_code`: final proof projection
 
-## Lean code
+## Statement NL
+
+For natural numbers `n` and `d`, finite sets `C U F : Finset (Fin n)`, and an allowed pattern family `patterns : Finset (Finset (Fin n))`, assume:
+
+1. `C` and `U` are disjoint;
+2. every `P ∈ patterns` satisfies `P ⊆ C`;
+3. every `P ∈ patterns` satisfies `P.card ≤ d + 1`; and
+4. `F ∈ patternFamily d patterns U`.
+
+Then `F.card = d + 1`.
+
+In particular, the core/filler disjointness makes the cardinality of a represented member `F = P ∪ A` the sum of the allowed pattern size and its prescribed filler size, so every such member has the target uniform cardinality.
+
+## Statement Formal
+
+```lean
+-- lean-constellation: managed-imports-begin
+import UniformMissingTraceFamily.Main.PatternCriterion.Prelude
+import UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily
+-- lean-constellation: managed-imports-end
+
+-- lean-constellation: declaration-source-begin
+
+/--
+# lean-constellation target: `card_eq_of_mem_patternFamily`
+
+For natural numbers `n` and `d`, finite sets `C U F : Finset (Fin n)`, and an allowed pattern family
+`patterns : Finset (Finset (Fin n))`, assume:
+
+1. `C` and `U` are disjoint;
+2. every `P ∈ patterns` satisfies `P ⊆ C`;
+3. every `P ∈ patterns` satisfies `P.card ≤ d + 1`; and
+4. `F ∈ patternFamily d patterns U`.
+
+Then `F.card = d + 1`.
+
+In particular, the core/filler disjointness makes the cardinality of a represented member `F = P ∪
+A` the sum of the allowed pattern size and its prescribed filler size, so every such member has the
+target uniform cardinality.
+
+## Sources
+
+- Source `article/sections/02_proof.tex`, lines 3–17
+
+## Statement dependencies
+
+- `Main.PatternCriterion::patternFamily` → `patternFamily` from
+  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.patternFamily`
+-/
+theorem card_eq_of_mem_patternFamily {n d : ℕ} (C U : Finset (Fin n))
+    (patterns : Finset (Finset (Fin n))) (F : Finset (Fin n))
+    (hCU : Disjoint C U) (h_patterns_subset : ∀ P ∈ patterns, P ⊆ C)
+    (h_patterns_card : ∀ P ∈ patterns, P.card ≤ d + 1)
+    (hF : F ∈ patternFamily d patterns U) : F.card = d + 1 := by
+  sorry
+```
+
+## Proof NL
+
+Apply the proved `mem_patternFamily` characterization to `hF`. This yields a pattern `P ∈ patterns`, a filler `A ⊆ U`, the exact filler cardinality `A.card = d + 1 - P.card`, and `F = P ∪ A`.
+
+Use `h_patterns_subset P hP` to obtain `P ⊆ C`. The disjointness `Disjoint C U`, together with `P ⊆ C` and `A ⊆ U`, implies `Disjoint P A`: using `Finset.disjoint_left`, any element lying in both `P` and `A` would lie in both `C` and `U`, contradicting `hCU`.
+
+Rewrite `F` as `P ∪ A` and apply `Finset.card_union_of_disjoint` to get `F.card = P.card + A.card`. Substitute the exact filler-cardinality witness. Finally, use `h_patterns_card P hP : P.card ≤ d + 1` to simplify the natural-number expression `P.card + (d + 1 - P.card)` to `d + 1` (the standard truncated-subtraction cancellation, discharged in Lean by arithmetic normalization such as `omega`). Thus every member has cardinality `d + 1`, with no perturbed-star-specific assumptions.
+
+## Proof Formal
 
 ```lean
 -- lean-constellation: managed-imports-begin

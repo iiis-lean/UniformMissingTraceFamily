@@ -2,11 +2,12 @@
   "change": {
     "base_revision": 1,
     "kind": "update",
-    "objective": "Retry and prove the accepted rev1 statement unchanged: for n r, 2+2*r≤n implies ∃ PerturbedStarBlocks n r. The exact prior blocker is resolved because public PerturbedStarBlocks rev2 is now committed at declared and proof-policy satisfied; capture that current-node statement dependency/import. Implement source b_0008 line 32 by reserving two Fin n anchors and embedding two shifted r-ranges, proving the structure fields with the verified Fin.castLEEmb, Fin.natAddEmb, Finset.card_map, Finset.disjoint_map, and Finset.disjoint_range_addRightEmbedding facts. This theorem serves the later core/pattern family, five certificate cases, counting consumer, and public missing-trace theorem.",
+    "objective": "exists_perturbedStarBlocks revision 2 preserves the consumer theorem hroom : 2+2*r≤n → ∃ PerturbedStarBlocks n r with its accepted PerturbedStarBlocks revision 2 dependency. Its construction reserves two Fin n anchors and embeds two shifted r-ranges; Fin.castLEEmb, Fin.natAddEmb, Finset.card_map, Finset.disjoint_map, and explicit disjointness facts establish the structure fields. The theorem supplies data for the later core/pattern family, five certificate cases, counting consumer, and public missing-trace theorem.",
     "require_target_state_satisfied": true,
-    "reset_to_state": "specified",
-    "summary": "The existence theorem successfully advanced from specified to proof_planned with its consumer statement preserved and captured: hroom : 2+2*r≤n implies Nonempty (PerturbedStarBlocks n r), using declared provider PerturbedStarBlocks rev2. Statement and proof dependencies were captured, and the strict Proof Formal candidate passed Lean without sorry using Fin embeddings, cardinality, disjointness, and explicit anchor-avoidance arguments. It did not reach proved only because the shared batch terminated on the false sibling parameter theorem. No declaration-specific blocker or mismatch remains. Exact retry condition: advance this rev2 proof plan alone from proof_planned to proved with the checked proof and require proof-policy satisfaction.",
-    "target_state": "proved"
+    "start_stage": "statement_formal",
+    "summary": "The existence theorem advanced from specified to proof_planned with its consumer statement preserved and captured: hroom : 2+2*r≤n implies Nonempty (PerturbedStarBlocks n r), using declared provider PerturbedStarBlocks rev2. Statement and proof dependencies were captured, and the strict Proof Formal candidate passed Lean without sorry using Fin embeddings, cardinality, disjointness, and explicit anchor-avoidance arguments. It did not reach proved only because the shared batch terminated on the false sibling parameter theorem. No declaration-specific blocker or mismatch remains.",
+    "target_state": "proved",
+    "execution_constraints": "Advance this rev2 proof plan alone from proof_planned to proved with the checked proof and require proof-policy satisfaction."
   },
   "lean_decl_name": "exists_perturbedStarBlocks",
   "proof": {
@@ -91,6 +92,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 0 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "6e445ca9f03dba0dc6709b852b45700bfd508e35dc85c23859270edaedec5daf",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "proof_formal",
         "scan": {
@@ -108,7 +114,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.exists_perturbedStarBlocks",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Theorems/exists_perturbedStarBlocks.lean",
+          "repo_kind": "native",
+          "stage": "proof"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport Mathlib.Data.Fin.Embedding\nimport Mathlib.Data.Finset.Card\nimport Mathlib.Data.Finset.Disjoint\nimport Mathlib.Data.Finset.Image\nimport Mathlib.Data.Fintype.Card\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `exists_perturbedStarBlocks`\n\nFor natural numbers n and r, if `2 + 2*r ≤ n`, then there exists `PerturbedStarBlocks n r`.  The\nasserted data may be chosen by reserving two distinguished points of `Fin n` and embedding two\nconsecutive, shifted ranges of length `r`; consequently its two blocks have cardinality `r`, are\ndisjoint, avoid both distinguished points, and the distinguished points are distinct.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 32\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n\n## Proof outline\n\nSet `e : Fin (2 + 2*r) ↪ Fin n := Fin.castLEEmb hroom`.  Let `hT : 2 + r ≤ 2 + 2*r` and `hL : 2 + r\n+ r ≤ 2 + 2*r` be the elementary arithmetic bounds.  Define the two embeddings with their full\ntypes:\n```\nt : Fin r ↪ Fin (2 + 2*r) :=\n  (Fin.castLEEmb hT).comp (Fin.natAddEmb 2)\nl : Fin r ↪ Fin (2 + 2*r) :=\n  (Fin.castLEEmb hL).comp (Fin.natAddEmb (2 + r)).\n```\nThus `t i` has value `2 + i.val`, while `l j` has value `2 + r + j.val`.  Use the checked base\nfinset\n```\nB : Finset (Fin r) := Finset.univ\nT₀ := B.map t\nL₀ := B.map l\nT  := T₀.map e\nL  := L₀.map e.\n```\nAll maps are between explicitly displayed `Fin` types.  Take anchors `a := e ⟨0, by omega⟩` and `b\n:= e ⟨1, by omega⟩`.\n\nThe base-cardinality calculation is `B.card = r` by `simp [B, Finset.card_univ, Fintype.card_fin]`.\nApply `Finset.card_map` first to `B.map t` and `B.map l`, then to the two maps by `e`, yielding both\nrequired block-cardinality fields.  For `Disjoint T₀ L₀`, apply `Finset.disjoint_left.mpr`; if an\nelement belongs to both maps, map-membership gives `i j : Fin r` with `t i = l j`.  Comparing values\nproduces `2 + i.val = 2 + r + j.val`, which contradicts `i.val < r`.  Then use the `.mpr` direction\nof `Finset.disjoint_map e` to obtain `Disjoint T L`.\n\nFinally, prove `a ≠ b` by injectivity of `e` and the distinct values `0,1`.  For each\nanchor-avoidance field, eliminate map membership to an `i : Fin r` or `j : Fin r`, cancel `e` by\ninjectivity, and compare values: every `t i` or `l j` is at least `2`, so it cannot equal either\nanchor coordinate.  Package `a,b,T,L` and these fields in `PerturbedStarBlocks n r`.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, line 32\n\n## Proof dependencies\n\n- `Fin.castLEEmb` from `Mathlib.Data.Fin.Embedding`\n- `Fin.natAddEmb` from `Mathlib.Data.Fin.Embedding`\n- `Finset.card_map` from `Mathlib.Data.Finset.Card`\n- `Finset.disjoint_left` from `Mathlib.Data.Finset.Disjoint`\n- `Finset.disjoint_map` from `Mathlib.Data.Finset.Image`\n- `Finset.card_univ` from `Mathlib.Data.Fintype.Card`\n- `Fintype.card_fin` from `Mathlib.Data.Fintype.Card`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n-/\ntheorem exists_perturbedStarBlocks (n r : ℕ) (hroom : 2 + 2 * r ≤ n) :\n    Nonempty (PerturbedStarBlocks n r) := by\n  let e : Fin (2 + 2 * r) ↪ Fin n := Fin.castLEEmb hroom\n  have hT : 2 + r ≤ 2 + 2 * r := by omega\n  have hL : 2 + r + r ≤ 2 + 2 * r := by omega\n  let t : Fin r ↪ Fin (2 + 2 * r) :=\n    (Fin.natAddEmb 2).trans (Fin.castLEEmb hT)\n  let l : Fin r ↪ Fin (2 + 2 * r) :=\n    (Fin.natAddEmb (2 + r)).trans (Fin.castLEEmb hL)\n  let B : Finset (Fin r) := Finset.univ\n  let T₀ : Finset (Fin (2 + 2 * r)) := B.map t\n  let L₀ : Finset (Fin (2 + 2 * r)) := B.map l\n  let a : Fin n := e ⟨0, by omega⟩\n  let b : Fin n := e ⟨1, by omega⟩\n  have T₀_ge_two (x : Fin (2 + 2 * r)) (hx : x ∈ T₀) : 2 ≤ x.val := by\n    change x ∈ B.map t at hx\n    rw [Finset.mem_map] at hx\n    rcases hx with ⟨i, hiB, hi⟩\n    have hval := congrArg Fin.val hi\n    simp [t] at hval\n    omega\n  have L₀_ge_two (x : Fin (2 + 2 * r)) (hx : x ∈ L₀) : 2 ≤ x.val := by\n    change x ∈ B.map l at hx\n    rw [Finset.mem_map] at hx\n    rcases hx with ⟨j, hjB, hj⟩\n    have hval := congrArg Fin.val hj\n    simp [l] at hval\n    omega\n  refine ⟨{\n    a := a\n    b := b\n    T := T₀.map e\n    L := L₀.map e\n    a_ne_b := ?_\n    card_T := ?_\n    card_L := ?_\n    T_disjoint_L := ?_\n    a_not_mem_T := ?_\n    b_not_mem_T := ?_\n    a_not_mem_L := ?_\n    b_not_mem_L := ?_ }⟩\n  · intro hab\n    simpa [a, b, e] using congrArg Fin.val (e.injective hab)\n  · simp [T₀, B]\n  · simp [L₀, B]\n  · apply (Finset.disjoint_map e).mpr\n    rw [Finset.disjoint_left]\n    intro x hxT hxL\n    change x ∈ B.map t at hxT\n    change x ∈ B.map l at hxL\n    rw [Finset.mem_map] at hxT hxL\n    rcases hxT with ⟨i, hiB, hi⟩\n    rcases hxL with ⟨j, hjB, hj⟩\n    have hval := congrArg Fin.val (hi.trans hj.symm)\n    simp [t, l] at hval\n    omega\n  · intro ha\n    rw [Finset.mem_map] at ha\n    rcases ha with ⟨x, hx, hxa⟩\n    have hxa' : x = ⟨0, by omega⟩ := by\n      apply e.injective\n      simpa [a] using hxa\n    have hval : x.val = 0 := by\n      simpa using congrArg Fin.val hxa'\n    have htwo := T₀_ge_two x hx\n    omega\n  · intro hb\n    rw [Finset.mem_map] at hb\n    rcases hb with ⟨x, hx, hxb⟩\n    have hxb' : x = ⟨1, by omega⟩ := by\n      apply e.injective\n      simpa [b] using hxb\n    have hval : x.val = 1 := by\n      simpa using congrArg Fin.val hxb'\n    have htwo := T₀_ge_two x hx\n    omega\n  · intro ha\n    rw [Finset.mem_map] at ha\n    rcases ha with ⟨x, hx, hxa⟩\n    have hxa' : x = ⟨0, by omega⟩ := by\n      apply e.injective\n      simpa [a] using hxa\n    have hval : x.val = 0 := by\n      simpa using congrArg Fin.val hxa'\n    have htwo := L₀_ge_two x hx\n    omega\n  · intro hb\n    rw [Finset.mem_map] at hb\n    rcases hb with ⟨x, hx, hxb⟩\n    have hxb' : x = ⟨1, by omega⟩ := by\n      apply e.injective\n      simpa [b] using hxb\n    have hval : x.val = 1 := by\n      simpa using congrArg Fin.val hxb'\n    have htwo := L₀_ge_two x hx\n    omega\n"
     },
@@ -164,6 +178,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 1 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "0ed2919b437192301b708885e5ebf5f56568454db4327f143708c1fcb3b46ba4",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -188,7 +207,15 @@
           "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.exists_perturbedStarBlocks",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Theorems/exists_perturbedStarBlocks.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `exists_perturbedStarBlocks`\n\nFor natural numbers n and r, if `2 + 2*r ≤ n`, then there exists `PerturbedStarBlocks n r`.  The\nasserted data may be chosen by reserving two distinguished points of `Fin n` and embedding two\nconsecutive, shifted ranges of length `r`; consequently its two blocks have cardinality `r`, are\ndisjoint, avoid both distinguished points, and the distinguished points are distinct.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 32\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n-/\ntheorem exists_perturbedStarBlocks (n r : ℕ) (hroom : 2 + 2 * r ≤ n) :\n    Nonempty (PerturbedStarBlocks n r) := by\n  sorry\n"
     },

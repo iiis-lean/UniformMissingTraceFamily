@@ -1,4 +1,4 @@
-[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md)
+[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md) · [Complete graph](../DECLARATION_GRAPH.md)
 
 # `perturbedStarFamily`
 
@@ -10,9 +10,17 @@ The explicit uniform family generated from the perturbed-star core patterns and 
 - State: `declared`
 - Revision status: `committed`
 - Repository completion: `graph_proved`
-- Formal code: final statement projection
+- Compatibility `formal_code`: final statement projection
 
-## Lean code
+## Statement NL
+
+For natural numbers d, n, and r and construction data `B : PerturbedStarBlocks n r`, `perturbedStarFamily d B` is the finite family of finite subsets of `Fin n` defined exactly by
+
+`patternFamily d (perturbedStarPatterns d B) (perturbedStarFiller B)`.
+
+Equivalently, it is the generic exact-cardinality completion of the accepted perturbed-star core patterns using the complementary filler. This definition adds no parameter hypotheses: bounds on d, s, and n are used only later to construct suitable data and certify the family, not to change its members.
+
+## Statement Formal
 
 ```lean
 -- lean-constellation: managed-imports-begin
@@ -56,6 +64,14 @@ def perturbedStarFamily (d : ℕ) {n r : ℕ}
     (B : PerturbedStarBlocks n r) : Finset (Finset (Fin n)) :=
   patternFamily d (perturbedStarPatterns d B) (perturbedStarFiller B)
 ```
+
+## Proof NL
+
+Not recorded.
+
+## Proof Formal
+
+Not recorded.
 
 ## Statement dependencies
 

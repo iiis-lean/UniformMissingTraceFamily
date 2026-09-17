@@ -4,15 +4,15 @@
       "disposition": "include",
       "path": ".gitignore",
       "reason": "portable_project_or_business_truth",
-      "sha256": "06f7c71341a353f2a99d5914d3b2324aa371988613ce9d65fdb01b37dda645af",
-      "size_bytes": 392
+      "sha256": "636b433981ff45f03c79feafc4227eecabd361e0c2a4444487244e495732fcff",
+      "size_bytes": 277
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/index/nodes.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "40064af8253f3526239a930dcd14adab8145bcd5a50467eaabe7eccd1bd872d0",
-      "size_bytes": 2162
+      "sha256": "cb1afc954dd9a251f8b0467bf5b4a3c7f737db8187aa0b591349d22271623f53",
+      "size_bytes": 2073
     },
     {
       "disposition": "include",
@@ -23,17 +23,10 @@
     },
     {
       "disposition": "include",
-      "path": ".lean_constellation/indexes/mathlib_candidates.json",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "0ad0c19af8a744ba381ce94bde65085f2497b508800ebd1b56cc55af4f65ecaa",
-      "size_bytes": 541732
-    },
-    {
-      "disposition": "include",
       "path": ".lean_constellation/nodes/node_2094ae1c4bd24610aba7ac7ae066fc45/contracts/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "dd648f167a41f65290af54a42db5016135f86f4351df1c213889281630ae1d1b",
-      "size_bytes": 7569
+      "sha256": "016fac3fd71f6abbfef7e95ea9a7bcef303821f26567a7e12112b7018fb82270",
+      "size_bytes": 7663
     },
     {
       "disposition": "include",
@@ -46,8 +39,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_2094ae1c4bd24610aba7ac7ae066fc45/decl_graph/decls/IsUniformMissingTraceFamily/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "8e77aa099393f2186077b5d56258f3be4f4862b4a1e6856b26d973b918e8986e",
-      "size_bytes": 4413
+      "sha256": "2c41b9bda4f1c4ab40b6a1147f186327bfce45cfd5b1d2a3ce3f01d212aee7d5",
+      "size_bytes": 4972
     },
     {
       "disposition": "include",
@@ -60,8 +53,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_2094ae1c4bd24610aba7ac7ae066fc45/decl_graph/decls/card_eq_of_mem_patternFamily/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "2b0e89cf56395a56d89a562ebabc020446d155b207062957d7d1fde468bef48f",
-      "size_bytes": 13908
+      "sha256": "acbee728eac41bd110b86b548b5f95ff1a050eeeebb659d19ff5cac641280992",
+      "size_bytes": 15070
     },
     {
       "disposition": "include",
@@ -74,8 +67,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_2094ae1c4bd24610aba7ac7ae066fc45/decl_graph/decls/mem_patternFamily/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "9253ba535ff84becc7d44fba4809b1711d0731bca8ece28fdf405245588da6c4",
-      "size_bytes": 13847
+      "sha256": "4883c5de5cf18306b8a4c69ff92fb69330fe9ffbbeb3a81b3ec31c2570e7953a",
+      "size_bytes": 14965
     },
     {
       "disposition": "include",
@@ -88,8 +81,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_2094ae1c4bd24610aba7ac7ae066fc45/decl_graph/decls/patternFamily/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "4895942abc2dfe238bcdb4e95de755b82171f0806476d62e508aeccb02ebe5e5",
-      "size_bytes": 5194
+      "sha256": "edf333c616c9d85e6cf37db008dd482f8fdbfa98810a265b10a4a4bb024cb192",
+      "size_bytes": 5725
     },
     {
       "disposition": "include",
@@ -102,64 +95,64 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_2094ae1c4bd24610aba7ac7ae066fc45/decl_graph/decls/patternFamily_isUniformMissingTraceFamily/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "904ac0ec49c0bbea1fd38902f95ab32e456bbae241dd18b6eb4d9edf5240aa7b",
-      "size_bytes": 28977
+      "sha256": "b6879e1d30a594634f5dd955fda9dc8e0097d10c350e9828285b7cbb4f726ad8",
+      "size_bytes": 29330
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_2094ae1c4bd24610aba7ac7ae066fc45/decl_graph/decls/patternFamily_isUniformMissingTraceFamily/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "d71397b39665751921c0fe937594e8816838c03dc152a3249ab60f86970ad933",
-      "size_bytes": 25700
+      "sha256": "585ebe1c795796eefadb3c2bcb3bf35e1094e8e53955fabdde312b2e10a7a978",
+      "size_bytes": 26468
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_2094ae1c4bd24610aba7ac7ae066fc45/decl_graph/index.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "8f9d7bd55788ad2fe7b51677bff69829cba2b9887b82b8e3c2db8219ce6f0224",
-      "size_bytes": 772
+      "sha256": "1e66dbda9de81e699d5b53a5ed0d8aa6e1264e1ee82fe4ac7a8e3dde61cf829f",
+      "size_bytes": 632
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_2094ae1c4bd24610aba7ac7ae066fc45/decl_graph/rounds/round_0081e774590c471f89e9be97cdb0fd7b.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "65cab1180069fa2632c8d1088a6c8f8275b799cc920b2d3ddd2192fa96522cbd",
-      "size_bytes": 1651
+      "sha256": "bff4a4a991183f05b92c4d9c8005ad8fb433f37b3217c86c13db887e8fbd4823",
+      "size_bytes": 1594
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_2094ae1c4bd24610aba7ac7ae066fc45/decl_graph/rounds/round_4877ce132fae47908f6a6f142b659176.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "42a9695977b801388c229543e59174b97d8aeb716aed48ff81644c0db8a3b26f",
-      "size_bytes": 1768
+      "sha256": "818b33535f84341fa889f31bc8f403fca71c39d92ef1ac242c38d25552da2e6a",
+      "size_bytes": 1540
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_2094ae1c4bd24610aba7ac7ae066fc45/decl_graph/rounds/round_5da9f3e5b2904f439b68f8cea0e1164c.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "d4fd90934248c939a4ba71530a4d597fc1306d17e81c91ee379c86c31aa1d517",
-      "size_bytes": 1785
+      "sha256": "82c4e40365081dc3a1c71a831ec3277c943c6b6660a2ac815298a11e7695515a",
+      "size_bytes": 1701
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_2094ae1c4bd24610aba7ac7ae066fc45/decl_graph/rounds/round_76fb5796e4724045b87d4e46e633f4d3.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "3ddde1985810362881dea0ed9d8d5670e2672bd25e2adbd5cc61ba469edbafe9",
-      "size_bytes": 1768
+      "sha256": "166c8b898d1f41ecc843032beae9f3ad7fbd3ce3c981f346a51caa6a93b63913",
+      "size_bytes": 1598
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_2094ae1c4bd24610aba7ac7ae066fc45/decl_graph/rounds/round_e8400acb3fd04a7396a2309708d21819.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "b4e83d7e091fa6590b7682857d0dbdab55c4d3d0364e1b7978dc16db6f0f7ed0",
-      "size_bytes": 1940
+      "sha256": "6095756523901ed9057215019608ff65260f493a513921241465366ce89d2a1d",
+      "size_bytes": 1853
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_2094ae1c4bd24610aba7ac7ae066fc45/decl_graph/strategies/strategy_d509811e109f4266a85f656d30c12936.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "31027ad329986e2ccd93967e318ffe9094e45281b92076512619f7484d29bb93",
-      "size_bytes": 1927
+      "sha256": "f666e0a6c91d4bf6e847d8b97b0165975691d18b31e1d5a2827b385c14a7eddf",
+      "size_bytes": 1957
     },
     {
       "disposition": "include",
@@ -172,8 +165,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/contracts/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "31c2679a79c6fac3e67887ca9fb47324f96221abd829315d37566b81a5ebb4fe",
-      "size_bytes": 12311
+      "sha256": "8779c2e4ba28f2a990081507db01d0939f4b552972da4646388e51d7222f60ee",
+      "size_bytes": 12353
     },
     {
       "disposition": "include",
@@ -186,15 +179,15 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/decls/perturbedPatternA_injOn/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "5d6aea035aa5e0c59fb352882be5a077296c02d30160d27f24357bf192461cea",
-      "size_bytes": 1020
+      "sha256": "bf727bb5d7ccb35adc8da549220a35bcf8a1b9b2ad73a9debf8a69d89671db49",
+      "size_bytes": 871
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/decls/perturbedPatternA_injOn/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "94e86d2c1c8110d32cd91b7bfafae9a7c26da77546180213c92443286ce59274",
-      "size_bytes": 12427
+      "sha256": "4917ff058c85ab4cd72d0ff2ebf01e18a49d7c4fdb31defbdc8909432d06c023",
+      "size_bytes": 13526
     },
     {
       "disposition": "include",
@@ -207,15 +200,15 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/decls/perturbedPatternA_inter_L/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "294d4d1a877013926bda5a37a08ea75c0de1ec2c46853189cb7fe0be674f2fc0",
-      "size_bytes": 991
+      "sha256": "bd10cc0c93b423de4d4c030833cb3b28c93e09615bfc75617b0b741831d21b2c",
+      "size_bytes": 881
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/decls/perturbedPatternA_inter_L/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "aaffb18e4d3d2412ba7a44fb47936a3ecdf069e2f2cd1e5d58471c33d2d17437",
-      "size_bytes": 12454
+      "sha256": "67c6ad31e3d191d73cfbc4dee4b6bf65a8ae78f7a44488d48149e7e3087d6737",
+      "size_bytes": 13600
     },
     {
       "disposition": "include",
@@ -228,15 +221,15 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/decls/perturbedPatternB_injOn/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "32f1336ec7dd344f58fa3289cc29675c6907cdd542859c77aeea591acc48ac66",
-      "size_bytes": 1030
+      "sha256": "39e0b0d59c5fc98dffca5919cbe51ca58a28d98b4eaf6781321196baecc6cba2",
+      "size_bytes": 881
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/decls/perturbedPatternB_injOn/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "1caf15a95a2f6c670ae12b905305660468bd688fffe51691d1d539eaf8ea042a",
-      "size_bytes": 12423
+      "sha256": "5a914022c5302115a3c2726cf8fbbaaac1de39af9b7139708fe1285baab78e6b",
+      "size_bytes": 13522
     },
     {
       "disposition": "include",
@@ -249,15 +242,15 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/decls/perturbedPatternB_inter_L/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "0b072b7f224ed2287e32d84267e9ec7a3307a7e03cf0a4d5576223b60a4b554c",
-      "size_bytes": 983
+      "sha256": "f58a08fbf77a0744c485944b3450295e5fb581b399e65c556bf9eff561741323",
+      "size_bytes": 873
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/decls/perturbedPatternB_inter_L/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "ab1318341de7ee89b843d57ba9647274e7ec5c05944f08b2396c3034c07bde74",
-      "size_bytes": 12469
+      "sha256": "61dc827980a44ea01df2049937acacf2e4b03526ae3aea52d35d8cc4db9e8bc3",
+      "size_bytes": 13615
     },
     {
       "disposition": "include",
@@ -270,15 +263,15 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/decls/perturbedPatternB_properImage_eq_erase/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "4bcdced026e0c6296d2cc9c9b0f1f2885824d3760633a94aca530b853819dc5e",
-      "size_bytes": 3788
+      "sha256": "a17a053b92e44267024ea2ee87162d5562c467aa379fb27b68a4c55e0842e39d",
+      "size_bytes": 3593
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/decls/perturbedPatternB_properImage_eq_erase/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "a3dc29ff338116815b365d7da50def7dfc7d65c64b269f762652d1ce570a23b9",
-      "size_bytes": 16871
+      "sha256": "ab8cbd63c8254a7990ae5604bddb4402e1ae9cefcfca1c7fdf0ab183ace7f5ac",
+      "size_bytes": 17984
     },
     {
       "disposition": "include",
@@ -291,8 +284,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/decls/perturbedPattern_card_eq/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "2f15d45587a3be4aaa2a837581b281e2c0e42739d133732081362a2d479deec5",
-      "size_bytes": 13688
+      "sha256": "63cc92f7529b05fc71a6c7318e667f157ee639f3d479ee6e841fb1f5cad5bd5e",
+      "size_bytes": 14800
     },
     {
       "disposition": "include",
@@ -305,15 +298,15 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/decls/perturbedPattern_chooseWeight_eq/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "f2ed514e9c4e2c44a6a3ae1a9f9f0eec2a0fd05f547c847254814aa4e1ce882f",
-      "size_bytes": 3619
+      "sha256": "068ce9cffe93d6e8158ab6c77065cfba2b1cba587c87cc525a345c3dcf7fffaf",
+      "size_bytes": 3471
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/decls/perturbedPattern_chooseWeight_eq/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "9bd7d83286a4c7917321d159931479f7d26668a7bfde0f2e95c38de9254572b7",
-      "size_bytes": 12804
+      "sha256": "4df23b2e2d0e62b6b94479fdce9f936e26d5046c95336c1add12fd239c03ccb8",
+      "size_bytes": 13940
     },
     {
       "disposition": "include",
@@ -326,8 +319,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/decls/perturbedPattern_properDomain_eq_erase/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "1b59909892b2cd68c418945a86533013f7000475fa1ca1f564b9fb159c88828f",
-      "size_bytes": 13151
+      "sha256": "e27e0899cd0a768740c7097b7485aa61d1fdfb0d083d22469b2107a5e25e2daa",
+      "size_bytes": 14319
     },
     {
       "disposition": "include",
@@ -340,78 +333,78 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/decls/perturbedPattern_properWeights_add_full_eq_fullWeights/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "b90048ccd6075b6e83db75e333e72f6a8f32244ef2c7f2de754649f1a43266cf",
-      "size_bytes": 5562
+      "sha256": "fb36a925a1d2c8724cf0c50d8b2460bb5213c9a6ad8f462f4df981db08c29fa3",
+      "size_bytes": 5292
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/decls/perturbedPattern_properWeights_add_full_eq_fullWeights/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "5e54bf5fa825e570b9371018344e00e6f5a88f25cec8007b85eeb19d67104869",
-      "size_bytes": 23155
+      "sha256": "08e316ff161877e27cc443772b214ec76c51c9690ef953389d566af87a841c99",
+      "size_bytes": 24257
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/index.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "d72f2286a7aeeed6866e7d4832d0857495fd92581399d8bf9d1a1186ace51cfb",
-      "size_bytes": 1122
+      "sha256": "8a011b749dccccc360b6cc321eb0f56799a658f19f33c73c2edb9163fdc85715",
+      "size_bytes": 970
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/rounds/round_034e0c72cd6f41d88677ff930697cd00.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "43decc4d2f959a915a9db1e47166f75038fd367672111b3e457098dbd6c78a77",
-      "size_bytes": 2354
+      "sha256": "e4f12117c91f7ee4d30c34cd56a769732b41af898f388671299e34bad0a7db28",
+      "size_bytes": 2328
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/rounds/round_16343be575ba418cba0aad22e93fd348.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "46a321e4091efcbb6cf7c9cca51a97877644f1b2927ff4bcd4527c8949cc096c",
-      "size_bytes": 2154
+      "sha256": "81e5cb14058fb9d60eff3cad26c00d95f1e7a817ecd190c8f9f9b379691c5370",
+      "size_bytes": 2128
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/rounds/round_202fa79c6c844b77bb52fca2037ecf7c.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "d5e358558d4865c99347b7e79688ea5569ce35e507d3065843fe1614e8551ca1",
-      "size_bytes": 2007
+      "sha256": "20e41238a7899675f73c6b4f1f9b74a02aa42286b5e6c2fb383ad11603f94f8b",
+      "size_bytes": 1981
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/rounds/round_5ef0e250f1c44e3eaadd3e793c7c53d0.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "31f75ee75d5358b8212e0be1d669622311fe38b4c3699daddbfabb5f3b16deea",
-      "size_bytes": 2108
+      "sha256": "1f4b81097cca5d0bacea11bb75b3e73a6c83a806d8723b5ac6bd13411fab620b",
+      "size_bytes": 2082
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/rounds/round_7a1bd8feec674ce7b7fb8d8b3b609987.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "8a221652af28b63f7b348d76ed52f29965507a369a220245c66cb153983e8b8f",
-      "size_bytes": 2116
+      "sha256": "97f684d8b646af6f3c88d8075c2b4ad48b878cd3ba99ad1660112741e78ac4f8",
+      "size_bytes": 2090
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/rounds/round_7c10aff3ca874174b427563ae0660549.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "30c9ce7a93e6f97e82608ebf20ce061d4f35dfcb786b99f4e47a824091a48cd6",
-      "size_bytes": 1854
+      "sha256": "9cfe67db2c44fa4ff9cc3d1afc9a0f13712db6d1611bf2748952f892e451cac7",
+      "size_bytes": 1828
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/rounds/round_d8966ad85f6e4360bc20cae55b094f97.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "1ea5d32ba94f292f6548a22c401d8e632724ca06e9d54ee5edc9315afed15103",
-      "size_bytes": 1984
+      "sha256": "3af7644d70c08c150d9ed7844239f1b918047afebbc3861df902d5f8e1bdbd46",
+      "size_bytes": 1958
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_608263422e2a4cd286c74a9e604191c6/decl_graph/rounds/round_ff476b6c5b6f429a9911c05595653405.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "e24c1e00d09124cfec08798666e4674d179dad6814c6534c9c6432abc3d95fc7",
-      "size_bytes": 1859
+      "sha256": "5c8322b04a99271d45a07ac951fc379d828a106f2e560cdd28101fae6c4ca60f",
+      "size_bytes": 1833
     },
     {
       "disposition": "include",
@@ -431,15 +424,15 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_8178f6ab0b0449cf94f3be8b2fb3ccf5/contracts/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "7386c83c1ef2c3a7fdc43f074c8dc43857b300db5cdbb9fc6b434e64e45b9f77",
-      "size_bytes": 3567
+      "sha256": "61712b1fee5454071c0aaacd651124c4d829f4e4726d335e3c5cd2325bc80e20",
+      "size_bytes": 3652
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_8178f6ab0b0449cf94f3be8b2fb3ccf5/contracts/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "5ec354fd342e2dfd1d62667e762d5f9d4c050727eb156bb472994160592c8f1a",
-      "size_bytes": 3573
+      "sha256": "dadcdeb45fa45c3b4f4f23b60cf58ac177872bb79a3681a13a8bc941dba57337",
+      "size_bytes": 3600
     },
     {
       "disposition": "include",
@@ -452,8 +445,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/contracts/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "a72c0c2bab71214a2458f5d7fe8e4c0824e4385281d7d573c49622af7bc578b5",
-      "size_bytes": 8613
+      "sha256": "8b8a8625ffa270e68682f1f44c0bf0c8f5b6fd9d9aa29626571bd25958c9291f",
+      "size_bytes": 8736
     },
     {
       "disposition": "include",
@@ -466,15 +459,15 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/PerturbedStarBlocks/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "4fe8d1db2f2f8cd990015f4498a3c61fe3648ac2c9bad54090444a4172135cac",
-      "size_bytes": 4878
+      "sha256": "7e7a4672474b8571eae4d78de287825b98dae8153810c607acdd554ae580e384",
+      "size_bytes": 5415
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/PerturbedStarBlocks/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "9be91eede152994c7f29abc273366619a87d05a586a04c029656a1ead78df45c",
-      "size_bytes": 4798
+      "sha256": "26084f8418c4ddfa108a3e07d14516054b9ce4e11ae761dbb8f30ed76d0e5e10",
+      "size_bytes": 5256
     },
     {
       "disposition": "include",
@@ -487,22 +480,22 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/exists_perturbedStarBlocks/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "396305feb5066511b3acffc43f4eea35d2aae3d57a37d18667fd0b44a5530162",
-      "size_bytes": 2868
+      "sha256": "e45702640f452f8b7909bd9674d55ddb22ab5bc7bc190051ca58907a09165d49",
+      "size_bytes": 2806
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/exists_perturbedStarBlocks/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "1b889292a861ab14895d5e584999bf685d130890a088681b220f1dbcaba938fc",
-      "size_bytes": 18982
+      "sha256": "d39f3e01ded06b2adb65e73cf5a100d58aaaeab9700caa032d0a03b1434bb7c3",
+      "size_bytes": 20035
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/exists_perturbedStarBlocks/revisions/3.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "abb5eea2b76596252d422166eb4038a286b4b4da7221101a2713ccc41b6b902e",
-      "size_bytes": 18610
+      "sha256": "79643d888c97d1708d4a0ece916f130dae8c31f0d73cacad39afad10da18add2",
+      "size_bytes": 19730
     },
     {
       "disposition": "include",
@@ -515,8 +508,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStarCertificate_addedProper/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "f61b0a853179e0233f1476f7b42b52d5f10f2dbff15c4f2c400332bb45afbac2",
-      "size_bytes": 29373
+      "sha256": "54327eff5fad526e64d02cc8042571447f0d0bb8dfc9c9a0cef50f8062da66b9",
+      "size_bytes": 30603
     },
     {
       "disposition": "include",
@@ -529,15 +522,15 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStarCertificate_finalAdded/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "62cae10eef658630820b9564cc818afb8e0ec47394a3ae74e818359cfb23df2c",
-      "size_bytes": 15551
+      "sha256": "3f230b8f0bded3c96a712d30d652146f649e578a0ac313677dc81a32ccffeb5c",
+      "size_bytes": 15472
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStarCertificate_finalAdded/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "21ca448d4ab5a1ee4a85116aa0d1f90c21778ede840c9461c65894834295107b",
-      "size_bytes": 26706
+      "sha256": "44a5a5577d7bde9c0c5951d34511f4e864ec622235f4c93ddbe3332154e1317c",
+      "size_bytes": 27675
     },
     {
       "disposition": "include",
@@ -550,8 +543,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStarCertificate_largeAvoiding/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "02a7617a33c52270dc78eeaa0e4ca6a76ad633bee2c4bef62af3e0c43c991fc5",
-      "size_bytes": 32683
+      "sha256": "a67acbef1083622b71b80286b26493431dcb49bcc1d8d2a6bddf47da6c88adcc",
+      "size_bytes": 33164
     },
     {
       "disposition": "include",
@@ -564,8 +557,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStarCertificate_largeMeeting/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "e070842f8940ca26339a5cdc552ff4521bfb2b4943f676c25245caf5b1114625",
-      "size_bytes": 30026
+      "sha256": "956941d77b839cdf7c016585d78d34993d358fcfd173a480b55f0442b8e0c3e2",
+      "size_bytes": 30536
     },
     {
       "disposition": "include",
@@ -578,8 +571,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStarCertificate_smallStar/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "bc1f4791c264613505429ddb45a0619ea45f9a359460cae46a96024ac2479514",
-      "size_bytes": 24411
+      "sha256": "7a3e7f1434234642b3b7af532201a08c41b3672c5fe78c2dde7aaba9b68304b7",
+      "size_bytes": 25126
     },
     {
       "disposition": "include",
@@ -592,8 +585,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStarCore/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "eea0db3422e29fd64a1bb96b65b2420b771f9e31b17432b17c6ef2d631377820",
-      "size_bytes": 5265
+      "sha256": "1d975d791b5f13803465a00039b4c75b6dbc8adeaff0fdb774e43def550b05c4",
+      "size_bytes": 5681
     },
     {
       "disposition": "include",
@@ -606,8 +599,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStarFamily/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "82c74a6a81f261520723acd5eced7388fa9633fe11388c707becd18876b50aec",
-      "size_bytes": 7918
+      "sha256": "d89d3de5af503fc3d6110cf04df2b0889449044893939705e4fb0195563df153",
+      "size_bytes": 8123
     },
     {
       "disposition": "include",
@@ -620,8 +613,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStarFiller/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "c5afb74e500f0cc2b7edf966a7124fdda9bcc31739a175ae8b996dc2cb120f7b",
-      "size_bytes": 5719
+      "sha256": "7bb74673611ba528e2dbb80e0d80afdee941c0d106688b27cccd2124b11cc113",
+      "size_bytes": 6161
     },
     {
       "disposition": "include",
@@ -634,8 +627,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStarFinalIntersection_excluded/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "7c020a0e5e9ec3854714dcee22257561fb0fbbbeb98b8da8df4dfc804fe8cf45",
-      "size_bytes": 21717
+      "sha256": "c61b32939ce55783dbd0bbe7be30052e83f130190c1ff3ec71a9af5773c2d9f4",
+      "size_bytes": 22412
     },
     {
       "disposition": "include",
@@ -648,22 +641,22 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStarParameterBounds/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "d189d14739b9aaa15454b96e843d70f9ff3081cbc4c514404972589572eb4b81",
-      "size_bytes": 5771
+      "sha256": "54d9918925c8bfa1cba276eca0fb99806d1674e794a9563a6bb722a61af91429",
+      "size_bytes": 6158
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStarParameterBounds/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "d4c0b4c197e0ab9d341dd52e6443b069296fbb8dd9475c3299a1073df692d674",
-      "size_bytes": 7230
+      "sha256": "8f9a44bbe246b5d79968bbb2e97bd6a7a928458830ff0f531d2dbdfeaa400983",
+      "size_bytes": 7791
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStarParameterBounds/revisions/3.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "de2b923e5e53fad6926814a77b97a06a857af3cbcc66029293ba9b1157de0a17",
-      "size_bytes": 11255
+      "sha256": "5e42c8ea8163d4bd2a5e8f9ce67c42b38dfaee5064b198f6cb3ae3ecc09552b8",
+      "size_bytes": 12580
     },
     {
       "disposition": "include",
@@ -676,8 +669,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStarPatterns/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "eb9e27df7e0ca5da5e65dc837dd2c803778f0a36d27263ca39c5602ccdd32088",
-      "size_bytes": 7586
+      "sha256": "216b44939415888d6a035ff2b718fd957afc8e80c27663fa46f19984e769f323",
+      "size_bytes": 7850
     },
     {
       "disposition": "include",
@@ -690,8 +683,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStarTau/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "8684f0b0986c458f2e13e079997f752babf465bad36d5a4126449f623d8e0076",
-      "size_bytes": 9482
+      "sha256": "8a6556d526456e0fae4107901c1e425cafaf00fbaddc47efdef9744f2e4e873b",
+      "size_bytes": 9776
     },
     {
       "disposition": "include",
@@ -704,190 +697,190 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStar_isUniformMissingTraceFamily/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "7c83dd56a9e4aa4b6379519b73ac14cae977d4ba37e39c0f8239e6e4bcf1cfd7",
-      "size_bytes": 2985
+      "sha256": "dc1df5029610ab057901aa0a9ae709f3d6f8a793b3da2f5679dabdbf57d307f4",
+      "size_bytes": 2334
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStar_isUniformMissingTraceFamily/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "e01e617f6d4019b35f28194bdd6b28af4a800b927291e1f3b8c33a94002ea7ef",
-      "size_bytes": 5774
+      "sha256": "f09435a3fb94994765e3290c77ec36f8e4482b9366c5393e8342d581cd6c014a",
+      "size_bytes": 5324
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStar_isUniformMissingTraceFamily/revisions/3.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "04036e52eeb1f85d63e0413ab8adf393035cf5abcf20a4bbdf0e7d29aca3f671",
-      "size_bytes": 16803
+      "sha256": "dee5d5602e9e18994bf07b7bcb438ec91d6db303bbc305d0a11bfda6cb0e2382",
+      "size_bytes": 16996
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/decls/perturbedStar_isUniformMissingTraceFamily/revisions/4.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "3633708ee0f9b2cbaab6ff7be0107100caf4668500b51a4b7567c24fea677610",
-      "size_bytes": 26272
+      "sha256": "2e265ed3c24d584b56272ea1d3aa10423ca42829ffdc1d84a644b96d39f3ede2",
+      "size_bytes": 26982
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/index.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "bedfaa2c094b56d6678da3aa710b8d11f331b6684f1d1ecc8df0e71112f7d54a",
-      "size_bytes": 1907
+      "sha256": "de333bd28414743508e56be8d96e30cdd1d5d8da1c770d33ed6793fc7b65eb6d",
+      "size_bytes": 1756
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_05bc55b7b70f4ca882d8ea5b8a13fb19.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "0a534fb7e3c6e83dbcd7f1ecabb9355186968938959808aefaf4deb8e2574bb9",
-      "size_bytes": 1978
+      "sha256": "a19856beaf30d8598421c3b286c78ff1a23b42238cbf18ce8c164b1036a3ef65",
+      "size_bytes": 1986
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_08445989329c44c48fe8d127e225781b.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "62f5cf62184f6a55a1e0024d761ef86e61a1123bae1af19aaeabdc9c81f992ce",
-      "size_bytes": 1690
+      "sha256": "ff45291b561b7381772e98d09baa072ed6e4f4a9f2942815789e22ea33443edb",
+      "size_bytes": 1632
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_13d2892b652c4462b5534a250aabe3bf.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "f946928f2d9bdf40f8ddc19377cbfc6c87d4d6ebd243a68f91802fae9dc680ab",
-      "size_bytes": 1773
+      "sha256": "e19c95dab4a5ca04ea2f98a0b110143e8f3adeb72d122f38534d02bcc815842b",
+      "size_bytes": 1684
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_17cdf0f27f25453dbcadbd5fee0d2c9e.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "92a9e5a70c9b4cf7c5c42cf79f8db756c9dbff1f68f33d7fffab851d387de3d1",
-      "size_bytes": 2455
+      "sha256": "cfd7053f337b9848b9b23c0d098e1da293c709c45fade2d4ff00fcd961c45e83",
+      "size_bytes": 2429
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_22b95f82c273468abb2a556a343dc2e3.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "eb1ee6a2912241ce76b50af1220e13c626592a5a3314e2c6d43c68688230494b",
-      "size_bytes": 2859
+      "sha256": "911d32b79d4b7fd32760c5a0f4ce8822a71128f371189e36def931854502fcd0",
+      "size_bytes": 2730
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_2940862f49ee43279a78931865fefe65.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "034d215c7a1cf839914f5c511af41e1d226c4078e4623af4a91debaa4a7953b5",
-      "size_bytes": 1925
+      "sha256": "62c65ec13978b81d16704ec88a1c4fde683022da936b9d307bc5ad65f1946935",
+      "size_bytes": 1831
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_374e03c5c724480bb86ad2b5f0fe5d1e.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "f9cd707c0e80eb027f52e93207dff3b7a3f75a6563ee24129a2ff5fec7b505b2",
-      "size_bytes": 1692
+      "sha256": "1031610adda5d5d5da6996b42f75c629198f923dee8cc339185a49579a876a4c",
+      "size_bytes": 1678
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_5f42734902fb4b51b50e53a65151f7a5.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "8ebe9a4bed4c1a6acd1d5a1255414e54b435c5eb20acf87b4cb80de12eff121e",
-      "size_bytes": 1771
+      "sha256": "0e8bfa46c422ebd513d36f52b5f355cce510287ba3ccdf6f10848a8f16acc01f",
+      "size_bytes": 1745
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_663378cf5b544218a633502c90e1966f.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "48a296bf8a0b77b1f23590ce3ca98029d0856596e89881ee5820eea6698e8f35",
-      "size_bytes": 1615
+      "sha256": "82c10408dff6fcb0bd337bb62f8fcf4bc65768bb1c8160ae2e5d1d6a8eee5c1b",
+      "size_bytes": 1569
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_6cdd22e7cddd43e9bfd8a23c45751ef0.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "42b8cf6a6ed6fcc273921d7737f13b6fbe31ef654b4478673851012cdd81dbe6",
-      "size_bytes": 1677
+      "sha256": "f0a573692f8a0efb2bcf0a1c94cbb891125f41d58ff3a04c71e49b04fbf0b2ed",
+      "size_bytes": 1692
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_6fe64cebb3204900ae88e5d48680d580.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "753890bfd15d0c1e395b5c1aa2f17bec684eba47a86d30091bc39601d2f8b604",
-      "size_bytes": 1770
+      "sha256": "5af5010850b845e76ddd971f103d5ba4823e2ec74b2fba4a2f9e6d0b46be179d",
+      "size_bytes": 1738
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_862ac8b13a76475baa769b24ca59725a.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "b59e8d12d536f405e5d2bfcb5f2de21ff2a8509912ab645312ba3553873a3da4",
-      "size_bytes": 1856
+      "sha256": "7d4ca6283c894cffcb028f014b61feed089a3ffd83e4bcfd047d566745e248c8",
+      "size_bytes": 1831
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_a44d9a6eb1cf46d2b4a8cd411253947c.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "8b6a5ec4be8a344f69847b5ffa33380db61c40808b6ad9198599371932e85d81",
-      "size_bytes": 2189
+      "sha256": "922bf3333075b0f4df5e24e464ca19d3b722e87ba18ba23498bb38d854de6ab2",
+      "size_bytes": 2163
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_b2821044b2eb4c7f959be8241b0920e9.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "0c49cc0574a1309cf2c406cafafc0ff466454721db7a3f8374796f6425b64a8d",
-      "size_bytes": 1674
+      "sha256": "f503d0f599a3f4a60d04c582c9df02ee734d3067540cba33eb7fb8cee91d5f96",
+      "size_bytes": 1657
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_c615ef666ae64205bf00df2de3844de3.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "ed48bebe23e8b45ba655f4132e3fd9ea633a2b6e1509657703dc8d3521a9320d",
-      "size_bytes": 2054
+      "sha256": "b488b8a3b9acc581233c35856468a7597a81a5ecb97fa4fb94e3421367e42896",
+      "size_bytes": 2028
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_d591ab8e8b6f494da9f7320950cbc784.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "ab132b9d8f1052f1af7bde983b467075812d83ffc9aa453045bdcbd76ef4314f",
-      "size_bytes": 1637
+      "sha256": "fb147b91ecb5007526ae12dec3f0e3c9e049605aaa82e6a371e7667e477a323d",
+      "size_bytes": 1595
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_deca55fba5514fca9a2ad8b5b23eba63.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "a4657eb3da9a2290f4f63d325460fdfb3f57a6b479727a40d495f8d4507ab589",
-      "size_bytes": 1777
+      "sha256": "74640c834580e8353a33387424d34d5b06abb83076770f1979762214ae243c12",
+      "size_bytes": 1772
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_df13249cb85e463286c7f3088cbe754d.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "97cbad4e8c56f78b1ff61c20dba58959f24f715fa2fea45497795c1c85e2d06e",
-      "size_bytes": 1852
+      "sha256": "808d3638a6b04cf726f1ac2029556cfc0e20f6d1ff5a20bd6768d338a559b64b",
+      "size_bytes": 1821
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_f9e0005fb2f0434c9d3d4a7160860629.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "b21d299afb8f038af0a4a5dfec89b76e7e0aa422c422723d3d6ba472e189db9e",
-      "size_bytes": 1964
+      "sha256": "b02b79fb67cb011f82c99e122d76f9c5b7fa489728540059fc10c7cb646e2b81",
+      "size_bytes": 1798
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_fada8d146e6241a08d0ecd1d8382e764.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "886c1a7358c1944fa964a4a6412d637c30900b8bed8d8f755a6798f88bb0d867",
-      "size_bytes": 1601
+      "sha256": "17045cd492b659720ba177f7dbcc34aee5238d145e9526ffb89c7e21aafc525b",
+      "size_bytes": 1627
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/rounds/round_fffa24189c11427da2ea8c2e084b8637.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "0f91117d821c7cb22fb56f82f7100ba6092cb3410ca7a94772f1d47462903ff5",
-      "size_bytes": 2486
+      "sha256": "eb33585a8a541714ccfa4f242e9d173a1fe259adaa3fe6abe20aede269ddd9db",
+      "size_bytes": 2373
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_b608884c39d04800a1b80922eee6b4d2/decl_graph/strategies/strategy_140c2962785943968f6203e9ab1972fc.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "8a67f77b6e72c3fb966bd7bead6f8993222075b198975dc97d23a973e821a3e6",
-      "size_bytes": 3050
+      "sha256": "aeb86907b09653799e75ef212a6949be8ded263d6642f98e4b299b42ce94826f",
+      "size_bytes": 3070
     },
     {
       "disposition": "include",
@@ -900,8 +893,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_c24b3eac6025417f8bece8bc91538304/contracts/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "307f9ab9199026cb82d012599daafa1256c0fb1f9bc4711f9d8e6a551402d008",
-      "size_bytes": 8867
+      "sha256": "6af5f6821063e988e93bab22b27755b279e285575b4223c663c12c106310dae0",
+      "size_bytes": 8909
     },
     {
       "disposition": "include",
@@ -914,8 +907,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_c24b3eac6025417f8bece8bc91538304/decl_graph/decls/anchoredPowerset_sum_erase/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "cbd30eff26f211e776c32596b9d18dd586457f87229fa9fd93ff2ff9fc1c8cdd",
-      "size_bytes": 13410
+      "sha256": "ae87e15252de4b2543958f6e7e17a5889f9a108a70d9057d1b6c437ad92e09ec",
+      "size_bytes": 14526
     },
     {
       "disposition": "include",
@@ -928,8 +921,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_c24b3eac6025417f8bece8bc91538304/decl_graph/decls/anchoredPowerset_weightedSum_eq_chooseSum/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "cefc3e7d2632b94196719dc966d654a5c478f4d03667b18390c0bc0b178124eb",
-      "size_bytes": 18266
+      "sha256": "4cc367a3097ae997c83dc938a4d6b77bab1d651ba36cb57aa75f388efae64468",
+      "size_bytes": 19359
     },
     {
       "disposition": "include",
@@ -942,8 +935,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_c24b3eac6025417f8bece8bc91538304/decl_graph/decls/powersetCard_weightedSum_eq_choose/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "8df8c2210125cf2a5d2497591223ad3d3fd5ceef849e03a63fc40fa35421806f",
-      "size_bytes": 11774
+      "sha256": "c20124b12ff6dd1fd079b041c2f93ce85f84c9be4b4442ff21fd02a275819f25",
+      "size_bytes": 12922
     },
     {
       "disposition": "include",
@@ -956,36 +949,36 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_c24b3eac6025417f8bece8bc91538304/decl_graph/decls/powerset_weightedSum_eq_chooseSum/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "9355390cb093d71e35659776a2bb09d6a1a82a0a0d4d3caa61f5ccf3b50e97e3",
-      "size_bytes": 18728
+      "sha256": "40ebe9c51c8dbf27728f5c688def59e096fe65b4252029b29a6303cfdd5ac25b",
+      "size_bytes": 19824
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_c24b3eac6025417f8bece8bc91538304/decl_graph/index.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "c69b1a04a961954c3dbc011c4e80bc52353a19de8bb0e70eb4b93656af7409c2",
-      "size_bytes": 702
+      "sha256": "1c9915838eab80d4f911488e3b67913fa3e2ea4b4539ee5d8004b640ebf861af",
+      "size_bytes": 551
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_c24b3eac6025417f8bece8bc91538304/decl_graph/rounds/round_796180c150b847cd9ade38a1867411ec.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "20c2723c75ba511f31ee3def9b5588627e6fdf9ad7ad4e9605c420654a3729b1",
-      "size_bytes": 1846
+      "sha256": "802b2b04ff71e70181ea887a44b0d1228dd8bfcd555aafbd103a4a87b12a3ae3",
+      "size_bytes": 1820
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_c24b3eac6025417f8bece8bc91538304/decl_graph/rounds/round_bae85cb7adfd4da3ac167306a006daf4.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "412e67793a3df55c0c20ded440827e373497ab5d6c836f3f89def4190fb4663f",
-      "size_bytes": 2014
+      "sha256": "355893a886eb1878543cbb158f0e0608816d0354f0db43d093fea758fdc276bd",
+      "size_bytes": 1988
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_c24b3eac6025417f8bece8bc91538304/decl_graph/rounds/round_dfd3273c1a8640c4ada5c86816b33011.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "c1f6e6f2fdeb259dfe7ad9371d53317f0e392faa2e37dc1a628c40d51f5c1552",
-      "size_bytes": 1827
+      "sha256": "30176a1d4a6550b9e489853d40335f5c8d5ad2694b6ffb5c2ba4808ea5d9a7ae",
+      "size_bytes": 1801
     },
     {
       "disposition": "include",
@@ -1005,43 +998,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/contracts/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "8d73d71661d4b5e10ef93441920d5e9f2be0c587e4764d949c5824591f125cbc",
-      "size_bytes": 15092
-    },
-    {
-      "disposition": "include",
-      "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/anchoredPowerset_chooseSum_reindex/decl.json",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "0f26b74ed30140cdd8c78752dc7d5c9d227ad9e2c6419fb2ac9b3121aaec2730",
-      "size_bytes": 552
-    },
-    {
-      "disposition": "include",
-      "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/anchoredPowerset_chooseSum_reindex/revisions/1.json",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "0ee68f1112eb591b82fba87f44e7b2d83fcec0b41993c4afb6d30fe100d81b5b",
-      "size_bytes": 10979
-    },
-    {
-      "disposition": "include",
-      "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/anchoredPowerset_chooseSum_reindex/revisions/2.json",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "28e33c5167f703936718cb18385f24525e4edd2d4795e518336cfecbaaa6a645",
-      "size_bytes": 13920
-    },
-    {
-      "disposition": "include",
-      "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/anchoredPowerset_chooseSum_reindex/revisions/3.json",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "2da9fba49d55f6477e145d00dcc76cb884fffa1c9cb79db2ac4b42d87ea17630",
-      "size_bytes": 12218
-    },
-    {
-      "disposition": "include",
-      "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/anchoredPowerset_chooseSum_reindex/revisions/4.json",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "ec26e2fc7d797826bc21161e8ef784501a31d043ac1f6a1cc5da4a532e927f9c",
-      "size_bytes": 11857
+      "sha256": "567e9fb6722c8cfc3765233214b85fcdb81cc0bf5dafd905b8d0e5db509677fe",
+      "size_bytes": 15256
     },
     {
       "disposition": "include",
@@ -1054,15 +1012,15 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/completionFiber_card/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "f4a79c29b4ef4df356ec5ee22b0766163708de7f7f42a531c3c8822419a26a08",
-      "size_bytes": 1201
+      "sha256": "b74e67d851f0eded1657a2cf9540f65c72bd22378aa1c2534e10f3401c16325f",
+      "size_bytes": 1091
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/completionFiber_card/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "cb6c856696e4a6a7af88139412af648c8b9c0047f74ea34171a73f47aca55739",
-      "size_bytes": 12550
+      "sha256": "07faacd218452a710a94200cab16f1f2f9281318d0eb40980742b0a2ff93b5c1",
+      "size_bytes": 13624
     },
     {
       "disposition": "include",
@@ -1075,15 +1033,15 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/completionFibers_pairwiseDisjoint/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "2629ff7113c9b8417f013c3ba51c5365e6ed5f11680dd974b5d76fd7ae60731c",
-      "size_bytes": 1248
+      "sha256": "a8f8d8e5f27fe26eb3c71dc71fd1193a6d23231c75fb7183d371519a71a3847f",
+      "size_bytes": 1138
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/completionFibers_pairwiseDisjoint/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "ea93bdfa763682387d13f9157f817319843e4a92a606bd692a09c3dba8fcd8d6",
-      "size_bytes": 13700
+      "sha256": "4afc1402b2f8987df218245567350c444b6d09314bdec20d4ebac85b502ef8f9",
+      "size_bytes": 14826
     },
     {
       "disposition": "include",
@@ -1096,8 +1054,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/exists_uniformMissingTraceFamily_strictlyLargerThanStar/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "36f07e27cbf0dc70016bfc6d0e2f4fd766adb139fbf3b2bb1f4d5863adcc8d8a",
-      "size_bytes": 17820
+      "sha256": "0d42f156e58835df6971e8bedb595e1847546b240aee71f242507996c035c0dc",
+      "size_bytes": 18927
     },
     {
       "disposition": "include",
@@ -1110,22 +1068,22 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/patternFamily_card_sum/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "db9680411ddc7483d19d3eeff81e3e1e13bf561c70285242239084d76a9d59f8",
-      "size_bytes": 1337
+      "sha256": "8a06242880ac8e1cf10bd51b6d87268138d56ed0d9b57d97d71a87e31f444694",
+      "size_bytes": 1150
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/patternFamily_card_sum/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "fb7a98a777d0303ad631d68cf4901998f1c45c3833b77f948e99da1247be3733",
-      "size_bytes": 3319
+      "sha256": "54f65dde0165c79717e37ad24fd8a69ec6b4e48ad291ed30b71e186d047ba152",
+      "size_bytes": 3162
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/patternFamily_card_sum/revisions/3.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "17348f617bb252edd24e89ea92f36efd5414c14ceb96002933701d3e376a4c5d",
-      "size_bytes": 14112
+      "sha256": "9b22a983dca1a443dcabbb97ed2e8eb3d6717ebc2366d7eee1ccf2625c921b41",
+      "size_bytes": 15117
     },
     {
       "disposition": "include",
@@ -1138,22 +1096,22 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarBase_chooseSum/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "a25e229d49b7bcf6cb84c8fcb11fad47a288b5f7f2ec9fa9678ff3a6c351f7ae",
-      "size_bytes": 4402
+      "sha256": "3d1e617034cc27596a7f4395a61272eda2595f9936275fd476876df04744c786",
+      "size_bytes": 4222
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarBase_chooseSum/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "0d4ef340675afd855cfba634854a1e2cc1b087c4e79c4d19b8b8212b68e1de28",
-      "size_bytes": 13876
+      "sha256": "fd66aca2aeb9355038dbad0eb2bf510c42f8ab67364a544773aa1435b45cd5a7",
+      "size_bytes": 14319
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarBase_chooseSum/revisions/3.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "c2c49f0d05d9c5d3c749d21575eca320ca62f659f74703301281dbcba3d8c770",
-      "size_bytes": 19945
+      "sha256": "9da1682604983b6e92270cb6c787821ce84a13521a5f44e767539b6c64826eb6",
+      "size_bytes": 20972
     },
     {
       "disposition": "include",
@@ -1166,15 +1124,15 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarCore_card/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "55510d02833915748e670a6d7fa3bb3dc3abd4617e9e534f66477613cc53be07",
-      "size_bytes": 1125
+      "sha256": "689801fc6d9737980b7e89164e50b31dd06ee45c2620fd12ece2163f1d2d0d80",
+      "size_bytes": 1015
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarCore_card/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "1daf2332464d98cb41f2da2c781f3ad3b1e13dcdad9bacf383325e747a964b46",
-      "size_bytes": 13606
+      "sha256": "98ad9f0fa67bc5fdd42da157263e82228d7b9e5a222f4aba22ecf7c15f7b668c",
+      "size_bytes": 14688
     },
     {
       "disposition": "include",
@@ -1187,8 +1145,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarExtra_choose_pos/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "b8917145f8fce4bb6188536e378f4a053442e51d4616dd1840fdd5e12a217210",
-      "size_bytes": 12245
+      "sha256": "84bbb81db14e9894660077b74126283ba7da781b5f2237b5006e84cadcc97d26",
+      "size_bytes": 13325
     },
     {
       "disposition": "include",
@@ -1201,8 +1159,8 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarFamily_card/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "9ce6d8ecba476e575893d43719f3d40e116075dd460235dc2114f72f1ea3154c",
-      "size_bytes": 14745
+      "sha256": "a881f45c11c638999de5ec0155c377babd4f8c3d18f33993c95a6144ea2284b1",
+      "size_bytes": 15681
     },
     {
       "disposition": "include",
@@ -1215,22 +1173,22 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarFiller_card/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "01d31d406085b98bd6be9db4e06a6757f6e8eb422fa392943a552b2026e82fb1",
-      "size_bytes": 1139
+      "sha256": "d815c356a4535db82688140d64cc9c33566fb5558fc3eb56bf3118c71e106d29",
+      "size_bytes": 993
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarFiller_card/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "5b7b0486f5cc70e82942bc98e12ab8f6468acec36c5a37c9a757f010afe897d8",
-      "size_bytes": 3583
+      "sha256": "aa5ed1e88cf2ab9e4a6e20d35383f2d3d68c1ff5e601ee9daf6b645c2169743c",
+      "size_bytes": 3467
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarFiller_card/revisions/3.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "f72043fb5aa726918499ff6d2c58665e025d3e4e2d0616b6ee087c9b7d5f4c0c",
-      "size_bytes": 14020
+      "sha256": "a04cb0d7d5790bf5bfbf5679e0200fb0826d81fb085c301bf7d832cd4b791faf",
+      "size_bytes": 15074
     },
     {
       "disposition": "include",
@@ -1243,15 +1201,15 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarPatterns_chooseSum/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "985dba88917cef00bc480c581cd1455016236371248f139292f61ee2b027c282",
-      "size_bytes": 9020
+      "sha256": "b7db3676112928be15de6fa3074b26e96f8cdc4c30865f445c182fc316a66285",
+      "size_bytes": 9441
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarPatterns_chooseSum/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "1157ab448d620a817b19a7bcffafc89717708abc32b51c420379fc2ac69f3f85",
-      "size_bytes": 14744
+      "sha256": "6830cf4ca555a69c314c7606348b037d9af6d8635bc681c2c3a43e83c4b387bb",
+      "size_bytes": 15771
     },
     {
       "disposition": "include",
@@ -1264,15 +1222,15 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarPatterns_disjoint_filler/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "32c5e2703663ac456e49e7ce252a4fb027185421182f261451d8cb521ab13e20",
-      "size_bytes": 10534
+      "sha256": "b1e6af4d20d69306f678f7496de1d2dea090bc439bb74bda92d6023a92cd3913",
+      "size_bytes": 11037
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarPatterns_disjoint_filler/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "e343feda6abcad8b82436bc96fa41d2ecfec93afd34920b6ed6d4907ba3c1cbd",
-      "size_bytes": 15933
+      "sha256": "e333490569bc75b29c326dd07ae12fd4145f64a0c41de6e4726027552333a847",
+      "size_bytes": 17070
     },
     {
       "disposition": "include",
@@ -1285,190 +1243,155 @@
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarPerturbation_chooseSum/revisions/1.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "2f9707465a52a3ed966d5141201c0b6f2013496f800cab3daa9798be20e868f7",
-      "size_bytes": 5061
+      "sha256": "78cf75e5c9dd1530b709bd1ec14bf7455e786d7ea53a1891ce88c824859a5113",
+      "size_bytes": 4881
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarPerturbation_chooseSum/revisions/2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "7f9ba749d5660477ce3835ce6208ba00f1ee20107416cd1104578d56689ad8e0",
-      "size_bytes": 15789
+      "sha256": "66d48ccaf20d402deb940e73cc5feeae78ac1cc450dba51906028da3c02d9f45",
+      "size_bytes": 16248
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarPerturbation_chooseSum/revisions/3.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "3724bdf02947f8c63cc2e97d95da65c1bc09bbdea5d0fe399e4291c5e071b8d8",
-      "size_bytes": 26224
-    },
-    {
-      "disposition": "include",
-      "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarProperPatterns_chooseSum/decl.json",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "8073bcba2e6d49a94631ab16eab3e21189d2bb8b6e974cfdf265da6ff95251db",
-      "size_bytes": 577
-    },
-    {
-      "disposition": "include",
-      "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarProperPatterns_chooseSum/revisions/1.json",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "693e0e46e51576fbeacca3aaaa40dff6ecc815d90a47c7350dd42771ac86fdf3",
-      "size_bytes": 13402
-    },
-    {
-      "disposition": "include",
-      "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarProperPatterns_chooseSum/revisions/2.json",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "cbfee995a1011aace51acbda5d52d6b8b2efdc349bf921a86f558e7ce92b4ddc",
-      "size_bytes": 15918
-    },
-    {
-      "disposition": "include",
-      "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarProperPatterns_chooseSum/revisions/3.json",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "04a11f87ccc57b4fcd664c9e168ee0811c292b2ad4826b49d39951479987cc9f",
-      "size_bytes": 14301
-    },
-    {
-      "disposition": "include",
-      "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/decls/perturbedStarProperPatterns_chooseSum/revisions/4.json",
-      "reason": "portable_project_or_business_truth",
-      "sha256": "634ba9aaadb7e0c2c650e4e5bd3a0f9bfdccb30c16e71eaf433c6916ff528647",
-      "size_bytes": 13902
+      "sha256": "de776868c8ffba296d7ad4d2e52c8cd5a7fb12b63e629ac7eba9030db67bd16f",
+      "size_bytes": 27283
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/index.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "c7e57ea50dc8db91ed447e66c231d118729c41a3a4c94f38a2531f1d3b550f0d",
-      "size_bytes": 1795
+      "sha256": "ad4e1612e36f08fe8449740b4c0e20c95df43750e100a11ebe068dd85aa34b81",
+      "size_bytes": 1567
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_0407c5b656c743628cbb5a9b8e6eee6d.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "1732880efff9b582b9fd2af4386779df7af77ab680885f797fd5d8447cd9c977",
-      "size_bytes": 2920
+      "sha256": "54e1799d188199a6a502940eb345a486a56055db5149bf0837564e7a3c891491",
+      "size_bytes": 2894
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_06d7e661838840adb853200fab812a02.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "5464a70b44a136f28c898b99f42a7d1c64124738a91acd50b1600ba804d530ba",
-      "size_bytes": 2381
+      "sha256": "d35679134eac256a1a4f484d10dda939fadbca83976bc7b1fc6a9cf1f6e4a86b",
+      "size_bytes": 2355
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_16b8e53e008b44f483101a9431aaf379.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "e002ba085cb8e63d3d0a865ee86a77783b1f756d03c368c8d9f5548510f5103f",
-      "size_bytes": 2012
+      "sha256": "319df91aefa3f266e0acf7c97d24402d8bd303c4a68d38e019ae715a9a85ea94",
+      "size_bytes": 1986
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_1ed57fdff50b485d9a6fae7380d3434a.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "3f08f066f2bc2500cb2718fbfcb58a754809b0ecd94747b02de13d7bc1b9b3c0",
-      "size_bytes": 2942
+      "sha256": "70dca479844684e952b252c6772131abf68e0a2df0563c4edc275a676921aa11",
+      "size_bytes": 2916
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_2cc09a7ca04c473dbd6f63caf5aa0786.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "58b185fe20996482e7f0def606a3fd1ee9b692ff50cecb67adade5b1071f7fdf",
-      "size_bytes": 2370
+      "sha256": "bdf482b3e323cbc5ff1d180e320fc50f90980bea0d823c15ec53b86e19b8f4d9",
+      "size_bytes": 2344
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_2f5e46a1294e4df7b2db668ced25ecce.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "afc7b3a5d2ca9cf7d74bf0bcbdf3a38b0efd2564aa5ab40c302d33aac71f9fda",
-      "size_bytes": 2142
+      "sha256": "adf38cd41ec15bf2aa7d6cfed3dc365c7b034d8957c8bf4d32d4e7215f0693d9",
+      "size_bytes": 2116
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_3dbd9d0587e943deb1546f6fcaf9f286.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "c965d700aab1594fd0db1f862ea930104d60e1475760f19749f7c6a523885c53",
-      "size_bytes": 1664
+      "sha256": "335db2296c72e8e55cdccb0155023fad8f30262c8ef5865f6a5a185584838e56",
+      "size_bytes": 1638
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_6871444043bd467ca03762529d118f5f.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "2cf575aeca66cf5058ba4279d1b01edab591baa5b3fe0d721676d84a0b838fdf",
-      "size_bytes": 1676
+      "sha256": "8252c0611aeca2d419429bc18be860b44dced74d30096518325fa067ae774752",
+      "size_bytes": 1650
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_7b9ce71ebc18446f874f34606fdb6bb7.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "5ab664c6e234286b71c81992ebfa4b9e29aa77871f31e39639bffa841534ada2",
-      "size_bytes": 2661
+      "sha256": "98ccaca84237c1e365209309b3ce6c983beaef73898cb463cb2ff134754085de",
+      "size_bytes": 2635
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_8e5d00d8fabb4bb29165f1e7bccfa9d3.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "e2c02b85ffb08ef775531f3795bbadfb1b8e4da2db6ab01654f2d5d24a80a81f",
-      "size_bytes": 2010
+      "sha256": "c46d023c9bbc7b45ab72fc5e2fc252ba8e4de7d727d37e3f5b21eefae67e869b",
+      "size_bytes": 1984
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_a1128bdb8a14412991557cc884e7cba9.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "3f3bdcbfbb9c56a8963a5453d81c56961e280e9ce9495bf66643fafa8189ddc7",
-      "size_bytes": 2349
+      "sha256": "8c063e88ba5f2efed77cf123853e319bba355867b365a0818492357a87d30bcc",
+      "size_bytes": 2323
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_a7651ea9f8c64ccc92e48ba9432c519a.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "4a0a3b309b5a3693dd82fe240e0b4fbd13096c255b520bb42f0a207a672823c5",
-      "size_bytes": 1887
+      "sha256": "145a9483c6b5d7a84a674e2ffce261d2f3df64ddc1d6edd8e5f84ec8568f7ab9",
+      "size_bytes": 1861
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_bcb7e4adfbbd4ffe85a710c857c8a6c2.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "466e46e47f99aa9054faed79df5f2960848016afe1207a6c0b34463a1bab4651",
-      "size_bytes": 1655
+      "sha256": "1a6fb39b08333dc00f256f825be0eb9a16cae245f5308bfd866e1b6c14fb8113",
+      "size_bytes": 1629
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_c5d25c45b86f4373b634000029e60b3a.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "3bd5978e02a2b1dd8c199f1f8d59aed57a36d567a35dcdab48a5df1ec8077d79",
-      "size_bytes": 2430
+      "sha256": "559ca4c8fc7174135fcdea06c7d882cd7f42875e28199ea7765366ff82cb28dc",
+      "size_bytes": 2404
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_c602c2afc8684314adc0efbcab015603.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "9ab7c1fd916d4cb19a1379b9d3e4d201b3c1805c30c2188fcd103a5c31d8af70",
-      "size_bytes": 1982
+      "sha256": "4e02143f9ae8bcf95127af5f0c169daacbd8da0c5739881f085a8c99f433afd4",
+      "size_bytes": 1956
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_d555c8ee268b477a81d53fa6905c934f.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "74680b1b4c08b3177ab08c0d06d23f333a2dee81c22b5ae452844e0a7f43067d",
-      "size_bytes": 2420
+      "sha256": "07c9fe39c27508029615e533bf8e9a194170870f8c0aeed52da1c69600989166",
+      "size_bytes": 2394
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_f67114f17c934435b92e53ffe6af5907.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "324d628aba603920ee9433b38086c4d9cf674ed4da06a1f703421848de58aadd",
-      "size_bytes": 2300
+      "sha256": "661939c7041bb01b5ae03c417bebe61ccfdc7b1691b174288b8126f44f1818d0",
+      "size_bytes": 2274
     },
     {
       "disposition": "include",
       "path": ".lean_constellation/nodes/node_ea3e75192f844e7b95aebdf8afe7ae6a/decl_graph/rounds/round_fc6b3d8b66ca4fc0bc7142aaa52780c6.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "dca136cb4d7b71629fa8deabcaf046177d2d3bd10bccbbf0e5ba3e3f2bfbce34",
-      "size_bytes": 3132
+      "sha256": "16d62bae86b75e59b22ebb731ed363db8e37ba39cc27fa3fc4c3e577ab9bd785",
+      "size_bytes": 3106
     },
     {
       "disposition": "include",
@@ -1495,8 +1418,8 @@
       "disposition": "include",
       "path": ".lean_constellation/preparation_input.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "fa75735ceea097f8f36415197a894267f11d0e82cbccd143e06231ea65442484",
-      "size_bytes": 2599
+      "sha256": "2b62d57d3a0694d4b0f366d76c5b6cbb5dc0115c49abad7cc4678e4713bd4307",
+      "size_bytes": 2584
     },
     {
       "disposition": "exclude",
@@ -1614,8 +1537,8 @@
       "disposition": "include",
       "path": ".lean_constellation/source_corpus/manifest.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "689f38e3dc49d482517201695d17937d154d62d82010f5dff4e9ec733abda796",
-      "size_bytes": 2005
+      "sha256": "1f62a2bde6f5d6331bc8c54f54bce1d2cd15518183809029aa3f8214466b96fe",
+      "size_bytes": 1963
     },
     {
       "disposition": "include",
@@ -1656,8 +1579,15 @@
       "disposition": "include",
       "path": "README.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "e72e39439d21f8be6d8d9eb5b6f343045491b56460764a7605ee6fd08684efdb",
-      "size_bytes": 3848
+      "sha256": "a00e3c126d3619e5392e77d749f957715569821917254fbeb9880007dd549def",
+      "size_bytes": 3881
+    },
+    {
+      "disposition": "include",
+      "path": "RELEASE_CANDIDATE.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "1346b02dccba714b9acd4d953c837bdf156f8fcd9e717b864ea4e0a490f8081a",
+      "size_bytes": 968
     },
     {
       "disposition": "include",
@@ -2074,10 +2004,24 @@
     },
     {
       "disposition": "include",
+      "path": "docs/lean-constellation/DECLARATION_GRAPH.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "e848a0f56fd37bc8442ea7c822b246f3f2e6966b62bec591ab1c6d19d6a083c3",
+      "size_bytes": 8755
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/EXTERNAL_DEPENDENCIES.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "e0c34f291b9f4efcb0d5109f5ff408910bb668edf80c166271319166a54400e2",
+      "size_bytes": 274
+    },
+    {
+      "disposition": "include",
       "path": "docs/lean-constellation/PUBLIC_API.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "54f167c5012a48a1a5b62dd06c3beae533bbd75960bb454c1bdec282036f64a6",
-      "size_bytes": 1007
+      "sha256": "c3a10b016ebc237ae52b737b730c81dabef71b339902d9a379c69da39fe76704",
+      "size_bytes": 1037
     },
     {
       "disposition": "include",
@@ -2085,6 +2029,13 @@
       "reason": "portable_project_or_business_truth",
       "sha256": "fbc9841ebc8e651d6c98a853fcddd3e0094b3004998de599b7efdebafef9d3c5",
       "size_bytes": 5140
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/assets/declaration-graph.svg",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "3b183d90e717530e88d3c54db74c9266f2328a18dd6bc766488e0561a1db8ce2",
+      "size_bytes": 106023
     },
     {
       "disposition": "include",
@@ -2109,192 +2060,353 @@
     },
     {
       "disposition": "include",
+      "path": "docs/lean-constellation/declaration-graph.json",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "52a885a9591cf8e2b468e84c3d7d9070974e28dc9783793686101aa5a4026707",
+      "size_bytes": 998596
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-anchoredpowersetenumeration-anchoredpowerset-sum-erase.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "224761db0f862c0f1b1d2d5a76b98fe0d5781dd418a233c0286874038b63a146",
+      "size_bytes": 7308
+    },
+    {
+      "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-anchoredpowersetenumeration-anchoredpowerset-weightedsum-eq-choosesum.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "057b96a127be928597f1f1343a9cd8f19d05a74a2723d5bc8767ef076126d52d",
-      "size_bytes": 7053
+      "sha256": "3b04d923727c980eba80b3061be27c617c64f0cb96059cd01392c611471faebf",
+      "size_bytes": 10844
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-anchoredpowersetenumeration-powerset-weightedsum-eq-choosesum.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "9493ead9856ff854377803e1cc5587a3a51cccccca1d38d4e2400f989c0ccc0c",
+      "size_bytes": 11738
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-anchoredpowersetenumeration-powersetcard-weightedsum-eq-choose.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "2b89af08fe3660c9a7a39a7aca5a65ab11be8197bf1015c82301de21967ff165",
+      "size_bytes": 5728
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-countingandmain-completionfiber-card.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "fe50a236ffaa1245084f8db0e83a3f607de30bac4c9648f146c13b99fb4addd1",
+      "size_bytes": 6260
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-countingandmain-completionfibers-pairwisedisjoint.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "8422a38081b1a6900aa6a017c908f7590177073fbbf940578d7ebc067cea01d8",
+      "size_bytes": 7686
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-countingandmain-exists-uniformmissingtracefamily-strictlylargerthanstar.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "f93d46eb9c4f6b88bed7f0ffcb8af34d38dfedc38783cbcb95ec364082f83028",
-      "size_bytes": 5699
+      "sha256": "1164ba4558d846175661cabb12ef61b1312a7d2a18903bca941ab509968a26dc",
+      "size_bytes": 8980
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-countingandmain-patternfamily-card-sum.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "e67fe2dad2338d8c6a57a643e2d232d315a581a92dabb671110eb46d05dd66b4",
+      "size_bytes": 6785
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-countingandmain-perturbedstarbase-choosesum.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "93f4ba0f8625378477da81a6b49699d2d25ce987119be3ba623b0801fbcc3883",
+      "size_bytes": 10905
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-countingandmain-perturbedstarcore-card.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "75ee8528017fea389ac8b64c1648b66f8a301513da2d3f96c25b47c15b461e40",
+      "size_bytes": 6795
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-countingandmain-perturbedstarextra-choose-pos.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "c12aef8f6a4c82e63187feeb9aab02a77c49b07fd8afa2a03a30812cba6f3faa",
+      "size_bytes": 5177
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-countingandmain-perturbedstarfamily-card.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "ae56ebb5cf64f583fa48ea4f4eba3d82b85c9b5650bff8230e9efffcd2795f3a",
-      "size_bytes": 4577
+      "sha256": "7e799a09fabe8565badd7fec055b523eaeaea44c3c62a1f57722bd43178237d2",
+      "size_bytes": 7128
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-countingandmain-perturbedstarfiller-card.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "b26671109c37e8b50a340b8ee0020335a74fcf0ec81ac59f64b473ea6313a04d",
+      "size_bytes": 6174
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-countingandmain-perturbedstarpatterns-choosesum.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "d1227030e1e04fb9eea93bde42b6e968093e3ce17fa2d03503293672a895e6b5",
+      "size_bytes": 7378
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-countingandmain-perturbedstarpatterns-disjoint-filler.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "d9487e3ff0350417478fdd154da100ad833a4981372e2bec467f39af5bd1c97c",
+      "size_bytes": 8430
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-countingandmain-perturbedstarperturbation-choosesum.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "6940bd2c04eb38d3d138ab3fef8a508249029e9b28496811859365c3ec623653",
+      "size_bytes": 16551
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-patterncriterion-card-eq-of-mem-patternfamily.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "346acac791d38530f362481221bffd17b59f4e48be4b49f6f2c7f3823ee35ffa",
-      "size_bytes": 4125
+      "sha256": "94d6a20ecf96d18a02ca15957cba2b42bd2852246b00e56eafea023141978b1b",
+      "size_bytes": 7286
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-patterncriterion-isuniformmissingtracefamily.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "f73821e1a710abf31aaeee62c2b1ae3c2bca11f97766b3bfe1953638e94cf62a",
-      "size_bytes": 1552
+      "sha256": "5ce161c250c6643f086085015c9aec5b2a7ef35779377058e235055a0a2e86a1",
+      "size_bytes": 2094
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-patterncriterion-mem-patternfamily.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "4940e69d85ee40e12c09d110bfa1607f4e1723b5f70a246b9d080ede1de4e26c",
-      "size_bytes": 3976
+      "sha256": "e3b2242437a3d4c4ac15ea6c116db33c6883e7cf8e27bbca26c033b280f735bc",
+      "size_bytes": 7155
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-patterncriterion-patternfamily-isuniformmissingtracefamily.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "3bc9ba10f9a1ba839c0cd63dfc8f782051eadd9a4b48825b3f0020f0b5f1bf59",
-      "size_bytes": 10628
+      "sha256": "1c2eb59c3e56f2ce98618c9243e1225d58272e9eadc25921e9006a481966507f",
+      "size_bytes": 16519
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-patterncriterion-patternfamily.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "71b1225da8fbf36c89c8b50b219ced2d7121d2544585bdc3293b71ae7057caf2",
-      "size_bytes": 1895
+      "sha256": "e305c3ba81790dbd39c7de86357736f0f128f428dbefcf36e03dd0619bc120f6",
+      "size_bytes": 2626
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedpatterncancellation-perturbedpattern-card-eq.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "37a294f32cf751f98f93c3c106c4bbff33be28ef84d3c85bd68394b3f9ab6971",
+      "size_bytes": 7518
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedpatterncancellation-perturbedpattern-chooseweight-eq.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "62499bd4093908921eeb73d33410eb71d8976fc7fb74345eb5caf8c39ace4a2c",
+      "size_bytes": 6563
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedpatterncancellation-perturbedpattern-properdomain-eq-erase.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "a108e170d2b07c8b45105bab44ca71c755ce2a1c95862337aa9810416c5ecbb8",
+      "size_bytes": 6398
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-perturbedpatterncancellation-perturbedpattern-properweights-add-full-eq-fullweights.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "e60f4cae8e64a4ca6e1baad051252d682ea15897d2aadbf46aaf2dc292788658",
-      "size_bytes": 9629
+      "sha256": "005db96782c17914efe4c3f02ef2ff5578643af7f9c64c010e392398f143e1d0",
+      "size_bytes": 14226
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedpatterncancellation-perturbedpatterna-injon.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "1ea68c6c533e9a763e56250aca060c7e4454afd2ad2b8b0e3511e18fafac795f",
+      "size_bytes": 6453
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedpatterncancellation-perturbedpatterna-inter-l.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "c08652c39a128125fad2c86efbb73fa7e7bcce7f2a08461b0c53e8db4c44931e",
+      "size_bytes": 6258
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedpatterncancellation-perturbedpatternb-injon.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "8f8c0d7892173c59e48430c1735910f751792bf1a44d64bcb206f6e716f58cee",
+      "size_bytes": 6453
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedpatterncancellation-perturbedpatternb-inter-l.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "88cdfb59cd05a6ecfc45258f7f0e462bb28d2f2dd62a1116c3d45697881e31bc",
+      "size_bytes": 6251
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/declarations/main-perturbedpatterncancellation-perturbedpatternb-properimage-eq-erase.md",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "08d7a52cb61e55a95f62f731c47867fb3b1dc13018abc59cd88dfdaab326727b",
+      "size_bytes": 9447
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-exists-perturbedstarblocks.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "270e7771e67cc410a5be4928f8b15d8aa09dbeab3113bf327994376862658fdf",
-      "size_bytes": 7635
+      "sha256": "171e6fd70ff9f6143c3c4da83d93f713f725a7c9f91125fc7add3edc2d47c1b0",
+      "size_bytes": 10917
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstar-isuniformmissingtracefamily.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "88aea3357456b1e3ab48691107dbc30080888fdf9cc29b99de2c59e6fa4db5a7",
-      "size_bytes": 11492
+      "sha256": "d72baf2ba48254c7105f31ef6491121cae43f205eaa4b79c175122f0b4fa960a",
+      "size_bytes": 16449
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarblocks.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "0eba7e1342c9bb330e1bf7682c9e255640ae2144c9f46bce2fae547ee63d1910",
-      "size_bytes": 1716
+      "sha256": "a4f5598e2900f3e26396d269c63d7cc5466b57043d91c4ef84be6733d119e39e",
+      "size_bytes": 2356
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarcertificate-addedproper.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "c2e52a07d2310f7b2e1a93978943f74c0bea480961081cb4fe1c261f8130c687",
-      "size_bytes": 13873
+      "sha256": "4a720f07c8a2555436892b866a53e0a629f822f6372ab252c92328a2034b4fc3",
+      "size_bytes": 19994
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarcertificate-finaladded.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "b9c11cbab8c01f1f85ad6cb86fe361e3168cdefc296a0c6a045a16287d142ec3",
-      "size_bytes": 11724
+      "sha256": "086329e66945849c10e71661f5a03d1248f998284b51174a8add3ad585957d1d",
+      "size_bytes": 17765
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarcertificate-largeavoiding.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "92fa74fa39fa9ceee66eb7b5c955c7356492eff02057d8d2b3d3b07169be93c0",
-      "size_bytes": 15493
+      "sha256": "7252f261a537ba36509277766a63eefe5a73dda626e9cd526f8a8f85754e885a",
+      "size_bytes": 22275
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarcertificate-largemeeting.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "987f2eef34143b162aba8d5fff804d3fe2bc9f7f92a93f9cc1059ebc8a3cce90",
-      "size_bytes": 13706
+      "sha256": "5e5c74cb3856d1081cdb2957c563ea845bcb06049aa65a7edf1e8bc1a57cd440",
+      "size_bytes": 20536
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarcertificate-smallstar.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "54f7299241fae6d37b0a371a6ca2782f570fa53455c9a1088f6b2179afad6f85",
-      "size_bytes": 10222
+      "sha256": "4dca06b7225a7c15f97d0c8d17e27b1f2e1941fe8140c844925b33fcdc26442c",
+      "size_bytes": 15491
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarcore.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "faea27a16bd241150b053e2d9ac2099f15611773be5c5c8547cdbebc166386e3",
-      "size_bytes": 1787
+      "sha256": "10c679cbf7c92275b4330eeee07f93077ed66e428be6172bd39e2acb4590fab7",
+      "size_bytes": 2326
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarfamily.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "8736769c888fd1c0f5da25c3c2f63a9f92b9776a4b80d14927d611136b86e660",
-      "size_bytes": 2903
+      "sha256": "eca8398fa96c3955ed8bd12db0ef58f3c320a9e0c8217260b5aa5f6b2914f2e5",
+      "size_bytes": 3606
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarfiller.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "ef3f1e1278924cf3ab08bbb17ee49da3368fb9a103c418b7d1c11b5b9a1a09da",
-      "size_bytes": 2075
+      "sha256": "f0babfd83c74f619da7ae88adb91abf00d4bcf746adcf00a9dbd7e60b410bf05",
+      "size_bytes": 2570
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarfinalintersection-excluded.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "e82794613567da31fbf814ffe8ca6e5531a6e49c564097a20e5e4fe0dbed8309",
-      "size_bytes": 9159
+      "sha256": "d6a727c3e689e6582d84709c472ac9a555f813d57109b00340867150239c8fd6",
+      "size_bytes": 13359
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarparameterbounds.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "ff2dbb379f0e33bb95eb8a96f2b402cc368f74218611dec1ee40811abdc6e2b5",
-      "size_bytes": 2909
+      "sha256": "f369ac5c8acd0e378997bdf2c0b8e1ed8b3d61623759f3a83b049c132bb79e01",
+      "size_bytes": 5400
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstarpatterns.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "a664ff32a329ce1f72bf726a29c4190125610d3f97f029dbb025aac94681c070",
-      "size_bytes": 2893
+      "sha256": "160987e075405bd8df7da09c9d449ade5f78510a7f1c76c2af08a564ebbbc9fc",
+      "size_bytes": 3878
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/declarations/main-perturbedstarcertificates-perturbedstartau.md",
       "reason": "portable_project_or_business_truth",
-      "sha256": "e67658afe0d7fb33b60d3bb28f9b971c1b2aee0448fe2ea0dd979b871aa00674",
-      "size_bytes": 3886
+      "sha256": "b12cc2cbf6eafbf62b0987ac2ed2b01958773f2a102d8ec9c3aa0cce542f28bd",
+      "size_bytes": 5651
+    },
+    {
+      "disposition": "include",
+      "path": "docs/lean-constellation/external-dependencies.json",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "1924a7f438255e8ed0d5370552028934a5571f08e81ce0ee17c54ffd3b01ebdd",
+      "size_bytes": 89
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/provenance.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "4ce371c81c032a19755279805be21d519bf363012a9b42f636d39e2269bde8b4",
-      "size_bytes": 1329
+      "sha256": "ee23731f3ded5e5225f699a1f73a3d2030c827fb81338a14e50548601a9be6bf",
+      "size_bytes": 1384
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/public-api.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "c307f9688fa61c7c670da98409db1cc209f5385312b450b954f348e900db3eb5",
-      "size_bytes": 7916
+      "sha256": "ab4c3e0f78110b6057fff19ddd3771e7e7d142775bf0260acd3c8823263a5d44",
+      "size_bytes": 29966
     },
     {
       "disposition": "include",
       "path": "docs/lean-constellation/public-boundaries.json",
       "reason": "portable_project_or_business_truth",
-      "sha256": "c9917ec7b43d9c3408378e423ea6a25d717edf00ca6bf922dd05b99763002e19",
-      "size_bytes": 170444
+      "sha256": "1f1d902ee2225f3223ef339de9bbc3a7d4595c1e5f3a820e9531a3a9c391ea0d",
+      "size_bytes": 577591
     },
     {
       "disposition": "include",
@@ -2316,6 +2428,13 @@
       "reason": "portable_project_or_business_truth",
       "sha256": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e",
       "size_bytes": 25
+    },
+    {
+      "disposition": "include",
+      "path": "migration_archive/legacy-records.json",
+      "reason": "portable_project_or_business_truth",
+      "sha256": "d1f5439e42f1265af725246861bf7ae4e1aa21c2e292deb198dab4b2bf0e2140",
+      "size_bytes": 2381808
     }
   ],
   "excluded_directories": [
@@ -2326,10 +2445,10 @@
     }
   ],
   "generated_at": null,
-  "included_file_count": 330,
-  "included_size_bytes": 2534513,
-  "manifest_digest": "469c4667499380994bcb1f58410ba3e7fe6ff42c914d7d103c2b2b2b1c5bc041",
+  "included_file_count": 347,
+  "included_size_bytes": 6091812,
+  "manifest_digest": "a0161ef4e6474134e65825681062207d1a20f601dfa36749afb83628ece6a5c0",
   "repo_key": "UniformMissingTraceFamily",
   "schema_version": 2,
-  "summary": "Publication manifest includes 330 files (2534513 bytes)."
+  "summary": "Publication manifest includes 347 files (6091812 bytes)."
 }

@@ -1,4 +1,4 @@
-[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md)
+[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md) · [Complete graph](../DECLARATION_GRAPH.md)
 
 # `perturbedStarCore`
 
@@ -10,9 +10,17 @@ The fixed core formed by the two distinguished anchors and the disjoint T and L 
 - State: `declared`
 - Revision status: `committed`
 - Repository completion: `graph_proved`
-- Formal code: final statement projection
+- Compatibility `formal_code`: final statement projection
 
-## Lean code
+## Statement NL
+
+For natural numbers n and r and construction data `B : PerturbedStarBlocks n r`, `perturbedStarCore B` is the finite subset of `Fin n` defined by
+
+`{B.a, B.b} ∪ B.T ∪ B.L`.
+
+Equivalently, it is the union of the two distinguished anchors and the two blocks recorded by `B`; the displayed union association is part of the definition and no additional elements or assumptions are introduced.
+
+## Statement Formal
 
 ```lean
 -- lean-constellation: managed-imports-begin
@@ -46,6 +54,14 @@ are introduced.
 def perturbedStarCore {n r : ℕ} (B : PerturbedStarBlocks n r) : Finset (Fin n) :=
   {B.a, B.b} ∪ B.T ∪ B.L
 ```
+
+## Proof NL
+
+Not recorded.
+
+## Proof Formal
+
+Not recorded.
 
 ## Statement dependencies
 

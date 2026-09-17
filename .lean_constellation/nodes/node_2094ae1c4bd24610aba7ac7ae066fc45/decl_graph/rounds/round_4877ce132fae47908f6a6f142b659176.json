@@ -1,12 +1,11 @@
 {
-  "change_summaries": {},
   "committed_at": "2026-07-22T11:20:29Z",
   "created_at": "2026-07-22T11:08:30Z",
   "execution_completed_at": "2026-07-22T11:20:29Z",
   "execution_reason": "DeclGraphRoundFlow finished with completed.",
   "execution_result_kind": "success",
   "node_path": "Main.PatternCriterion",
-  "objective": "Repair reviewer visibility for the generic criterion by compacting its formally equivalent tau hypotheses into one per-pattern certificate bundle, then rerun the theorem through proved state without changing its mathematics.",
+  "objective": "The generic criterion uses one per-pattern certificate bundle for the formally equivalent tau hypotheses, with its mathematics unchanged.",
   "plan_closeout_acknowledged_at": "2026-07-22T11:20:29Z",
   "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
   "result_kind": "success",
@@ -23,5 +22,6 @@
   "started_at": "2026-07-22T11:11:27Z",
   "status": "committed",
   "strategy_id": "strategy_d509811e109f4266a85f656d30c12936",
-  "summary": "Round 5 completed the bottom-up strategy's final theorem. patternFamily_isUniformMissingTraceFamily revision 2 reached proved state and is proof-policy satisfied; the prior reviewer-visibility blocker is resolved without mathematical strengthening or weakening. All five active declarations are purposeful: two required public definitions, two reusable proved helpers, and the required proved criterion. No state-only work, blocker, retry condition, superseded active branch, or cleanup round remains. The next step is interface binding and the content-node completion gate."
+  "summary": "patternFamily_isUniformMissingTraceFamily revision 2 reached proved state and is proof-policy satisfied without mathematical strengthening or weakening. The five active declarations comprise two public definitions, two reusable proved helpers, and the proved criterion. No unresolved mathematical declaration remains in this round.",
+  "execution_constraints": "After the semantics-preserving certificate-bundle repair, rerun the theorem through proved state."
 }

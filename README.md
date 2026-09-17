@@ -11,6 +11,7 @@ A Lean 4 formalization of the uniform missing-trace family construction underlyi
 | --- | --- |
 | Completion | `graph_proved` |
 | Proof availability | `proved` |
+| Repository format | `native` |
 
 ## Build
 

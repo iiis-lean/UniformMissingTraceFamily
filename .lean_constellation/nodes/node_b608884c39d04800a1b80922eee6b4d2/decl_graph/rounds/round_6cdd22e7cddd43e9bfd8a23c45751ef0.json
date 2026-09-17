@@ -1,12 +1,11 @@
 {
-  "change_summaries": {},
   "committed_at": "2026-07-22T13:50:36Z",
   "created_at": "2026-07-22T13:30:08Z",
   "execution_completed_at": "2026-07-22T13:50:36Z",
   "execution_reason": "DeclGraphRoundFlow finished with completed.",
   "execution_result_kind": "success",
   "node_path": "Main.PerturbedStarCertificates",
-  "objective": "Prove the first source b_0012 certificate branch for inserted patterns indexed by proper subsets of L, delivering exactly the bundled four-clause hypothesis consumed by the generic pattern criterion.",
+  "objective": "The first source b_0012 certificate branch covers inserted patterns indexed by proper subsets of L and delivers exactly the bundled four-clause hypothesis consumed by the generic pattern criterion.",
   "plan_closeout_acknowledged_at": "2026-07-22T13:50:36Z",
   "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
   "result_kind": "success",
@@ -23,5 +22,6 @@
   "started_at": "2026-07-22T13:32:01Z",
   "status": "committed",
   "strategy_id": "strategy_140c2962785943968f6203e9ab1972fc",
-  "summary": "Round 11 completed the first of five mandatory semantic certificate branches. The added proper-L theorem is proved and recursively proof-policy satisfied, with the exact bundled consumer shape required by the generic criterion. No state-only work, missing dependency, superseded branch, graph-hygiene issue, or scope overflow remains. The bottom-up strategy remains viable; the next proved case is the final added pattern from source line 63, using the accepted tau selector and the same parameter relations."
+  "summary": "Round 11 completed the first of five mandatory semantic certificate branches. The added proper-L theorem is proved and recursively proof-policy satisfied, with the exact bundled consumer shape required by the generic criterion. No state-only work, missing dependency, superseded branch, graph-hygiene issue, or scope overflow remains. The bottom-up strategy remains viable.",
+  "execution_constraints": "Continue with the final added pattern from source line 63 using the accepted tau selector and the same parameter relations as the next proved case."
 }

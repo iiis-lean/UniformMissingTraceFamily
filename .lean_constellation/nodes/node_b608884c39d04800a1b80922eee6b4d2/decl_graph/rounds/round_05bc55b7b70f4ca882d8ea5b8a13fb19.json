@@ -1,12 +1,11 @@
 {
-  "change_summaries": {},
   "committed_at": "2026-07-22T14:03:55Z",
   "created_at": "2026-07-22T13:52:39Z",
   "execution_completed_at": "2026-07-22T14:03:55Z",
   "execution_reason": "DeclGraphRoundFlow finished with blocked.",
   "execution_result_kind": "blocked",
   "node_path": "Main.PerturbedStarCertificates",
-  "objective": "Prove the second source b_0012 certificate branch for the final inserted pattern `{b} ∪ T ∪ L`, including the chosen L-element tau and the deleted singleton-L exclusion.",
+  "objective": "The second source b_0012 certificate branch for the final inserted pattern `{b} ∪ T ∪ L` includes the chosen L-element tau and the deleted singleton-L exclusion.",
   "plan_closeout_acknowledged_at": "2026-07-22T14:03:55Z",
   "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
   "result_kind": "blocked",
@@ -23,5 +22,6 @@
   "started_at": "2026-07-22T13:54:11Z",
   "status": "committed",
   "strategy_id": "strategy_140c2962785943968f6203e9ab1972fc",
-  "summary": "Round 12 advanced `perturbedStarCertificate_finalAdded` through statement acceptance and proof planning but blocked at Proof Formal. Its formal goal and source line-63 proof route remain valid and unchanged; the theorem is committed at proof_planned and is not proof-policy satisfied. The blocker is a predictable tracked helper within this node, not missing source, external dependency, interface drift, or scope overflow: a reusable classification/exclusion lemma for patterns whose intersection with the final b/T/L pattern is T plus one chosen L-element. Known retry conditions are to prove that helper from the already accepted block/core/pattern definitions, then rerun only Proof Formal for the parent with the helper captured. The active bottom-up strategy still explains this repair; no superseded artifact or cleanup target exists."
+  "summary": "Round 12 advanced `perturbedStarCertificate_finalAdded` through statement acceptance and proof planning but remained blocked at Proof Formal. Its formal goal and source line-63 proof route remain valid and unchanged; the theorem is committed at proof_planned and is not proof-policy satisfied. The blocker is a predictable tracked helper within this node, not missing source, external dependency, interface drift, or scope overflow: a reusable classification/exclusion lemma for patterns whose intersection with the final b/T/L pattern is T plus one chosen L-element. The active bottom-up strategy remains associated with this repair; no superseded artifact or cleanup target exists.",
+  "execution_constraints": "Prove the tracked classification/exclusion helper from the accepted block/core/pattern definitions, then rerun only Proof Formal for the parent with the helper captured."
 }

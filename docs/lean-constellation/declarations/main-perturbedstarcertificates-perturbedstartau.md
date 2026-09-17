@@ -1,4 +1,4 @@
-[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md)
+[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md) · [Complete graph](../DECLARATION_GRAPH.md)
 
 # `perturbedStarTau`
 
@@ -10,9 +10,21 @@ The source case-defined proper-subpattern certificate selector for perturbed-sta
 - State: `declared`
 - Revision status: `committed`
 - Repository completion: `graph_proved`
-- Formal code: final statement projection
+- Compatibility `formal_code`: final statement projection
 
-## Lean code
+## Statement NL
+
+For natural numbers n and r, construction data `B : PerturbedStarBlocks n r`, and every finite set `P : Finset (Fin n)`, `perturbedStarTau B P` is a total finite-set-valued selector. It evaluates the following guarded cases in the displayed priority order. A classical choice is made only after the indicated witness is available.
+
+1. If `P = {B.b} ∪ B.T ∪ Y` for a proper subset `Y ⊂ B.L`, it returns `B.T`.
+2. If `P = {B.b} ∪ B.T ∪ B.L` and there exists `ell0 ∈ B.L`, it chooses such an `ell0` and returns `B.T ∪ {ell0}`. If this pattern equality holds but `B.L` is empty, this guarded branch is unavailable and the selector falls through to the empty default.
+3. If `B.a ∈ P` and `P.card ≤ r`, it returns `∅`.
+4. If `B.a ∈ P`, `P.card > r`, `P ∩ B.T = ∅`, and there exists `Q ⊆ P ∩ B.L` with `Q.card = P.card - r`, it chooses such a `Q` and returns it. If no such subset exists, this guarded branch falls through to the empty default.
+5. If `B.a ∈ P`, `P.card > r`, `P ∩ B.T ≠ ∅`, and there exist `t0 ∈ P ∩ B.T` and `Q ⊆ P \ {B.a, t0}` with `Q.card = P.card - r`, it chooses such a pair and returns `Q`. If either required witness is unavailable, this guarded branch falls through to the empty default.
+
+When none of the preceding guarded cases applies, `perturbedStarTau B P` is `∅`. Later certificate lemmas prove, for members of `perturbedStarPatterns d B` under the perturbed-star parameter hypotheses, that the relevant guards and witnesses hold; therefore the intended five source values apply there while the selector remains total for arbitrary data and inputs.
+
+## Statement Formal
 
 ```lean
 -- lean-constellation: managed-imports-begin
@@ -80,6 +92,14 @@ noncomputable def perturbedStarTau {n r : ℕ}
     exact Q
   · exact ∅
 ```
+
+## Proof NL
+
+Not recorded.
+
+## Proof Formal
+
+Not recorded.
 
 ## Statement dependencies
 

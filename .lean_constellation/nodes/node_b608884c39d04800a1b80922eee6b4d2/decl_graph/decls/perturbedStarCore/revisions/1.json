@@ -2,10 +2,9 @@
   "change": {
     "base_revision": null,
     "kind": "create",
-    "objective": "Define the source b_0008 core C from article/sections/02_proof.tex line 34. For n r and accepted construction data B : PerturbedStarBlocks n r, return the Finset (Fin n) equal to {B.a, B.b} ∪ B.T ∪ B.L, with union/insert association chosen transparently but no semantic additions. Capture PerturbedStarBlocks rev2 as the statement dependency. This public reusable definition is the lower provider for U=[n]\\C, the allowed perturbed-star patterns on C, the required perturbedStarFamily interface, all five certificate cases, and downstream exact-cardinality work.",
+    "objective": "The source b_0008 core C from article/sections/02_proof.tex line 34 is the Finset (Fin n) `{B.a, B.b} ∪ B.T ∪ B.L` for construction data B : PerturbedStarBlocks n r, with no semantic additions. Its statement dependency is PerturbedStarBlocks revision 2. This public reusable definition is the lower provider for U=[n]\\C, the allowed perturbed-star patterns on C, the required perturbedStarFamily interface, all five certificate cases, and downstream exact-cardinality work.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
-    "summary": "Completed successfully. The source-b_0008 core is now the public declared definition `perturbedStarCore B = {B.a, B.b} ∪ B.T ∪ B.L`. Its formal statement passed Lean checking, its sole statement dependency is the accepted `PerturbedStarBlocks` revision 2, and declared/proved-policy satisfaction holds for this non-theorem provider. No blocker or retry condition remains; the definition is ready to feed the complementary filler, allowed-pattern, family, counting, and certificate layers.",
+    "summary": "The source-b_0008 core is the public declared definition `perturbedStarCore B = {B.a, B.b} ∪ B.T ∪ B.L`. Its formal statement passed Lean checking, its sole statement dependency is the accepted `PerturbedStarBlocks` revision 2, and declared/proved-policy satisfaction holds for this non-theorem provider. The definition supplies the complementary filler, allowed-pattern, family, counting, and certificate layers without semantic drift.",
     "target_state": "declared"
   },
   "lean_decl_name": "perturbedStarCore",
@@ -38,6 +37,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 0 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "2a58c8a7db47722c5b30c5518b26947ecedac61902b6c09b5cc60a3c353ecebf",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -55,7 +59,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Defs/perturbedStarCore.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarCore`\n\nFor natural numbers n and r and construction data `B : PerturbedStarBlocks n r`, `perturbedStarCore\nB` is the finite subset of `Fin n` defined by\n\n`{B.a, B.b} ∪ B.T ∪ B.L`.\n\nEquivalently, it is the union of the two distinguished anchors and the two blocks recorded by `B`;\nthe displayed union association is part of the definition and no additional elements or assumptions\nare introduced.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 34\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n-/\ndef perturbedStarCore {n r : ℕ} (B : PerturbedStarBlocks n r) : Finset (Fin n) :=\n  {B.a, B.b} ∪ B.T ∪ B.L\n"
     },

@@ -1,4 +1,5 @@
 {
+  "adapter_upstream": null,
   "completion_mode": "graph_proved",
   "declarations": [
     {
@@ -8,6 +9,127 @@
       "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.exists_uniformMissingTraceFamily_strictlyLargerThanStar",
       "name": "exists_uniformMissingTraceFamily_strictlyLargerThanStar",
       "node_path": "Main.CountingAndMain",
+      "proof": {
+        "deps": [
+          {
+            "kind": "repo_decl",
+            "reason": "Supplies strict positivity of the exact s-form second binomial term used for the final strict inequality.",
+            "ref": {
+              "name": "perturbedStarExtra_choose_pos",
+              "node": "Main.CountingAndMain",
+              "repo": null,
+              "revision": 1
+            }
+          },
+          {
+            "kind": "repo_decl",
+            "reason": "Supplies the proved r-form cardinality equation for the chosen explicit family.",
+            "ref": {
+              "name": "perturbedStarFamily_card",
+              "node": "Main.CountingAndMain",
+              "repo": null,
+              "revision": 1
+            }
+          },
+          {
+            "kind": "repo_decl",
+            "reason": "Supplies the r-form bounds for perturbedStarFamily_card and the exact r-to-s lower-index rewrite.",
+            "ref": {
+              "name": "perturbedStarParameterBounds",
+              "node": "Main.PerturbedStarCertificates",
+              "repo": null,
+              "revision": 3
+            }
+          },
+          {
+            "kind": "repo_decl",
+            "reason": "Provides the existential perturbed-star block witness and the required IsUniformMissingTraceFamily predicate proof.",
+            "ref": {
+              "name": "perturbedStar_isUniformMissingTraceFamily",
+              "node": "Main.PerturbedStarCertificates",
+              "repo": null,
+              "revision": 4
+            }
+          }
+        ],
+        "formal": {
+          "check": {
+            "allow_sorry": false,
+            "contains_axiom": false,
+            "contains_sorry": false,
+            "declaration_soundness": null,
+            "diagnostics": {
+              "diagnostics": [],
+              "passed": true,
+              "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.CountingAndMain.Theorems.exists_uniformMissingTraceFamily_strictlyLargerThanStar', 'items': [], 'total_items': 0, 'error_count': 0, 'warning_count': 0, 'info_count': 0, 'sorry_count': 0}",
+              "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/exists_uniformMissingTraceFamily_strictlyLargerThanStar.lean",
+              "schema_version": 2,
+              "summary": "Diagnostics returned 0 items"
+            },
+            "findings": [],
+            "fingerprint": {
+              "environment_sha256": null,
+              "source_sha256": "b65a4a3b016a86ec3050ce71e0faae11c79c68023044d295c5bc07693d733cb1",
+              "upstream_revision": null
+            },
+            "managed_import_check": null,
+            "message": "Lean check passed.",
+            "policy": "proof_formal",
+            "scan": {
+              "admit_count": 0,
+              "axiom_count": 0,
+              "contains_admit": false,
+              "contains_axiom": false,
+              "contains_opaque": false,
+              "contains_sorry": false,
+              "contains_unsafe": false,
+              "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+              "occurrences": [],
+              "opaque_count": 0,
+              "sorry_count": 0,
+              "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+              "unsafe_count": 0
+            },
+            "schema_version": 1,
+            "status": "passed",
+            "subject": {
+              "declaration_name": null,
+              "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.exists_uniformMissingTraceFamily_strictlyLargerThanStar",
+              "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/exists_uniformMissingTraceFamily_strictlyLargerThanStar.lean",
+              "repo_kind": "native",
+              "stage": "proof"
+            }
+          },
+          "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Nat.Choose.Basic\nimport UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarExtra_choose_pos\nimport UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarFamily_card\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `exists_uniformMissingTraceFamily_strictlyLargerThanStar`\n\nFor natural numbers `d`, `s`, and `n`, if `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤ d -\n1`, and `hn : 2 * (d + 1) ≤ n`, then there exists a family `family : Finset (Finset (Fin n))` such\nthat\n`IsUniformMissingTraceFamily d s family ∧ family.card = Nat.choose (n - 1) d + Nat.choose (n - 2 *\n(d + 1 - s) - 2) (2 * s - d - 2) ∧ Nat.choose (n - 1) d < family.card`.\n\n## Sources\n\n- Source `formal_target.lean`, lines 14–25\n- Source `article/sections/02_proof.tex`, lines 75–79\n\n## Statement dependencies\n\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PatternCriterion::IsUniformMissingTraceFamily` → `IsUniformMissingTraceFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily`\n\n## Proof outline\n\nInstantiate the proof-accepted lower theorem\n`Main.PerturbedStarCertificates::perturbedStar_isUniformMissingTraceFamily d s n hd hslow hshigh hn`\nand obtain `B : PerturbedStarBlocks n (d + 1 - s)` together with `hB : IsUniformMissingTraceFamily d\ns (perturbedStarFamily d B)`. Use `perturbedStarFamily d B` as the existential family and retain\n`hB` unchanged.\n\nInstantiate `Main.PerturbedStarCertificates::perturbedStarParameterBounds d s n hd hslow hshigh hn`.\nIts r-form conclusions give `2 * (d + 1 - s) ≤ d`, `2 + 2 * (d + 1 - s) ≤ n`, and `d - 2 * (d + 1 -\ns) = 2 * s - d - 2`. Supply the two bounds to the committed current-node theorem\n`perturbedStarFamily_card B`; rewrite its second lower index with that equality to obtain the exact\nimmutable s-form cardinality conjunct.\n\nApply the committed current-node helper `perturbedStarExtra_choose_pos hd hslow hshigh hn` for\npositivity of that same s-form second term. Substitute the proved cardinality equality and conclude\n`Nat.choose (n - 1) d < (perturbedStarFamily d B).card` by elementary natural-number arithmetic.\nThis assembles only the ready certificate, count, and positivity interfaces; it does not re-prove\nany certificate case or counting chain.\n\n## Proof sources\n\n- Source `formal_target.lean`, lines 14–25\n- Source `article/sections/02_proof.tex`, lines 75–79\n\n## Proof dependencies\n\n- `Main.CountingAndMain::perturbedStarExtra_choose_pos` → `perturbedStarExtra_choose_pos` from\n  `UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarExtra_choose_pos`\n- `Main.CountingAndMain::perturbedStarFamily_card` → `perturbedStarFamily_card` from\n  `UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarFamily_card`\n- `Main.PerturbedStarCertificates::perturbedStarParameterBounds` → `perturbedStarParameterBounds`\n  from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarParameterBounds`\n- `Main.PerturbedStarCertificates::perturbedStar_isUniformMissingTraceFamily` →\n  `perturbedStar_isUniformMissingTraceFamily` from `UniformMissingTraceFamily.Main.PerturbedStarCert\n  ificates.Theorems.perturbedStar_isUniformMissingTraceFamily`\n-/\ntheorem exists_uniformMissingTraceFamily_strictlyLargerThanStar (d s n : ℕ)\n    (hd : 4 ≤ d) (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    ∃ family : Finset (Finset (Fin n)),\n      IsUniformMissingTraceFamily d s family ∧\n        family.card =\n          Nat.choose (n - 1) d +\n          Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2) ∧\n          Nat.choose (n - 1) d < family.card := by\n  rcases perturbedStar_isUniformMissingTraceFamily d s n hd hslow hshigh hn with ⟨B, hB⟩\n  rcases perturbedStarParameterBounds d s n hd hslow hshigh hn with\n    ⟨hr_two, hr_s, hrewrite, hrd, hrn⟩\n  refine ⟨perturbedStarFamily d B, hB, ?_, ?_⟩\n  · simpa [hrewrite] using perturbedStarFamily_card B hrd hrn\n  · have hcard : (perturbedStarFamily d B).card =\n        Nat.choose (n - 1) d +\n          Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2) := by\n      simpa [hrewrite] using perturbedStarFamily_card B hrd hrn\n    have hpos := perturbedStarExtra_choose_pos hd hslow hshigh hn\n    rw [hcard]\n    omega\n"
+        },
+        "nl": {
+          "origin": [
+            {
+              "end_line": 25,
+              "end_locator": null,
+              "kind": "source",
+              "note": "SourceIndex b_0014 fixes the immutable consumer theorem shape assembled by this route.",
+              "ref": null,
+              "resource_key": null,
+              "source_path": "formal_target.lean",
+              "start_line": 14,
+              "start_locator": null
+            },
+            {
+              "end_line": 79,
+              "end_locator": null,
+              "kind": "source",
+              "note": "SourceIndex b_0011 concludes the constructed witness has the exact formula and a positive excess term.",
+              "ref": null,
+              "resource_key": null,
+              "source_path": "article/sections/02_proof.tex",
+              "start_line": 75,
+              "start_locator": null
+            }
+          ],
+          "text": "Instantiate the proof-accepted lower theorem `Main.PerturbedStarCertificates::perturbedStar_isUniformMissingTraceFamily d s n hd hslow hshigh hn` and obtain `B : PerturbedStarBlocks n (d + 1 - s)` together with `hB : IsUniformMissingTraceFamily d s (perturbedStarFamily d B)`. Use `perturbedStarFamily d B` as the existential family and retain `hB` unchanged.\n\nInstantiate `Main.PerturbedStarCertificates::perturbedStarParameterBounds d s n hd hslow hshigh hn`. Its r-form conclusions give `2 * (d + 1 - s) ≤ d`, `2 + 2 * (d + 1 - s) ≤ n`, and `d - 2 * (d + 1 - s) = 2 * s - d - 2`. Supply the two bounds to the committed current-node theorem `perturbedStarFamily_card B`; rewrite its second lower index with that equality to obtain the exact immutable s-form cardinality conjunct.\n\nApply the committed current-node helper `perturbedStarExtra_choose_pos hd hslow hshigh hn` for positivity of that same s-form second term. Substitute the proved cardinality equality and conclude `Nat.choose (n - 1) d < (perturbedStarFamily d B).card` by elementary natural-number arithmetic. This assembles only the ready certificate, count, and positivity interfaces; it does not re-prove any certificate case or counting chain."
+        }
+      },
       "proof_available": true,
       "proof_dependencies": [
         "current repo:Main.CountingAndMain.perturbedStarExtra_choose_pos",
@@ -21,6 +143,119 @@
         "article/sections/02_proof.tex:75-79"
       ],
       "state": "proved",
+      "statement": {
+        "deps": [
+          {
+            "kind": "mathlib_decl",
+            "reason": "Both the exact cardinality expression and the strict comparison are stated using Nat.choose.",
+            "ref": {
+              "module": "Mathlib.Data.Nat.Choose.Basic",
+              "name": "Nat.choose"
+            }
+          },
+          {
+            "kind": "repo_decl",
+            "reason": "The conclusion asserts this exact missing-trace predicate of the existential family.",
+            "ref": {
+              "name": "IsUniformMissingTraceFamily",
+              "node": "Main.PatternCriterion",
+              "repo": null,
+              "revision": 1
+            }
+          }
+        ],
+        "formal": {
+          "check": {
+            "allow_sorry": true,
+            "contains_axiom": false,
+            "contains_sorry": true,
+            "declaration_soundness": null,
+            "diagnostics": {
+              "diagnostics": [
+                {
+                  "column": 9,
+                  "line": 28,
+                  "message": "declaration uses `sorry`",
+                  "severity": "warning"
+                }
+              ],
+              "passed": true,
+              "raw_excerpt": "{'success': True, 'error_message': None, 'file': 'UniformMissingTraceFamily.Main.CountingAndMain.Theorems.exists_uniformMissingTraceFamily_strictlyLargerThanStar', 'items': [{'severity': 'warning', 'pos': {'line': 28, 'column': 9}, 'endPos': {'line': 28, 'column': 64}, 'kind': None, 'data': 'declaration uses `sorry`', 'fileName': 'UniformMissingTraceFamily.Main.CountingAndMain.Theorems.exists_uniformMissingTraceFamily_strictlyLargerThanStar', 'content': '  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily`\\n-/\\ntheorem exists_uniformMissingTraceFamily_strictlyLargerThanStar (d s n : ℕ)\\n    (hd : 4 ≤ d) (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\\n    (hn : 2 * (d + 1) ≤ n) :'}], 'total_items': 1, 'error_count': 0, 'warning_count': 1, 'info_count': 0, 'sorry_count': 1}",
+              "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/exists_uniformMissingTraceFamily_strictlyLargerThanStar.lean",
+              "schema_version": 2,
+              "summary": "Diagnostics returned 1 items"
+            },
+            "findings": [],
+            "fingerprint": {
+              "environment_sha256": null,
+              "source_sha256": "ef1075886ea76167a0c509c2584bb4e71506e6dfc8776af0269d8e59e45ab662",
+              "upstream_revision": null
+            },
+            "managed_import_check": null,
+            "message": "Lean check passed.",
+            "policy": "statement_formal",
+            "scan": {
+              "admit_count": 0,
+              "axiom_count": 0,
+              "contains_admit": false,
+              "contains_axiom": false,
+              "contains_opaque": false,
+              "contains_sorry": true,
+              "contains_unsafe": false,
+              "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+              "occurrences": [
+                {
+                  "column": 3,
+                  "excerpt": "sorry",
+                  "kind": "sorry",
+                  "line": 37
+                }
+              ],
+              "opaque_count": 0,
+              "sorry_count": 1,
+              "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
+              "unsafe_count": 0
+            },
+            "schema_version": 1,
+            "status": "passed",
+            "subject": {
+              "declaration_name": null,
+              "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.exists_uniformMissingTraceFamily_strictlyLargerThanStar",
+              "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/exists_uniformMissingTraceFamily_strictlyLargerThanStar.lean",
+              "repo_kind": "native",
+              "stage": "statement"
+            }
+          },
+          "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `exists_uniformMissingTraceFamily_strictlyLargerThanStar`\n\nFor natural numbers `d`, `s`, and `n`, if `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤ d -\n1`, and `hn : 2 * (d + 1) ≤ n`, then there exists a family `family : Finset (Finset (Fin n))` such\nthat\n`IsUniformMissingTraceFamily d s family ∧ family.card = Nat.choose (n - 1) d + Nat.choose (n - 2 *\n(d + 1 - s) - 2) (2 * s - d - 2) ∧ Nat.choose (n - 1) d < family.card`.\n\n## Sources\n\n- Source `formal_target.lean`, lines 14–25\n- Source `article/sections/02_proof.tex`, lines 75–79\n\n## Statement dependencies\n\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PatternCriterion::IsUniformMissingTraceFamily` → `IsUniformMissingTraceFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily`\n-/\ntheorem exists_uniformMissingTraceFamily_strictlyLargerThanStar (d s n : ℕ)\n    (hd : 4 ≤ d) (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    ∃ family : Finset (Finset (Fin n)),\n      IsUniformMissingTraceFamily d s family ∧\n        family.card =\n          Nat.choose (n - 1) d +\n            Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2) ∧\n          Nat.choose (n - 1) d < family.card := by\n  sorry\n"
+        },
+        "nl": {
+          "origin": [
+            {
+              "end_line": 25,
+              "end_locator": null,
+              "kind": "source",
+              "note": "This is the immutable exported theorem specification: its binders, hypotheses, existential family type, predicate, exact cardinality, and strict comparison.",
+              "ref": null,
+              "resource_key": null,
+              "source_path": "formal_target.lean",
+              "start_line": 14,
+              "start_locator": null
+            },
+            {
+              "end_line": 79,
+              "end_locator": null,
+              "kind": "source",
+              "note": "The source conclusion establishes an s-witness family with this exact cardinality and shows the second term is positive, yielding strict excess over the star.",
+              "ref": null,
+              "resource_key": null,
+              "source_path": "article/sections/02_proof.tex",
+              "start_line": 75,
+              "start_locator": null
+            }
+          ],
+          "text": "For natural numbers `d`, `s`, and `n`, if `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤ d - 1`, and `hn : 2 * (d + 1) ≤ n`, then there exists a family `family : Finset (Finset (Fin n))` such that\n`IsUniformMissingTraceFamily d s family ∧ family.card = Nat.choose (n - 1) d + Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2) ∧ Nat.choose (n - 1) d < family.card`."
+        }
+      },
       "statement_dependencies": [
         "Mathlib:Mathlib.Data.Nat.Choose.Basic.Nat.choose",
         "current repo:Main.PatternCriterion.IsUniformMissingTraceFamily"
@@ -35,6 +270,7 @@
       "module": "UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily",
       "name": "IsUniformMissingTraceFamily",
       "node_path": "Main.PatternCriterion",
+      "proof": null,
       "proof_available": false,
       "proof_dependencies": [],
       "revision": 1,
@@ -42,6 +278,75 @@
         "formal_target.lean:3-9"
       ],
       "state": "declared",
+      "statement": {
+        "deps": [],
+        "formal": {
+          "check": {
+            "allow_sorry": false,
+            "contains_axiom": false,
+            "contains_sorry": false,
+            "declaration_soundness": null,
+            "diagnostics": {
+              "diagnostics": [],
+              "passed": true,
+              "raw_excerpt": "",
+              "repo_file_path": "UniformMissingTraceFamily/Main/PatternCriterion/Defs/IsUniformMissingTraceFamily.lean",
+              "schema_version": 2,
+              "summary": "Command completed successfully"
+            },
+            "findings": [],
+            "fingerprint": {
+              "environment_sha256": null,
+              "source_sha256": "8442740af55b5eb8c6cf645c6882d36d2d399cf6468ac25ba178a4e9b796e1e9",
+              "upstream_revision": null
+            },
+            "managed_import_check": null,
+            "message": "Lean check passed.",
+            "policy": "statement_formal",
+            "scan": {
+              "admit_count": 0,
+              "axiom_count": 0,
+              "contains_admit": false,
+              "contains_axiom": false,
+              "contains_opaque": false,
+              "contains_sorry": false,
+              "contains_unsafe": false,
+              "limitation": "Text scan ignores Lean comments and string literals with a conservative first-round lexer; it is not a full Lean parser.",
+              "occurrences": [],
+              "opaque_count": 0,
+              "sorry_count": 0,
+              "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
+              "unsafe_count": 0
+            },
+            "schema_version": 1,
+            "status": "passed",
+            "subject": {
+              "declaration_name": null,
+              "module": "UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily",
+              "repo_file_path": "UniformMissingTraceFamily/Main/PatternCriterion/Defs/IsUniformMissingTraceFamily.lean",
+              "repo_kind": "native",
+              "stage": "statement"
+            }
+          },
+          "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PatternCriterion.Prelude\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `IsUniformMissingTraceFamily`\n\nFor natural numbers `n`, `d`, and `s`, and a finite family `family : Finset (Finset (Fin n))`,\n`IsUniformMissingTraceFamily d s family` holds exactly when:\n\n1. every member `F` of `family` has cardinality `d + 1`; and\n2. every `F ∈ family` has a finite set `B : Finset (Fin n)` with `B ⊆ F` and `B.card = s` such that,\nfor every `F' ∈ family`, the intersection trace `F ∩ F'` is not `B`.\n\n## Sources\n\n- Source `formal_target.lean`, lines 3–9\n-/\ndef IsUniformMissingTraceFamily {n : ℕ} (d s : ℕ)\n    (family : Finset (Finset (Fin n))) : Prop :=\n  (∀ F ∈ family, F.card = d + 1) ∧\n    ∀ F ∈ family, ∃ B : Finset (Fin n), B ⊆ F ∧ B.card = s ∧\n      ∀ F' ∈ family, B ≠ F ∩ F'\n"
+        },
+        "nl": {
+          "origin": [
+            {
+              "end_line": 9,
+              "end_locator": null,
+              "kind": "source",
+              "note": "Defines the predicate, its binder order, uniform cardinality condition, and missing-trace condition.",
+              "ref": null,
+              "resource_key": null,
+              "source_path": "formal_target.lean",
+              "start_line": 3,
+              "start_locator": null
+            }
+          ],
+          "text": "For natural numbers `n`, `d`, and `s`, and a finite family `family : Finset (Finset (Fin n))`, `IsUniformMissingTraceFamily d s family` holds exactly when:\n\n1. every member `F` of `family` has cardinality `d + 1`; and\n2. every `F ∈ family` has a finite set `B : Finset (Fin n)` with `B ⊆ F` and `B.card = s` such that, for every `F' ∈ family`, the intersection trace `F ∩ F'` is not `B`."
+        }
+      },
       "statement_dependencies": [],
       "status": "committed",
       "summary": "A Finset family on Fin n is (d+1)-uniform and has an s-element missing intersection trace inside every member."
@@ -50,7 +355,8 @@
   "dependencies": [],
   "proof_availability": "proved",
   "release_id": "release_264b1a8d57364941b10df68dfd6631cf",
+  "repo_format": "native",
   "repo_key": "UniformMissingTraceFamily",
-  "schema_version": 3,
+  "schema_version": 5,
   "summary": "Exported 2 Main declarations."
 }

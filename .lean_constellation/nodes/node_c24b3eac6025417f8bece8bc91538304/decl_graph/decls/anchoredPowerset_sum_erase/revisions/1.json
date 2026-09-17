@@ -1,12 +1,9 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [],
-    "anticipated_statement_dep_names": [],
     "base_revision": null,
     "kind": "create",
     "objective": "Create and prove the generic anchor reindexing foundation required by contract v1 and the role abstracted from SourceIndex b_0009 / article/sections/02_proof.tex:41-51. For [DecidableEq α], finset C, anchor a with only ha : a ∈ C, and an arbitrary Nat-valued weight f on finsets, state the equality in the direction from the sum over S ∈ C.powerset filtered by a ∈ S to the sum over T ∈ (C.erase a).powerset weighted by f (insert a T). Do not add cardinality, disjointness, or ambient-size hypotheses. Prove it via the verified Mathlib erase/insert inverse and Finset.sum_bij facts. This lower declaration will be consumed by anchoredPowerset_weightedSum_eq_chooseSum to replace anchored subsets by subsets of C.erase a.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
     "summary": "Created the intended private theorem and advanced revision 1 through statement NL, statement formal, proof NL, and proof formal to proved. The formal statement and proof both passed, and the declaration is proof-policy satisfied. It provides the Nat-valued erase/insert sum reindexing under only [DecidableEq α] and ha : a ∈ C for the later public convolution. No blocker, state-only gap, or cleanup issue remains.",
     "target_state": "proved"
   },
@@ -59,6 +56,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 0 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "2ce6cbeec24d4c4ed4d6f18996093877ec93ba9d985632d515f521cba8cc47ee",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "proof_formal",
         "scan": {
@@ -76,7 +78,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.AnchoredPowersetEnumeration.Theorems.anchoredPowerset_sum_erase",
+          "repo_file_path": "UniformMissingTraceFamily/Main/AnchoredPowersetEnumeration/Theorems/anchoredPowerset_sum_erase.lean",
+          "repo_kind": "native",
+          "stage": "proof"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.AnchoredPowersetEnumeration.Prelude\nimport Mathlib.Algebra.BigOperators.Group.Finset.Defs\nimport Mathlib.Data.Finset.Basic\nimport Mathlib.Data.Finset.Filter\nimport Mathlib.Data.Finset.Insert\nimport Mathlib.Data.Finset.Powerset\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `anchoredPowerset_sum_erase`\n\nLet α be a type with `[DecidableEq α]`. For every finset `C : Finset α`, anchor `a : α`, proof `ha :\na ∈ C`, and weight `f : Finset α → ℕ`, the sum over subsets of `C` containing `a` is reindexed by\nerasing the anchor:\n\n`∑ S ∈ C.powerset.filter (fun S => a ∈ S), f S = ∑ T ∈ (C.erase a).powerset, f (insert a T)`.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Finset.filter` from `Mathlib.Data.Finset.Filter`\n- `Finset.powerset` from `Mathlib.Data.Finset.Powerset`\n\n## Proof outline\n\nApply `Finset.sum_bij` to the source finset `C.powerset.filter (fun S => a ∈ S)` and target\n`(C.erase a).powerset`, sending an anchored subset `S` to `S.erase a`.\n\nFor a source member, `Finset.mem_powerset` gives `S ⊆ C`; erasing preserves this inclusion and\nexcludes `a`, so `S.erase a ⊆ C.erase a`, hence it is in the target powerset. Equality of images is\ninjective on the source because `Finset.insert_erase_invOn` gives the inverse law `insert a (S.erase\na) = S` for sets containing `a`. The summands then agree after this rewrite: `f S = f (insert a\n(S.erase a))`.\n\nFor surjectivity, let `T ∈ (C.erase a).powerset`. From `Finset.mem_powerset`, `T ⊆ C.erase a`; in\nparticular `a ∉ T`. Map it back to `insert a T`. `Finset.insert_subset ha` shows this lies in `C`,\nand it contains `a`, so it is in the filtered source. The other inverse law supplied by\n`Finset.insert_erase_invOn` (equivalently the erase-after-insert law using `a ∉ T`) proves that its\nimage is `T`. These facts discharge `sum_bij` and yield the stated equality.\n\n## Proof dependencies\n\n- `Finset.sum_bij` from `Mathlib.Algebra.BigOperators.Group.Finset.Defs`\n- `Finset.insert_erase_invOn` from `Mathlib.Data.Finset.Basic`\n- `Finset.insert_subset` from `Mathlib.Data.Finset.Insert`\n- `Finset.mem_powerset` from `Mathlib.Data.Finset.Powerset`\n-/\ntheorem anchoredPowerset_sum_erase {α : Type*} [DecidableEq α] (C : Finset α) (a : α)\n    (ha : a ∈ C) (f : Finset α → ℕ) :\n    ∑ S ∈ C.powerset.filter (fun S => a ∈ S), f S =\n      ∑ T ∈ (C.erase a).powerset, f (insert a T) := by\n  refine Finset.sum_bij (fun S _ => S.erase a) ?_ ?_ ?_ ?_\n  · intro S hS\n    rw [Finset.mem_filter] at hS\n    rw [Finset.mem_powerset] at hS ⊢\n    intro x hx\n    exact Finset.mem_erase.mpr\n      ⟨(Finset.mem_erase.mp hx).1, hS.1 (Finset.mem_erase.mp hx).2⟩\n  · intro S₁ h₁ S₂ h₂ hEq\n    have ha₁ : a ∈ S₁ := (Finset.mem_filter.mp h₁).2\n    have ha₂ : a ∈ S₂ := (Finset.mem_filter.mp h₂).2\n    calc\n      S₁ = insert a (S₁.erase a) := (Finset.insert_erase ha₁).symm\n      _ = insert a (S₂.erase a) := by rw [hEq]\n      _ = S₂ := Finset.insert_erase ha₂\n  · intro T hT\n    refine ⟨insert a T, ?_, ?_⟩\n    · rw [Finset.mem_filter, Finset.mem_powerset]\n      exact ⟨Finset.insert_subset ha ((Finset.mem_powerset.mp hT).trans\n        (Finset.erase_subset a C)), Finset.mem_insert_self _ _⟩\n    · have hnot : a ∉ T := by\n        intro hat\n        exact (Finset.mem_erase.mp ((Finset.mem_powerset.mp hT) hat)).1 rfl\n      simp [hnot]\n  · intro S hS\n    rw [Finset.insert_erase (Finset.mem_filter.mp hS).2]\n"
     },
@@ -126,6 +136,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 1 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "0c6209b4154262f3d7e848fcddc86001b01547e26e4542f28b5027e72bf169c8",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -150,7 +165,15 @@
           "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.AnchoredPowersetEnumeration.Theorems.anchoredPowerset_sum_erase",
+          "repo_file_path": "UniformMissingTraceFamily/Main/AnchoredPowersetEnumeration/Theorems/anchoredPowerset_sum_erase.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.AnchoredPowersetEnumeration.Prelude\nimport Mathlib.Data.Finset.Filter\nimport Mathlib.Data.Finset.Powerset\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `anchoredPowerset_sum_erase`\n\nLet α be a type with `[DecidableEq α]`. For every finset `C : Finset α`, anchor `a : α`, proof `ha :\na ∈ C`, and weight `f : Finset α → ℕ`, the sum over subsets of `C` containing `a` is reindexed by\nerasing the anchor:\n\n`∑ S ∈ C.powerset.filter (fun S => a ∈ S), f S = ∑ T ∈ (C.erase a).powerset, f (insert a T)`.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Finset.filter` from `Mathlib.Data.Finset.Filter`\n- `Finset.powerset` from `Mathlib.Data.Finset.Powerset`\n-/\ntheorem anchoredPowerset_sum_erase {α : Type*} [DecidableEq α] (C : Finset α) (a : α)\n    (ha : a ∈ C) (f : Finset α → ℕ) :\n    ∑ S ∈ C.powerset.filter (fun S => a ∈ S), f S =\n      ∑ T ∈ (C.erase a).powerset, f (insert a T) := by\n  sorry\n"
     },

@@ -12,25 +12,25 @@
         {
           "kind": "source",
           "ref": {
-            "end_line": null,
+            "end_line": 26,
             "path": "formal_target.lean",
-            "start_line": null
+            "start_line": 1
           }
         },
         {
           "kind": "source",
           "ref": {
-            "end_line": null,
+            "end_line": 79,
             "path": "article/sections/02_proof.tex",
-            "start_line": null
+            "start_line": 1
           }
         },
         {
           "kind": "source",
           "ref": {
-            "end_line": null,
+            "end_line": 21,
             "path": "article/sections/03_remarks_and_acknowledgement.tex",
-            "start_line": null
+            "start_line": 1
           }
         }
       ],

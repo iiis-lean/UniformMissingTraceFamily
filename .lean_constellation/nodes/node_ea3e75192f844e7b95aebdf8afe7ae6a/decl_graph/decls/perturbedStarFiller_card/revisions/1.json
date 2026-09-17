@@ -1,14 +1,9 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [
-      "perturbedStarCore_card"
-    ],
-    "anticipated_statement_dep_names": [],
     "base_revision": null,
     "kind": "create",
     "objective": "Derive the filler size needed in SourceIndex b_0009/article/sections/02_proof.tex 48–50: for B : PerturbedStarBlocks n r, prove (perturbedStarFiller B).card = n - (2 + 2 * r), with an equivalent parenthesization acceptable. Consume the lower perturbedStarFiller definition and current-node perturbedStarCore_card, using Finset.card_sdiff/univ cardinality. This must serve the completion-binomial upper index in perturbedStarFamily_card without introducing stronger ambient-size assumptions than later consumers possess.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
     "summary": "DeclGraphRoundFlow failed for change perturbedStarFiller_card@rev:1.",
     "target_state": "proved"
   },

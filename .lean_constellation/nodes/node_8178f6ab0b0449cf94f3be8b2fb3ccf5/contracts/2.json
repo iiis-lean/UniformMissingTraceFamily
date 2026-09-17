@@ -38,25 +38,25 @@
         {
           "kind": "source",
           "ref": {
-            "end_line": null,
+            "end_line": 26,
             "path": "formal_target.lean",
-            "start_line": null
+            "start_line": 1
           }
         },
         {
           "kind": "source",
           "ref": {
-            "end_line": null,
+            "end_line": 79,
             "path": "article/sections/02_proof.tex",
-            "start_line": null
+            "start_line": 1
           }
         },
         {
           "kind": "source",
           "ref": {
-            "end_line": null,
+            "end_line": 21,
             "path": "article/sections/03_remarks_and_acknowledgement.tex",
-            "start_line": null
+            "start_line": 1
           }
         }
       ],
@@ -70,5 +70,6 @@
   "status": "committed",
   "success_criteria": "All required repository interfaces are bound and the Main scope can be committed as the repo public boundary.",
   "summary": "Promote the existing public Statement dependency Main.PatternCriterion.IsUniformMissingTraceFamily@1 into the Main export boundary while preserving the graph_proved root theorem and all mathematical truth.",
+  "task_completion_mode": "graph_proved",
   "version": 2
 }

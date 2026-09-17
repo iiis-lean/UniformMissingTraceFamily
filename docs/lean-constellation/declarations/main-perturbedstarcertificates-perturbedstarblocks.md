@@ -1,4 +1,4 @@
-[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md)
+[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md) · [Complete graph](../DECLARATION_GRAPH.md)
 
 # `PerturbedStarBlocks`
 
@@ -10,9 +10,13 @@ Construction data consisting of two distinguished points and two disjoint equal-
 - State: `declared`
 - Revision status: `committed`
 - Repository completion: `graph_proved`
-- Formal code: final statement projection
+- Compatibility `formal_code`: final statement projection
 
-## Lean code
+## Statement NL
+
+For natural numbers n and r, `PerturbedStarBlocks n r` is public construction data consisting of two distinguished elements `a` and `b` of `Fin n` and two finite sets `T` and `L` of `Fin n`.  It records explicitly that `a ≠ b`, that `T` and `L` each have cardinality `r`, that `T` and `L` are disjoint, and that neither `T` nor `L` contains either distinguished element.  Thus all anchor distinctness and block-avoidance requirements are fields of the data, rather than implicit conventions.
+
+## Statement Formal
 
 ```lean
 -- lean-constellation: managed-imports-begin
@@ -49,6 +53,14 @@ structure PerturbedStarBlocks (n r : ℕ) where
   a_not_mem_L : a ∉ L
   b_not_mem_L : b ∉ L
 ```
+
+## Proof NL
+
+Not recorded.
+
+## Proof Formal
+
+Not recorded.
 
 ## Sources
 

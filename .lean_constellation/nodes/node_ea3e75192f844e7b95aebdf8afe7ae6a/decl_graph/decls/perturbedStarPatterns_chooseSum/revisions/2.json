@@ -1,15 +1,10 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [
-      "perturbedStarBase_chooseSum",
-      "perturbedStarPerturbation_chooseSum"
-    ],
-    "anticipated_statement_dep_names": [],
     "base_revision": 1,
     "kind": "update",
     "objective": "Preserve the accepted SourceIndex b_0009/article 41–51 statement exactly: for B : PerturbedStarBlocks n r with hrd : 2*r≤d and hrn : 2+2*r≤n, the weighted sum over perturbedStarPatterns d B equals Nat.choose (n-1) d + Nat.choose (n-2*r-2) (d-2*r). Prove it by applying perturbedStarPerturbation_chooseSum to express the pattern sum as the explicit anchored-base sum plus the unpaired term, then rewrite that base sum with perturbedStarBase_chooseSum. These two providers are proved and graph_proved-satisfied. Add no assumptions, preserve the r-form indices and equality direction, and do not reintroduce deleted wrappers or local enumeration/cancellation arguments. This theorem is the direct counting input to perturbedStarFamily_card.",
     "require_target_state_satisfied": true,
-    "reset_to_state": "declared",
+    "start_stage": "proof_nl",
     "summary": "The unchanged combined SourceIndex b_0009 pattern-weight theorem advanced from declared to proved. Its proof composes the proved perturbedStarPerturbation_chooseSum with perturbedStarBase_chooseSum, preserves hrd/hrn and the exact r-form Nat.choose indices, and passed graph_proved proof-policy satisfaction. No obsolete wrapper or local cancellation dependency remains. It is now the direct proved counting input for the required public perturbedStarFamily_card theorem.",
     "target_state": "proved"
   },
@@ -50,6 +45,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 0 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "cb59f7c29b799d92ef361f3d55128deecba87b1633e20660f741a053179ba776",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "proof_formal",
         "scan": {
@@ -67,7 +67,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarPatterns_chooseSum",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarPatterns_chooseSum.lean",
+          "repo_kind": "native",
+          "stage": "proof"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Nat.Choose.Basic\nimport UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarBase_chooseSum\nimport UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarPerturbation_chooseSum\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarPatterns_chooseSum`\n\nFor natural numbers n, r, and d, construction data `B : PerturbedStarBlocks n r`, and hypotheses `2\n* r ≤ d` and `2 + 2 * r ≤ n`,\n`∑ P ∈ perturbedStarPatterns d B, Nat.choose (perturbedStarFiller B).card (d + 1 - P.card) =\nNat.choose (n - 1) d + Nat.choose (n - 2 * r - 2) (d - 2 * r)`.\nThe anchored base star contributes the first term; each proper-`B.L` deletion at the first anchor\ncancels with its equal-cardinality insertion at the second anchor, leaving only the `Y = B.L`\npattern as the second term.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 41–51\n\n## Statement dependencies\n\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\n\n## Proof outline\n\nApply the committed theorem `perturbedStarPerturbation_chooseSum B hrd hrn`. Its left-hand side is\nexactly the target weighted sum, and it rewrites it to the explicit filtered anchored-base sum plus\nthe unchanged unpaired term `Nat.choose (n - 2 * r - 2) (d - 2 * r)`. Rewrite that base sum with the\ncommitted theorem `perturbedStarBase_chooseSum B`, obtaining `Nat.choose (n - 1) d`.\n\nThe resulting equality is exactly the accepted conclusion, in the same r-form indices and equality\ndirection. This is a two-provider composition; it introduces no assumptions and uses neither cleanup\nwrapper nor a local enumeration/cancellation argument.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, lines 41–51\n\n## Proof dependencies\n\n- `Main.CountingAndMain::perturbedStarBase_chooseSum` → `perturbedStarBase_chooseSum` from\n  `UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarBase_chooseSum`\n- `Main.CountingAndMain::perturbedStarPerturbation_chooseSum` →\n  `perturbedStarPerturbation_chooseSum` from\n  `UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarPerturbation_chooseSum`\n-/\ntheorem perturbedStarPatterns_chooseSum {n r d : ℕ} (B : PerturbedStarBlocks n r)\n    (hrd : 2 * r ≤ d) (hrn : 2 + 2 * r ≤ n) :\n    ∑ P ∈ perturbedStarPatterns d B,\n      Nat.choose (perturbedStarFiller B).card (d + 1 - P.card) =\n        Nat.choose (n - 1) d + Nat.choose (n - 2 * r - 2) (d - 2 * r) := by\n  rw [perturbedStarPerturbation_chooseSum B hrd hrn, perturbedStarBase_chooseSum B]\n"
     },
@@ -151,6 +159,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 1 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "8f73d2810b47b4b4dc087d75a4d4db4fa6d14a7a313e31aa7136fbb9570aa752",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -175,7 +188,15 @@
           "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarPatterns_chooseSum",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarPatterns_chooseSum.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarPatterns_chooseSum`\n\nFor natural numbers n, r, and d, construction data `B : PerturbedStarBlocks n r`, and hypotheses `2\n* r ≤ d` and `2 + 2 * r ≤ n`,\n`∑ P ∈ perturbedStarPatterns d B, Nat.choose (perturbedStarFiller B).card (d + 1 - P.card) =\nNat.choose (n - 1) d + Nat.choose (n - 2 * r - 2) (d - 2 * r)`.\nThe anchored base star contributes the first term; each proper-`B.L` deletion at the first anchor\ncancels with its equal-cardinality insertion at the second anchor, leaving only the `Y = B.L`\npattern as the second term.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 41–51\n\n## Statement dependencies\n\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\n-/\ntheorem perturbedStarPatterns_chooseSum {n r d : ℕ} (B : PerturbedStarBlocks n r)\n    (hrd : 2 * r ≤ d) (hrn : 2 + 2 * r ≤ n) :\n    ∑ P ∈ perturbedStarPatterns d B,\n      Nat.choose (perturbedStarFiller B).card (d + 1 - P.card) =\n        Nat.choose (n - 1) d + Nat.choose (n - 2 * r - 2) (d - 2 * r) := by\n  sorry\n"
     },

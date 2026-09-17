@@ -1,23 +1,10 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [
-      "exists_perturbedStarBlocks",
-      "perturbedStarCertificate_addedProper",
-      "perturbedStarCertificate_finalAdded",
-      "perturbedStarCertificate_largeAvoiding",
-      "perturbedStarCertificate_largeMeeting",
-      "perturbedStarCertificate_smallStar",
-      "perturbedStarParameterBounds"
-    ],
-    "anticipated_statement_dep_names": [
-      "PerturbedStarBlocks",
-      "perturbedStarFamily"
-    ],
     "base_revision": 1,
     "kind": "update",
     "objective": "Retry the unchanged final public theorem after the prior unsubmitted planning-only revision failed before all stages due solely to dependency metadata. Preserve exactly the source- and contract-derived statement: for d,s,n : ℕ with hd : 4≤d, hslow : (d+3)/2≤s, hshigh : s≤d-1, and hn : 2*(d+1)≤n, conclude `∃ B : PerturbedStarBlocks n (d+1-s), IsUniformMissingTraceFamily d s (perturbedStarFamily d B)`. Execute the full pipeline from planned to proved. Use `perturbedStarParameterBounds` and `exists_perturbedStarBlocks` to select B, then apply visible proved `Main.PatternCriterion.patternFamily_isUniformMissingTraceFamily` to accepted core/filler/pattern/tau definitions. Establish core/filler disjointness and pattern containment directly. Prove the bundled tau hypothesis by an exhaustive accepted-pattern classification and invoke all five separately proved case theorems: addedProper, finalAdded, smallStar, largeAvoiding, and largeMeeting. Preserve the explicit existential B and family object required by downstream counting; do not alter hypotheses, merge cases, add assumptions, or bypass the generic criterion. Declared non-theorem foundations are intentionally omitted from anticipated proof-provider metadata because graph_proved treats their declared state as satisfied; formal stages should capture those actual definition dependencies normally.",
     "require_target_state_satisfied": true,
-    "reset_to_state": "planned",
+    "start_stage": "statement_nl",
     "summary": "Blocked at Statement Formal by an external build-environment prerequisite. Statement NL was accepted and revision 2 reached specified state; no formal Lean declaration or proof artifacts were captured. The frozen consumer-side target remains: for d,s,n : ℕ with hd : 4≤d, hslow : (d+3)/2≤s, hshigh : s≤d-1, and hn : 2*(d+1)≤n, conclude `∃ B : PerturbedStarBlocks n (d+1-s), IsUniformMissingTraceFamily d s (perturbedStarFamily d B)`. The planner and worker checked the satisfied current-node providers `perturbedStarParameterBounds`, `exists_perturbedStarBlocks`, all five proved certificate theorems, and the declared/satisfied block/core/filler/pattern/tau/family definitions, together with visible proved `Main.PatternCriterion.patternFamily_isUniformMissingTraceFamily`; no statement-shape or dependency mismatch was found. Lean capture could not run because the rebased workspace lacks its Mathlib package checkout. Retry only after the workspace's Mathlib checkout/package environment is restored; preserve this statement and dependency route, then resume from specified through Statement Formal and the proof stages.",
     "target_state": "proved"
   },

@@ -184,5 +184,6 @@
   "status": "committed",
   "success_criteria": "A proved public theorem rewrites the filtered anchored-powerset weighted sum to ∑ j∈range(d+1), choose (C.erase a).card j * choose U.card (d-j); its proof closure contains the reusable anchor erase/insert and powersetCard fiber evaluation roles; all theorem-like outputs are proof-policy satisfied.",
   "summary": "Accepted ready outcome in graph_proved mode. Four intentional theorem declarations are proved and proof-policy satisfied. The public anchoredPowerset_weightedSum_eq_chooseSum has exactly the [DecidableEq α], C/U/a/ha/d signature, filtered anchored domain, Nat subtraction indices, and equality direction of private consumer Main.CountingAndMain::anchoredPowerset_chooseSum_reindex@1, with no extra hypotheses. This discharges the generic enumeration prerequisite; the separate perturbed-pattern cancellation prerequisite remains.",
+  "task_completion_mode": "graph_proved",
   "version": 1
 }

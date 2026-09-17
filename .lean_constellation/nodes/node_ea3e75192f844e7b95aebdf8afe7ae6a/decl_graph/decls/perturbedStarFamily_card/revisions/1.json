@@ -1,16 +1,9 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [
-      "patternFamily_card_sum",
-      "perturbedStarPatterns_chooseSum",
-      "perturbedStarPatterns_disjoint_filler"
-    ],
-    "anticipated_statement_dep_names": [],
     "base_revision": null,
     "kind": "create",
     "objective": "Implement the required public interface from contract v1 and SourceIndex b_0009/article lines 41–51. For natural n r d, B : PerturbedStarBlocks n r, hrd : 2*r ≤ d, and hrn : 2+2*r ≤ n, prove exactly `(perturbedStarFamily d B).card = Nat.choose (n - 1) d + Nat.choose (n - 2 * r - 2) (d - 2 * r)` (up to harmless formatting/parenthesization). Preserve the explicit perturbedStarFamily object, the r-form bounds and indices, and equality direction; add no assumptions and do not rewrite to s-form. Unfold perturbedStarFamily as the pattern family, apply proved patternFamily_card_sum using perturbedStarPatterns_disjoint_filler, then rewrite the resulting weighted sum with proved perturbedStarPatterns_chooseSum. This public proved theorem is the exact cardinality input for the immutable final existential theorem and must be semantically bindable to interface perturbedStarFamily_card.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
     "summary": "Created the required public theorem perturbedStarFamily_card and advanced revision 1 through all four stages to proved. The compiler-confirmed r-form statement preserves the explicit perturbedStarFamily object, assumptions 2*r ≤ d and 2+2*r ≤ n, equality direction, and exact cardinality Nat.choose (n-1) d + Nat.choose (n-2*r-2) (d-2*r). Its proof composes the proved patternFamily cardinality sum, filler disjointness, and perturbed-star pattern weighted-sum theorem, so it is graph_proved and supplies the exact cardinality input for the immutable final existential theorem.",
     "target_state": "proved"
   },
@@ -71,6 +64,11 @@
           "schema_version": 2,
           "summary": "Command completed successfully"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "28910ea39876ed2c3e4b44c139b1a54a1214a6f0bc52503c3a713a4cf5da68ac",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "proof_formal",
         "scan": {
@@ -88,7 +86,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarFamily_card",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarFamily_card.lean",
+          "repo_kind": "native",
+          "stage": "proof"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Nat.Choose.Basic\nimport UniformMissingTraceFamily.Main.CountingAndMain.Theorems.patternFamily_card_sum\nimport UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarPatterns_chooseSum\nimport UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarPatterns_disjoint_filler\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarFamily_card`\n\nFor natural numbers `n`, `r`, and `d`, any `B : PerturbedStarBlocks n r`, and proofs `hrd : 2 * r ≤\nd` and `hrn : 2 + 2 * r ≤ n`, the explicit family `perturbedStarFamily d B` has cardinality\n`(perturbedStarFamily d B).card = Nat.choose (n - 1) d + Nat.choose (n - 2 * r - 2) (d - 2 * r)`.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 41–51\n\n## Statement dependencies\n\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFamily` → `perturbedStarFamily` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFamily`\n\n## Proof outline\n\nUnfold the accepted definition `perturbedStarFamily d B` to `patternFamily d (perturbedStarPatterns\nd B) (perturbedStarFiller B)`. Apply the committed generic theorem `patternFamily_card_sum` to these\npatterns and filler, discharging its sole hypothesis pointwise with the committed theorem\n`perturbedStarPatterns_disjoint_filler B P hP`. This rewrites the family cardinality to exactly the\nweighted sum over `perturbedStarPatterns d B`.\n\nRewrite that weighted sum using the committed theorem `perturbedStarPatterns_chooseSum B hrd hrn`.\nThe result is precisely `Nat.choose (n - 1) d + Nat.choose (n - 2 * r - 2) (d - 2 * r)`, preserving\nthe public object, both r-form hypotheses and indices, and the equality direction. No additional\nassumptions or local counting argument are introduced.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, lines 41–51\n\n## Proof dependencies\n\n- `Main.CountingAndMain::patternFamily_card_sum` → `patternFamily_card_sum` from\n  `UniformMissingTraceFamily.Main.CountingAndMain.Theorems.patternFamily_card_sum`\n- `Main.CountingAndMain::perturbedStarPatterns_chooseSum` → `perturbedStarPatterns_chooseSum` from\n  `UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarPatterns_chooseSum`\n- `Main.CountingAndMain::perturbedStarPatterns_disjoint_filler` →\n  `perturbedStarPatterns_disjoint_filler` from\n  `UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarPatterns_disjoint_filler`\n- `Main.PerturbedStarCertificates::perturbedStarFamily` → `perturbedStarFamily` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFamily`\n-/\ntheorem perturbedStarFamily_card {n r d : ℕ} (B : PerturbedStarBlocks n r)\n    (hrd : 2 * r ≤ d) (hrn : 2 + 2 * r ≤ n) :\n    (perturbedStarFamily d B).card =\n      Nat.choose (n - 1) d + Nat.choose (n - 2 * r - 2) (d - 2 * r) := by\n  unfold perturbedStarFamily\n  rw [patternFamily_card_sum (perturbedStarPatterns d B) (perturbedStarFiller B)\n    (fun P hP => perturbedStarPatterns_disjoint_filler B P hP)]\n  exact perturbedStarPatterns_chooseSum B hrd hrn\n"
     },
@@ -162,6 +168,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 1 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "2031524a0a3a2319a19db2c3a73cddb0e6ecd5725541ed092efb1c550785f2d1",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -186,7 +197,15 @@
           "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarFamily_card",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarFamily_card.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarFamily_card`\n\nFor natural numbers `n`, `r`, and `d`, any `B : PerturbedStarBlocks n r`, and proofs `hrd : 2 * r ≤\nd` and `hrn : 2 + 2 * r ≤ n`, the explicit family `perturbedStarFamily d B` has cardinality\n`(perturbedStarFamily d B).card = Nat.choose (n - 1) d + Nat.choose (n - 2 * r - 2) (d - 2 * r)`.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 41–51\n\n## Statement dependencies\n\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFamily` → `perturbedStarFamily` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFamily`\n-/\ntheorem perturbedStarFamily_card {n r d : ℕ} (B : PerturbedStarBlocks n r)\n    (hrd : 2 * r ≤ d) (hrn : 2 + 2 * r ≤ n) :\n    (perturbedStarFamily d B).card =\n      Nat.choose (n - 1) d + Nat.choose (n - 2 * r - 2) (d - 2 * r) := by\n  sorry\n"
     },

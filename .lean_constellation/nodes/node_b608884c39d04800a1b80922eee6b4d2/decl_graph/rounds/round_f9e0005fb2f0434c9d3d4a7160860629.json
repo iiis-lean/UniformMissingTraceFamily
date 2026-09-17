@@ -1,12 +1,11 @@
 {
-  "change_summaries": {},
   "committed_at": "2026-07-22T12:13:15Z",
   "created_at": "2026-07-22T12:10:10Z",
   "execution_completed_at": "2026-07-22T12:13:15Z",
   "execution_reason": "DeclGraphRoundFlow finished with completed.",
   "execution_result_kind": "success",
   "node_path": "Main.PerturbedStarCertificates",
-  "objective": "Resolve the round-1 tracked-provider sequencing blocker by accepting the already checked source b_0008 PerturbedStarBlocks structure at declared state, without changing its consumer-facing meaning, so dependent theorem modules may import it in subsequent rounds.",
+  "objective": "The already checked source b_0008 PerturbedStarBlocks structure is an accepted declared provider with unchanged consumer-facing meaning for dependent theorem modules.",
   "plan_closeout_acknowledged_at": "2026-07-22T12:13:15Z",
   "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
   "result_kind": "success",
@@ -23,5 +22,6 @@
   "started_at": "2026-07-22T12:11:23Z",
   "status": "committed",
   "strategy_id": "strategy_140c2962785943968f6203e9ab1972fc",
-  "summary": "Round 2 successfully resolved the tracked-provider sequencing blocker. PerturbedStarBlocks rev2 reached target declared and is proof-policy satisfied; its public anchors/block/cardinality/disjointness/avoidance interface is unchanged. No theorem proof was attempted in this provider-only round, no state-only intermediate remains for this non-theorem foundation, and graph hygiene is clean. The existing bottom-up strategy made the intended progress and remains viable. The known parent retry condition is now met: the next round may advance perturbedStarParameterBounds and retry the unchanged exists_perturbedStarBlocks statement to proved, with PerturbedStarBlocks available as an accepted declared dependency and the verified Mathlib construction facts available."
+  "summary": "Round 2 successfully resolved the tracked-provider sequencing blocker. PerturbedStarBlocks rev2 reached target declared and is proof-policy satisfied; its public anchors/block/cardinality/disjointness/avoidance interface is unchanged. No theorem proof was attempted in this provider-only round, no state-only intermediate remains for this non-theorem foundation, and graph hygiene is clean. The existing bottom-up strategy made the intended progress and remains viable.",
+  "execution_constraints": "Advance perturbedStarParameterBounds and retry the unchanged exists_perturbedStarBlocks statement to proved, with PerturbedStarBlocks as an accepted declared dependency and the verified Mathlib construction facts available."
 }

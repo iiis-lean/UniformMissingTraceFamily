@@ -2,11 +2,11 @@
   "change": {
     "base_revision": null,
     "kind": "create",
-    "objective": "From the contract hypotheses hd : 4 ≤ d, hslow : (d+2)/2 ≤ s, hshigh : s ≤ d-1, and hn : 2*(d+1) ≤ n, with r = d+1-s, prove the source b_0008 consequences from article/sections/02_proof.tex lines 30–32: 2 ≤ r, r+1 ≤ s, d-2*r = 2*s-d-2 (or an equivalent truncation-safe equality), 2*r ≤ d, and enough room 2+2*r ≤ n. Keep every Nat subtraction/truncation justification explicit. This consumes the verified Mathlib.Tactic/omega support and serves the block-existence theorem, later certificate size bounds, and the public perturbed-star theorem.",
+    "objective": "The source b_0008 arithmetic foundation under hd : 4≤d, hslow : (d+2)/2≤s, hshigh : s≤d-1, hn : 2*(d+1)≤n and r=d+1-s asserts 2≤r, r+1≤s, d-2*r=2*s-d-2, 2*r≤d, and 2+2*r≤n, with explicit Nat truncation justification. It serves exists_perturbedStarBlocks, later certificate size bounds, and the public perturbed-star theorem.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
-    "summary": "Created the source b_0008 arithmetic foundation and reached committed state specified. Statement NL was accepted, and a Lean statement candidate matching the consumer shape was checked: under hd, hslow, hshigh, hn with r=d+1-s it concludes 2≤r, r+1≤s, the truncation-safe equality d-2*r=2*s-d-2, 2*r≤d, and 2+2*r≤n. It did not reach declared/proved because the round terminated at Statement Formal on a sibling dependency; no declaration-specific source, interface, or Lean mismatch was reported. Retry by advancing this unchanged accepted statement through declared and proved with Mathlib.Tactic/omega.",
-    "target_state": "proved"
+    "summary": "Created the source b_0008 arithmetic foundation and reached committed state specified. Statement NL was accepted, and a Lean statement candidate matching the consumer shape was checked: under hd, hslow, hshigh, hn with r=d+1-s it concludes 2≤r, r+1≤s, the truncation-safe equality d-2*r=2*s-d-2, 2*r≤d, and 2+2*r≤n. It did not reach declared/proved because the round terminated at Statement Formal on a sibling dependency; no declaration-specific source, interface, or Lean mismatch was reported.",
+    "target_state": "proved",
+    "execution_constraints": "Advance this unchanged accepted statement through declared and proved with Mathlib.Tactic/omega."
   },
   "lean_decl_name": "perturbedStarParameterBounds",
   "proof": null,
@@ -34,6 +34,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 1 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "700d6514cd4d628a0a34f60887735aeee250774a834d19a36059d7ffc60dafcc",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -58,7 +63,15 @@
           "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarParameterBounds",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Theorems/perturbedStarParameterBounds.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarParameterBounds`\n\nFor natural numbers d, s, and n, assume `4 ≤ d`, `(d + 2) / 2 ≤ s`, `s ≤ d - 1`, and `2 * (d + 1) ≤\nn`.  Put `r = d + 1 - s`.  Then `2 ≤ r`, `r + 1 ≤ s`, `d - 2*r = 2*s - d - 2`, `2*r ≤ d`, and `2 +\n2*r ≤ n`.  All subtractions are natural-number subtraction, so the theorem supplies the accompanying\ntruncation-safe arithmetic consequences under the displayed hypotheses.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 30–32\n-/\ntheorem perturbedStarParameterBounds (d s n : ℕ) (hd : 4 ≤ d)\n    (hslow : (d + 2) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    let r := d + 1 - s\n    2 ≤ r ∧ r + 1 ≤ s ∧ d - 2 * r = 2 * s - d - 2 ∧\n      2 * r ≤ d ∧ 2 + 2 * r ≤ n := by\n  sorry\n"
     },

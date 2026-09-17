@@ -1,12 +1,10 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [],
-    "anticipated_statement_dep_names": [],
     "base_revision": 1,
     "kind": "update",
     "objective": "Preserve the accepted formal statement from SourceIndex b_0009/construction lines 34–39 and run only its proof stages: for P ∈ perturbedStarPatterns d B, prove Disjoint P (perturbedStarFiller B) without parameter bounds. The existing Proof NL route unfolds the pattern/core/filler definitions, shows every base or inserted pattern is contained in perturbedStarCore B, and closes with Finset.disjoint_left against univ \\ core. No tracked helper or parent dependency is missing. This proved fact will discharge patternFamily_card_sum’s disjointness hypothesis in perturbedStarFamily_card.",
     "require_target_state_satisfied": true,
-    "reset_to_state": "declared",
+    "start_stage": "proof_nl",
     "summary": "The proof-only advancement completed successfully. The accepted formal statement was preserved, Proof NL and Proof Formal passed, and perturbedStarPatterns_disjoint_filler is now committed at proved state with required proof-policy satisfaction. It is ready to discharge the per-pattern disjointness premise of patternFamily_card_sum in the later public cardinality proof.",
     "target_state": "proved"
   },
@@ -73,6 +71,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 0 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "f88b65d0d00bf633ef4a2709e191b2a57921df20382b5dc8fd0eff8d3457ae31",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "proof_formal",
         "scan": {
@@ -90,7 +93,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarPatterns_disjoint_filler",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarPatterns_disjoint_filler.lean",
+          "repo_kind": "native",
+          "stage": "proof"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Finset.Disjoint\nimport Mathlib.Data.Finset.Powerset\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarPatterns_disjoint_filler`\n\nFor natural numbers n, r, and d and construction data `B : PerturbedStarBlocks n r`, every pattern\n`P ∈ perturbedStarPatterns d B` is disjoint from the complementary filler `perturbedStarFiller B`.\nEquivalently, `Disjoint P (perturbedStarFiller B)` holds for each such P, because every base,\ndeleted, or inserted pattern lies in `perturbedStarCore B`, while the filler is its complement in\n`Fin n`.  No parameter bounds are assumed.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 34–39\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\n\n## Proof outline\n\nUnfold `perturbedStarPatterns`, `perturbedStarCore`, and `perturbedStarFiller`.  From `hP`, split\nmembership in `(base \\ deleted) ∪ inserted`.  In the left case, membership in `base \\ deleted` gives\nmembership in `base`; then `Finset.mem_powerset` yields `P ⊆ perturbedStarCore B`.  In the inserted\ncase, extract `Y ∈ B.L.powerset` and the equality `P = {B.b} ∪ B.T ∪ Y`; `Finset.mem_powerset` gives\n`Y ⊆ B.L`, and elementwise union membership proves that this displayed pattern is a subset of\n`{B.a,B.b} ∪ B.T ∪ B.L = perturbedStarCore B`.\n\nHaving proved `P ⊆ perturbedStarCore B`, use `Finset.disjoint_left`.  If an element belongs both to\n`P` and to `perturbedStarFiller B = Finset.univ \\ perturbedStarCore B`, the subset fact puts it in\nthe core while its filler membership says it is not in the core, a contradiction.  The case split\nand membership simplifications are lightweight local Finset reasoning; no parameter hypothesis or\nadditional helper is required.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, lines 34–39\n\n## Proof dependencies\n\n- `Finset.disjoint_left` from `Mathlib.Data.Finset.Disjoint`\n- `Finset.mem_powerset` from `Mathlib.Data.Finset.Powerset`\n- `Main.PerturbedStarCertificates::perturbedStarCore` → `perturbedStarCore` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\n-/\ntheorem perturbedStarPatterns_disjoint_filler {n r d : ℕ}\n    (B : PerturbedStarBlocks n r) (P : Finset (Fin n))\n    (hP : P ∈ perturbedStarPatterns d B) : Disjoint P (perturbedStarFiller B) := by\n  have hsub : P ⊆ perturbedStarCore B := by\n    unfold perturbedStarPatterns at hP\n    dsimp at hP\n    rcases Finset.mem_union.mp hP with hbase | hins\n    · have hPbase := (Finset.mem_sdiff.mp hbase).1\n      exact Finset.mem_powerset.mp (Finset.mem_filter.mp hPbase).1\n    · rcases Finset.mem_image.mp hins with ⟨Y, hY, hYP⟩\n      have hYsub : Y ⊆ B.L := Finset.mem_powerset.mp hY\n      intro x hx\n      rw [← hYP] at hx\n      unfold perturbedStarCore\n      rcases Finset.mem_union.mp hx with hxbT | hxY\n      · rcases Finset.mem_insert.mp hxbT with rfl | hxT\n        · simp\n        · simp [hxT]\n      · simp [hYsub hxY]\n  rw [Finset.disjoint_left]\n  intro x hxP hxFiller\n  have hxCore : x ∈ perturbedStarCore B := hsub hxP\n  unfold perturbedStarFiller at hxFiller\n  exact (Finset.mem_sdiff.mp hxFiller).2 hxCore\n"
     },
@@ -166,6 +177,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 1 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "6d924354ffafc0fc7e82fbfa41ed5ad94db74725e3040fd8c5cc3e82c2ff7958",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -190,7 +206,15 @@
           "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarPatterns_disjoint_filler",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarPatterns_disjoint_filler.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarPatterns_disjoint_filler`\n\nFor natural numbers n, r, and d and construction data `B : PerturbedStarBlocks n r`, every pattern\n`P ∈ perturbedStarPatterns d B` is disjoint from the complementary filler `perturbedStarFiller B`.\nEquivalently, `Disjoint P (perturbedStarFiller B)` holds for each such P, because every base,\ndeleted, or inserted pattern lies in `perturbedStarCore B`, while the filler is its complement in\n`Fin n`.  No parameter bounds are assumed.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 34–39\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\n-/\ntheorem perturbedStarPatterns_disjoint_filler {n r d : ℕ}\n    (B : PerturbedStarBlocks n r) (P : Finset (Fin n))\n    (hP : P ∈ perturbedStarPatterns d B) : Disjoint P (perturbedStarFiller B) := by\n  sorry\n"
     },

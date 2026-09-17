@@ -1,12 +1,10 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [],
-    "anticipated_statement_dep_names": [],
     "base_revision": 1,
     "kind": "update",
     "objective": "Advance the independent planned foundation through all stages to proved, preserving SourceIndex b_0009/article 41–51: for B : PerturbedStarBlocks n r, the two distinct anchors and two disjoint r-blocks give card (perturbedStarCore B) = 2 + 2*r. Consume only lower PerturbedStarBlocks/perturbedStarCore facts; this serves the deferred filler and final-term counts.",
     "require_target_state_satisfied": true,
-    "reset_to_state": "planned",
+    "start_stage": "statement_nl",
     "summary": "Completed the intended update from planned to proved. The formal statement and proof both passed, establishing the source-faithful cardinality of the two-anchor, two-r-block perturbedStarCore; the declaration is committed at proved state and is ready as the provider for perturbedStarFiller_card and later unpaired-pattern counting.",
     "target_state": "proved"
   },
@@ -71,6 +69,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 0 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "cad94551a999c8d307e451f981f5d304b2b90fed2cd04bd445d802bf47c25bda",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "proof_formal",
         "scan": {
@@ -88,7 +91,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarCore_card",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarCore_card.lean",
+          "repo_kind": "native",
+          "stage": "proof"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Finset.Card\nimport Mathlib.Data.Finset.Disjoint\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarCore_card`\n\nFor natural numbers n and r and `B : PerturbedStarBlocks n r`, the fixed core has cardinality `card\n(perturbedStarCore B) = 2 + 2 * r`.  Thus its two distinct anchors together with its two disjoint\nr-element blocks contribute exactly the stated number of elements.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 30–34\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarCore` → `perturbedStarCore` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore`\n\n## Proof outline\n\nUnfold `perturbedStarCore B` as `({B.a, B.b} ∪ B.T) ∪ B.L`.  From `B.a_not_mem_T`, `B.b_not_mem_T`,\n`B.a_not_mem_L`, and `B.b_not_mem_L`, build the two disjointness facts `Disjoint {B.a,B.b} B.T` and\n`Disjoint ({B.a,B.b} ∪ B.T) B.L`; the latter combines anchor/block avoidance with `B.T_disjoint_L`.\nThese are direct elementwise uses of `Finset.disjoint_left`.\n\nUse `Finset.card_union_of_disjoint` twice.  `Finset.card_pair B.a_ne_b` gives the anchor cardinality\n`2`; substitute `B.card_T` and `B.card_L`, then finish the natural-number normalization to obtain `2\n+ 2 * r`.  This route consumes only the accepted `PerturbedStarBlocks` fields and the accepted\ndefinition `perturbedStarCore`, as required.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, lines 30–34\n\n## Proof dependencies\n\n- `Finset.card_pair` from `Mathlib.Data.Finset.Card`\n- `Finset.card_union_of_disjoint` from `Mathlib.Data.Finset.Card`\n- `Finset.disjoint_left` from `Mathlib.Data.Finset.Disjoint`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarCore` → `perturbedStarCore` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore`\n-/\ntheorem perturbedStarCore_card {n r : ℕ} (B : PerturbedStarBlocks n r) :\n    (perturbedStarCore B).card = 2 + 2 * r := by\n  have habT : Disjoint ({B.a, B.b} : Finset (Fin n)) B.T := by\n    rw [Finset.disjoint_left]\n    intro x hx hxT\n    simp only [Finset.mem_insert, Finset.mem_singleton] at hx\n    rcases hx with rfl | rfl\n    · exact B.a_not_mem_T hxT\n    · exact B.b_not_mem_T hxT\n  have habTL : Disjoint (({B.a, B.b} : Finset (Fin n)) ∪ B.T) B.L := by\n    rw [Finset.disjoint_left]\n    intro x hx hxL\n    rcases Finset.mem_union.mp hx with hxab | hxT\n    · simp only [Finset.mem_insert, Finset.mem_singleton] at hxab\n      rcases hxab with rfl | rfl\n      · exact B.a_not_mem_L hxL\n      · exact B.b_not_mem_L hxL\n    · exact (Finset.disjoint_left.mp B.T_disjoint_L) hxT hxL\n  unfold perturbedStarCore\n  calc\n    (({B.a, B.b} ∪ B.T) ∪ B.L).card = ({B.a, B.b} ∪ B.T).card + B.L.card :=\n      Finset.card_union_of_disjoint habTL\n    _ = ({B.a, B.b} : Finset (Fin n)).card + B.T.card + B.L.card := by\n      rw [Finset.card_union_of_disjoint habT]\n    _ = 2 + 2 * r := by\n      simp [Finset.card_pair B.a_ne_b, B.card_T, B.card_L]\n      omega\n"
     },
@@ -154,6 +165,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 1 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "68128f8a90e7a2adf5c47ac403f15aa66fe526eb1513e60bc78e50f9d025a3d0",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -178,7 +194,15 @@
           "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarCore_card",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarCore_card.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarCore_card`\n\nFor natural numbers n and r and `B : PerturbedStarBlocks n r`, the fixed core has cardinality `card\n(perturbedStarCore B) = 2 + 2 * r`.  Thus its two distinct anchors together with its two disjoint\nr-element blocks contribute exactly the stated number of elements.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 30–34\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarCore` → `perturbedStarCore` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore`\n-/\ntheorem perturbedStarCore_card {n r : ℕ} (B : PerturbedStarBlocks n r) :\n    (perturbedStarCore B).card = 2 + 2 * r := by\n  sorry\n"
     },

@@ -1,12 +1,11 @@
 {
-  "change_summaries": {},
   "committed_at": "2026-07-22T14:21:43Z",
   "created_at": "2026-07-22T14:06:54Z",
   "execution_completed_at": "2026-07-22T14:21:43Z",
   "execution_reason": "DeclGraphRoundFlow finished with completed.",
   "execution_result_kind": "success",
   "node_path": "Main.PerturbedStarCertificates",
-  "objective": "Resolve the round-12 predictable helper blocker by proving the tracked final-pattern intersection exclusion that classifies both raw perturbed-star pattern branches.",
+  "objective": "The round-12 predictable helper blocker is the tracked final-pattern intersection exclusion that classifies both raw perturbed-star pattern branches.",
   "plan_closeout_acknowledged_at": "2026-07-22T14:21:43Z",
   "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
   "result_kind": "success",
@@ -23,5 +22,6 @@
   "started_at": "2026-07-22T14:08:16Z",
   "status": "committed",
   "strategy_id": "strategy_140c2962785943968f6203e9ab1972fc",
-  "summary": "Round 13 resolved the predictable tracked-helper blocker from round 12. The final-pattern intersection exclusion is proved and recursively proof-policy satisfied; it preserves source line 63 and adds no unrelated parent arithmetic. The blocked parent `perturbedStarCertificate_finalAdded` remains unchanged at proof_planned. Its known dependency closure is now complete, so the next action is an isolated Proof Formal retry capturing this helper. No state-only work, superseded branch, graph-hygiene issue, or scope overflow remains."
+  "summary": "Round 13 resolved the predictable tracked-helper blocker from round 12. The final-pattern intersection exclusion is proved and recursively proof-policy satisfied; it preserves source line 63 and adds no unrelated parent arithmetic. The blocked parent `perturbedStarCertificate_finalAdded` remains unchanged at proof_planned, and its known dependency closure is complete. No state-only work, superseded branch, graph-hygiene issue, or scope overflow remains.",
+  "execution_constraints": "Retry Proof Formal for the blocked parent after capturing this helper."
 }

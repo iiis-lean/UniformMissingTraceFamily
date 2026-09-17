@@ -1,4 +1,4 @@
-[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md)
+[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md) · [Complete graph](../DECLARATION_GRAPH.md)
 
 # `perturbedPattern_properWeights_add_full_eq_fullWeights`
 
@@ -10,9 +10,92 @@ Proper a-pattern weights plus the full-L b-pattern weight equal the full b-patte
 - State: `proved`
 - Revision status: `committed`
 - Repository completion: `graph_proved`
-- Formal code: final proof projection
+- Compatibility `formal_code`: final proof projection
 
-## Lean code
+## Statement NL
+
+For every `B : PerturbedStarBlocks n r` and every natural number `d`, let
+
+`w(P) = Nat.choose (perturbedStarFiller B).card (d + 1 - P.card)`,
+
+`fₐ(Y) = {B.a} ∪ B.T ∪ Y`, and `fᵦ(Y) = {B.b} ∪ B.T ∪ Y`.
+
+Then the proper deleted-pattern weight sum plus the sole full-`L` added-pattern weight equals the full added-pattern image weight sum:
+
+`(∑ P ∈ ({Y ∈ B.L.powerset | Y ≠ B.L}.image fₐ), w(P)) + w({B.b} ∪ B.T ∪ B.L) = ∑ P ∈ B.L.powerset.image fᵦ, w(P)`.
+
+No additional hypotheses, including `hrd` or `hrn`, are assumed.
+
+## Statement Formal
+
+```lean
+-- lean-constellation: managed-imports-begin
+import UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Prelude
+import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Data.Finset.Card
+import Mathlib.Data.Finset.Filter
+import Mathlib.Data.Finset.Image
+import Mathlib.Data.Finset.Powerset
+import Mathlib.Data.Nat.Choose.Basic
+-- lean-constellation: managed-imports-end
+
+-- lean-constellation: declaration-source-begin
+
+/--
+# lean-constellation target: `perturbedPattern_properWeights_add_full_eq_fullWeights`
+
+For every `B : PerturbedStarBlocks n r` and every natural number `d`, let
+
+`w(P) = Nat.choose (perturbedStarFiller B).card (d + 1 - P.card)`,
+
+`fₐ(Y) = {B.a} ∪ B.T ∪ Y`, and `fᵦ(Y) = {B.b} ∪ B.T ∪ Y`.
+
+Then the proper deleted-pattern weight sum plus the sole full-`L` added-pattern weight equals the
+full added-pattern image weight sum:
+
+`(∑ P ∈ ({Y ∈ B.L.powerset | Y ≠ B.L}.image fₐ), w(P)) + w({B.b} ∪ B.T ∪ B.L) = ∑ P ∈
+B.L.powerset.image fᵦ, w(P)`.
+
+No additional hypotheses, including `hrd` or `hrn`, are assumed.
+
+## Sources
+
+- Source `article/sections/02_proof.tex`, line 49
+
+## Statement dependencies
+
+- `Finset.sum` from `Mathlib.Algebra.BigOperators.Group.Finset.Defs`
+- `Finset.card` from `Mathlib.Data.Finset.Card`
+- `Finset.filter` from `Mathlib.Data.Finset.Filter`
+- `Finset.image` from `Mathlib.Data.Finset.Image`
+- `Finset.powerset` from `Mathlib.Data.Finset.Powerset`
+- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`
+- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from
+  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`
+- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from
+  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`
+-/
+theorem perturbedPattern_properWeights_add_full_eq_fullWeights {n r : ℕ}
+    (B : PerturbedStarBlocks n r) (d : ℕ) :
+    (∑ P ∈ (B.L.powerset.filter (fun Y => Y ≠ B.L)).image
+        (fun Y : Finset (Fin n) ↦ {B.a} ∪ B.T ∪ Y),
+      Nat.choose (perturbedStarFiller B).card (d + 1 - P.card)) +
+      Nat.choose (perturbedStarFiller B).card
+        (d + 1 - ({B.b} ∪ B.T ∪ B.L).card) =
+      ∑ P ∈ B.L.powerset.image (fun Y : Finset (Fin n) ↦ {B.b} ∪ B.T ∪ Y),
+        Nat.choose (perturbedStarFiller B).card (d + 1 - P.card) := by
+  sorry
+```
+
+## Proof NL
+
+Write `S = B.L.powerset`, `D = S.filter (fun Y => Y ≠ B.L)`, `fₐ(Y) = {B.a} ∪ B.T ∪ Y`, `fᵦ(Y) = {B.b} ∪ B.T ∪ Y`, and `w(P) = Nat.choose (perturbedStarFiller B).card (d + 1 - P.card)`.  First restrict each accepted `Set.InjOn` theorem `perturbedPatternA_injOn B` and `perturbedPatternB_injOn B` from `S` to `D`: `Finset.mem_filter` shows every member of `D` lies in `S`.  Apply `Finset.sum_image` with the restricted a-injectivity to rewrite the left proper-a image sum as `∑ Y ∈ D, w (fₐ Y)`.
+
+Use `Finset.sum_congr` on this common finite domain.  For each `Y ∈ D`, combine `Finset.mem_filter` and `Finset.mem_powerset` to obtain `Y ⊆ B.L`, then apply the accepted theorem `perturbedPattern_chooseWeight_eq B d Y` to replace `w (fₐ Y)` with `w (fᵦ Y)`.  Apply `Finset.sum_image` with the restricted b-injectivity in the reverse direction, converting this sum to the proper-b image sum `∑ P ∈ D.image fᵦ, w P`.
+
+Rewrite the b-image index finset with the accepted `perturbedPatternB_properImage_eq_erase B`, obtaining the sum over `(S.image fᵦ).erase (fᵦ B.L)`.  Establish `fᵦ B.L ∈ S.image fᵦ` by `Finset.mem_image`, using `Finset.mem_powerset` for `B.L ∈ S`.  Finally apply `Finset.sum_erase_add` to conclude that this erased b-image sum plus `w (fᵦ B.L)` is exactly the full b-image sum.  This yields the stated proper-a-plus-full-b equals full-b direction with the exact maps and indices, no `hrd`/ `hrn` assumptions, and no helper declaration.
+
+## Proof Formal
 
 ```lean
 -- lean-constellation: managed-imports-begin

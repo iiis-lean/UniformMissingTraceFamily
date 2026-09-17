@@ -1,4 +1,4 @@
-[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md)
+[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md) · [Complete graph](../DECLARATION_GRAPH.md)
 
 # `perturbedStarCertificate_smallStar`
 
@@ -10,9 +10,102 @@ The tau certificate satisfies the generic criterion for a small a-anchored pertu
 - State: `proved`
 - Revision status: `committed`
 - Repository completion: `graph_proved`
-- Formal code: final proof projection
+- Compatibility `formal_code`: final proof projection
 
-## Lean code
+## Statement NL
+
+For natural numbers `d`, `s`, `n`, and `r`, let `B : PerturbedStarBlocks n r` and `P : Finset (Fin n)`. Assume `P ∈ perturbedStarPatterns d B`, `B.a ∈ P`, `P.card ≤ r`, and `r = d + 1 - s`. The accepted small-star selector branch applies, so `perturbedStarTau B P = ∅`. Then the following four-clause certificate bundle holds:
+
+1. `perturbedStarTau B P ⊂ P`.
+2. `P.card - (perturbedStarTau B P).card ≤ d + 1 - s`.
+3. `(perturbedStarTau B P).card ≤ s`.
+4. There is no `Q ∈ perturbedStarPatterns d B` such that both `Q ∩ P = perturbedStarTau B P` and `Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s)`.
+
+This is the distinct small a-anchored case of the source certificate: an a-anchored competing pattern meets `P` at `B.a`, while an inserted b/T pattern cannot meet the required size bound.
+
+## Statement Formal
+
+```lean
+-- lean-constellation: managed-imports-begin
+import UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude
+import UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns
+import UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau
+import UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks
+-- lean-constellation: managed-imports-end
+
+-- lean-constellation: declaration-source-begin
+
+/--
+# lean-constellation target: `perturbedStarCertificate_smallStar`
+
+For natural numbers `d`, `s`, `n`, and `r`, let `B : PerturbedStarBlocks n r` and `P : Finset (Fin
+n)`. Assume `P ∈ perturbedStarPatterns d B`, `B.a ∈ P`, `P.card ≤ r`, and `r = d + 1 - s`. The
+accepted small-star selector branch applies, so `perturbedStarTau B P = ∅`. Then the following
+four-clause certificate bundle holds:
+
+1. `perturbedStarTau B P ⊂ P`.
+2. `P.card - (perturbedStarTau B P).card ≤ d + 1 - s`.
+3. `(perturbedStarTau B P).card ≤ s`.
+4. There is no `Q ∈ perturbedStarPatterns d B` such that both `Q ∩ P = perturbedStarTau B P` and
+`Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s)`.
+
+This is the distinct small a-anchored case of the source certificate: an a-anchored competing
+pattern meets `P` at `B.a`, while an inserted b/T pattern cannot meet the required size bound.
+
+## Sources
+
+- Source `article/sections/02_proof.tex`, line 65
+
+## Statement dependencies
+
+- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from
+  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`
+- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from
+  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`
+- `Main.PerturbedStarCertificates::perturbedStarTau` → `perturbedStarTau` from
+  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau`
+-/
+theorem perturbedStarCertificate_smallStar (d s n r : ℕ)
+    (B : PerturbedStarBlocks n r) (P : Finset (Fin n))
+    (hP : P ∈ perturbedStarPatterns d B) (ha : B.a ∈ P)
+    (hcard : P.card ≤ r) (hr : r = d + 1 - s) :
+    perturbedStarTau B P ⊂ P ∧
+      P.card - (perturbedStarTau B P).card ≤ d + 1 - s ∧
+      (perturbedStarTau B P).card ≤ s ∧
+      ¬ ∃ Q ∈ perturbedStarPatterns d B,
+        Q ∩ P = perturbedStarTau B P ∧
+          Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s) := by
+  sorry
+```
+
+## Proof NL
+
+First identify the selector value. The proper-added guard is false: any set `{B.b} ∪ B.T ∪ Y` with `Y ⊆ B.L` omits `B.a`, by `B.a_ne_b`, `B.a_not_mem_T`, and `B.a_not_mem_L`, whereas `ha : B.a ∈ P`. The final-added guard is false for the same reason, since `B.a ∉ {B.b} ∪ B.T ∪ B.L`. The next small-star guard is exactly `ha ∧ hcard`; unfolding the ordered cases in `perturbedStarTau` gives
+```
+perturbedStarTau B P = ∅.
+```
+
+After this rewrite, `∅ ⊂ P` follows from `ha`. The gap is
+```
+P.card - ∅.card = P.card ≤ r = d + 1 - s,
+```
+using `hcard` and `hr`. The tau-cardinality clause is the immediate natural-number inequality `0 ≤ s`.
+
+For the exclusion clause, suppose `Q ∈ perturbedStarPatterns d B`,
+`Q ∩ P = ∅`, and `Q.card ≤ r` (after the same tau and `hr` rewrites). Unfold `perturbedStarPatterns` and simplify powerset, image, filter, union, and difference membership with `Finset.mem_powerset`.
+
+* If `Q` comes from the base-minus-deleted component, the base filter supplies `B.a ∈ Q`. Together with `ha : B.a ∈ P`, this gives `B.a ∈ Q ∩ P`, contradicting the empty intersection.
+
+* If `Q` comes from the inserted component, then for some `Z ⊆ B.L`,
+  ```
+  Q = {B.b} ∪ B.T ∪ Z.
+  ```
+  The fields `B.b_not_mem_T`, `B.b_not_mem_L`, `B.T_disjoint_L`, and `Z ⊆ B.L` give the required pairwise disjointness (elementwise through `Finset.disjoint_left`). Applying `Finset.card_union_of_disjoint` with `B.card_T = r` shows
+  `Q.card = 1 + r + Z.card ≥ r + 1`, contradicting `Q.card ≤ r`.
+
+Thus both construction branches are impossible. Rewriting by the empty small-star selector gives exactly the four required conjuncts. No expansion of `perturbedStarCore` is needed in this branch: the base filter's `B.a ∈ Q` condition already supplies the source exclusion.
+
+## Proof Formal
 
 ```lean
 -- lean-constellation: managed-imports-begin

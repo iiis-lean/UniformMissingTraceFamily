@@ -1,15 +1,10 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [
-      "perturbedStarCore_card",
-      "perturbedStarFiller_card"
-    ],
-    "anticipated_statement_dep_names": [],
     "base_revision": 1,
     "kind": "update",
     "objective": "Retry revision 1 unchanged after satisfying its sole Statement-NL prerequisite: Finset.powerset and Finset.filter are now verified repository MathlibIndex entries and current-node hints. Formalize the exact SourceIndex b_0009/article lines 48–50 cancellation equation under 2*r ≤ d and 2+2*r ≤ n: the weighted sum over perturbedStarPatterns d B is the explicit filtered anchored-base sum plus Nat.choose (n-2*r-2) (d-2*r). Pair every proper-Y deletion with its equal-weight insertion, prove the required injectivity/disjointness and card facts, and isolate Y=B.L as the sole unpaired insertion. Consume the proved core/filler cardinality providers and preserve the exact r-form indices needed by perturbedStarPatterns_chooseSum.",
     "require_target_state_satisfied": true,
-    "reset_to_state": "planned",
+    "start_stage": "statement_nl",
     "summary": "Update revision 2 advanced from planned to proof_planned: Statement NL, compiler-confirmed Statement Formal, and Proof NL were accepted; Proof Formal is absent, so the proved target and graph_proved satisfaction were not reached. Blocker classification: predictable tracked helper / Lean-specific proper-subset cancellation within this node. Preserved consumer-side formal goal: under hrd : 2*r ≤ d and hrn : 2+2*r ≤ n, the weighted sum over perturbedStarPatterns d B equals the exact filtered anchored-base sum plus Nat.choose (n-2*r-2) (d-2*r). The accepted route checked perturbedStarCore_card, perturbedStarFiller_card, Finset.sum_image, Finset.sum_sdiff, Finset.sum_union, Finset.sum_erase_add, and Finset.card_union_of_disjoint. These transport individual sums but do not provide the standalone equality pairing the deleted images {B.a}∪B.T∪Y and inserted images {B.b}∪B.T∪Y over proper Y⊂B.L, including injectivity, equal weights, disjointness, and isolation of Y=B.L. Before retrying this parent, add and prove a tracked proper-subset deletion/insertion cancellation interface in the exact perturbedStarPatterns representation and r-form bounds; then use it to leave only the full-L binomial term.",
     "target_state": "proved"
   },
@@ -224,6 +219,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 1 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "60c887320e24261f423776fa8d3eee2e28f8afde182ecffa16238c7e51418199",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -248,7 +248,15 @@
           "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarPerturbation_chooseSum",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarPerturbation_chooseSum.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Finset.Filter\nimport Mathlib.Data.Finset.Powerset\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarPerturbation_chooseSum`\n\nFor natural numbers n, r, and d, construction data `B : PerturbedStarBlocks n r`, and hypotheses `2\n* r ≤ d` and `2 + 2 * r ≤ n`,\n`∑ P ∈ perturbedStarPatterns d B, Nat.choose (perturbedStarFiller B).card (d + 1 - P.card) = (∑ P ∈\n((perturbedStarCore B).powerset.filter (fun P => B.a ∈ P ∧ P.card ≤ d + 1)), Nat.choose\n(perturbedStarFiller B).card (d + 1 - P.card)) + Nat.choose (n - 2 * r - 2) (d - 2 * r)`.\nEvery proper-`B.L` deletion is paired with its equal-cardinality insertion at the other anchor; the\ninsertion for `Y = B.L` is the sole unpaired term.  The statement retains the exact r-form bounds\nand Nat.choose indices.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 35–50\n\n## Statement dependencies\n\n- `Finset.filter` from `Mathlib.Data.Finset.Filter`\n- `Finset.powerset` from `Mathlib.Data.Finset.Powerset`\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarCore` → `perturbedStarCore` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\n-/\ntheorem perturbedStarPerturbation_chooseSum {n r d : ℕ} (B : PerturbedStarBlocks n r)\n    (hrd : 2 * r ≤ d) (hrn : 2 + 2 * r ≤ n) :\n    (∑ P ∈ perturbedStarPatterns d B,\n      Nat.choose (perturbedStarFiller B).card (d + 1 - P.card)) =\n        (∑ P ∈ (perturbedStarCore B).powerset.filter (fun P => B.a ∈ P ∧ P.card ≤ d + 1),\n          Nat.choose (perturbedStarFiller B).card (d + 1 - P.card)) +\n          Nat.choose (n - 2 * r - 2) (d - 2 * r) := by\n  sorry\n"
     },

@@ -1,4 +1,4 @@
-[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md)
+[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md) · [Complete graph](../DECLARATION_GRAPH.md)
 
 # `exists_perturbedStarBlocks`
 
@@ -10,9 +10,68 @@ Sufficient ambient size yields explicit perturbed-star block data.
 - State: `proved`
 - Revision status: `committed`
 - Repository completion: `graph_proved`
-- Formal code: final proof projection
+- Compatibility `formal_code`: final proof projection
 
-## Lean code
+## Statement NL
+
+For natural numbers n and r, if `2 + 2*r ≤ n`, then there exists `PerturbedStarBlocks n r`.  The asserted data may be chosen by reserving two distinguished points of `Fin n` and embedding two consecutive, shifted ranges of length `r`; consequently its two blocks have cardinality `r`, are disjoint, avoid both distinguished points, and the distinguished points are distinct.
+
+## Statement Formal
+
+```lean
+-- lean-constellation: managed-imports-begin
+import UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude
+import UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks
+-- lean-constellation: managed-imports-end
+
+-- lean-constellation: declaration-source-begin
+
+/--
+# lean-constellation target: `exists_perturbedStarBlocks`
+
+For natural numbers n and r, if `2 + 2*r ≤ n`, then there exists `PerturbedStarBlocks n r`.  The
+asserted data may be chosen by reserving two distinguished points of `Fin n` and embedding two
+consecutive, shifted ranges of length `r`; consequently its two blocks have cardinality `r`, are
+disjoint, avoid both distinguished points, and the distinguished points are distinct.
+
+## Sources
+
+- Source `article/sections/02_proof.tex`, line 32
+
+## Statement dependencies
+
+- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from
+  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`
+-/
+theorem exists_perturbedStarBlocks (n r : ℕ) (hroom : 2 + 2 * r ≤ n) :
+    Nonempty (PerturbedStarBlocks n r) := by
+  sorry
+```
+
+## Proof NL
+
+Set `e : Fin (2 + 2*r) ↪ Fin n := Fin.castLEEmb hroom`.  Let `hT : 2 + r ≤ 2 + 2*r` and `hL : 2 + r + r ≤ 2 + 2*r` be the elementary arithmetic bounds.  Define the two embeddings with their full types:
+```
+t : Fin r ↪ Fin (2 + 2*r) :=
+  (Fin.castLEEmb hT).comp (Fin.natAddEmb 2)
+l : Fin r ↪ Fin (2 + 2*r) :=
+  (Fin.castLEEmb hL).comp (Fin.natAddEmb (2 + r)).
+```
+Thus `t i` has value `2 + i.val`, while `l j` has value `2 + r + j.val`.  Use the checked base finset
+```
+B : Finset (Fin r) := Finset.univ
+T₀ := B.map t
+L₀ := B.map l
+T  := T₀.map e
+L  := L₀.map e.
+```
+All maps are between explicitly displayed `Fin` types.  Take anchors `a := e ⟨0, by omega⟩` and `b := e ⟨1, by omega⟩`.
+
+The base-cardinality calculation is `B.card = r` by `simp [B, Finset.card_univ, Fintype.card_fin]`.  Apply `Finset.card_map` first to `B.map t` and `B.map l`, then to the two maps by `e`, yielding both required block-cardinality fields.  For `Disjoint T₀ L₀`, apply `Finset.disjoint_left.mpr`; if an element belongs to both maps, map-membership gives `i j : Fin r` with `t i = l j`.  Comparing values produces `2 + i.val = 2 + r + j.val`, which contradicts `i.val < r`.  Then use the `.mpr` direction of `Finset.disjoint_map e` to obtain `Disjoint T L`.
+
+Finally, prove `a ≠ b` by injectivity of `e` and the distinct values `0,1`.  For each anchor-avoidance field, eliminate map membership to an `i : Fin r` or `j : Fin r`, cancel `e` by injectivity, and compare values: every `t i` or `l j` is at least `2`, so it cannot equal either anchor coordinate.  Package `a,b,T,L` and these fields in `PerturbedStarBlocks n r`.
+
+## Proof Formal
 
 ```lean
 -- lean-constellation: managed-imports-begin

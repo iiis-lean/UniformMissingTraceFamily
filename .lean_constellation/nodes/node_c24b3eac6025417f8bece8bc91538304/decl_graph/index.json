@@ -12,10 +12,8 @@
     "round_bae85cb7adfd4da3ac167306a006daf4",
     "round_dfd3273c1a8640c4ada5c86816b33011"
   ],
-  "schema_version": 1,
+  "schema_version": 2,
   "strategy_ids": [
     "strategy_44d5ffb61d1946208cb6cb22bb89a21d"
-  ],
-  "summary": "DeclGraph index rebuilt for Main.AnchoredPowersetEnumeration: 4 decls, 3 rounds, 1 strategies.",
-  "updated_at": "2026-07-27T16:05:41Z"
+  ]
 }

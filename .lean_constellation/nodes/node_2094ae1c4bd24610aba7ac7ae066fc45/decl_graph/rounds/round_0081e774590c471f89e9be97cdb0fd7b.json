@@ -1,5 +1,4 @@
 {
-  "change_summaries": {},
   "committed_at": "2026-07-22T09:49:25Z",
   "created_at": "2026-07-22T09:29:48Z",
   "execution_completed_at": "2026-07-22T09:49:25Z",
@@ -23,5 +22,6 @@
   "started_at": "2026-07-22T09:31:36Z",
   "status": "committed",
   "strategy_id": "strategy_d509811e109f4266a85f656d30c12936",
-  "summary": "Round 2 successfully advanced the bottom-up strategy: mem_patternFamily reached proved state and is proof-policy satisfied, providing the stable elimination/introduction boundary needed for both uniform-cardinality and missing-trace arguments. No blocker, state-only exception, superseded branch, or cleanup target remains. The final criterion is still intentionally deferred; the next source-visible stage is a proved uniform-cardinality helper using mem_patternFamily, disjoint core/filler regions, and Finset.card_union_of_disjoint."
+  "summary": "mem_patternFamily reached proved state and is proof-policy satisfied, providing the stable membership characterization needed for later uniform-cardinality and missing-trace arguments. No blocker, state-only exception, superseded branch, cleanup target, or unresolved mathematical declaration remains in this round.",
+  "execution_constraints": "Use mem_patternFamily as the next source-visible stage for the uniform-cardinality helper with disjoint core/filler regions and Finset.card_union_of_disjoint."
 }

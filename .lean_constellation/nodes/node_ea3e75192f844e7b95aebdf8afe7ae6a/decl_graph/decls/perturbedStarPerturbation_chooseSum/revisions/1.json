@@ -1,15 +1,9 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [
-      "perturbedStarCore_card",
-      "perturbedStarFiller_card"
-    ],
-    "anticipated_statement_dep_names": [],
     "base_revision": null,
     "kind": "create",
     "objective": "Formalize the second cancellation step of SourceIndex b_0009/article 48–50 in the exact representation of perturbedStarPatterns. For B : PerturbedStarBlocks n r with hrd : 2*r ≤ d and hrn : 2+2*r ≤ n, prove that the weighted sum over perturbedStarPatterns d B equals the weighted sum over the anchored base ((perturbedStarCore B).powerset filtered by B.a ∈ P and P.card ≤ d+1) plus Nat.choose (n-2*r-2) (d-2*r). Prove injectivity of Y ↦ {B.a}∪B.T∪Y and Y ↦ {B.b}∪B.T∪Y, show every proper Y deletion lies in the base under hrd, show the a- and b-pattern weights agree because their cards agree, establish the relevant disjoint union/difference facts, and isolate Y=B.L as the sole unpaired insertion with the displayed weight using card_L and perturbedStarFiller_card. Consume proved perturbedStarCore_card and perturbedStarFiller_card and verified Finset card/image/union/sdiff support. This equation is the second prerequisite of declared perturbedStarPatterns_chooseSum; preserve its r-form bounds and exact Nat.choose indices.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
     "summary": "Blocked at Statement NL with a present NL artifact but no accepted formal statement or proof; the revision remains planned. The preserved consumer goal is the exact r-form equation saying the weighted perturbedStarPatterns sum equals the explicit filtered anchored-base sum plus Nat.choose (n-2*r-2) (d-2*r), under 2*r≤d and 2+2*r≤n, by proper-Y pairing and the sole Y=B.L insertion. As for its sibling, the precise mismatch is MathlibIndex metadata: the typed statement representation directly uses Finset.powerset and Finset.filter, whose declaration entries are absent. Retry after both are verified, indexed, and hinted; current mathematical providers perturbedStarCore_card and perturbedStarFiller_card remain proved and sufficient at this stage.",
     "target_state": "proved"
   },

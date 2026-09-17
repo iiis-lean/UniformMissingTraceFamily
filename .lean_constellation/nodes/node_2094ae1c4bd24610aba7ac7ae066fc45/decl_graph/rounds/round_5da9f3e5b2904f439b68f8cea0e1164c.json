@@ -1,5 +1,4 @@
 {
-  "change_summaries": {},
   "committed_at": "2026-07-22T10:14:32Z",
   "created_at": "2026-07-22T09:54:09Z",
   "execution_completed_at": "2026-07-22T10:14:32Z",
@@ -23,5 +22,6 @@
   "started_at": "2026-07-22T10:01:05Z",
   "status": "committed",
   "strategy_id": "strategy_d509811e109f4266a85f656d30c12936",
-  "summary": "Round 3 successfully advanced the bottom-up strategy: card_eq_of_mem_patternFamily reached proved state and is proof-policy satisfied, completing the reusable uniformity stage from source line 17. No blocker, state-only exception, superseded artifact, or cleanup target remains. With the accepted predicate, construction, membership characterization, cardinality helper, exact-size subset Mathlib support, and intersection-distribution support, the known source-visible dependency closure for the final tau-certificate theorem is now available; the next step is a direct proved parent round, with any further helper justified only by a concrete Lean-stage blocker."
+  "summary": "card_eq_of_mem_patternFamily reached proved state and is proof-policy satisfied, completing the reusable uniformity stage from source line 17. The accepted predicate, construction, membership characterization, cardinality helper, exact-size subset Mathlib support, and intersection-distribution support provide the dependency context for the generic tau-certificate theorem. No unresolved mathematical declaration remains in this round.",
+  "execution_constraints": "Use the accepted dependency context for a direct proved parent round; add another helper only if a concrete Lean-stage blocker requires it."
 }

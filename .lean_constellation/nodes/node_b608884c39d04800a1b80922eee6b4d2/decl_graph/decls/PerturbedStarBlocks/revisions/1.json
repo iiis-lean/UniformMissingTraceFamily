@@ -2,11 +2,11 @@
   "change": {
     "base_revision": null,
     "kind": "create",
-    "objective": "Define the reusable construction-data boundary required by SourceIndex b_0008 and the contract: two distinct distinguished elements of Fin n together with Finsets T and L of cardinality r, pairwise disjoint from each other and avoiding both distinguished points. Encode the Fin n distinctness and avoidance obligations as explicit fields rather than implicit convention. This declared foundation is consumed by the core/pattern definitions, all five certificate cases, and downstream exact-cardinality work.",
+    "objective": "The reusable construction-data boundary required by SourceIndex b_0008 and the contract consists of two distinct Fin n elements and Finsets T,L of cardinality r, pairwise disjoint and avoiding both distinguished points. Fin n distinctness and avoidance are explicit fields rather than implicit conventions. This declared foundation is consumed by core/pattern definitions, all five certificate cases, and downstream exact-cardinality work.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
-    "summary": "Created the source b_0008 construction-data foundation and reached committed state specified. Statement NL was accepted, and the checked formal candidate is a public structure PerturbedStarBlocks (n r) with anchors a,b, blocks T,L, explicit a≠b, card_T=card_L=r, T/L disjointness, and avoidance of both anchors by both blocks. It did not reach target declared only because the round stopped on the consumer sequencing blocker; its own formal check passed without sorry and no mismatch was reported. This predictable tracked provider must be advanced to accepted declared before exists_perturbedStarBlocks is retried.",
-    "target_state": "declared"
+    "summary": "Created the source b_0008 construction-data foundation and reached committed state specified. Statement NL was accepted, and the checked formal candidate is a public structure PerturbedStarBlocks (n r) with anchors a,b, blocks T,L, explicit a≠b, card_T=card_L=r, T/L disjointness, and avoidance of both anchors by both blocks. It did not reach target declared only because the round stopped on the consumer sequencing blocker; its own formal check passed without sorry and no mismatch was reported.",
+    "target_state": "declared",
+    "execution_constraints": "Advance this tracked provider to accepted declared and proof-policy-satisfied state before retrying exists_perturbedStarBlocks."
   },
   "lean_decl_name": "PerturbedStarBlocks",
   "proof": null,
@@ -27,6 +27,11 @@
           "schema_version": 2,
           "summary": "Command completed successfully"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "dd2a6f52eb0edd6e253a0a106166f7fe717ffdfb3738f0e8019a55e708a1c5ad",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -44,7 +49,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Types/PerturbedStarBlocks.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `PerturbedStarBlocks`\n\nFor natural numbers n and r, `PerturbedStarBlocks n r` is public construction data consisting of two\ndistinguished elements `a` and `b` of `Fin n` and two finite sets `T` and `L` of `Fin n`.  It\nrecords explicitly that `a ≠ b`, that `T` and `L` each have cardinality `r`, that `T` and `L` are\ndisjoint, and that neither `T` nor `L` contains either distinguished element.  Thus all anchor\ndistinctness and block-avoidance requirements are fields of the data, rather than implicit\nconventions.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 30–32\n-/\nstructure PerturbedStarBlocks (n r : ℕ) where\n  a : Fin n\n  b : Fin n\n  T : Finset (Fin n)\n  L : Finset (Fin n)\n  a_ne_b : a ≠ b\n  card_T : T.card = r\n  card_L : L.card = r\n  T_disjoint_L : Disjoint T L\n  a_not_mem_T : a ∉ T\n  b_not_mem_T : b ∉ T\n  a_not_mem_L : a ∉ L\n  b_not_mem_L : b ∉ L\n"
     },

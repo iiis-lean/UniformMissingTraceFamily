@@ -15,10 +15,8 @@
     "round_76fb5796e4724045b87d4e46e633f4d3",
     "round_e8400acb3fd04a7396a2309708d21819"
   ],
-  "schema_version": 1,
+  "schema_version": 2,
   "strategy_ids": [
     "strategy_d509811e109f4266a85f656d30c12936"
-  ],
-  "summary": "DeclGraph index rebuilt for Main.PatternCriterion: 5 decls, 5 rounds, 1 strategies.",
-  "updated_at": "2026-07-27T16:05:41Z"
+  ]
 }

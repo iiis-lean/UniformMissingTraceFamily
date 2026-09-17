@@ -1,14 +1,10 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [
-      "perturbedStarCore_card"
-    ],
-    "anticipated_statement_dep_names": [],
     "base_revision": 2,
     "kind": "update",
     "objective": "Retry the source-derived filler-size lemma from planned through proved after its prior batch was stopped by a sibling-only index blocker. Preserve SourceIndex b_0009/article 48–50: for B : PerturbedStarBlocks n r, (perturbedStarFiller B).card = n - (2 + 2*r), up to equivalent Nat arithmetic. Consume proved perturbedStarCore_card, the lower perturbedStarFiller definition, and Finset.card_sdiff/univ cardinality. This exact upper-index bridge serves the unpaired term in perturbedStarFamily_card; add no ambient hypotheses and do not change its meaning.",
     "require_target_state_satisfied": true,
-    "reset_to_state": "planned",
+    "start_stage": "statement_nl",
     "summary": "The isolated retry completed successfully. perturbedStarFiller_card advanced from planned to committed proved state; statement and proof artifacts passed and required proof-policy satisfaction succeeded. The accepted filler-cardinality bridge preserves SourceIndex b_0009 and is ready to supply the n-2r-2 upper binomial index in the construction-specific cancellation and public cardinality theorem.",
     "target_state": "proved"
   },
@@ -73,6 +69,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 0 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "f1d65a34b1cfb415d2041013bdfaa803c13ac9c1479b25955d78f0bd9e87e728",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "proof_formal",
         "scan": {
@@ -90,7 +91,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarFiller_card",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarFiller_card.lean",
+          "repo_kind": "native",
+          "stage": "proof"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Finset.Card\nimport Mathlib.Data.Fintype.Card\nimport UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarCore_card\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarFiller_card`\n\nFor natural numbers n and r and `B : PerturbedStarBlocks n r`, the complementary filler has\ncardinality\n`(perturbedStarFiller B).card = n - (2 + 2 * r)`.\nThis uses only that the filler is the complement of the two-anchor, two-r-block core and introduces\nno additional ambient-size hypothesis.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 30–34\n- Source `article/sections/02_proof.tex`, lines 48–50\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n\n## Proof outline\n\nUnfold the accepted definition `perturbedStarFiller B` as `(Finset.univ : Finset (Fin n)) \\\nperturbedStarCore B`.  Apply `Finset.card_sdiff` with ambient finset `Finset.univ` and deleted\nfinset `perturbedStarCore B`; its intersection term simplifies to `perturbedStarCore B` because\nevery `Fin n` element lies in `univ`.\n\nRewrite the universe cardinality using `Finset.card_univ` and `Fintype.card_fin`, then substitute\nthe committed theorem `perturbedStarCore_card B`.  The remaining expression is exactly `n - (2 + 2 *\nr)`.  Simplifying `core ∩ univ = core` and the final natural-number arithmetic are lightweight local\nLean steps; no ambient hypothesis or helper declaration is needed.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, lines 30–34\n- Source `article/sections/02_proof.tex`, lines 48–50\n\n## Proof dependencies\n\n- `Finset.card_sdiff` from `Mathlib.Data.Finset.Card`\n- `Finset.card_univ` from `Mathlib.Data.Fintype.Card`\n- `Fintype.card_fin` from `Mathlib.Data.Fintype.Card`\n- `Main.CountingAndMain::perturbedStarCore_card` → `perturbedStarCore_card` from\n  `UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarCore_card`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n-/\ntheorem perturbedStarFiller_card {n r : ℕ} (B : PerturbedStarBlocks n r) :\n    (perturbedStarFiller B).card = n - (2 + 2 * r) := by\n  unfold perturbedStarFiller\n  rw [Finset.card_sdiff]\n  simp [perturbedStarCore_card]\n"
     },
@@ -167,6 +176,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 1 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "378a4e2eeab42c4d08411fbf889ec5094a30d14a5b26a1d302519e98165c49dd",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -191,7 +205,15 @@
           "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarFiller_card",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarFiller_card.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarFiller_card`\n\nFor natural numbers n and r and `B : PerturbedStarBlocks n r`, the complementary filler has\ncardinality\n`(perturbedStarFiller B).card = n - (2 + 2 * r)`.\nThis uses only that the filler is the complement of the two-anchor, two-r-block core and introduces\nno additional ambient-size hypothesis.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 30–34\n- Source `article/sections/02_proof.tex`, lines 48–50\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarFiller` → `perturbedStarFiller` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller`\n-/\ntheorem perturbedStarFiller_card {n r : ℕ} (B : PerturbedStarBlocks n r) :\n    (perturbedStarFiller B).card = n - (2 + 2 * r) := by\n  sorry\n"
     },

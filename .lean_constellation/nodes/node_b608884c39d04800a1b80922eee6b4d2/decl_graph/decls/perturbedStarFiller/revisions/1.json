@@ -2,10 +2,9 @@
   "change": {
     "base_revision": null,
     "kind": "create",
-    "objective": "Define the source b_0008 filler U from article/sections/02_proof.tex line 34. For natural n,r and accepted B : PerturbedStarBlocks n r, return the Finset (Fin n) exactly equal to (Finset.univ : Finset (Fin n)) \\ perturbedStarCore B, with no extra hypotheses or semantic changes. Consume the already declared PerturbedStarBlocks revision 2 and perturbedStarCore revision 1. This public construction provider must remain usable by the allowed perturbed-star pattern definition, the required perturbedStarFamily interface, the generic Main.PatternCriterion instantiation, all five certificate branches, and downstream exact-cardinality work.",
+    "objective": "The source b_0008 filler U from article/sections/02_proof.tex line 34 is the Finset (Fin n) `(Finset.univ : Finset (Fin n)) \\ perturbedStarCore B` for natural n,r and B : PerturbedStarBlocks n r, with no extra hypotheses or semantic changes. Its dependencies are PerturbedStarBlocks revision 2 and perturbedStarCore revision 1. This public construction provider supplies the allowed perturbed-star pattern definition, perturbedStarFamily interface, generic Main.PatternCriterion instantiation, five certificate branches, and downstream exact-cardinality work.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
-    "summary": "Completed successfully. `perturbedStarFiller` revision 1 reached declared state with the exact source-b_0008 meaning `(Finset.univ : Finset (Fin n)) \\ perturbedStarCore B`. Lean statement checking passed; its accepted dependencies are `PerturbedStarBlocks` revision 2 and `perturbedStarCore` revision 1, and the non-theorem declaration is proof-policy satisfied. No blocker or retry condition remains.",
+    "summary": "`perturbedStarFiller` revision 1 reached declared state with the exact source-b_0008 meaning `(Finset.univ : Finset (Fin n)) \\ perturbedStarCore B`. Lean statement checking passed; its accepted dependencies are `PerturbedStarBlocks` revision 2 and `perturbedStarCore` revision 1, and the non-theorem declaration is proof-policy satisfied without semantic drift.",
     "target_state": "declared"
   },
   "lean_decl_name": "perturbedStarFiller",
@@ -48,6 +47,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 0 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "30216e7e09ae52a34b5fe673850ed704709cb177409598ffa819ea6557a07c3c",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -65,7 +69,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarFiller",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Defs/perturbedStarFiller.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarFiller`\n\nFor natural numbers n and r and construction data `B : PerturbedStarBlocks n r`,\n`perturbedStarFiller B` is the finite subset of `Fin n` defined by\n\n`(Finset.univ : Finset (Fin n)) \\ perturbedStarCore B`.\n\nThus it is exactly the complement of the fixed core within `Fin n`; no additional elements,\nhypotheses, or semantic conditions are introduced.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 34\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarCore` → `perturbedStarCore` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore`\n-/\ndef perturbedStarFiller {n r : ℕ} (B : PerturbedStarBlocks n r) : Finset (Fin n) :=\n  (Finset.univ : Finset (Fin n)) \\ perturbedStarCore B\n"
     },

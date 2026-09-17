@@ -1,14 +1,10 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [
-      "perturbedStarCore_card"
-    ],
-    "anticipated_statement_dep_names": [],
     "base_revision": 1,
     "kind": "update",
     "objective": "Advance the planned source-derived filler-size lemma through all stages to proved. Preserve SourceIndex b_0009/article 48–50: for B : PerturbedStarBlocks n r, (perturbedStarFiller B).card = n - (2 + 2*r), up to equivalent Nat arithmetic. Consume the now-proved perturbedStarCore_card plus the lower perturbedStarFiller definition and Finset.card_sdiff/univ cardinality. This exact upper-index bridge serves the later unpaired completion term in perturbedStarFamily_card without stronger ambient assumptions.",
     "require_target_state_satisfied": true,
-    "reset_to_state": "planned",
+    "start_stage": "statement_nl",
     "summary": "The intended proved advancement was blocked at the shared Statement NL stage; this revision retained a present Statement NL artifact but remained committed at planned state with no formal statement or proof artifacts. Its consumer-side goal is unchanged: prove (perturbedStarFiller B).card = n - (2 + 2*r) from proved perturbedStarCore_card and Finset.card_sdiff. No semantic or provider mismatch was found for this declaration; it was stopped because sibling patternFamily_card_sum could not record a required Mathlib statement dependency. Retry after the repository MathlibIndex contains a direct Nat.choose entry, preferably in a batch whose dependencies are then valid.",
     "target_state": "proved"
   },

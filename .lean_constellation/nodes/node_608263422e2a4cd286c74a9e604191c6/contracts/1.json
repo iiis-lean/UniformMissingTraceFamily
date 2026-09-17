@@ -287,5 +287,6 @@
   "status": "committed",
   "success_criteria": "The public cancellation theorem is proved for every B : PerturbedStarBlocks n r and d, with proper a-pattern weights plus the full-L b weight equal to the full b-image weight; injectivity, recovery, equal-card/weight, and erase/image transport are represented in its proved dependency closure.",
   "summary": "Accepted ready in graph_proved mode. Nine intentional theorem declarations are proved and proof-policy satisfied. The bound public revision 2 perturbedPattern_properWeights_add_full_eq_fullWeights exactly matches Main.CountingAndMain::perturbedStarProperPatterns_chooseSum@1 in quantified objects and indices, a/b image constructors, filler-based Nat.choose weights, no-hrd/no-hrn assumptions, and conclusion direction. The node provides the complete construction-specific recovery, injectivity, equal-card/weight, proper-domain, and erase/image transport boundary; no prerequisite remains inside this node.",
+  "task_completion_mode": "graph_proved",
   "version": 1
 }

@@ -1,12 +1,11 @@
 {
-  "change_summaries": {},
   "committed_at": "2026-07-22T14:29:49Z",
   "created_at": "2026-07-22T14:23:40Z",
   "execution_completed_at": "2026-07-22T14:29:49Z",
   "execution_reason": "DeclGraphRoundFlow finished with completed.",
   "execution_result_kind": "success",
   "node_path": "Main.PerturbedStarCertificates",
-  "objective": "Retry only Proof Formal for the unchanged final-added certificate theorem now that its sole tracked final-intersection exclusion prerequisite is proved and satisfied.",
+  "objective": "The final-added certificate theorem reaches proved state from its unchanged statement once its sole tracked final-intersection exclusion prerequisite is proved and satisfied.",
   "plan_closeout_acknowledged_at": "2026-07-22T14:29:49Z",
   "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
   "result_kind": "success",
@@ -23,5 +22,6 @@
   "started_at": "2026-07-22T14:25:05Z",
   "status": "committed",
   "strategy_id": "strategy_140c2962785943968f6203e9ab1972fc",
-  "summary": "Round 14 completed the second of five mandatory certificate branches. `perturbedStarCertificate_finalAdded` is now proved and recursively proof-policy satisfied with its statement unchanged and the tracked exclusion helper captured. No state-only intermediate, unresolved dependency, superseded branch, graph-hygiene issue, or scope overflow remains. The active strategy continues bottom-up; the next proved source case is the small anchored-star branch from line 65."
+  "summary": "Round 14 completed the second of five mandatory certificate branches. `perturbedStarCertificate_finalAdded` is now proved and recursively proof-policy satisfied with its statement unchanged and the tracked exclusion helper captured. No state-only intermediate, unresolved dependency, superseded branch, graph-hygiene issue, or scope overflow remains. The active strategy continues bottom-up.",
+  "execution_constraints": "Continue with the small anchored-star branch from line 65 as the next proved source case."
 }

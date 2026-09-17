@@ -1,12 +1,10 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [],
-    "anticipated_statement_dep_names": [],
     "base_revision": 1,
     "kind": "update",
     "objective": "Advance the accepted planned b-anchor recovery target to a proved theorem: for every B : PerturbedStarBlocks n r and Y ⊆ B.L, (({B.b} ∪ B.T ∪ Y) ∩ B.L) = Y. Preserve SourceIndex b_0009 / article/sections/02_proof.tex:49 and the exact added-pattern constructor; use only B's anchor avoidance, T_disjoint_L, and verified Finset membership/disjointness facts. This lower theorem will support perturbedPatternB_injOn and later b-image erase/sum transport, with no hrd/hrn assumptions.",
     "require_target_state_satisfied": true,
-    "reset_to_state": "planned",
+    "start_stage": "statement_nl",
     "summary": "Completed successfully. The b-anchor recovery declaration advanced from planned revision 1 to revision 2 at proved state; statement and proof formal checks passed, and its declared/proved dependency policy is satisfied. It now provides the accepted lower theorem needed to advance perturbedPatternB_injOn and later b-image transport.",
     "target_state": "proved"
   },
@@ -77,6 +75,11 @@
           "schema_version": 2,
           "summary": "Command completed successfully"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "9fcea8aee91e56ba93ab3de1430a85ba35647a74912e24ec6a72a82ac0397d69",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "proof_formal",
         "scan": {
@@ -94,7 +97,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPatternB_inter_L",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedPatternCancellation/Theorems/perturbedPatternB_inter_L.lean",
+          "repo_kind": "native",
+          "stage": "proof"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Prelude\nimport Mathlib.Data.Finset.Defs\nimport Mathlib.Data.Finset.Disjoint\nimport Mathlib.Data.Finset.Insert\nimport Mathlib.Data.Finset.Lattice.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedPatternB_inter_L`\n\nFor every `B : PerturbedStarBlocks n r` and every finite set `Y` with `Y ⊆ B.L`, intersecting the\nexact added-pattern constructor with `B.L` recovers `Y`:\n\n`(({B.b} ∪ B.T ∪ Y) ∩ B.L) = Y`.\n\nNo additional hypotheses, including `hrd` or `hrn`, are assumed.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n\n## Proof outline\n\nFix `B : PerturbedStarBlocks n r`, `Y : Finset (Fin n)`, and `hY : Y ⊆ B.L`.  Prove the equality by\n`Finset.ext`, fixing an element `x`, and normalize membership in the intersection, both unions, and\nthe singleton with the verified equivalences `Finset.mem_inter`, `Finset.mem_union`, and\n`Finset.mem_singleton`.\n\nFor the forward implication, membership in `(({B.b} ∪ B.T ∪ Y) ∩ B.L)` gives membership in `B.L` and\none of the anchor, `B.T`, or `Y` branches.  In the anchor branch, substitute the singleton equality\nand contradict `B.b_not_mem_L`.  In the `B.T` branch, apply `Finset.disjoint_left.mp B.T_disjoint_L`\nto the simultaneous memberships in `B.T` and `B.L`.  The remaining branch is exactly membership in\n`Y`.  Conversely, a member of `Y` belongs to the third branch of the union and belongs to `B.L` by\n`hY`.  This uses no `hrd` or `hrn` assumptions and requires no helper declaration.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Proof dependencies\n\n- `Finset.ext` from `Mathlib.Data.Finset.Defs`\n- `Finset.disjoint_left` from `Mathlib.Data.Finset.Disjoint`\n- `Finset.mem_singleton` from `Mathlib.Data.Finset.Insert`\n- `Finset.mem_inter` from `Mathlib.Data.Finset.Lattice.Basic`\n- `Finset.mem_union` from `Mathlib.Data.Finset.Lattice.Basic`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n-/\ntheorem perturbedPatternB_inter_L {n r : ℕ} (B : PerturbedStarBlocks n r)\n    (Y : Finset (Fin n)) (hY : Y ⊆ B.L) :\n    (({B.b} ∪ B.T ∪ Y) ∩ B.L) = Y := by\n  ext x\n  simp only [Finset.mem_inter, Finset.mem_union, Finset.mem_singleton]\n  constructor\n  · rintro ⟨(⟨hxb | hxT⟩ | hxY), hxL⟩\n    · subst x\n      exact (B.b_not_mem_L hxL).elim\n    · exact (Finset.disjoint_left.mp B.T_disjoint_L hxT hxL).elim\n    · exact hxY\n  · intro hxY\n    exact ⟨Or.inr hxY, hY hxY⟩\n"
     },
@@ -150,6 +161,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 1 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "8dba5b8eb2eb92d487e3fb2aa4842d708f1a8d320aabca784651fda54e220ef7",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -174,7 +190,15 @@
           "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPatternB_inter_L",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedPatternCancellation/Theorems/perturbedPatternB_inter_L.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Prelude\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedPatternB_inter_L`\n\nFor every `B : PerturbedStarBlocks n r` and every finite set `Y` with `Y ⊆ B.L`, intersecting the\nexact added-pattern constructor with `B.L` recovers `Y`:\n\n`(({B.b} ∪ B.T ∪ Y) ∩ B.L) = Y`.\n\nNo additional hypotheses, including `hrd` or `hrn`, are assumed.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n-/\ntheorem perturbedPatternB_inter_L {n r : ℕ} (B : PerturbedStarBlocks n r)\n    (Y : Finset (Fin n)) (hY : Y ⊆ B.L) :\n    (({B.b} ∪ B.T ∪ Y) ∩ B.L) = Y := by\n  sorry\n"
     },

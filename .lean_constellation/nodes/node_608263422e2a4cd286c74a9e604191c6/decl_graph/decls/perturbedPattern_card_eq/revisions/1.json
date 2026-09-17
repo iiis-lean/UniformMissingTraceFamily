@@ -1,12 +1,9 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [],
-    "anticipated_statement_dep_names": [],
     "base_revision": null,
     "kind": "create",
     "objective": "For every B : PerturbedStarBlocks n r and Y ⊆ B.L, prove ({B.a} ∪ B.T ∪ Y).card = ({B.b} ∪ B.T ∪ Y).card. This is the exact equal-size assertion in SourceIndex b_0009 / article/sections/02_proof.tex:49 for the required constructors. Use only PerturbedStarBlocks anchor avoidance/disjointness and verified Finset.card_union_of_disjoint support; add no hrd/hrn assumptions. The theorem is the lower provider for the later Nat.choose weight equality and ultimately the public cancellation interface.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
     "summary": "Completed successfully. The matched-cardinality theorem was created directly at proved state; formal statement and proof checks passed and graph_proved satisfaction holds. It is now the accepted lower provider for the Nat.choose weight equality.",
     "target_state": "proved"
   },
@@ -69,6 +66,11 @@
           "schema_version": 2,
           "summary": "Command completed successfully"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "64281ddafcc86d1648d9ff641b6f807844bc2da8e37cf7a88da29b8c1c8cac38",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "proof_formal",
         "scan": {
@@ -86,7 +88,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPattern_card_eq",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedPatternCancellation/Theorems/perturbedPattern_card_eq.lean",
+          "repo_kind": "native",
+          "stage": "proof"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Prelude\nimport Mathlib.Data.Finset.Card\nimport Mathlib.Data.Finset.Disjoint\nimport Mathlib.Data.Finset.Insert\nimport Mathlib.Data.Finset.Lattice.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedPattern_card_eq`\n\nFor every `B : PerturbedStarBlocks n r` and every finite set `Y` with `Y ⊆ B.L`, the exact deleted\nand added pattern constructors have equal cardinality:\n\n`({B.a} ∪ B.T ∪ Y).card = ({B.b} ∪ B.T ∪ Y).card`.\n\nNo additional hypotheses, including `hrd` or `hrn`, are assumed.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Finset.card` from `Mathlib.Data.Finset.Card`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n\n## Proof outline\n\nFix `B`, `Y`, and `hY : Y ⊆ B.L`.  Prove four disjointness facts with `Finset.disjoint_left`:\n`{B.a}` is disjoint from `B.T` by `B.a_not_mem_T`; `{B.b}` is disjoint from `B.T` by\n`B.b_not_mem_T`; and each of `{B.a} ∪ B.T` and `{B.b} ∪ B.T` is disjoint from `Y`.  For the latter\ntwo, normalize the singleton/union membership branches with `Finset.mem_singleton` and\n`Finset.mem_union`; use `hY` to place a member of `Y` in `B.L`; then contradict the relevant\nanchor-avoidance field or `B.T_disjoint_L`.\n\nUse `Finset.card_union_of_disjoint` first on each outer union `({B.a} ∪ B.T) ∪ Y` and `({B.b} ∪ B.T)\n∪ Y`, and then on the singleton–`B.T` unions.  Both cardinalities reduce to the same expression `1 +\nB.T.card + Y.card`; finish by the lightweight simplification of singleton cardinality and\nassociativity.  This uses exactly the required constructors and only the recorded\nblock-avoidance/disjointness data, with no `hrd` or `hrn` assumptions and no helper declaration.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Proof dependencies\n\n- `Finset.card_union_of_disjoint` from `Mathlib.Data.Finset.Card`\n- `Finset.disjoint_left` from `Mathlib.Data.Finset.Disjoint`\n- `Finset.mem_singleton` from `Mathlib.Data.Finset.Insert`\n- `Finset.mem_union` from `Mathlib.Data.Finset.Lattice.Basic`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n-/\ntheorem perturbedPattern_card_eq {n r : ℕ} (B : PerturbedStarBlocks n r)\n    (Y : Finset (Fin n)) (hY : Y ⊆ B.L) :\n    ({B.a} ∪ B.T ∪ Y).card = ({B.b} ∪ B.T ∪ Y).card := by\n  have haT : Disjoint ({B.a} : Finset (Fin n)) B.T := by\n    refine Finset.disjoint_left.mpr ?_\n    intro x hxa hxT\n    have hxa' : x = B.a := Finset.mem_singleton.mp hxa\n    subst x\n    exact B.a_not_mem_T hxT\n  have hbT : Disjoint ({B.b} : Finset (Fin n)) B.T := by\n    refine Finset.disjoint_left.mpr ?_\n    intro x hxb hxT\n    have hxb' : x = B.b := Finset.mem_singleton.mp hxb\n    subst x\n    exact B.b_not_mem_T hxT\n  have haTY : Disjoint ({B.a} ∪ B.T) Y := by\n    refine Finset.disjoint_left.mpr ?_\n    intro x hx hxY\n    rcases Finset.mem_union.mp hx with hxa | hxT\n    · have hxa' : x = B.a := Finset.mem_singleton.mp hxa\n      subst x\n      exact B.a_not_mem_L (hY hxY)\n    · exact (Finset.disjoint_left.mp B.T_disjoint_L hxT (hY hxY)).elim\n  have hbTY : Disjoint ({B.b} ∪ B.T) Y := by\n    refine Finset.disjoint_left.mpr ?_\n    intro x hx hxY\n    rcases Finset.mem_union.mp hx with hxb | hxT\n    · have hxb' : x = B.b := Finset.mem_singleton.mp hxb\n      subst x\n      exact B.b_not_mem_L (hY hxY)\n    · exact (Finset.disjoint_left.mp B.T_disjoint_L hxT (hY hxY)).elim\n  rw [Finset.card_union_of_disjoint haTY, Finset.card_union_of_disjoint hbTY,\n    Finset.card_union_of_disjoint haT, Finset.card_union_of_disjoint hbT]\n  simp\n"
     },
@@ -150,6 +160,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 1 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "1c356f1aa507ef47c18abe018357709b49deda6bd21d6aaf4f649c9a397619b4",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -174,7 +189,15 @@
           "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Theorems.perturbedPattern_card_eq",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedPatternCancellation/Theorems/perturbedPattern_card_eq.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedPatternCancellation.Prelude\nimport Mathlib.Data.Finset.Card\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedPattern_card_eq`\n\nFor every `B : PerturbedStarBlocks n r` and every finite set `Y` with `Y ⊆ B.L`, the exact deleted\nand added pattern constructors have equal cardinality:\n\n`({B.a} ∪ B.T ∪ Y).card = ({B.b} ∪ B.T ∪ Y).card`.\n\nNo additional hypotheses, including `hrd` or `hrn`, are assumed.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 49\n\n## Statement dependencies\n\n- `Finset.card` from `Mathlib.Data.Finset.Card`\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n-/\ntheorem perturbedPattern_card_eq {n r : ℕ} (B : PerturbedStarBlocks n r)\n    (Y : Finset (Fin n)) (hY : Y ⊆ B.L) :\n    ({B.a} ∪ B.T ∪ Y).card = ({B.b} ∪ B.T ∪ Y).card := by\n  sorry\n"
     },

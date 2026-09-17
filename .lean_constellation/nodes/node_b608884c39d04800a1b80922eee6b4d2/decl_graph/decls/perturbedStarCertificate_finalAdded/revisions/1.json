@@ -2,11 +2,11 @@
   "change": {
     "base_revision": null,
     "kind": "create",
-    "objective": "Prove the distinct final-added certificate case from SourceIndex b_0012 / article/sections/02_proof.tex line 63. For d,s,n,r and accepted B : PerturbedStarBlocks n r, let P = {B.b} ∪ B.T ∪ B.L and assume r = d+1-s, 2 ≤ r, and r+1 ≤ s. Conclude exactly the four-clause bundle required by visible `Main.PatternCriterion::patternFamily_isUniformMissingTraceFamily` revision 2 for `tau = perturbedStarTau B` and `patterns = perturbedStarPatterns d B`: properness of tau P in P; the gap bound by d+1-s; tau-cardinality at most s; and absence of Q in the pattern collection with `Q ∩ P = tau P` and the criterion size bound. The proof must use 2≤r and B.card_L to establish a chosen ell0∈B.L and expose the final-added selector branch, so tau P=B.T∪{ell0}; prove card tau=r+1 and card P-card tau=r using the accepted disjointness and avoidance fields; split exclusion exactly as the source does: every inserted Q contributes B.b to the intersection, whereas any a-anchored Q with the required intersection must equal `{B.a} ∪ B.T ∪ {ell0}`, which belongs to the deleted proper-L image because r≥2 makes `{ell0}` a proper subset of B.L. Consume `PerturbedStarBlocks` revision 2, `perturbedStarCore` revision 1 as needed for base classification, `perturbedStarPatterns` revision 1, and `perturbedStarTau` revision 1. This theorem is the second of five separate proved branches and must remain directly composable into the eventual universal certificate theorem.",
+    "objective": "`perturbedStarCertificate_finalAdded` formalizes the distinct final-added case from SourceIndex b_0012 / article/sections/02_proof.tex line 63. For d,s,n,r, B : PerturbedStarBlocks n r, and P={B.b}∪B.T∪B.L satisfying r=d+1-s, 2≤r, and r+1≤s, it yields the exact four clauses for perturbedStarTau B P over perturbedStarPatterns d B. The selector has value B.T∪{ell0} for a chosen ell0∈B.L, with tau.card=r+1 and P.card-tau.card=r; inserted competitors meet at B.b, whereas an a-anchored competitor with the required intersection is the deleted `{B.a}∪B.T∪{ell0}` form. Its dependencies are PerturbedStarBlocks rev2, perturbedStarCore rev1, perturbedStarPatterns rev1, perturbedStarTau rev1, and Finset cardinality/disjointness/powerset facts. This is the second of five proved branches.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
-    "summary": "Blocked at Proof Formal after Statement Formal and Proof NL were accepted. The frozen consumer-side theorem remains: for P={B.b}∪B.T∪B.L under r=d+1-s, 2≤r, and r+1≤s, prove the exact four-clause generic certificate bundle for `perturbedStarTau B P` over `perturbedStarPatterns d B`. The accepted proof plan checks `PerturbedStarBlocks` rev2, `perturbedStarCore` rev1, `perturbedStarPatterns` rev1, `perturbedStarTau` rev1, and the listed Finset cardinality/disjointness/powerset lemmas. The concrete missing item is a predictable tracked helper: from ell0∈B.L, Q∈perturbedStarPatterns d B, and `Q ∩ ({B.b}∪B.T∪B.L)=B.T∪{ell0}`, classify Q's raw pattern-membership branch. Inserted Q is impossible because B.b lies in the intersection; a base Q must be exactly `{B.a}∪B.T∪{ell0}`, hence is deleted because 2≤r makes `{ell0}⊂B.L`. This is a major reusable finite-set classification/exclusion argument and cannot remain a local Proof Formal helper. No statement/interface drift or source mismatch occurred. Retry condition: first prove and accept that tracked final-intersection exclusion lemma, then retry this unchanged proof-planned revision with the helper in its proof dependencies.",
-    "target_state": "proved"
+    "summary": "Blocked at Proof Formal after Statement Formal and Proof NL were accepted. The frozen consumer-side theorem remains: for P={B.b}∪B.T∪B.L under r=d+1-s, 2≤r, and r+1≤s, prove the exact four-clause generic certificate bundle for `perturbedStarTau B P` over `perturbedStarPatterns d B`. The accepted proof plan checks PerturbedStarBlocks rev2, perturbedStarCore rev1, perturbedStarPatterns rev1, perturbedStarTau rev1, and listed Finset cardinality/disjointness/powerset lemmas. The concrete missing item is a predictable tracked helper: from ell0∈B.L, Q∈perturbedStarPatterns d B, and Q∩({B.b}∪B.T∪B.L)=B.T∪{ell0}, classify Q's raw pattern-membership branch. Inserted Q is impossible because B.b lies in the intersection; a base Q must be exactly {B.a}∪B.T∪{ell0}, hence is deleted because 2≤r makes {ell0}⊂B.L. This is a major reusable finite-set classification/exclusion argument and cannot remain a local Proof Formal helper. No statement/interface drift or source mismatch occurred.",
+    "target_state": "proved",
+    "execution_constraints": "First prove and accept the tracked final-intersection exclusion lemma, then retry this unchanged proof-planned revision with the helper in its proof dependencies."
   },
   "lean_decl_name": "perturbedStarCertificate_finalAdded",
   "proof": {
@@ -149,6 +149,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 1 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "e3f1957cf77d320f4f197b9f698ab902c38fa6cebd392fbbb68e126e7acbc349",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -173,7 +178,15 @@
           "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarCertificate_finalAdded",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Theorems/perturbedStarCertificate_finalAdded.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarCertificate_finalAdded`\n\nFor natural numbers `d`, `s`, `n`, and `r`, let `B : PerturbedStarBlocks n r`. Assume `r = d + 1 -\ns`, `2 ≤ r`, and `r + 1 ≤ s`, and put `P = {B.b} ∪ B.T ∪ B.L`. The lower bound together with\n`B.card_L = r` makes `B.L` nonempty, so the final-added selector guard applies: for the selector's\nchosen `ell0 ∈ B.L`, `perturbedStarTau B P = B.T ∪ {ell0}`. Then the following four-clause\ncertificate bundle holds:\n\n1. `perturbedStarTau B P ⊂ P`.\n2. `P.card - (perturbedStarTau B P).card ≤ d + 1 - s`.\n3. `(perturbedStarTau B P).card ≤ s`.\n4. There is no `Q ∈ perturbedStarPatterns d B` such that both `Q ∩ P = perturbedStarTau B P` and\n`Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s)`.\n\nThis is the final inserted `b/T/L` pattern case and supplies exactly the certificate shape required\nby the generic pattern-family criterion.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, line 63\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`\n- `Main.PerturbedStarCertificates::perturbedStarTau` → `perturbedStarTau` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarTau`\n-/\ntheorem perturbedStarCertificate_finalAdded (d s n r : ℕ)\n    (B : PerturbedStarBlocks n r)\n    (hr : r = d + 1 - s) (hrtwo : 2 ≤ r) (hrs : r + 1 ≤ s) :\n    let P := {B.b} ∪ B.T ∪ B.L\n    perturbedStarTau B P ⊂ P ∧\n      P.card - (perturbedStarTau B P).card ≤ d + 1 - s ∧\n      (perturbedStarTau B P).card ≤ s ∧\n      ¬ ∃ Q ∈ perturbedStarPatterns d B,\n        Q ∩ P = perturbedStarTau B P ∧\n          Q.card ≤ (perturbedStarTau B P).card + (d + 1 - s) := by\n  sorry\n"
     },

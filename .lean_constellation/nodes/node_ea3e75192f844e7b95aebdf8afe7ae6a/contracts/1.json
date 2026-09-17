@@ -1,7 +1,7 @@
 {
-  "boundary": "Owns cancellation/counting of removed and added pattern completions, the unpaired final-pattern binomial term, the arithmetic rewrite d-2r=2s-d-2, positivity/strict star comparison, and final assembly of exists_uniformMissingTraceFamily_strictlyLargerThanStar from SourceIndex blocks b_0009, b_0011, and b_0014. Excludes re-proving the generic criterion or redesigning the five certificate cases. Expected scale: about 6–12 important declarations including injectivity/disjointness/cardinality helpers and the final theorem.",
+  "boundary": "Owns cancellation/counting of removed and added pattern completions, the unpaired final-pattern binomial term, the arithmetic rewrite d-2r=2s-d-2, positivity/strict star comparison, and final assembly of exists_uniformMissingTraceFamily_strictlyLargerThanStar from SourceIndex blocks b_0009, b_0011, and b_0014. Excludes re-proving the generic criterion or redesigning the five certificate cases.",
   "committed_at": "2026-07-27T15:37:19Z",
-  "constraints": "The theorem name, all hypotheses, IsUniformMissingTraceFamily conclusion, exact Nat.choose expression, and strict inequality are immutable. Reuse lower-node public interfaces rather than duplicating their proofs.",
+  "constraints": "The theorem name, all hypotheses, IsUniformMissingTraceFamily conclusion, exact Nat.choose expression, and strict inequality are immutable.",
   "context_refs": [],
   "contract_kind": "content",
   "created_at": "2026-07-22T08:53:20Z",
@@ -328,7 +328,7 @@
       "reason": "Defining import for Finset.sum_bij used in the planned weighted-sum reindexings."
     }
   ],
-  "objective": "Once the criterion and certificate construction are public, prove the exact source formula and strict inequality and bind the protected Main interface without changing its statement.",
+  "objective": "The exact source formula and strict inequality are proved and bound to the protected Main interface without changing its statement, using the public criterion and certificate construction.",
   "owned_refs": [
     {
       "added_by": "coordinator",
@@ -373,5 +373,7 @@
   "status": "committed",
   "success_criteria": "The explicit family has the exact immutable cardinality; the second choose term is proved positive under the given hypotheses; the protected theorem exists_uniformMissingTraceFamily_strictlyLargerThanStar is compiler-confirmed and proved-level proof-policy satisfied.",
   "summary": "Accepted ready under graph_proved. The public perturbedStarFamily_card revision 1 proves the exact r-form cardinality with unchanged hypotheses and equality direction. The public exists_uniformMissingTraceFamily_strictlyLargerThanStar revision 1 preserves the immutable root signature, exact Nat.choose indices, conjunction structure, and strict inequality and is proved-level satisfied. The full counting, cancellation, arithmetic, and positivity chain is proved using the committed lower providers; the two superseded private wrappers are intentionally obsolete. No node-local prerequisite remains.",
-  "version": 1
+  "task_completion_mode": "graph_proved",
+  "version": 1,
+  "execution_constraints": "Begin once the criterion and certificate construction are public; reuse lower-node public interfaces rather than duplicating their proofs, and keep the implementation within about 6–12 important declarations, including injectivity/disjointness/cardinality helpers and the final theorem."
 }

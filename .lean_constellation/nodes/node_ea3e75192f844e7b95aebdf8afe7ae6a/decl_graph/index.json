@@ -1,6 +1,5 @@
 {
   "decl_names": [
-    "anchoredPowerset_chooseSum_reindex",
     "completionFiber_card",
     "completionFibers_pairwiseDisjoint",
     "exists_uniformMissingTraceFamily_strictlyLargerThanStar",
@@ -12,8 +11,7 @@
     "perturbedStarFiller_card",
     "perturbedStarPatterns_chooseSum",
     "perturbedStarPatterns_disjoint_filler",
-    "perturbedStarPerturbation_chooseSum",
-    "perturbedStarProperPatterns_chooseSum"
+    "perturbedStarPerturbation_chooseSum"
   ],
   "node_id": "node_ea3e75192f844e7b95aebdf8afe7ae6a",
   "node_path": "Main.CountingAndMain",
@@ -37,11 +35,9 @@
     "round_f67114f17c934435b92e53ffe6af5907",
     "round_fc6b3d8b66ca4fc0bc7142aaa52780c6"
   ],
-  "schema_version": 1,
+  "schema_version": 2,
   "strategy_ids": [
     "strategy_746a2d92b99d454db9e1556c2088f3e8",
     "strategy_7cbc30f0d9cb46628fd30ebca588482b"
-  ],
-  "summary": "DeclGraph index rebuilt for Main.CountingAndMain: 14 decls, 18 rounds, 2 strategies.",
-  "updated_at": "2026-07-27T16:05:41Z"
+  ]
 }

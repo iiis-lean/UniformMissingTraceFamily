@@ -1,12 +1,11 @@
 {
-  "change_summaries": {},
   "committed_at": "2026-07-22T14:47:49Z",
   "created_at": "2026-07-22T14:33:17Z",
   "execution_completed_at": "2026-07-22T14:47:49Z",
   "execution_reason": "DeclGraphRoundFlow finished with completed.",
   "execution_result_kind": "success",
   "node_path": "Main.PerturbedStarCertificates",
-  "objective": "Prove the third mandatory source b_0012 certificate branch (article/sections/02_proof.tex line 65): for an allowed a-anchored pattern P with P.card ≤ r, show the accepted selector is empty and establish the exact four-clause certificate bundle consumed by Main.PatternCriterion.",
+  "objective": "The third mandatory source b_0012 certificate branch (article/sections/02_proof.tex line 65) covers an allowed a-anchored pattern P with P.card ≤ r, for which the accepted selector is empty and the exact four-clause certificate bundle consumed by Main.PatternCriterion holds.",
   "plan_closeout_acknowledged_at": "2026-07-22T14:47:49Z",
   "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
   "result_kind": "success",
@@ -23,5 +22,6 @@
   "started_at": "2026-07-22T14:34:23Z",
   "status": "committed",
   "strategy_id": "strategy_140c2962785943968f6203e9ab1972fc",
-  "summary": "Round 15 completed the third of five mandatory source certificate branches. `perturbedStarCertificate_smallStar` reached proved state and is recursively proof-policy satisfied. The active bottom-up strategy made direct progress; no superseded artifacts, unresolved dependencies, state-only intermediates, or graph-hygiene issues were introduced. Two source-visible case theorems remain—large a-star avoiding T and large a-star meeting T—before the public generic-criterion assembly. The next action should plan the avoiding-T branch from source lines 67–70 after its exact witness conditions are checked."
+  "summary": "Round 15 completed the third of five mandatory source certificate branches. `perturbedStarCertificate_smallStar` reached proved state and is recursively proof-policy satisfied. The active bottom-up strategy made direct progress; no superseded artifacts, unresolved dependencies, state-only intermediates, or graph-hygiene issues were introduced. Two source-visible case theorems remain—large a-star avoiding T and large a-star meeting T—before the public generic-criterion assembly.",
+  "execution_constraints": "Plan the avoiding-T branch from source lines 67–70 after checking its exact witness conditions."
 }

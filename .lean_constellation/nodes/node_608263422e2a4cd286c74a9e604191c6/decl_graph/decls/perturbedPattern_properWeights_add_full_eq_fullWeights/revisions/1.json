@@ -1,17 +1,9 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [
-      "perturbedPatternA_injOn",
-      "perturbedPatternB_injOn",
-      "perturbedPatternB_properImage_eq_erase",
-      "perturbedPattern_chooseWeight_eq"
-    ],
-    "anticipated_statement_dep_names": [],
     "base_revision": null,
     "kind": "create",
     "objective": "Create the contract-required public theorem, for every B : PerturbedStarBlocks n r and natural d, with no hrd/hrn assumptions. Its left side must be the sum of weights Nat.choose (perturbedStarFiller B).card (d + 1 - P.card) over the image under exactly Y ↦ {B.a} ∪ B.T ∪ Y of the proper domain {Y ∈ B.L.powerset | Y ≠ B.L}, plus the single weight of {B.b} ∪ B.T ∪ B.L. Its right side must be the same weight summed over the full image of B.L.powerset under exactly Y ↦ {B.b} ∪ B.T ∪ Y, with equality directed proper-a sum plus full-L b weight = full b-image sum. This is the weighted cancellation and sole-excess assertion of SourceIndex b_0009 / article/sections/02_proof.tex:49 and must match the interface summary consumed by Main.CountingAndMain::perturbedStarProperPatterns_chooseSum@1. Prove it using perturbedPatternA_injOn and perturbedPatternB_injOn with Finset.sum_image, perturbedPattern_chooseWeight_eq to match proper terms, perturbedPatternB_properImage_eq_erase to identify the erased b-image, and Finset.sum_erase_add to restore the unique full-L term. Do not add assumptions, redesign perturbedStarPatterns, invoke generic anchored-powerset enumeration, or prove parent/global cardinality results.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
     "summary": "Blocked at Statement NL before formal capture; the public revision remains planned with Statement NL present and all later artifacts absent. Preserve the consumer-side goal exactly: for every B : PerturbedStarBlocks n r and d, with no hrd/hrn assumptions, the Nat.choose (perturbedStarFiller B).card weighted sum over the proper a-pattern image under Y ↦ {B.a} ∪ B.T ∪ Y plus the weight of {B.b} ∪ B.T ∪ B.L equals the weighted sum over the full b-pattern image under Y ↦ {B.b} ∪ B.T ∪ Y. The checked providers perturbedPatternA_injOn, perturbedPatternB_injOn, perturbedPattern_chooseWeight_eq, and perturbedPatternB_properImage_eq_erase are all proved and match the intended proof; Finset.sum_image and Finset.sum_erase_add are already indexed. Concrete blocker classification: typed Statement MathlibIndex gap. Finset.sum is compiler-verified but has no repo MathlibIndex entry, so the reviewer-required dependency cannot be recorded. Retry after curating Finset.sum and attaching/validating its current-node hint; no source, interface, assumption, visibility, scope, or lower-dependency mismatch was reported.",
     "target_state": "proved"
   },

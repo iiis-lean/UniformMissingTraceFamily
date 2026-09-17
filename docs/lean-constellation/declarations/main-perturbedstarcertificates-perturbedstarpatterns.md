@@ -1,4 +1,4 @@
-[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md)
+[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md) · [Complete graph](../DECLARATION_GRAPH.md)
 
 # `perturbedStarPatterns`
 
@@ -10,9 +10,19 @@ The allowed core patterns obtained by perturbing the anchored one-star along the
 - State: `declared`
 - Revision status: `committed`
 - Repository completion: `graph_proved`
-- Formal code: final statement projection
+- Compatibility `formal_code`: final statement projection
 
-## Lean code
+## Statement NL
+
+For natural numbers d, n, and r and construction data `B : PerturbedStarBlocks n r`, `perturbedStarPatterns d B` is a finite family of finite subsets of `Fin n`, defined from the following three components.
+
+1. Its base anchored-star component consists of every finite set `P` with `P ⊆ perturbedStarCore B`, `B.a ∈ P`, and `P.card ≤ d + 1`.
+2. From that base component, delete exactly the sets `{B.a} ∪ B.T ∪ Y` for which `Y` is a proper subset of `B.L`.
+3. Insert exactly the sets `{B.b} ∪ B.T ∪ Y` for every subset `Y ⊆ B.L`.
+
+The result is the base component after the stated deletions, union the stated inserted component. In particular, the insertion includes `Y = B.L` as the final added pattern, while the deletion excludes that non-proper choice. No filler elements or further hypotheses occur in this definition.
+
+## Statement Formal
 
 ```lean
 -- lean-constellation: managed-imports-begin
@@ -62,6 +72,14 @@ def perturbedStarPatterns (d : ℕ) {n r : ℕ}
     {B.b} ∪ B.T ∪ Y
   (base \ deleted) ∪ inserted
 ```
+
+## Proof NL
+
+Not recorded.
+
+## Proof Formal
+
+Not recorded.
 
 ## Statement dependencies
 

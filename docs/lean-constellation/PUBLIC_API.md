@@ -1,5 +1,6 @@
 # Public API
 
+- Repository format: `native`
 - Repository completion: `graph_proved`
 - Proof availability: `proved`
 - Public declarations: `2` across `2` nodes

@@ -1,12 +1,11 @@
 {
-  "change_summaries": {},
   "committed_at": "2026-07-22T12:56:34Z",
   "created_at": "2026-07-22T12:51:54Z",
   "execution_completed_at": "2026-07-22T12:56:34Z",
   "execution_reason": "DeclGraphRoundFlow finished with completed.",
   "execution_result_kind": "success",
   "node_path": "Main.PerturbedStarCertificates",
-  "objective": "Begin the source b_0008 construction layer by declaring the fixed core C from accepted PerturbedStarBlocks data, establishing the provider needed by the filler, allowed-pattern, public-family, counting, and certificate layers.",
+  "objective": "The source b_0008 construction layer contains the fixed core C from accepted PerturbedStarBlocks data, which is the provider needed by the filler, allowed-pattern, public-family, counting, and certificate layers.",
   "plan_closeout_acknowledged_at": "2026-07-22T12:56:34Z",
   "plan_closeout_acknowledged_by": "checkpoint_migration:decl_closeout_v1",
   "result_kind": "success",
@@ -23,5 +22,6 @@
   "started_at": "2026-07-22T12:52:52Z",
   "status": "committed",
   "strategy_id": "strategy_140c2962785943968f6203e9ab1972fc",
-  "summary": "Round 6 completed the next bottom-up construction layer: `perturbedStarCore` revision 1 was declared exactly from source b_0008 line 34 and is proof-policy satisfied over `PerturbedStarBlocks` revision 2. Dependency closure is clean, the active strategy remains viable, and no superseded or retry-named artifacts were introduced. The next dependency-safe step is to declare the source filler `U = univ \\ C` before planning patterns or certificate consumers."
+  "summary": "Round 6 completed the next bottom-up construction layer: `perturbedStarCore` revision 1 was declared exactly from source b_0008 line 34 and is proof-policy satisfied over `PerturbedStarBlocks` revision 2. Dependency closure is clean, the active strategy remains viable, and no superseded or retry-named artifacts were introduced.",
+  "execution_constraints": "Declare the source filler `U = univ \\ C` before planning patterns or certificate consumers."
 }

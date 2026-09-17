@@ -1,12 +1,9 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [],
-    "anticipated_statement_dep_names": [],
     "base_revision": null,
     "kind": "create",
     "objective": "Implement the SourceIndex b_0011 positivity step in the exact consumer-side s-form required by formal_target.lean lines 14–24: for d s n : ℕ with hd : 4 ≤ d, hslow : (d + 3) / 2 ≤ s, hshigh : s ≤ d - 1, and hn : 2 * (d + 1) ≤ n, prove `0 < Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2)`. Preserve all immutable hypotheses and both exact Nat.choose indices. Consume the proved lower-node perturbedStarParameterBounds to obtain the rewrite `d - 2 * (d + 1 - s) = 2 * s - d - 2` and the nonnegative lower index/bounds; derive `d - 2*r ≤ n - 2*r - 2` from hn (with hd as needed), then apply Mathlib Nat.choose_pos and rewrite to the s-form. This private proved helper must directly feed the strict inequality conjunct of exists_uniformMissingTraceFamily_strictlyLargerThanStar; do not change the final theorem or re-prove construction/cardinality.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
     "summary": "Created private theorem perturbedStarExtra_choose_pos and advanced revision 1 through statement and proof stages to proved. The accepted theorem has exactly the immutable d, s, n hypotheses and proves positivity of `Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2)`. Its proof reuses perturbedStarParameterBounds for the r-to-s index rewrite and room inequalities and Mathlib Nat.choose_pos, so it is proof-policy satisfied under graph_proved and is the direct strictness input for the final public existential theorem.",
     "target_state": "proved"
   },
@@ -45,6 +42,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 0 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "bfaba8a57a6910ca0b9c24af022ed68aa351aff17cbb8aa1e815886cb7afb37f",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "proof_formal",
         "scan": {
@@ -62,7 +64,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarExtra_choose_pos",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarExtra_choose_pos.lean",
+          "repo_kind": "native",
+          "stage": "proof"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarExtra_choose_pos`\n\nFor natural numbers `d`, `s`, and `n`, if `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤ d -\n1`, and `hn : 2 * (d + 1) ≤ n`, then\n`0 < Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2)`.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 75–79\n- Source `formal_target.lean`, lines 14–24\n\n## Statement dependencies\n\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n\n## Proof outline\n\nSet `r := d + 1 - s` and instantiate the proof-accepted lower interface\n`Main.PerturbedStarCertificates::perturbedStarParameterBounds d s n hd hslow hshigh hn`. Destructure\nits conclusions to obtain the exact rewrite `d - 2 * r = 2 * s - d - 2`, together with `2 * r ≤ d`,\n`2 + 2 * r ≤ n`, and the stated nontruncation bounds for `r`.\n\nUse `hn` and `hd` in elementary natural-number arithmetic to derive `d - 2 * r ≤ n - 2 * r - 2`; the\nprovider’s `2 * r ≤ d` ensures this is the intended lower index. Apply verified `Nat.choose_pos` to\nget `0 < Nat.choose (n - 2 * r - 2) (d - 2 * r)`. Finally unfold `r` and rewrite its lower choice\nindex with the provider equality, yielding exactly `0 < Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s\n- d - 2)`. No construction or cardinality result is reproved.\n\n## Proof sources\n\n- Source `article/sections/02_proof.tex`, lines 75–79\n\n## Proof dependencies\n\n- `Nat.choose_pos` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PerturbedStarCertificates::perturbedStarParameterBounds` → `perturbedStarParameterBounds`\n  from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarParameterBounds`\n-/\ntheorem perturbedStarExtra_choose_pos {d s n : ℕ} (hd : 4 ≤ d)\n    (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    0 < Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2) := by\n  rcases perturbedStarParameterBounds d s n hd hslow hshigh hn with\n    ⟨hr_two, hr_s, hrewrite, hrd, hrn⟩\n  apply Nat.choose_pos\n  omega\n"
     },
@@ -116,6 +126,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 1 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "e06d434b08091df935e1f02573d16477700260389eba5e2fdb880562aebc152b",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -140,7 +155,15 @@
           "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarExtra_choose_pos",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/perturbedStarExtra_choose_pos.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarExtra_choose_pos`\n\nFor natural numbers `d`, `s`, and `n`, if `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤ d -\n1`, and `hn : 2 * (d + 1) ≤ n`, then\n`0 < Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2)`.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 75–79\n- Source `formal_target.lean`, lines 14–24\n\n## Statement dependencies\n\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n-/\ntheorem perturbedStarExtra_choose_pos {d s n : ℕ} (hd : 4 ≤ d)\n    (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    0 < Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2) := by\n  sorry\n"
     },

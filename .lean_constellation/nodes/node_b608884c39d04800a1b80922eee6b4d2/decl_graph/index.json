@@ -41,10 +41,8 @@
     "round_fada8d146e6241a08d0ecd1d8382e764",
     "round_fffa24189c11427da2ea8c2e084b8637"
   ],
-  "schema_version": 1,
+  "schema_version": 2,
   "strategy_ids": [
     "strategy_140c2962785943968f6203e9ab1972fc"
-  ],
-  "summary": "DeclGraph index rebuilt for Main.PerturbedStarCertificates: 15 decls, 21 rounds, 1 strategies.",
-  "updated_at": "2026-07-27T16:05:41Z"
+  ]
 }

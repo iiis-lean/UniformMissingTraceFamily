@@ -1,14 +1,9 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [
-      "perturbedPattern_card_eq"
-    ],
-    "anticipated_statement_dep_names": [],
     "base_revision": null,
     "kind": "create",
     "objective": "For every B : PerturbedStarBlocks n r, d, and Y ⊆ B.L, prove equality of the exact completion weights Nat.choose (perturbedStarFiller B).card (d + 1 - ({B.a} ∪ B.T ∪ Y).card) and Nat.choose (perturbedStarFiller B).card (d + 1 - ({B.b} ∪ B.T ∪ Y).card). Preserve the contribution equality in SourceIndex b_0009 / article/sections/02_proof.tex:49, use the exact constructors and filler, and add no hrd/hrn assumptions. Consume the proved perturbedPattern_card_eq by rewriting the card argument; this theorem feeds the proper matched-sum side of the public cancellation interface.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
     "summary": "Blocked at Statement NL as a round-level collateral effect before formal statement capture. The intended consumer-side goal remains equality, for every B, d, and Y ⊆ B.L, of the two Nat.choose (perturbedStarFiller B).card completion weights for the exact a/b anchored patterns; perturbedPattern_card_eq is already proved and matches the required card rewrite. Statement NL is present, but statement formal/proof artifacts are absent and the revision remains planned. Concrete blocker classification: Mathlib typed-dependency index gap, not source, interface, or proof mathematics. Retry after the repo MathlibIndex records compiler-verified Finset.image from Mathlib.Data.Finset.Image; no other prerequisite is known.",
     "target_state": "proved"
   },

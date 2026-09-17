@@ -1,4 +1,4 @@
-[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md)
+[← Public API](../PUBLIC_API.md) · [Public boundaries](../PUBLIC_BOUNDARIES.md) · [Complete graph](../DECLARATION_GRAPH.md)
 
 # `perturbedStarFinalIntersection_excluded`
 
@@ -10,9 +10,82 @@ No allowed perturbed-star pattern intersects the final b/T/L pattern in T plus e
 - State: `proved`
 - Revision status: `committed`
 - Repository completion: `graph_proved`
-- Formal code: final proof projection
+- Compatibility `formal_code`: final proof projection
 
-## Lean code
+## Statement NL
+
+For natural numbers `d`, `n`, and `r`, let `B : PerturbedStarBlocks n r` and let `ell0 : Fin n` satisfy `ell0 ∈ B.L`. If `2 ≤ r`, then there is no `Q ∈ perturbedStarPatterns d B` for which
+
+`Q ∩ ({B.b} ∪ B.T ∪ B.L) = B.T ∪ {ell0}`.
+
+Equivalently, no allowed perturbed-star pattern has intersection with the final inserted `b/T/L` pattern equal to all of `T` together with exactly the single L-element `ell0`. This isolates the source line-63 exclusion: inserted patterns contain `B.b`, while a base pattern with this intersection would be the deleted proper-L pattern `{B.a} ∪ B.T ∪ {ell0}`.
+
+## Statement Formal
+
+```lean
+-- lean-constellation: managed-imports-begin
+import UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude
+import UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns
+import UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks
+-- lean-constellation: managed-imports-end
+
+-- lean-constellation: declaration-source-begin
+
+/--
+# lean-constellation target: `perturbedStarFinalIntersection_excluded`
+
+For natural numbers `d`, `n`, and `r`, let `B : PerturbedStarBlocks n r` and let `ell0 : Fin n`
+satisfy `ell0 ∈ B.L`. If `2 ≤ r`, then there is no `Q ∈ perturbedStarPatterns d B` for which
+
+`Q ∩ ({B.b} ∪ B.T ∪ B.L) = B.T ∪ {ell0}`.
+
+Equivalently, no allowed perturbed-star pattern has intersection with the final inserted `b/T/L`
+pattern equal to all of `T` together with exactly the single L-element `ell0`. This isolates the
+source line-63 exclusion: inserted patterns contain `B.b`, while a base pattern with this
+intersection would be the deleted proper-L pattern `{B.a} ∪ B.T ∪ {ell0}`.
+
+## Sources
+
+- Source `article/sections/02_proof.tex`, line 63
+
+## Statement dependencies
+
+- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from
+  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`
+- `Main.PerturbedStarCertificates::perturbedStarPatterns` → `perturbedStarPatterns` from
+  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns`
+-/
+theorem perturbedStarFinalIntersection_excluded (d n r : ℕ)
+    (B : PerturbedStarBlocks n r) (ell0 : Fin n)
+    (hell0 : ell0 ∈ B.L) (hrtwo : 2 ≤ r) :
+    ¬ ∃ Q ∈ perturbedStarPatterns d B,
+      Q ∩ ({B.b} ∪ B.T ∪ B.L) = B.T ∪ {ell0} := by
+  sorry
+```
+
+## Proof NL
+
+Assume `Q ∈ perturbedStarPatterns d B` and
+```
+Q ∩ ({B.b} ∪ B.T ∪ B.L) = B.T ∪ {ell0}.
+```
+Unfold `perturbedStarPatterns` and simplify membership in its powersets, images, filters, union, and difference (using `Finset.mem_powerset`). This gives the inserted and base-minus-deleted branches of the accepted definition.
+
+* In the inserted branch, for some `Z ⊆ B.L`,
+  `Q = {B.b} ∪ B.T ∪ Z`. The point `B.b` belongs to both `Q` and the final set `{B.b} ∪ B.T ∪ B.L`, hence to their intersection. But `B.b ∉ B.T ∪ {ell0}`: use `B.b_not_mem_T`, `B.b_not_mem_L`, and `hell0`. This contradicts the displayed intersection equality.
+
+* In the base-minus-deleted branch, unfold `perturbedStarCore` in the base membership. It gives `B.a ∈ Q` and
+  `Q ⊆ {B.a, B.b} ∪ B.T ∪ B.L`. The intersection equality forces `B.b ∉ Q`, forces every element of `B.T ∪ {ell0}` into `Q`, and excludes every element of `B.L \ {ell0}` from `Q`. For the last two claims use the anchor-avoidance fields and `B.T_disjoint_L` elementwise through `Finset.disjoint_left`. Extensionality with the core containment now yields
+  ```
+  Q = {B.a} ∪ B.T ∪ {ell0}.
+  ```
+
+It remains to show that this exact set is deleted. The singleton `{ell0}` is contained in `B.L` by `hell0`. If it equalled `B.L`, simp would give `B.L.card = 1`; after rewriting with `B.card_L`, this contradicts `hrtwo : 2 ≤ r`. Thus `{ell0} ⊂ B.L`. Its powerset and filter witnesses therefore place
+`{B.a} ∪ B.T ∪ {ell0}` in the deleted image. This contradicts the base-minus-deleted membership of `Q`.
+
+Both raw construction branches are impossible, proving the exact no-`Q` conclusion.
+
+## Proof Formal
 
 ```lean
 -- lean-constellation: managed-imports-begin

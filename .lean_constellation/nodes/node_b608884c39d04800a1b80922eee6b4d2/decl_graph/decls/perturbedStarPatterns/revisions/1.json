@@ -2,10 +2,9 @@
   "change": {
     "base_revision": null,
     "kind": "create",
-    "objective": "Formalize exactly SourceIndex b_0008 / article/sections/02_proof.tex lines 35–39 as a finite family of finite subsets of Fin n. For d,n,r and accepted B : PerturbedStarBlocks n r, start with every P ⊆ perturbedStarCore B such that B.a ∈ P and P.card ≤ d+1; delete exactly the patterns `{B.a} ∪ B.T ∪ Y` indexed by proper subsets Y ⊂ B.L; then insert exactly the patterns `{B.b} ∪ B.T ∪ Y` indexed by all subsets Y ⊆ B.L, including Y=B.L as the final added pattern. Preserve these three source components explicitly enough that later proofs can distinguish deleted-proper-L/added-proper-L, final-added, small-star, large-star-avoiding-T, and large-star-meeting-T cases. Consume `PerturbedStarBlocks` revision 2 and `perturbedStarCore` revision 1. Produce a public Finset (Finset (Fin n)) usable unchanged as the `patterns` argument of Main.PatternCriterion.patternFamily, by the required `perturbedStarFamily`, by downstream exact-cardinality work, and by all five certificate lemmas. Do not introduce filler elements or additional hypotheses.",
+    "objective": "`perturbedStarPatterns d B` is the finite family from SourceIndex b_0008 / article/sections/02_proof.tex lines 35–39. For d,n,r and B : PerturbedStarBlocks n r, it consists of the base sets P ⊆ perturbedStarCore B with B.a ∈ P and P.card ≤ d+1, with exactly the `{B.a} ∪ B.T ∪ Y` proper-L subsets deleted and exactly the `{B.b} ∪ B.T ∪ Y` subsets Y ⊆ B.L inserted, including Y=B.L. These explicit components distinguish the deleted-proper-L/added-proper-L, final-added, small-star, large-star-avoiding-T, and large-star-meeting-T cases. The definition depends on PerturbedStarBlocks revision 2 and perturbedStarCore revision 1, yields a public Finset (Finset (Fin n)) for the generic patternFamily and downstream consumers, and introduces no filler elements or additional hypotheses.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
-    "summary": "Completed successfully. `perturbedStarPatterns` revision 1 reached declared state with the exact source-b_0008 three-part construction: the bounded a-anchored base on the core, deletion of precisely the proper-L a/T patterns, and insertion of every b/T/L-subset pattern including the final Y=L case. Lean statement checking passed; dependencies are the accepted `PerturbedStarBlocks` revision 2 and `perturbedStarCore` revision 1, and declared/proof-policy satisfaction holds. No blocker or retry condition remains.",
+    "summary": "`perturbedStarPatterns` revision 1 reached declared state with the exact source-b_0008 three-part construction: the bounded a-anchored base on the core, deletion of precisely the proper-L a/T patterns, and insertion of every b/T/L-subset pattern including the final Y=L case. Lean statement checking passed; dependencies are the accepted `PerturbedStarBlocks` revision 2 and `perturbedStarCore` revision 1, and declared/proof-policy satisfaction holds without semantic drift.",
     "target_state": "declared"
   },
   "lean_decl_name": "perturbedStarPatterns",
@@ -48,6 +47,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 0 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "914cbe07656faf9e55e060de53d4ef3a7cce27ee7e315feb1f40357b9f5c4c0b",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -65,7 +69,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarPatterns",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PerturbedStarCertificates/Defs/perturbedStarPatterns.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Prelude\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore\nimport UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `perturbedStarPatterns`\n\nFor natural numbers d, n, and r and construction data `B : PerturbedStarBlocks n r`,\n`perturbedStarPatterns d B` is a finite family of finite subsets of `Fin n`, defined from the\nfollowing three components.\n\n1. Its base anchored-star component consists of every finite set `P` with `P ⊆ perturbedStarCore B`,\n`B.a ∈ P`, and `P.card ≤ d + 1`.\n2. From that base component, delete exactly the sets `{B.a} ∪ B.T ∪ Y` for which `Y` is a proper\nsubset of `B.L`.\n3. Insert exactly the sets `{B.b} ∪ B.T ∪ Y` for every subset `Y ⊆ B.L`.\n\nThe result is the base component after the stated deletions, union the stated inserted component. In\nparticular, the insertion includes `Y = B.L` as the final added pattern, while the deletion excludes\nthat non-proper choice. No filler elements or further hypotheses occur in this definition.\n\n## Sources\n\n- Source `article/sections/02_proof.tex`, lines 35–39\n\n## Statement dependencies\n\n- `Main.PerturbedStarCertificates::PerturbedStarBlocks` → `PerturbedStarBlocks` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Types.PerturbedStarBlocks`\n- `Main.PerturbedStarCertificates::perturbedStarCore` → `perturbedStarCore` from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Defs.perturbedStarCore`\n-/\ndef perturbedStarPatterns (d : ℕ) {n r : ℕ}\n    (B : PerturbedStarBlocks n r) : Finset (Finset (Fin n)) :=\n  let base := (perturbedStarCore B).powerset.filter fun P =>\n    B.a ∈ P ∧ P.card ≤ d + 1\n  let deleted :=\n    (B.L.powerset.filter fun Y => Y ⊆ B.L ∧ Y ≠ B.L).image fun Y =>\n      {B.a} ∪ B.T ∪ Y\n  let inserted := B.L.powerset.image fun Y =>\n    {B.b} ∪ B.T ∪ Y\n  (base \\ deleted) ∪ inserted\n"
     },

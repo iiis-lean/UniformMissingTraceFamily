@@ -4,7 +4,6 @@
     "kind": "create",
     "objective": "Implement the exact public predicate from formal_target.lean lines 3–9 and contract interface IsUniformMissingTraceFamily: preserve binder order {n : ℕ} (d s : ℕ) (family : Finset (Finset (Fin n))) and require both uniform card d+1 and, for each F in family, an s-cardinality B ⊆ F unequal to F ∩ F' for every F' in family. It has no lower node declarations and serves the final patternFamily_isUniformMissingTraceFamily conclusion and downstream existential theorem without altering Finset semantics.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
     "summary": "Completed creation of the public definition at declared state. The accepted Lean statement exactly preserves the contract binder order and Finset (Finset (Fin n)) semantics from formal_target.lean lines 3–9: uniform card d+1 plus an s-cardinality subset B whose intersection trace is absent against every family member. Lean statement checking passed, there are no declaration dependencies, and declared-level proof-policy satisfaction holds.",
     "target_state": "declared"
   },
@@ -27,6 +26,11 @@
           "schema_version": 2,
           "summary": "Command completed successfully"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "8442740af55b5eb8c6cf645c6882d36d2d399cf6468ac25ba178a4e9b796e1e9",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -44,7 +48,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily",
+          "repo_file_path": "UniformMissingTraceFamily/Main/PatternCriterion/Defs/IsUniformMissingTraceFamily.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.PatternCriterion.Prelude\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `IsUniformMissingTraceFamily`\n\nFor natural numbers `n`, `d`, and `s`, and a finite family `family : Finset (Finset (Fin n))`,\n`IsUniformMissingTraceFamily d s family` holds exactly when:\n\n1. every member `F` of `family` has cardinality `d + 1`; and\n2. every `F ∈ family` has a finite set `B : Finset (Fin n)` with `B ⊆ F` and `B.card = s` such that,\nfor every `F' ∈ family`, the intersection trace `F ∩ F'` is not `B`.\n\n## Sources\n\n- Source `formal_target.lean`, lines 3–9\n-/\ndef IsUniformMissingTraceFamily {n : ℕ} (d s : ℕ)\n    (family : Finset (Finset (Fin n))) : Prop :=\n  (∀ F ∈ family, F.card = d + 1) ∧\n    ∀ F ∈ family, ∃ B : Finset (Fin n), B ⊆ F ∧ B.card = s ∧\n      ∀ F' ∈ family, B ≠ F ∩ F'\n"
     },

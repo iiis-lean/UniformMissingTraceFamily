@@ -1,15 +1,9 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [
-      "perturbedStarExtra_choose_pos",
-      "perturbedStarFamily_card"
-    ],
-    "anticipated_statement_dep_names": [],
     "base_revision": null,
     "kind": "create",
     "objective": "Implement the immutable public theorem exactly from contract v1 and SourceIndex b_0014/formal_target.lean lines 14–25: `(d s n : ℕ) (hd : 4 ≤ d) (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1) (hn : 2 * (d + 1) ≤ n) : ∃ family : Finset (Finset (Fin n)), IsUniformMissingTraceFamily d s family ∧ family.card = Nat.choose (n - 1) d + Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2) ∧ Nat.choose (n - 1) d < family.card`. Do not alter the name, assumptions, existential object, exact indices, equality direction, conjunction structure, or strict comparison. Obtain `B : PerturbedStarBlocks n (d + 1 - s)` and its predicate proof from the proved lower-node perturbedStar_isUniformMissingTraceFamily. Use perturbedStarParameterBounds to supply the r-form bounds and rewrite `d - 2 * (d + 1 - s)` to `2 * s - d - 2`; specialize proved current-node perturbedStarFamily_card to establish the exact equality. Finish strictness from the equality and proved current-node perturbedStarExtra_choose_pos, using elementary Nat arithmetic only. This is the final interface consumer; do not re-prove the certificate cases or counting chain.",
     "require_target_state_satisfied": true,
-    "reset_to_state": null,
     "summary": "Created the immutable public theorem exists_uniformMissingTraceFamily_strictlyLargerThanStar and advanced revision 1 through all statement and proof stages to proved. The accepted statement preserves exactly d, s, n; hd, hslow, hshigh, hn; the existential Finset (Finset (Fin n)); IsUniformMissingTraceFamily; the two exact Nat.choose terms; and the strict star comparison. Its proof assembles the proved perturbed-star certificate and parameter bounds with current-node perturbedStarFamily_card and perturbedStarExtra_choose_pos, so the theorem is graph_proved with no duplicated certificate or counting arguments.",
     "target_state": "proved"
   },
@@ -70,6 +64,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 0 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "b65a4a3b016a86ec3050ce71e0faae11c79c68023044d295c5bc07693d733cb1",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "proof_formal",
         "scan": {
@@ -87,7 +86,15 @@
           "summary": "sorry=0, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.exists_uniformMissingTraceFamily_strictlyLargerThanStar",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/exists_uniformMissingTraceFamily_strictlyLargerThanStar.lean",
+          "repo_kind": "native",
+          "stage": "proof"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Nat.Choose.Basic\nimport UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarExtra_choose_pos\nimport UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarFamily_card\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `exists_uniformMissingTraceFamily_strictlyLargerThanStar`\n\nFor natural numbers `d`, `s`, and `n`, if `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤ d -\n1`, and `hn : 2 * (d + 1) ≤ n`, then there exists a family `family : Finset (Finset (Fin n))` such\nthat\n`IsUniformMissingTraceFamily d s family ∧ family.card = Nat.choose (n - 1) d + Nat.choose (n - 2 *\n(d + 1 - s) - 2) (2 * s - d - 2) ∧ Nat.choose (n - 1) d < family.card`.\n\n## Sources\n\n- Source `formal_target.lean`, lines 14–25\n- Source `article/sections/02_proof.tex`, lines 75–79\n\n## Statement dependencies\n\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PatternCriterion::IsUniformMissingTraceFamily` → `IsUniformMissingTraceFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily`\n\n## Proof outline\n\nInstantiate the proof-accepted lower theorem\n`Main.PerturbedStarCertificates::perturbedStar_isUniformMissingTraceFamily d s n hd hslow hshigh hn`\nand obtain `B : PerturbedStarBlocks n (d + 1 - s)` together with `hB : IsUniformMissingTraceFamily d\ns (perturbedStarFamily d B)`. Use `perturbedStarFamily d B` as the existential family and retain\n`hB` unchanged.\n\nInstantiate `Main.PerturbedStarCertificates::perturbedStarParameterBounds d s n hd hslow hshigh hn`.\nIts r-form conclusions give `2 * (d + 1 - s) ≤ d`, `2 + 2 * (d + 1 - s) ≤ n`, and `d - 2 * (d + 1 -\ns) = 2 * s - d - 2`. Supply the two bounds to the committed current-node theorem\n`perturbedStarFamily_card B`; rewrite its second lower index with that equality to obtain the exact\nimmutable s-form cardinality conjunct.\n\nApply the committed current-node helper `perturbedStarExtra_choose_pos hd hslow hshigh hn` for\npositivity of that same s-form second term. Substitute the proved cardinality equality and conclude\n`Nat.choose (n - 1) d < (perturbedStarFamily d B).card` by elementary natural-number arithmetic.\nThis assembles only the ready certificate, count, and positivity interfaces; it does not re-prove\nany certificate case or counting chain.\n\n## Proof sources\n\n- Source `formal_target.lean`, lines 14–25\n- Source `article/sections/02_proof.tex`, lines 75–79\n\n## Proof dependencies\n\n- `Main.CountingAndMain::perturbedStarExtra_choose_pos` → `perturbedStarExtra_choose_pos` from\n  `UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarExtra_choose_pos`\n- `Main.CountingAndMain::perturbedStarFamily_card` → `perturbedStarFamily_card` from\n  `UniformMissingTraceFamily.Main.CountingAndMain.Theorems.perturbedStarFamily_card`\n- `Main.PerturbedStarCertificates::perturbedStarParameterBounds` → `perturbedStarParameterBounds`\n  from\n  `UniformMissingTraceFamily.Main.PerturbedStarCertificates.Theorems.perturbedStarParameterBounds`\n- `Main.PerturbedStarCertificates::perturbedStar_isUniformMissingTraceFamily` →\n  `perturbedStar_isUniformMissingTraceFamily` from `UniformMissingTraceFamily.Main.PerturbedStarCert\n  ificates.Theorems.perturbedStar_isUniformMissingTraceFamily`\n-/\ntheorem exists_uniformMissingTraceFamily_strictlyLargerThanStar (d s n : ℕ)\n    (hd : 4 ≤ d) (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    ∃ family : Finset (Finset (Fin n)),\n      IsUniformMissingTraceFamily d s family ∧\n        family.card =\n          Nat.choose (n - 1) d +\n          Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2) ∧\n          Nat.choose (n - 1) d < family.card := by\n  rcases perturbedStar_isUniformMissingTraceFamily d s n hd hslow hshigh hn with ⟨B, hB⟩\n  rcases perturbedStarParameterBounds d s n hd hslow hshigh hn with\n    ⟨hr_two, hr_s, hrewrite, hrd, hrn⟩\n  refine ⟨perturbedStarFamily d B, hB, ?_, ?_⟩\n  · simpa [hrewrite] using perturbedStarFamily_card B hrd hrn\n  · have hcard : (perturbedStarFamily d B).card =\n        Nat.choose (n - 1) d +\n          Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2) := by\n      simpa [hrewrite] using perturbedStarFamily_card B hrd hrn\n    have hpos := perturbedStarExtra_choose_pos hd hslow hshigh hn\n    rw [hcard]\n    omega\n"
     },
@@ -162,6 +169,11 @@
           "schema_version": 2,
           "summary": "Diagnostics returned 1 items"
         },
+        "fingerprint": {
+          "environment_sha256": null,
+          "source_sha256": "ef1075886ea76167a0c509c2584bb4e71506e6dfc8776af0269d8e59e45ab662",
+          "upstream_revision": null
+        },
         "message": "Lean check passed.",
         "policy": "statement_formal",
         "scan": {
@@ -186,7 +198,15 @@
           "summary": "sorry=1, admit=0, axiom=0, opaque=0, unsafe=0",
           "unsafe_count": 0
         },
-        "status": "passed"
+        "schema_version": 1,
+        "status": "passed",
+        "subject": {
+          "declaration_name": null,
+          "module": "UniformMissingTraceFamily.Main.CountingAndMain.Theorems.exists_uniformMissingTraceFamily_strictlyLargerThanStar",
+          "repo_file_path": "UniformMissingTraceFamily/Main/CountingAndMain/Theorems/exists_uniformMissingTraceFamily_strictlyLargerThanStar.lean",
+          "repo_kind": "native",
+          "stage": "statement"
+        }
       },
       "code": "-- lean-constellation: managed-imports-begin\nimport UniformMissingTraceFamily.Main.CountingAndMain.Prelude\nimport Mathlib.Data.Nat.Choose.Basic\n-- lean-constellation: managed-imports-end\n\n-- lean-constellation: declaration-source-begin\n\n/--\n# lean-constellation target: `exists_uniformMissingTraceFamily_strictlyLargerThanStar`\n\nFor natural numbers `d`, `s`, and `n`, if `hd : 4 ≤ d`, `hslow : (d + 3) / 2 ≤ s`, `hshigh : s ≤ d -\n1`, and `hn : 2 * (d + 1) ≤ n`, then there exists a family `family : Finset (Finset (Fin n))` such\nthat\n`IsUniformMissingTraceFamily d s family ∧ family.card = Nat.choose (n - 1) d + Nat.choose (n - 2 *\n(d + 1 - s) - 2) (2 * s - d - 2) ∧ Nat.choose (n - 1) d < family.card`.\n\n## Sources\n\n- Source `formal_target.lean`, lines 14–25\n- Source `article/sections/02_proof.tex`, lines 75–79\n\n## Statement dependencies\n\n- `Nat.choose` from `Mathlib.Data.Nat.Choose.Basic`\n- `Main.PatternCriterion::IsUniformMissingTraceFamily` → `IsUniformMissingTraceFamily` from\n  `UniformMissingTraceFamily.Main.PatternCriterion.Defs.IsUniformMissingTraceFamily`\n-/\ntheorem exists_uniformMissingTraceFamily_strictlyLargerThanStar (d s n : ℕ)\n    (hd : 4 ≤ d) (hslow : (d + 3) / 2 ≤ s) (hshigh : s ≤ d - 1)\n    (hn : 2 * (d + 1) ≤ n) :\n    ∃ family : Finset (Finset (Fin n)),\n      IsUniformMissingTraceFamily d s family ∧\n        family.card =\n          Nat.choose (n - 1) d +\n            Nat.choose (n - 2 * (d + 1 - s) - 2) (2 * s - d - 2) ∧\n          Nat.choose (n - 1) d < family.card := by\n  sorry\n"
     },

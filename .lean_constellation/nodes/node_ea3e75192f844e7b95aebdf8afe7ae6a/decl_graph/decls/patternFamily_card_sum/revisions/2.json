@@ -1,15 +1,10 @@
 {
   "change": {
-    "anticipated_proof_dep_names": [
-      "completionFiber_card",
-      "completionFibers_pairwiseDisjoint"
-    ],
-    "anticipated_statement_dep_names": [],
     "base_revision": 1,
     "kind": "update",
     "objective": "Advance the planned generic cardinality decomposition through all stages to proved, preserving SourceIndex b_0009/article 48–50: if every P ∈ patterns is disjoint from U, card (patternFamily d patterns U) is the Finset sum over P of Nat.choose U.card (d+1-P.card). Consume the now-proved completionFiber_card and completionFibers_pairwiseDisjoint, the lower patternFamily definition, and Finset.card_biUnion. This must directly serve cancellation over perturbedStarPatterns without altering the pattern objects, indices, or adding unavailable assumptions.",
     "require_target_state_satisfied": true,
-    "reset_to_state": "planned",
+    "start_stage": "statement_nl",
     "summary": "Blocked at Statement NL with a present NL artifact but no accepted formal statement or proof; the revision remains committed at planned state. The preserved consumer-side shape is card (patternFamily d patterns U) = ∑ P ∈ patterns, Nat.choose U.card (d+1-P.card) under per-pattern disjointness from U, consuming proved completionFiber_card and completionFibers_pairwiseDisjoint. The reviewer checked the available Mathlib support and required a direct Statement dependency on Nat.choose; the precise mismatch is repository-index metadata: Mathlib.Data.Nat.Choose.Basic and Nat.choose_pos are indexed/hinted, but Nat.choose itself has no MathlibIndex declaration entry, so the dependency cannot be recorded. This is a small Lean-specific index prerequisite, not missing source, provider mathematics, or scope. Retry only after verifying and curating Nat.choose in its defining Mathlib module.",
     "target_state": "proved"
   },
