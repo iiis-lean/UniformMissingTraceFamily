@@ -3,11 +3,11 @@
   "entry_path": "README.md",
   "files": [
     {
-      "line_count": 41,
+      "line_count": 54,
       "path": "README.md",
       "readable_text": true,
-      "sha256": "3eba4f01e8272b22d19472f10fb3171e183a106126632f8b5e84b85001ccb47d",
-      "size_bytes": 1745
+      "sha256": "c53c1bb59cecc2397d2a61be5aaf1242591d68c1db791124eaf1e65b9b804e61",
+      "size_bytes": 2420
     },
     {
       "line_count": 38,
